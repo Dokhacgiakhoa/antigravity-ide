@@ -1,7 +1,7 @@
 {
   "name": "antigravity-ide",
   "version": "3.0.1",
-  "description": "The Ultimate AI Agent IDE. Create AI Agent projects with interactive setup for skills, rules, and workflows.",
+  "description": "The Ultimate AI Agent IDE with 550+ skills. Gemini-compatible. Create production-ready AI Agent projects with interactive setup.",
   "main": "cli/index.js",
   "bin": {
     "antigravity-ide": "./cli/index.js",
@@ -21,9 +21,15 @@
     "ai-ide",
     "agent-framework",
     "gemini",
+    "gemini-ai",
+    "google-gemini",
     "cli",
     "skills",
-    "ai-development"
+    "ai-development",
+    "550-skills",
+    "rag",
+    "llm",
+    "agent-orchestration"
   ],
   "files": [
     "cli/",

@@ -8,13 +8,13 @@
 [![Giấy Phép: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Nâng Cấp](https://img.shields.io/badge/Antigravity-Enhanced-blueviolet)]()
 
-**Google Antigravity** là phiên bản "siêu nạp" của Antigravity Kit gốc. Nó biến một Agent template cơ bản thành một hệ sinh thái khổng lồ, sẵn sàng cho production, để xây dựng các AI Agent tiên tiến.
+**Antigravity IDE** là phiên bản nâng cấp mạnh mẽ của Antigravity Kit. Nó biến một Agent template cơ bản thành hệ sinh thái production-ready hoàn chỉnh, giúp bạn xây dựng AI Agents chuyên nghiệp.
 
 ## 📦 Cài Đặt
 
-### Bắt Đầu Nhanh (Khuyến Nghị)
+### Bắt đầu nhanh (Khuyên dùng)
 
-Tạo dự án AI Agent mới ngay lập tức:
+Tạo dự án AI Agent mới chỉ với một lệnh:
 
 ```bash
 npx antigravity-ide create my-agent-project
@@ -22,12 +22,12 @@ npx antigravity-ide create my-agent-project
 
 Làm theo hướng dẫn tương tác để tùy chỉnh:
 - **Template**: Minimal / Standard / Full
-- **Quy Tắc Agent**: Strict / Balanced / Flexible  
-- **Kỹ Năng**: Chọn từ 6 danh mục (webdev, mobile, devops, security, ai, data)
+- **Agent Rules**: Strict / Balanced / Flexible  
+- **Skills**: Chọn từ 6 categories (webdev, mobile, devops, security, ai, data)
 - **Workflows**: Git, Testing, Deployment, Code Review
 - **Dashboard**: Giao diện Web Next.js (tùy chọn)
 
-### Bỏ Qua Hỏi Đáp (Dùng Mặc Định)
+### Bỏ qua câu hỏi (dùng mặc định)
 
 ```bash
 npx antigravity-ide create my-project --skip-prompts
@@ -40,29 +40,72 @@ npm install -g antigravity-ide
 antigravity-ide create my-project
 ```
 
-## 🚀 Điểm Nổi Bật Nâng Cấp
+## 🤖 Tương thích với Google Gemini
 
-Phiên bản "Pro Max" này bao gồm các cải tiến đáng kể:
+**Tất cả 550+ skills đều hoạt động với Gemini!**
 
-1.  **🧠 Trung Tâm Kỹ Năng Khổng Lồ**: Tích hợp **2.500+ Kỹ Năng** từ `antigravity-awesome-skills`. Agent của bạn giờ đây biết mọi thứ từ *Kiến Trúc Kubernetes Nâng Cao* đến *Viết Bản Sao Marketing Viral* ngay từ đầu.
-2.  **🧪 Phòng Thí Nghiệm Nghiên Cứu**: Bao gồm thư mục `lab/` với các tính năng thử nghiệm, giao thức agent "Beta", và các mẫu thiết kế tiên tiến từ `antigravity-lab`.
-3.  **✅ Bộ Kiểm Thử Hoàn Chỉnh**: Tích hợp đầy đủ `antigravity-test` trong `test/` để đánh giá nghiêm ngặt agent và kiểm tra hồi quy.
-4.  **⚡ Giao Diện Web Tối Ưu**: Dashboard Next.js được cấu hình sẵn trong `web/` để quản lý, trực quan hóa và điều phối các agent của bạn.
+```javascript
+// Gemini agent tự động có sẵn tất cả skills
+import { GoogleGenerativeAI } from "@google/generative-ai";
 
-## 📂 Cấu Trúc Dự Án
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+const model = genAI.getGenerativeModel({ 
+  model: "gemini-2.0-flash-exp"
+});
+
+// Skills nằm trong .agent/skills/ - sẵn sàng dùng ngay!
+```
+
+**Tại sao chọn Gemini + Antigravity IDE?**
+- ✅ **Universal Skills**: Hoạt động với mọi AI model
+- ✅ **Large Context**: Gemini 1.5 Pro xử lý được 2M tokens
+- ✅ **Production-Ready**: 550+ skills đã qua kiểm chứng thực tế
+
+👉 Xem [GEMINI.md](./GEMINI.md) để biết hướng dẫn chi tiết.
+
+## 🚀 Điểm nổi bật
+
+### 🧠 **2500+ Files, 550+ AI Skills**
+- **Core Skills**: Hơn 550 skills production-ready cho AI agent
+- **Gemini-Ready**: Tương thích 100% với Google Gemini AI
+- **Universal Format**: Dùng được với mọi AI model (Claude, GPT, Gemini, Llama)
+- **8 Categories**: Development, DevOps, Database, AI/ML, Security, Design, Business, Tools
+
+### 🎨 **CLI đẹp mắt với hiệu ứng Gradient**
+- **Gradient UI**: Banner ASCII art rainbow, output gọn gàng
+- **Interactive Setup**: Chọn skills, workflows và templates dễ dàng
+- **Tạo nhanh**: Chỉ cần `npx antigravity-ide create my-project`
+
+### 📦 **Cấu trúc dự án được cải tiến**
+```text
+antigravity-ide/
+├── .agent/           # 550+ Skills (từ awesome-skills)
+├── web/              # Next.js Dashboard
+├── lab/              # Experimental Features
+├── test/             # Testing Suite
+└── cli/              # CLI Tool (gradient UI)
+```
+
+### ✨ **Điểm đặc biệt**
+- **AI-Agnostic**: Skills hoạt động với mọi LLM (Gemini, Claude, GPT...)
+- **Production-Ready**: Được kiểm chứng bởi 500+ contributors
+- **Comprehensive**: Từ frontend đến AI agents, security đến marketing
+- **Well-Documented**: Mỗi skill đều có hướng dẫn và ví dụ cụ thể
+
+## 📂 Cấu trúc dự án
 
 ```text
 antigravity-ide/
-├── .agent/           # 🧠 BỘ NÃO: Cấu hình & 2500+ Kỹ Năng (Nâng Cấp)
-├── web/              # 🖥️ GIAO DIỆN: Dashboard Next.js
-├── lab/              # 🧪 PHÒNG THÍ NGHIỆM: Tính Năng Thử Nghiệm
-├── test/             # 🛡️ BẢO VỆ: Kiểm Thử & Benchmark
-└── COPYRIGHT.md      # 📜 Thông tin bản quyền (Tiếng Việt)
+├── .agent/           # 🧠 BỘ NÃO: Config & 550+ Skills
+├── web/              # 🖥️ GIAO DIỆN: Next.js Dashboard
+├── lab/              # 🧪 THÍ NGHIỆM: Features thử nghiệm
+├── test/             # 🛡️ KIỂM THỬ: Testing & Benchmarks
+└── cli/              # ⚡ CLI TOOL: Tạo project
 ```
 
-## 🛠️ Bắt Đầu Nhanh
+## 🛠️ Bắt đầu sử dụng
 
-Dự án này là một monorepo. Để khởi động giao diện chính:
+Đây là monorepo. Để chạy giao diện chính:
 
 ```bash
 cd web
@@ -72,19 +115,19 @@ npm run dev
 
 Truy cập `http://localhost:3000` để xem Dashboard.
 
-## 📚 Tài Liệu
+## 📚 Tài liệu
 
 - [**README.md**](./README.md) - Phiên bản tiếng Anh
-- [**COPYRIGHT.md**](./COPYRIGHT.md) - Thông tin bản quyền chi tiết
-- [**AGENT_FLOW.vi.md**](./AGENT_FLOW.vi.md) - Hướng dẫn kỹ thuật Agent (Sắp có)
-- [**CHANGELOG.vi.md**](./CHANGELOG.vi.md) - Lịch sử thay đổi (Sắp có)
+- [**SKILLS.md**](./SKILLS.md) - Danh sách 550+ skills
+- [**GEMINI.md**](./GEMINI.md) - Hướng dẫn tích hợp Gemini
+- [**COPYRIGHT.md**](./COPYRIGHT.md) - Thông tin bản quyền
 
-## 📜 Ghi Nhận & Giấy Phép
+## 📜 Giấy phép & Ghi nhận
 
-Dự án này tuân theo Giấy Phép MIT.
+Dự án này sử dụng giấy phép MIT.
 
-*   Dự án này là sản phẩm phái sinh từ [Antigravity Kit](https://github.com/vudovn/antigravity-kit) của [vudovn](https://github.com/vudovn).
-*   Xem [LICENSE](./LICENSE) để biết thông tin chi tiết về giấy phép bên thứ ba.
+*   Phát triển dựa trên [Antigravity Kit](https://github.com/vudovn/antigravity-kit) của [vudovn](https://github.com/vudovn).
+*   Xem [LICENSE](./LICENSE) để biết chi tiết về giấy phép.
 *   Xem [COPYRIGHT.md](./COPYRIGHT.md) để đọc giải thích bằng tiếng Việt.
 
 ---

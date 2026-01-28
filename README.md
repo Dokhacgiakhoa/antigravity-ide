@@ -40,14 +40,59 @@ npm install -g antigravity-ide
 antigravity-ide create my-project
 ```
 
+## 🤖 Works with Google Gemini
+
+**All 550+ skills are Gemini-compatible!**
+
+```javascript
+// Your Gemini agent gets all skills automatically
+import { GoogleGenerativeAI } from "@google/generative-ai";
+
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+const model = genAI.getGenerativeModel({ 
+  model: "gemini-2.0-flash-exp"
+});
+
+// Skills are in .agent/skills/ - ready to use!
+```
+
+**Why Gemini + Antigravity IDE?**
+- ✅ **Universal Skills**: Works with any AI model
+- ✅ **Large Context**: Gemini 1.5 Pro handles 2M tokens
+- ✅ **Production-Ready**: 550+ battle-tested skills
+
+See [GEMINI.md](./GEMINI.md) for complete guide.
+
 ## 🚀 Upgrade Highlights
 
 This "Pro Max" edition includes significant expansions:
 
-1.  **🧠 Massive Skill Core**: Integrated **2,500+ Skills** from `antigravity-awesome-skills`. Your Agent now knows everything from *Advanced Kubernets Architecture* to *Writing Viral Marketing Copy* out of the box.
-2.  **🧪 Research Lab**: Includes `lab/` directory with experimental features, "Beta" agent protocols, and bleeding-edge bleeding-edge design patterns from `antigravity-lab`.
-3.  **✅ Test Suite**: Full integration of `antigravity-test` in `test/` for rigorous agent benchmarking and regression testing.
-4.  **⚡ Optimized Web Interface**: A pre-configured Next.js dashboard in `web/` to manage, visualize, and orchestrate your agents.
+### 🧠 **2500+ Files, 550+ AI Skills**
+- **Core Skills**: 550+ production-ready AI agent skills
+- **Gemini-Ready**: Full compatibility with Google Gemini AI
+- **Universal Format**: Works with any AI model (Claude, GPT, Gemini, Llama)
+- **8 Categories**: Development, DevOps, Database, AI/ML, Security, Design, Business, Tools
+
+### 🎨 **Beautiful CLI Experience**
+- **Gradient UI**: Rainbow ASCII art banner with concise output
+- **Interactive Setup**: Choose skills, workflows, and templates
+- **Fast Creation**: `npx antigravity-ide create my-project`
+
+### 📦 **Enhanced Project Structure**
+```text
+antigravity-ide/
+├── .agent/           # 550+ Skills (from awesome-skills)
+├── web/              # Next.js Dashboard
+├── lab/              # Experimental Features
+├── test/             # Testing Suite
+└── cli/              # CLI Tool (gradient UI)
+```
+
+### ✨ **What Makes It Special**
+- **AI-Agnostic**: Skills work with any LLM (Gemini, Claude, GPT, etc.)
+- **Production-Ready**: Battle-tested skills from 500+ contributors
+- **Comprehensive**: From frontend to AI agents, security to marketing
+- **Well-Documented**: Each skill has clear instructions and examples
 
 ## 📂 Project Structure
 
