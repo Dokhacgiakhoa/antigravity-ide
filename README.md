@@ -16,7 +16,7 @@
 
 Create a new AI Agent project instantly:
 
-```bash
+```sh
 npx antigravity-ide create my-agent-project
 ```
 
@@ -29,13 +29,13 @@ Follow the interactive prompts to customize:
 
 ### Skip Prompts (Use Defaults)
 
-```bash
+```sh
 npx antigravity-ide create my-project --skip-prompts
 ```
 
 ### Global Installation
 
-```bash
+```sh
 npm install -g antigravity-ide
 antigravity-ide create my-project
 ```

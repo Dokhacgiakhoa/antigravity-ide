@@ -16,7 +16,7 @@
 
 Tạo dự án AI Agent mới chỉ với một lệnh:
 
-```bash
+```sh
 npx antigravity-ide create my-agent-project
 ```
 
@@ -29,13 +29,13 @@ Làm theo hướng dẫn tương tác để tùy chỉnh:
 
 ### Bỏ qua câu hỏi (dùng mặc định)
 
-```bash
+```sh
 npx antigravity-ide create my-project --skip-prompts
 ```
 
 ### Cài Đặt Toàn Cục
 
-```bash
+```sh
 npm install -g antigravity-ide
 antigravity-ide create my-project
 ```
