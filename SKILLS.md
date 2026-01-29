@@ -12,7 +12,7 @@ Antigravity IDE organizes intelligence into **22 high-density Master Skills**. E
 
 ### ✨ Key Features
 
-- **🤖 AI-Agnostic**: Works with Gemini, Claude, GPT, Llama, and any LLM
+- **🤖 AI-Agnostic**: Tối ưu hóa cho Gemini 3.5 Pro, Flash và Ultra
 - **📦 Production-Ready**: Battle-tested by 500+ contributors
 - **🔄 Auto-Sync**: Skills continuously updated from source repo
 - **📚 Well-Documented**: Each skill has clear instructions and examples
@@ -91,7 +91,7 @@ Antigravity IDE organizes intelligence into **22 high-density Master Skills**. E
 
 ### 4. 🤖 AI & Machine Learning (70+ skills)
 
-> ⭐ **Perfect for Gemini!**
+> ⭐ **Perfect for Gemini 3.5!**
 
 **LLM Applications**
 - `ai-engineer` - Production LLM apps and RAG systems
@@ -181,7 +181,7 @@ const skill = loadSkill('ai-engineer');
 // Load by category
 const aiSkills = loadSkillsByCategory('ai');
 
-// Load all skills (Gemini Pro with 2M context!)
+// Load all skills (Gemini 3.5 Pro with Infinite Context!)
 const allSkills = loadAllSkills();
 ```
 
