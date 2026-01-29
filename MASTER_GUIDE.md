@@ -1,5 +1,5 @@
 # 🛰️ Antigravity IDE - Master Operations Guide
-**Version**: 1.0.1 (Enterprise Multi-Agent Edition)
+**Version**: 3.5.36 (Enterprise Multi-Agent Edition)
 **Language**: Tiếng Việt (Giao diện) - English (Technical)
 
 Chào mừng bạn đến với hệ thống Antigravity IDE đã được "độ" lên mức tối đa. Đây không còn là một công cụ lập trình thông thường, mà là một **Phòng tác chiến AI** với đầy đủ tri thức nghiệp vụ và dây chuyền sản xuất chuyên nghiệp.

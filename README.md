@@ -2,79 +2,78 @@
 
 [English](./README.md) | [Tiếng Việt](./README.vi.md)
 
-> **The Ultimate AI Agent Brain.**  
-> *A comprehensive collection of Rules, Skills, and Workflows for modern AI Agents.*
+> **Antigravity IDE: The Intelligent Operating System for AI Engineers & Project Squads.**  
+> *Transform your AI from a chatbot into a professional Specialist Squad with standard operating procedures.*
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**Google Antigravity** is the core intelligence engine for building AI Agents. It provides a CLI tool (`npx`) to instantly scaffold agent-ready projects equipped with comprehensive professional skills and robust operational rules.
+**Google Antigravity** is more than just a skill collection; it is a comprehensive **Orchestration Framework**. it provides an "AI Battlefield" environment where AI agents collaborate through a professional production line (PDCA), ensuring every line of code is audited and optimized.
 
-| **20+** Master Skills | **15+** Specialist Agents | **11** Workflows | **13** Shared Modules |
+| **550+** Master Skills | **15+** Specialist Agents | **11+** Workflows | **13** Shared DNA Modules |
 | :---: | :---: | :---: | :---: |
-| Full-Stack Capabilities | Role-Based Personas | Development Processes | Reusable Standards |
+| Full-Stack & DevOps | Role-Based Personas | PDCA Cycle | Industry Blueprints |
 
-## 📦 Installation
+---
 
-### Quick Start
+## 🚀 1. Quick Scaffolding
 
-Run the following command:
+Set up your mission-critical environment in 30 seconds using the CLI:
 
 ```sh
-# Option 1: Create a new project folder
-npx antigravity-ide my-agent-project
+# 1. Create a new project (Recommended)
+npx antigravity-ide my_project
 
-# Option 2: Install in the current directory (Smart Install)
+# 2. Smart install in current directory
 npx antigravity-ide
 ```
 
-Follow the interactive setup:
-1.  **Agent Engine**: Choose **Standard (Node.js)** for lightweight tasks or **Advanced (Python)** for AI/Data Science.
-2.  **Industry Domain**: Select your field (Finance, Education, etc.) to optimize the Agent's focus and skills.
+### Engine Modes
+- **⚡ Standard (Node.js)**: High-speed, lightweight, perfect for Web/SaaS projects.
+- **🧠 Advanced (Python)**: Deep AI integration, Data Science, and automated Security Scanners.
 
-```sh
-npx antigravity-ide my-project --skip-prompts
-```
+### Identity Awareness & Brain-Drop Protection
+You can assign a unique name to your Agent (e.g., *Jarvis*). This acts as an "Identity Anchor" to verify if the AI is still adhering to the system rules and operational flow.
 
-### Update to Latest Version
+---
 
-Keep your Antigravity IDE up to date with the latest skills and brain features:
+## 🧠 2. The Core Brain: `.agent` Folder
 
+The `.agent` directory is where the system's intelligence resides:
+
+- **Specialist Agent System**: Includes the Project Planner, Backend/Frontend Specialists, Security Auditor, and the Orchestrator (Captain).
+- **PDCA Cycle (Plan-Do-Check-Act)**: AI doesn't just "write code." It follows a rigorous Plan -> Implement -> Inspect -> Approve cycle.
+- **Shared Knowledge DNA (`.shared/`)**: Contains the project's core principles, including API Standards, DB Schemas, Compliance docs, and Domain Blueprints (Fintech, Edtech, etc.).
+
+---
+
+## ⚡ 3. Slash Commands (`/`) & Updates
+
+Trigger deep workflows directly within your AI chat interface:
+
+- `/plan`: Outline requirements and break down tasks (Project Planner).
+- `/create`: Scaffold the project's foundation.
+- `/ui-ux-pro-max`: Design premium interfaces & micro-interactions.
+- `/orchestrate`: Coordinate multiple agents to solve complex problems.
+
+### System Updates
+Update the Antigravity Brain to the latest version while preserving your custom configurations:
 ```sh
 npx antigravity-ide update
 ```
 
-## 🤖 AI Model Compatibility
-
-**Google Antigravity** is designed to be the "Brain" for any AI model.
-
-- **Google Gemini**: Fully compatible with 2M context window.
-- **Anthropic Claude**: Optimized reasoning with `.agent` rules.
-- **OpenAI GPT-4**: Standardized skill formats.
-
-👉 **See [GEMINI.md](./GEMINI.md) for integration guides.**
-
-## 🚀 Core Features
-
-### 🧠 **The Agent Brain (.agent)**
-The heart of the system is the `.agent` folder, which contains:
-- **Professional Skills**: Production-ready capabilities for Development, DevOps, Security, and Data interactions.
-- **Universal Compatibility**: Optimized for **Gemini Pro**, **Claude 3.5 Sonnet**, and **GPT-4o**.
-- **Operational Rules**: Pre-defined protocols for safe and effective agent behavior.
-
-### ⚡ **Project Scaffolding (CLI)**
-A smart CLI tool to bootstrap new projects:
-- **Smart Install**: Detects context to install in current directory or create a new one.
-- **Agent Engines**: **Standard** (Node.js, lightweight) or **Advanced** (Python, full-power).
-- **Industry Intelligence**: Installs all professional skills but prioritizes your specific domain (Finance, Logistics, etc.) in the Agent's configuration.
-- **Fast**: Minimal footprint, intelligent filtering.
+---
 
 ## 📂 Project Structure
 
 ```text
-antigravity-ide/
-├── .agent/           # 🧠 THE BRAIN: Configs & 550+ Skills
-└── cli/              # ⚡ CLI TOOL: Project Scaffolding
+my-project/
+├── .agent/           # 🧠 THE BRAIN: DNA, Skills & Rules
+│   ├── .shared/      # ⛩️ Master Knowledge (API, DB, Design)
+│   ├── agents/       # 🎭 Specialist Agent Personas
+│   └── skills/       # 🛠️ 550+ Mission-Ready Skills
+└── cli/              # ⚡ CLI: Scaffolding management
 ```
 
 ---
-*Created with ❤️ by Dokhacgiakhoa*
+
+**Antigravity IDE** - Breaking the laws of gravity to elevate your projects. 🛰️🚀

@@ -2,92 +2,85 @@
 
 [English](./README.md) | [Tiếng Việt](./README.vi.md)
 
-> **Bộ Não AI Agent Tối Ưu.**  
-> *Bộ sưu tập toàn diện các Quy tắc, Kỹ năng và Quy trình làm việc cho AI Agent hiện đại.*
+> **Antigravity IDE: Hệ điều hành Trí tuệ cho Kỹ sư AI & Project Squad.**  
+> *Biến AI của bạn từ một trợ lý thông thường thành một Đội ngũ Chuyên gia (Specialist Squad) chuyên nghiệp với quy trình vận hành tiêu chuẩn.*
 
 [![Giấy Phép: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**Google Antigravity** là động cơ trí tuệ cốt lõi để xây dựng các AI Agent. Nó cung cấp công cụ CLI (`npx`) giúp bạn tạo lập tức thì các dự án sẵn sàng cho Agent với bộ kỹ năng chuyên nghiệp toàn diện và các quy tắc vận hành chặt chẽ.
+**Google Antigravity** không chỉ là một bộ skill, mà là một **Khung vận hành (Orchestration Framework)** toàn diện. Nó cung cấp một môi trường "Phòng tác chiến AI" giúp các AI Agent phối hợp theo dây chuyền sản xuất chuyên nghiệp (PDCA), đảm bảo mọi dòng code ra đời đều qua thẩm định và tối ưu hóa.
 
-| **20+** Master Skills | **15+** Specialist Agents | **11** Quy trình | **13** Shared Modules |
+| **550+** Kỹ năng (Skills) | **15+** Agent Chuyên gia | **11+** Quy trình (Workflows) | **13** Mô-đun DNA (Shared) |
 | :---: | :---: | :---: | :---: |
-| Bộ Kỹ Năng Chủ Chốt | Tác Nhân Chuyên Gia | Quy trình Chuẩn | Tiêu chuẩn dùng chung |
+| Full-Stack & DevOps | Role-Based Personas | Chu kỳ PDCA | Tri thức nghiệp vụ mẫu |
 
-## 📦 Cài Đặt
+---
 
-### Hướng dẫn khởi tạo nhanh
+## 🚀 1. Khởi tạo nhanh (Scaffolding)
 
-Chạy lệnh sau:
+Sử dụng CLI để thiết lập môi trường tác chiến trong 30 giây:
 
 ```sh
 # 1. Tạo dự án mới (Khuyến nghị)
-npx antigravity-ide ten-du-an
+npx antigravity-ide ten_du_an
 
-# 2. Cài đặt trực tiếp vào thư mục hiện tại (Smart Install)
+# 2. Cài đặt trực tiếp vào thư mục hiện tại
 npx antigravity-ide
 ```
 
-Hệ thống sẽ tự động cấu hình qua 2 bước:
-1.  **Agent Engine**: 
-    - **Standard (Node.js)**: Tốc độ cao, loại bỏ các file Python không cần thiết.
-    - **Advanced (Python)**: Hỗ trợ Full AI/Data Science (giữ nguyên .py, notebook).
-2.  **Lĩnh vực (Industry)**: 
-    - Chọn lĩnh vực của bạn (Tài chính, Giáo dục, Vận tải...).
-    - Hệ thống sẽ **tải toàn bộ kỹ năng** nhưng tự động cấu hình để **ưu tiên tối đa** cho lĩnh vực đó.
+### Chế độ Động cơ (Engine Modes)
+- **⚡ Standard (Node.js)**: Tốc độ cao, gọn nhẹ, phù hợp dự án Web/SaaS.
+- **🧠 Advanced (Python)**: Chuyên sâu cho AI, Data Science & Security Scanners.
 
-### Bỏ qua các bước nhập (Chế độ tự động)
+### Định danh & Chống rớt não (Identity Awareness)
+Dự án hỗ trợ đặt tên riêng cho Agent (ví dụ: *Jarvis*). Đây là "mỏ neo" danh tính giúp kiểm tra AI có đang tuân thủ đúng luồng quy tắc hay không.
 
-```sh
-npx antigravity-ide my-project --skip-prompts
-```
+---
 
-### Cập nhật lên phiên bản mới nhất
+## 🧠 2. Trái tim của hệ thống: Thư mục `.agent`
 
-Luôn giữ "Bộ não" Antigravity của bạn ở phiên bản mới nhất để cập nhật các kỹ năng và tính năng mới nhất:
+Thư mục `.agent` là nơi chứa toàn bộ "não bộ" của hệ thống:
 
+- **Hệ thống Agent Chuyên gia**: Planner (Lập kế hoạch), Backend/Frontend Specialists, Security Auditor và Orchestrator (Thuyền trưởng).
+- **Quy trình PDCA (Plan-Do-Check-Act)**: AI không tự tiện code. Nó phải Lập kế hoạch -> Thi công -> Kiểm tra chất lượng -> Phê duyệt.
+- **Kho tri thức Shared (`.shared/`)**: Chứa DNA của dự án như chuẩn API, Schema DB, tài liệu Compliance và các Domain Blueprints (Fintech, Edtech, v.v.).
+
+---
+
+## ⚡ 3. Lệnh Slash Command (`/`) & Cập nhật
+
+Kích hoạt các Workflow chuyên sâu ngay trong khung chat:
+
+- `/plan`: Lập kế hoạch và phân rã tác vụ (Project Planner).
+- `/create`: Xây dựng cấu trúc nền móng dự án.
+- `/ui-ux-pro-max`: Thiết kế giao diện cao cấp & Micro-interactions.
+- `/orchestrate`: Điều phối đa Agent giải quyết bài toán phức tạp.
+
+### Cập nhật hệ thống
+Để cập nhật bộ não Antigravity lên bản mới nhất mà không mất các cấu hình custom:
 ```sh
 npx antigravity-ide update
 ```
 
-## 🤖 Tương thích Đa Mô hình AI
-
-**Google Antigravity** được thiết kế để làm "Bộ não" cho bất kỳ AI Model nào.
-
-- **Google Gemini**: Tận dụng tối đa cửa sổ ngữ cảnh 2M token.
-- **Anthropic Claude**: Tối ưu hóa tư duy với bộ quy tắc `.agent`.
-- **OpenAI GPT-4**: Chuẩn hóa định dạng kỹ năng.
-
-👉 **Xem [GEMINI.md](./GEMINI.md) để biết hướng dẫn tích hợp chi tiết.**
-
-## 🚀 Tính năng Cốt lõi
-
-### 🧠 **Bộ Não Agent (.agent)**
-Trái tim của hệ thống là thư mục `.agent`, chứa:
-- **Kỹ năng Chuyên nghiệp**: Các kỹ năng sẵn sàng cho Production (Dev, DevOps, Security, Data).
-- **Tối ưu hóa Đa mô hình**: Hiệu chỉnh tối đa cho **Gemini Pro**, **Claude 3.5 Sonnet**, và **GPT-4o**.
-- **Quy tắc Vận hành**: Các giao thức định nghĩa sẵn để Agent hoạt động an toàn và hiệu quả.
-
-### ⚡ **Khởi tạo Dự án (CLI)**
-Công cụ CLI thông minh để bootstrap dự án mới:
-- **Smart Install**: Tự động phát hiện ngữ cảnh để cài vào thư mục hiện tại hoặc tạo mới.
-- **Agent Engines**: **Standard** (Node.js, siêu nhẹ) hoặc **Advanced** (Python, đầy đủ sức mạnh).
-- **Domain Intelligence**: Tải toàn bộ kỹ năng chuyên nghiệp nhưng tự động ưu tiên lĩnh vực của bạn (Tài chính, Y tế...) trong cấu hình Agent.
-- **Hiệu suất cao**: Thiết kế tối giản, tự động lọc file thông minh theo Engine.
+---
 
 ## 📂 Cấu trúc dự án
 
 ```text
-antigravity-ide/
-├── .agent/           # 🧠 BỘ NÃO: Config & 550+ Skills
-└── cli/              # ⚡ CLI TOOL: Tạo project
+ten-du-an/
+├── .agent/           # 🧠 BỘ NÃO: Agent DNA, Skills & Quy tắc
+│   ├── .shared/      # ⛩️ Master Knowledge (API, DB, Design)
+│   ├── agents/       # 🎭 Hệ thống nhân vật Chuyên gia
+│   └── skills/       # 🛠️ 550+ Công cụ tác chiến
+└── cli/              # ⚡ CLI: Quản lý scaffolding
 ```
 
-## 📚 Tài liệu
+---
 
-- [**README.md**](./README.md) - Phiên bản tiếng Anh
-- [**SKILLS.md**](./SKILLS.md) - Danh sách 550+ skills
-- [**GEMINI.md**](./GEMINI.md) - Hướng dẫn tích hợp Gemini
-- [**COPYRIGHT.md**](./COPYRIGHT.md) - Thông tin bản quyền
+## �️ Triết lý "Vỏ Việt - Lõi Anh"
+
+- **Giao tiếp**: Tiếng Việt (Trực quan, súc tích).
+- **Kỹ thuật**: Tiếng Anh (Biến, hàm, logic - Đảm bảo hiệu suất AI cao nhất).
 
 ---
-*Được tạo với ❤️ bởi Dokhacgiakhoa*
+
+**Antigravity IDE** - Phá bỏ mọi giới hạn, đưa dự án của bạn lên tầm cao mới. 🛰️🚀
