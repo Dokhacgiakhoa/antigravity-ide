@@ -76,48 +76,65 @@ async function setup() {
     }
     fs.writeFileSync(path.join(GLOBAL_DIR, '.config.json'), JSON.stringify({ lang, engineMode, projectScale }, null, 2));
 
-    // 4. Config Rules based on Scale
-    const rulesToSync = {
-        'personal': ['GEMINI.md', 'security.md', 'debug.md'],
-        'sme': ['GEMINI.md', 'security.md', 'frontend.md', 'backend.md', 'debug.md', 'business.md'],
-        'enterprise': null // null means ALL files
-    };
-
-    // 5. Sync Files
+    // 5. Sync Files (GLOBAL ALWAYS FULL ENTERPRISE)
+    console.log('\n🔄 Checking Global Cache (Update if needed)...');
     syncFolders.forEach(folder => {
         const src = path.join(SOURCE_DIR, folder);
         const dest = path.join(GLOBAL_DIR, folder);
 
         if (fs.existsSync(src)) {
-            // Special handling for 'rules' folder based on scale
-            if (folder === 'rules' && projectScale !== 'enterprise') {
-                 if (!fs.existsSync(dest)) fs.mkdirSync(dest, { recursive: true });
-                 const allowedRules = rulesToSync[projectScale] || [];
-                 
-                 // Copy only allowed files
-                 allowedRules.forEach(ruleFile => {
-                     const srcRule = path.join(src, ruleFile);
-                     const destRule = path.join(dest, ruleFile);
-                     if (fs.existsSync(srcRule)) {
-                         fs.copyFileSync(srcRule, destRule);
-                     }
-                 });
-                 console.log(`✅ Đã đồng bộ ${folder} (Chế độ: ${projectScale}) vào hệ thống toàn cục.`);
+            // ALWAYS sync full content to Global (Central Repository)
+            // This ensures Global always has the latest & greatest version of everything.
+            if (os.platform() === 'win32') {
+                try {
+                    execSync(`robocopy "${src}" "${dest}" /E /NFL /NDL /NJH /NJS /nc /ns /np /XO`, { stdio: 'inherit' });
+                } catch (e) {}
             } else {
-                // Default full sync for other folders or Enterprise mode
-                if (os.platform() === 'win32') {
-                    try {
-                        execSync(`robocopy "${src}" "${dest}" /E /NFL /NDL /NJH /NJS /nc /ns /np`, { stdio: 'inherit' });
-                    } catch (e) {
-                        // Robocopy returns exit codes > 0 on success (1-7), catch block is expected
-                    }
-                } else {
-                    execSync(`mkdir -p "${dest}" && cp -R "${src}/"* "${dest}/"`, { stdio: 'inherit' });
-                }
-                console.log(`✅ Đã đồng bộ ${folder} ${projectScale === 'enterprise' && folder === 'rules' ? '(Full Enterprise)' : ''} vào hệ thống toàn cục.`);
+                execSync(`mkdir -p "${dest}" && cp -R "${src}/"* "${dest}/"`, { stdio: 'inherit' });
             }
         }
     });
+    console.log('✅ Global Cache is up-to-date (Full Enterprise Mode).');
+
+    // 6. Initialize Workspace (Apply Scale Logic to Local Project)
+    // Only copy specific rules to current directory based on Scale
+    console.log(`\n📂 Initializing Workspace (Scale: ${projectScale.toUpperCase()})...`);
+    
+    const localAgentDir = path.join(process.cwd(), '.agent');
+    const localRulesDir = path.join(localAgentDir, 'rules');
+
+    // Create local .agent struct if not exists
+    if (!fs.existsSync(localRulesDir)) fs.mkdirSync(localRulesDir, { recursive: true });
+
+    // Define rules for each scale
+    const rulesToApply = {
+        'personal': ['GEMINI.md', 'security.md', 'debug.md'],
+        'sme': ['GEMINI.md', 'security.md', 'frontend.md', 'backend.md', 'debug.md', 'business.md'],
+        'enterprise': null // null means ALL files from Global
+    };
+
+    const targetRules = rulesToApply[projectScale];
+
+    if (targetRules) {
+        // Copy specific files from GLOBAL to LOCAL
+        targetRules.forEach(file => {
+            const globalFile = path.join(GLOBAL_DIR, 'rules', file);
+            const localFile = path.join(localRulesDir, file);
+            if (fs.existsSync(globalFile)) {
+                 fs.copyFileSync(globalFile, localFile);
+            }
+        });
+        console.log(`✅ Applied ${targetRules.length} rules to Workspace.`);
+    } else {
+        // Enterprise: Copy ALL rules from Global to Local
+         const globalRulesDir = path.join(GLOBAL_DIR, 'rules');
+         if (fs.existsSync(globalRulesDir)) {
+             fs.readdirSync(globalRulesDir).forEach(file => {
+                 fs.copyFileSync(path.join(globalRulesDir, file), path.join(localRulesDir, file));
+             });
+         }
+         console.log(`✅ Applied Full Enterprise rules to Workspace.`);
+    }
 
     // 3. Localize Workflows
     localizeWorkflows(lang);
