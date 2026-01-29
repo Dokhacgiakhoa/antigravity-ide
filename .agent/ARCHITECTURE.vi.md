@@ -9,7 +9,7 @@
 Antigravity Kit là một hệ thống mô-đun bao gồm:
 
 - **20 Chuyên gia Agent** - Các nhân dạng AI dựa trên vai trò.
-- **550+ Kỹ năng (Skills)** - Các mô-đun tri thức chuyên biệt theo từng lĩnh vực.
+- **22 Siêu Kỹ năng (Master Kits)** - Các mô-đun tri thức nén bao phủ 550+ lĩnh vực.
 - **11 Quy trình (Workflows)** - Các quy trình thực thi lệnh slash command.
 - **13 Mô-đun DNA (Shared)** - Tri thức nền tảng và tiêu chuẩn dùng chung.
 
@@ -98,7 +98,7 @@ Hệ thống sử dụng các kịch bản kiểm tra tự động để đảm 
 | Chỉ số | Giá trị |
 | ------ | ----- |
 | **Tổng số Agent** | 20 |
-| **Tổng số Kỹ năng** | 550+ |
+| **Tổng số Master Kits** | 22 (Bao phủ 550+ chuyên môn) |
 | **Quy trình tiêu chuẩn** | 11 |
 | **Độ phủ nghiệp vụ** | ~95% Web/Mobile/DevOps |
 

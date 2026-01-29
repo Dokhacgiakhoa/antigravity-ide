@@ -1,14 +1,14 @@
 # Skills Inventory - Antigravity IDE
 
 **Last Updated:** 2026-01-29  
-**Total Skills:** 550+ production-ready AI agent skills  
+**Total Skills:** 22 Master Kits (Consolidating 550+ specialized domains)  
 **Source:** [antigravity-awesome-skills](https://github.com/vudovn/antigravity-awesome-skills)
 
 ---
 
 ## 🎯 Overview
 
-Antigravity IDE includes **550+ professional AI agent skills** covering every aspect of modern software development, from frontend to AI agents, security to marketing.
+Antigravity IDE organizes intelligence into **22 high-density Master Kits**. Each kit consolidates the best practices and instructions of over **550+ professional specialized skills** from our open-source lineage, optimized for high-performance AI orchestration.
 
 ### ✨ Key Features
 

@@ -9,9 +9,9 @@
 
 **Google Antigravity** is more than just a skill collection; it is a comprehensive **Orchestration Framework**. it provides an "AI Battlefield" environment where AI agents collaborate through a professional production line (PDCA), ensuring every line of code is audited and optimized.
 
-| **550+** Master Skills | **15+** Specialist Agents | **11+** Workflows | **13** Shared DNA Modules |
+| **22** Master Kits | **15+** Specialist Agents | **11+** Workflows | **13** Shared DNA Modules |
 | :---: | :---: | :---: | :---: |
-| Full-Stack & DevOps | Role-Based Personas | PDCA Cycle | Industry Blueprints |
+| Covering 550+ Domains | Role-Based Personas | PDCA Cycle | Industry Blueprints |
 
 ---
 
