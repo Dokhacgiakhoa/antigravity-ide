@@ -27,7 +27,7 @@ npx antigravity-ide my_project
 npx antigravity-ide
 ```
 
-### ✨ Setup Wizard Features (v2026.3.5)
+### ✨ Setup Wizard Features (v3.5.30)
 The new interactive CLI puts you in control:
 
 1.  **Project Scale Selection**:

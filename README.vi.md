@@ -27,7 +27,7 @@ npx antigravity-ide ten_du_an
 npx antigravity-ide
 ```
 
-### ✨ Tính năng Setup Wizard (v2026.3.5)
+### ✨ Tính năng Setup Wizard (v3.5.30)
 CLI tương tác mới giúp bạn làm chủ hoàn toàn môi trường:
 
 1.  **Lựa chọn Quy mô Dự án (Project Scale)**:
