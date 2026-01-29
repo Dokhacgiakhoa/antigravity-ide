@@ -2,12 +2,10 @@ const fs = require('fs');
 const path = require('path');
 const os = require('os');
 const { execSync } = require('child_process');
-const readline = require('readline');
-
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
+const chalk = require('chalk');
+const gradient = require('gradient-string');
+const boxen = require('boxen');
+const prompts = require('prompts');
 
 const GLOBAL_DIR = path.join(os.homedir(), '.antigravity');
 const SOURCE_DIR = path.join(__dirname, '.agent');
@@ -15,7 +13,25 @@ const SOURCE_DIR = path.join(__dirname, '.agent');
 const syncFolders = ['rules', 'workflows', 'agents', 'skills', '.shared'];
 
 async function setup() {
-    console.log('🚀 Antigravity Global Setup Starting...');
+    // Clear screen
+    console.log('\x1b[2J\x1b[0f');
+
+    // Premium Banner Restoration
+    const branding = `
+    ___          __  _ ______                 _ __       
+   /   |  ____  / /_(_) ____/________ __   __(_) /___  __
+  / /| | / __ \\/ __/ / / __/ ___/ __ \`/ | / / / __/ / / /
+ / ___ |/ / / / /_/ / /_/ / /  / /_/ /| |/ / / /_/ /_/ / 
+/_/  |_/_/ /_/\\__/_/\\____/_/   \\__,_/ |___/_/\\__/\\__, /  
+                                                 /____/   
+    `;
+    
+    console.log(gradient.rainbow.multiline(branding));
+    console.log(gradient.atlas('━'.repeat(60)));
+    console.log(chalk.gray(`  Google Antigravity • Global Setup Wizard • v2026.3.5`));
+    console.log(chalk.gray('  Developed with 💡 by Dokhacgiakhoa'));
+    console.log(gradient.atlas('━'.repeat(60)) + '\n');
+    console.log(chalk.bold.hex('#00ffee')('🚀 Antigravity Global Setup Starting...\n'));
 
     // 0. Check for Python (Required for Advanced Skills)
     let hasPython = false;
@@ -30,51 +46,94 @@ async function setup() {
     }
 
     if (!hasPython) {
-        console.log('⚠️ Warning: Python was not detected on your system.');
-        console.log('   Some "Pro" features (automated scans, evaluators) require Python.');
-        console.log('   You can still use the core IDE, but it is recommended to install Python later.');
+        console.log(chalk.yellow('⚠️ Warning: Python was not detected on your system.'));
+        console.log(chalk.gray('   Some "Pro" features (automated scans, evaluators) require Python.'));
+        console.log(chalk.gray('   You can still use the core IDE, but it is recommended to install Python later.\n'));
     }
 
-    // 1. Ask for Language
-    const lang = await new Promise(resolve => {
-        rl.question('🌐 Select Language / Chọn Ngôn ngữ (en/vi) [vi]: ', (answer) => {
-            resolve(answer.toLowerCase() === 'en' ? 'en' : 'vi');
-        });
+    // Interactive Prompts
+    const response = await prompts([
+        {
+            type: 'select',
+            name: 'lang',
+            message: 'Select Language / Chọn Ngôn ngữ:',
+            choices: [
+                { title: 'Tiếng Việt (Vietnamese)', value: 'vi' },
+                { title: 'English (Tiếng Anh)', value: 'en' }
+            ],
+            initial: 0
+        },
+        {
+            type: 'select',
+            name: 'engineMode',
+            message: (prev, values) => values.lang === 'vi' ? 'Chọn Chế độ Động cơ:' : 'Select Engine Mode:',
+            choices: (prev, values) => values.lang === 'vi' ? [
+                { title: '⚡ Standard (Node.js) - Gọn nhẹ [Mặc định]', value: 'standard' },
+                { title: '🧠 Advanced (Python) - Chuyên sâu AI & Data', value: 'advanced' }
+            ] : [
+                { title: '⚡ Standard (Node.js) - Lightweight [Default]', value: 'standard' },
+                { title: '🧠 Advanced (Python) - Deep AI & Data', value: 'advanced' }
+            ],
+            initial: 0
+        },
+        {
+            type: 'select',
+            name: 'projectScale',
+            message: (prev, values) => values.lang === 'vi' ? 'Chọn Quy mô Dự án (Project Scale):' : 'Select Project Scale:',
+            choices: (prev, values) => values.lang === 'vi' ? [
+                { title: '👤 Personal (Cá nhân) - Tinh gọn (Core + Debug)', value: 'personal' },
+                { title: '🏢 SME / Start-Up (Tiêu chuẩn) - Đầy đủ Big 5 [Mặc định]', value: 'sme' },
+                { title: '🏭 Enterprise (Tập đoàn) - Full Option + Compliance', value: 'enterprise' }
+            ] : [
+                { title: '👤 Personal - Lean (Core + Debug)', value: 'personal' },
+                { title: '🏢 SME / Start-Up - Standard Big 5 [Default]', value: 'sme' },
+                { title: '🏭 Enterprise - Full Option + Compliance', value: 'enterprise' }
+            ],
+            initial: 1
+        },
+        {
+            type: 'select',
+            name: 'industryDomain',
+            message: (prev, values) => values.lang === 'vi' ? 'Chọn Lĩnh vực dự án (Industry):' : 'Select Industry Domain:',
+            choices: (prev, values) => values.lang === 'vi' ? [
+                { title: '💰 Finance (Tài chính - Fintech)', value: 'finance' },
+                { title: '🎓 Education (Giáo dục - EdTech)', value: 'education' },
+                { title: '🍔 F&B / Restaurant (Nhà hàng)', value: 'fnb' },
+                { title: '👤 Personal / Portfolio (Cá nhân)', value: 'personal' },
+                { title: '🏥 Healthcare (Y tế - HealthTech)', value: 'healthcare' },
+                { title: '🚚 Logistics (Vận tải)', value: 'logistics' },
+                { title: '🔮 Other (Khác - Web/App cơ bản)', value: 'other' }
+            ] : [
+                { title: '💰 Finance (Fintech)', value: 'finance' },
+                { title: '🎓 Education (EdTech)', value: 'education' },
+                { title: '🍔 F&B / Restaurant', value: 'fnb' },
+                { title: '👤 Personal / Portfolio', value: 'personal' },
+                { title: '🏥 Healthcare (HealthTech)', value: 'healthcare' },
+                { title: '🚚 Logistics', value: 'logistics' },
+                { title: '🔮 Other (General Web/App)', value: 'other' }
+            ],
+            initial: 6
+        }
+    ], {
+        onCancel: () => {
+            console.log(chalk.red('\n✖ Setup cancelled / Đã hủy thiết lập'));
+            process.exit(0);
+        }
     });
 
-    // 2. Ask for Engine Mode
-    console.log('\n🛠️ Select Engine Mode / Chọn Chế độ Động cơ:');
-    console.log('   1. Standard (Node.js) - Gọn nhẹ, Không cần cấu hình [Mặc định]');
-    console.log('   2. Advanced (Python) - Chuyên nghiệp, Yêu cầu đã cài đặt Python');
-    const engineMode = await new Promise(resolve => {
-        rl.question('👉 Choice / Lựa chọn của sếp (1/2) [1]: ', (answer) => {
-            resolve(answer === '2' ? 'advanced' : 'standard');
-        });
-    });
+    const { lang, engineMode, projectScale, industryDomain } = response;
 
-    // 3. Ask for Project Scale
-    console.log('\n⚖️  Select Project Scale / Chọn Quy mô Dự án:');
-    console.log('   1. Personal (Cá nhân) - Tinh gọn, chỉ gồm Core + Debug');
-    console.log('   2. SME / Start-Up (Tiêu chuẩn) - Đầy đủ bộ Big 5 + Business [Mặc định]');
-    console.log('   3. Enterprise (Tập đoàn) - Full option + Compliance Rules');
-    
-    const projectScale = await new Promise(resolve => {
-        rl.question('👉 Choice / Lựa chọn của sếp (1/2/3) [2]: ', (answer) => {
-            if (answer === '1') resolve('personal');
-            else if (answer === '3') resolve('enterprise');
-            else resolve('sme');
-        });
-    });
-
-    console.log(`📍 Selected Language: ${lang.toUpperCase()}`);
-    console.log(`📍 Selected Engine: ${engineMode.toUpperCase()}`);
-    console.log(`📍 Selected Scale: ${projectScale.toUpperCase()}`);
+    console.log(chalk.green(`\n📍 Configuration Saved:`));
+    console.log(chalk.cyan(`   Language: ${lang === 'vi' ? 'Tiếng Việt' : 'English'}`));
+    console.log(chalk.cyan(`   Engine: ${engineMode.toUpperCase()}`));
+    console.log(chalk.cyan(`   Scale: ${projectScale.toUpperCase()}`));
+    console.log(chalk.cyan(`   Industry: ${industryDomain ? industryDomain.toUpperCase() : 'OTHER'}\n`));
 
     // Save config
     if (!fs.existsSync(GLOBAL_DIR)) {
         fs.mkdirSync(GLOBAL_DIR, { recursive: true });
     }
-    fs.writeFileSync(path.join(GLOBAL_DIR, '.config.json'), JSON.stringify({ lang, engineMode, projectScale }, null, 2));
+    fs.writeFileSync(path.join(GLOBAL_DIR, '.config.json'), JSON.stringify({ lang, engineMode, projectScale, industryDomain }, null, 2));
 
     // 5. Sync Files (GLOBAL ALWAYS FULL ENTERPRISE)
     console.log('\n🔄 Checking Global Cache (Update if needed)...');
