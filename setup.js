@@ -77,6 +77,13 @@ async function setup() {
             initial: 0
         },
         {
+            type: 'text',
+            name: 'agentName',
+            message: (prev, values) => values.lang === 'vi' ? 'Đặt tên định danh cho AI Agent của bạn:' : 'Name your AI Agent:',
+            initial: 'Antigravity',
+            validate: value => value.length < 2 ? 'Minimum 2 chars' : true
+        },
+        {
             type: 'select',
             name: 'projectScale',
             message: (prev, values) => values.lang === 'vi' ? 'Chọn Quy mô Dự án (Project Scale):' : 'Select Project Scale:',
@@ -121,10 +128,11 @@ async function setup() {
         }
     });
 
-    const { lang, engineMode, projectScale, industryDomain } = response;
+    const { lang, engineMode, agentName, projectScale, industryDomain } = response;
 
     console.log(chalk.green(`\n📍 Configuration Saved:`));
     console.log(chalk.cyan(`   Language: ${lang === 'vi' ? 'Tiếng Việt' : 'English'}`));
+    console.log(chalk.cyan(`   Agent Name: ${chalk.bold.yellow(agentName)}`));
     console.log(chalk.cyan(`   Engine: ${engineMode.toUpperCase()}`));
     console.log(chalk.cyan(`   Scale: ${projectScale.toUpperCase()}`));
     console.log(chalk.cyan(`   Industry: ${industryDomain ? industryDomain.toUpperCase() : 'OTHER'}\n`));
@@ -133,7 +141,7 @@ async function setup() {
     if (!fs.existsSync(GLOBAL_DIR)) {
         fs.mkdirSync(GLOBAL_DIR, { recursive: true });
     }
-    fs.writeFileSync(path.join(GLOBAL_DIR, '.config.json'), JSON.stringify({ lang, engineMode, projectScale, industryDomain }, null, 2));
+    fs.writeFileSync(path.join(GLOBAL_DIR, '.config.json'), JSON.stringify({ lang, engineMode, agentName, projectScale, industryDomain }, null, 2));
 
     // 5. Sync Files (GLOBAL ALWAYS FULL ENTERPRISE)
     console.log('\n🔄 Checking Global Cache (Update if needed)...');
@@ -193,6 +201,30 @@ async function setup() {
              });
          }
          console.log(`✅ Applied Full Enterprise rules to Workspace.`);
+    }
+
+    // 7. Inject Config into Workspace Rules (Agent Name & Domain)
+    const geminiRulePath = path.join(localRulesDir, 'GEMINI.md');
+    if (fs.existsSync(geminiRulePath)) {
+        let content = fs.readFileSync(geminiRulePath, 'utf-8');
+        
+        // Inject Agent Name
+        if (agentName && agentName !== 'Antigravity') {
+            content = content.replace(
+                /Nhân dạng\*\*: Antigravity Orchestrator/g, 
+                `Nhân dạng**: ${agentName} (Powered by Antigravity)`
+            );
+        }
+
+        // Inject Industry Domain
+        if (industryDomain) {
+            const domainBlock = `\n- **Lĩnh vực hoạt động**: ${industryDomain.toUpperCase()}\n  - Hệ thống sẽ ưu tiên các pattern và best practice thuộc lĩnh vực này.`;
+            // Insert after Identity bullets
+            content = content.replace(/(Giá trị cốt lõi\*\*)/, `\n${domainBlock}\n$1`);
+        }
+
+        fs.writeFileSync(geminiRulePath, content);
+        console.log(`✅ Configured GEMINI.md with Agent Name & Industry context.`);
     }
 
     // 3. Localize Workflows
