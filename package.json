@@ -1,6 +1,6 @@
 {
   "name": "antigravity-ide",
-  "version": "3.5.36",
+  "version": "2026.3.5",
   "description": "The Ultimate AI Agent Brain - Rules, Skills, and Workflows",
   "main": "cli/index.js",
   "files": [
@@ -23,6 +23,7 @@
     "update": "node ./update.js"
   },
   "dependencies": {
+    "boxen": "^5.1.2",
     "chalk": "^4.1.2",
     "commander": "^11.1.0",
     "fs-extra": "^11.2.0",
