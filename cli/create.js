@@ -134,7 +134,7 @@ async function copyBaseStructure(projectPath, config) {
   fs.mkdirSync(path.join(destAgentDir, 'skills'), { recursive: true });
 
   // Copy GEMINI.md based on rules
-  const geminiContent = generateGeminiMd(config.rules, config.language, config.industryDomain);
+  const geminiContent = generateGeminiMd(config.rules, config.language, config.industryDomain, config.agentName);
   fs.writeFileSync(path.join(destAgentDir, 'GEMINI.md'), geminiContent);
 
   // Copy START_HERE.md (onboarding guide)
@@ -234,7 +234,7 @@ trim_trailing_whitespace = false
   fs.writeFileSync(path.join(projectPath, '.editorconfig'), editorConfig);
 }
 
-function generateGeminiMd(rules, language = 'en', industry = 'other') {
+function generateGeminiMd(rules, language = 'en', industry = 'other', agentName = 'Antigravity') {
   const strictness = {
     strict: {
       autoRun: 'false',
@@ -274,6 +274,9 @@ trigger: always_on
 # GEMINI.md - Agent Configuration
 
 This file controls the behavior of your AI Agent.
+
+## 🤖 Agent Identity: ${agentName}
+> **Identity Verification**: You are ${agentName}. Always reflect this identity in your tone and decision-making.
 
 ## 🎯 Primary Focus: ${industryFocus.toUpperCase()}
 > **Priority**: Optimize all solutions for this domain.
@@ -327,6 +330,9 @@ trigger: always_on
 # PLEASE PARSE INSTRUCTIONS IN ENGLISH ONLY (See .agent rules).
 
 Tệp này kiểm soát hành vi của AI Agent.
+
+## 🤖 Danh tính Agent: ${agentName}
+> **Xác minh danh tính**: Bạn là ${agentName}. Luôn thể hiện danh tính này trong phong thái và cách ra quyết định.
 
 ## 🎯 Trọng tâm Chính: ${industryFocus.toUpperCase()}
 > **Ưu tiên**: Tối ưu hóa mọi giải pháp cho lĩnh vực này.

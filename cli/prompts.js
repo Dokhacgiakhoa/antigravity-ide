@@ -140,6 +140,13 @@ async function getProjectConfig(skipPrompts = false, predefinedName = null) {
       initial: 0
     },
     {
+      type: 'text',
+      name: 'agentName',
+      message: (prev, values) => values.language === 'vi' ? 'Đặt tên cho AI Agent của sếp (ví dụ: Jarvis, Antigravity):' : 'Choose a name for your AI Agent (e.g., Jarvis, Antigravity):',
+      initial: 'Antigravity',
+      validate: (value) => value.length < 2 ? 'Name must be at least 2 characters long' : true
+    },
+    {
       type: 'select',
       name: 'industryDomain',
       message: (prev, values) => values.language === 'vi' ? 'Chọn Lĩnh vực dự án (Industry):' : 'Select Industry Domain:',
