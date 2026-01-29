@@ -27,6 +27,22 @@ npx antigravity-ide my_project
 npx antigravity-ide
 ```
 
+### ✨ Setup Wizard Features (v2026.3.5)
+The new interactive CLI puts you in control:
+
+1.  **Project Scale Selection**:
+    - **👤 Personal**: Lean setup (Core Rules + Debug).
+    - **🏢 SME / Start-Up**: Standard Big 5 Rules + Business Logic.
+    - **🏭 Enterprise**: Full Option + Compliance & Architecture Review.
+
+2.  **Context Injection**:
+    - **Name your Agent**: Personalize your AI (e.g., *Jarvis*, *Friday*).
+    - **Industry Domain**: Optimize for Finance, Healthcare, Logistics, etc.
+
+3.  **Global vs. Workspace Strategy**:
+    - **Global (`~/.antigravity`)**: Holds the Master Rules (Enterprise Tier).
+    - **Workspace (`.agent`)**: Inherits only what matches your Project Scale.
+
 ### Engine Modes
 - **⚡ Standard (Node.js)**: High-speed, lightweight, perfect for Web/SaaS projects.
 - **🧠 Advanced (Python)**: Deep AI integration, Data Science, and automated Security Scanners.
