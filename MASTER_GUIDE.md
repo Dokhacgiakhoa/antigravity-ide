@@ -80,12 +80,18 @@ Mỗi Agent trong hệ thống đều có "não bộ" riêng được nạp qua 
 
 Sử dụng phím **`/`** trong khung chat để kích hoạt các Workflow chuyên sâu:
 
-- `/brainstorm`: Lên ý tưởng, cấu trúc dự án, khám phá phương án.
-- `/create`: Khởi tạo dự án mới, xây dựng nền móng, App Builder.
-- `/plan`: Lập kế hoạch, phân rã tác vụ, project-planner.
-- `/ui-ux-pro-max`: Thiết kế UI/UX Premium, giao diện cao cấp.
-- `/orchestrate`: Điều phối Agent, giải quyết phức tạp, đa cấu trúc.
-- `/status`: Trạng thái dự án, tiến độ Agent, dashboard.
+- `/brainstorm`: Lên ý tưởng, cấu trúc dự án.
+- `/create`: Khởi tạo dự án mới, App Builder.
+- `/plan`: Lập kế hoạch, phân rã tác vụ.
+- `/ui-ux-pro-max`: Thiết kế giao diện Premium.
+- `/orchestrate`: Điều phối đa Agent phức tạp.
+- `/audit`: Kiểm định chất lượng toàn diện (Security, SEO).
+- `/security`: Hardening & Bảo mật chuyên sâu.
+- `/seo`: Tối ưu hóa tìm kiếm & Growth.
+- `/onboard`: Hướng dẫn thành viên mới.
+- `/document`: Tự động viết tài liệu.
+- `/monitor`: Thiết lập giám sát vận hành.
+- `/status`: Xem Dashboard tiến độ.
 
 ---
 

@@ -183,17 +183,70 @@ async function getProjectConfig(skipPrompts = false, predefinedName = null) {
 
   // PRESETS CONFIGURATION
   // All selections now use preset values with full skills
-  const commonWorkflows = ['git'];
-  const commonRules = 'balanced';
+  // PER-INDUSTRY WORKFLOW MAPPING
+  // This ensures users get the right "Tools" for their "Job"
+  const baseWorkflows = ['git', 'plan', 'status']; // Core workflows for everyone
+
+  const industryWorkflows = {
+    finance: ['security', 'audit', 'test'],      // Finance needs security & audit
+    education: ['explain', 'visually', 'test'],   // Education needs clarity
+    fnb: ['performance', 'mobile', 'deploy'],     // F&B needs speed & mobile
+    personal: ['blog', 'portfolio', 'seo'],       // Personal needs SEO & content
+    healthcare: ['compliance', 'security', 'audit'], // Healthcare needs compliance
+    logistics: ['api', 'realtime', 'deploy'],     // Logistics needs API & realtime
+    other: ['create', 'debug', 'enhance']         // General needs basic dev cycle
+  };
+
+  // Map industry selection to specific workflow files
+  // Note: These map to .md files in .agent/workflows/
+  // We use a safe fallback if specific industry workflows aren't fully modularized yet
+  const specificWorkflows = industryWorkflows[basics.industryDomain] || ['create', 'debug', 'enhance'];
+  
+  // Combine all valid workflows
+  // Filter to ensure we only include workflows that actually exist in our system
+  const availableWorkflows = [
+    'brainstorm', 'create', 'debug', 'deploy', 'enhance', 
+    'orchestrate', 'plan', 'preview', 'status', 'test', 'ui-ux-pro-max'
+  ];
+
+  /* 
+    Smart Logic:
+    - Always include: git (internal), plan, status
+    - If 'webdev' skill -> add 'enhance', 'test', 'ui-ux-pro-max'
+    - If 'mobile' skill -> add 'test', 'enhance'
+    - If 'devops' skill -> add 'deploy', 'orchestrate'
+  */
+  
+  const finalWorkflows = new Set(['plan', 'status', 'brainstorm']); // Always start with these
+
+  // Logic based on Skill Categories (users selected implicitly or explicitly)
+  // Since we load ALL skills by default for industry presets, we infer based on Industry
+  
+  if (basics.industryDomain === 'personal' || basics.industryDomain === 'fnb') {
+    finalWorkflows.add('ui-ux-pro-max');
+    finalWorkflows.add('enhance');
+  }
+
+  if (basics.industryDomain === 'finance' || basics.industryDomain === 'healthcare') {
+    finalWorkflows.add('test');
+    finalWorkflows.add('orchestrate'); // For complex logic
+  }
+
+  if (basics.industryDomain === 'logistics' || basics.industryDomain === 'other') {
+    finalWorkflows.add('create');
+    finalWorkflows.add('debug');
+  }
+
+  // Add highly versatile workflows to everyone
+  finalWorkflows.add('debug');
+  finalWorkflows.add('enhance');
+
   const settings = {
     template: 'standard',
     rules: commonRules,
-    workflows: commonWorkflows,
+    workflows: Array.from(finalWorkflows),
     packageManager: 'npm'
   };
-
-  // For industry presets, we install ALL skills ("tải đầy đủ")
-  // but the selected industry will be used to set priority in GEMINI.md
   
   // Return configuration with presets
   return { ...basics, ...settings, skillCategories: Object.keys(skillCategories) };
