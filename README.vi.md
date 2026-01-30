@@ -43,7 +43,7 @@ Trải nghiệm dòng lệnh (CLI) đẳng cấp Premium:
 3.  **Thông tin Ngữ cảnh (Context Injection)**:
     - **Đặt tên Agent**: Gọi tên trợ lý thân thương (ví dụ: *Jarvis*).
     - **Lĩnh vực hoạt động**: Tối ưu luật cho **Tài chính, Y tế, Logistics**, v.v.
-    - *Auto-Inject*: Hệ thống tự động "cấy" thông tin này vào não bộ AI (`GEMINI.md`).
+    - *Auto-Inject*: Hệ thống tự động "cấy" thông tin này vào não bộ AI (xem `GEMINI_GUIDE.md`).
 
 4.  **Chiến lược Trung ương & Địa phương**:
     - **Global (`~/.antigravity`)**: Chứa Bộ luật gốc (Luôn là Enterprise).
