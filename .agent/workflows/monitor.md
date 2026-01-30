@@ -1,5 +1,4 @@
----
-description: Thiết lập giám sát & Vận hành
+description: Giám sát vận hành & Logging
 ---
 
 # /monitor - DevOps & Observability

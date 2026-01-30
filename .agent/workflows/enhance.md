@@ -1,5 +1,5 @@
 ---
-description: Cập nhật tính năng, phát triển lặp lại, nâng cấp app
+description: Nâng cấp, sửa đổi giao diện/logic
 ---
 
 # /enhance - Update Application

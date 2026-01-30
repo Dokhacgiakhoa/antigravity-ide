@@ -1,5 +1,5 @@
 ---
-description: Lên ý tưởng, cấu trúc dự án, khám phá phương án
+description: Khởi tạo ý tưởng, cấu trúc dự án
 ---
 
 # /brainstorm - Structured Idea Exploration

@@ -1,5 +1,4 @@
----
-description: Kiểm định chất lượng toàn diện (Security, SEO, Code)
+description: Tổng kiểm tra chất lượng (Security, SEO)
 ---
 
 # /audit - Comprehensive Quality Check

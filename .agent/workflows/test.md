@@ -1,5 +1,4 @@
----
-description: Chạy kiểm thử, tự động hóa, đảm bảo chất lượng
+description: Kiểm thử tự động (Unit/E2E)
 ---
 
 # /test - Test Generation and Execution

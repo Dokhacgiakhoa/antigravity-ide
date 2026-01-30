@@ -1,5 +1,4 @@
----
-description: Khởi tạo dự án mới, xây dựng nền móng, App Builder
+description: Tạo tính năng mới (Full-stack)
 ---
 
 # /create - Create Application

@@ -1,5 +1,4 @@
----
-description: Tự động hóa viết tài liệu (Code to Docs)
+description: Tự động viết/cập nhật tài liệu
 ---
 
 # /document - Auto Documentation

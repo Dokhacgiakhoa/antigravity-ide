@@ -1,5 +1,4 @@
----
-description: Bảo mật & Hardening hệ thống
+description: Bảo mật chuyên sâu & Hardening
 ---
 
 # /security - Security Hardening

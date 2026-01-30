@@ -1,5 +1,4 @@
----
-description: Lập kế hoạch, phân rã tác vụ, project-planner
+description: Lập kế hoạch, phân rã tác vụ
 ---
 
 # /plan - Project Planning Mode

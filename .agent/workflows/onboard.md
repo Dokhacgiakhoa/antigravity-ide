@@ -1,5 +1,4 @@
----
-description: Hướng dẫn thành viên mới & Setup môi trường
+description: Hướng dẫn thành viên mới
 ---
 
 # /onboard - Team Onboarding

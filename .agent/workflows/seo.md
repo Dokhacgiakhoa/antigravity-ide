@@ -1,5 +1,4 @@
----
-description: Tối ưu hóa công cụ tìm kiếm & Growth
+description: Tối ưu hóa tìm kiếm & Growth
 ---
 
 # /seo - Growth Engine

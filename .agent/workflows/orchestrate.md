@@ -1,5 +1,5 @@
 ---
-description: Điều phối Agent, giải quyết phức tạp, đa cấu trúc
+description: Điều phối Đa Agent (Tác vụ phức tạp)
 ---
 
 # Multi-Agent Orchestration

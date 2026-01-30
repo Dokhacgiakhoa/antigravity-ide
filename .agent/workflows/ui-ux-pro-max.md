@@ -1,5 +1,4 @@
----
-description: Thiết kế UI/UX, Premium, giao diện cao cấp
+description: Thiết kế giao diện đỉnh cao (Linear/Magic UI)
 ---
 
 

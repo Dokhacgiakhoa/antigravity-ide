@@ -1,5 +1,5 @@
 ---
-description: Gỡ lỗi hệ thống, điều tra vấn đề, sửa lỗi
+description: Sửa lỗi thông minh, tối ưu code
 ---
 
 # /debug - Systematic Problem Investigation

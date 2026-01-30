@@ -1,5 +1,4 @@
----
-description: Triển khai Production, kiểm tra an toàn, phát hành
+description: Phát hành ứng dụng (Vercel/Docker)
 ---
 
 # /deploy - Production Deployment
