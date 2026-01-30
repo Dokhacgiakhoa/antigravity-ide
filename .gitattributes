@@ -1,0 +1,7 @@
+# Enforce using LF line endings on all files
+* text=auto eol=lf
+
+# Explicitly force LF for executable scripts to avoid "env: node\r: No such file or directory"
+*.js text eol=lf
+*.sh text eol=lf
+bin/* text eol=lf
