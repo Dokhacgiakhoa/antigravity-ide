@@ -3,8 +3,8 @@
 ## ✅ Published Successfully!
 
 **Package:** `antigravity-ide`  
-**Version:** `3.5.5`  
-**Published:** 2026-01-29  
+**Version:** `3.5.37`  
+**Published:** 2026-01-30  
 **Link:** https://www.npmjs.com/package/antigravity-ide
 
 ---

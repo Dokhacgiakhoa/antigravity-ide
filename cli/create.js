@@ -444,5 +444,6 @@ function printSuccessMessage(projectName, config) {
 }
 
 module.exports = {
-  createProject
+  createProject,
+  generateGeminiMd
 };

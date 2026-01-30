@@ -3,7 +3,7 @@
 ## 📜 Thông Tin Bản Quyền
 
 **Tên Dự Án**: Google Antigravity (Enhanced Edition)  
-**Tác Giả**: Dokhacgiakhoa  
+**Chủ Sở Hữu & Bảo Trì**: Dokhacgiakhoa  
 **Năm**: 2026  
 **Giấy Phép**: MIT License
 
@@ -11,73 +11,47 @@
 
 ## ⚖️ Giấy Phép MIT - Giải Thích Bằng Tiếng Việt
 
-Dự án này được phát hành theo **giấy phép MIT** - một trong những giấy phép mã nguồn mở linh hoạt nhất.
+Dự án này được phát hành theo **giấy phép MIT**.
 
-### Quyền Lợi Của Bạn:
-✅ **Sử dụng tự do**: Bạn có thể sử dụng mã nguồn này cho bất kỳ mục đích nào (cá nhân, thương mại, học tập).  
-✅ **Sao chép và phân phối**: Bạn có thể sao chép, chia sẻ dự án này cho người khác.  
-✅ **Chỉnh sửa**: Bạn có thể tùy biến, phát triển thêm tính năng mới.  
-✅ **Thương mại hóa**: Bạn có thể tích hợp vào sản phẩm thương mại của mình.
+### Quyền Lợi:
+✅ **Sử dụng tự do**: Bạn có thể sử dụng cho cá nhân, thương mại, học tập.  
+✅ **Sao chép và phân phối**: Bạn có thể chia sẻ dự án.  
+✅ **Chỉnh sửa**: Bạn có thể tùy biến code.
 
-### Nghĩa Vụ Của Bạn:
-⚠️ **Giữ nguyên thông báo bản quyền**: Khi phân phối lại (dù nguyên gốc hay đã chỉnh sửa), bạn phải giữ nguyên dòng thông báo bản quyền và giấy phép.  
-⚠️ **Không bảo hành**: Phần mềm được cung cấp "nguyên trạng" (AS-IS). Tác giả không chịu trách nhiệm về bất kỳ lỗi, thiệt hại nào phát sinh.
+### Nghĩa Vụ:
+⚠️ **Giữ nguyên thông báo bản quyền**: Khi phân phối lại.  
+⚠️ **Không bảo hành**: Tác giả không chịu trách nhiệm về lỗi phát sinh.
 
 ---
 
-## 🙏 Ghi Nhận Bên Thứ Ba
+## 🙏 Ghi Nhận & Nguồn Tham Khảo (Credits)
 
-Dự án này được xây dựng dựa trên các dự án mã nguồn mở sau:
+Dự án này do **Dokhacgiakhoa** phát triển và vận hành. Trong quá trình xây dựng, chúng tôi đã tham khảo và kế thừa tri thức từ các nguồn mã nguồn mở sau:
 
-### 1. Antigravity Kit (Core Framework)
-- **Tác giả gốc**: VUDOVN
-- **Repositories**: 
-  - [vudovn/antigravity-kit](https://github.com/vudovn/antigravity-kit) (Core)
-  - [sickn33/antigravity-awesome-skills](https://github.com/sickn33/antigravity-awesome-skills) (Skills Database)
-- **Giấy phép**: MIT License
-- **Phần sử dụng**:
-  - Cấu trúc framework cơ bản (VUDOVN)
-  - Hệ thống 2500+ kỹ năng chuyên sâu (SICKN33)
-  - Module Lab và Test
+### Nguồn Tham Khảo (Upstream References)
+*Đây là các dự án nguồn mà chúng tôi đã nghiên cứu để xây dựng nên phiên bản này:*
 
-### 2. Tiêu Chuẩn & Phương Pháp Luận Ngành
-Dự án tích hợp tri thức và quy chuẩn từ:
-- **OWASP**: Các mẫu quét và phòng chống lỗ hổng bảo mật.
-- **SOLID & Clean Code**: Nguyên tắc thiết kế kiến trúc phần mềm chất lượng cao.
-- **PDCA & Socratic Questioning**: Phương pháp luận vận hành và khám phá yêu cầu.
+1.  **Antigravity Kit** (by `vudovn`)
+    *   *Vai trò*: Tham khảo cấu trúc Framework và tư duy Agent.
+    *   *Link*: [github.com/vudovn/antigravity-kit](https://github.com/vudovn/antigravity-kit)
 
-### 3. Cốt Lõi Công Nghệ (Core Stack)
-Sử dụng các thư viện mã nguồn mở theo giấy phép MIT:
-- **Next.js** (Vercel), **React** (Meta), **Tailwind CSS**.
-- **Shadcn/ui**, **Lucide Icons**.
+2.  **Antigravity Awesome Skills** (by `sickn33`)
+    *   *Vai trò*: Tham khảo cơ sở dữ liệu các kỹ năng (Skills Database).
+    *   *Link*: [github.com/sickn33/antigravity-awesome-skills](https://github.com/sickn33/antigravity-awesome-skills)
 
-### 4. Tham Chiếu Cộng Đồng
-Các best practices được tham chiếu và đối soát với cộng đồng J2TEAM và hệ sinh thái Unikorn.vn.
+
+3.  **UI/UX Pro Max** (by `sickn33`)
+    *   *Vai trò*: Tham khảo quy chuẩn thiết kế giao diện cao cấp.
+    *   *Link*: [github.com/sickn33/ui-ux-pro-max](https://github.com/sickn33/ui-ux-pro-max)
+
+> **Lưu ý**: Các tác giả gốc (`vudovn`, `sickn33`) được ghi nhận vì những đóng góp nền tảng cho cộng đồng mã nguồn mở. Tuy nhiên, họ **không trực tiếp tham gia** phát triển, sửa lỗi hay quản lý repository (`Dokhacgiakhoa/google-antigravity`) này.
 
 ---
 
 ## 📄 Văn Bản Pháp Lý Gốc
 
-Để đảm bảo tính pháp lý quốc tế, văn bản giấy phép MIT đầy đủ bằng **tiếng Anh** được lưu tại file [`LICENSE`](./LICENSE).
-
-Văn bản đó có giá trị pháp lý chính thức. File này (`COPYRIGHT.md`) chỉ là bản giải thích bằng tiếng Việt để dễ hiểu.
+Văn bản giấy phép MIT đầy đủ bằng tiếng Anh được lưu tại file [`LICENSE`](./LICENSE).
 
 ---
 
-## 💬 Câu Hỏi Thường Gặp
-
-**Q: Tôi có thể dùng code này cho dự án thương mại không?**  
-A: Có, hoàn toàn được. Bạn chỉ cần giữ nguyên thông báo bản quyền.
-
-**Q: Tôi có phải mở mã nguồn khi sử dụng code này không?**  
-A: Không bắt buộc. MIT không yêu cầu bạn công khai code.
-
-**Q: Tôi có thể xóa tên tác giả không?**  
-A: Không được. Bạn phải giữ nguyên thông báo bản quyền ban đầu.
-
-**Q: Nếu gặp lỗi, tôi có được hỗ trợ không?**  
-A: Dự án mã nguồn mở không có bảo hành. Nhưng bạn có thể tạo Issue trên GitHub để cộng đồng hỗ trợ.
-
----
-
-*Để biết thêm chi tiết về giấy phép MIT, xem: [https://opensource.org/licenses/MIT](https://opensource.org/licenses/MIT)*
+*Verified by Dokhacgiakhoa*
