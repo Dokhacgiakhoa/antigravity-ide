@@ -3,16 +3,7 @@
   "version": "3.5.49",
   "description": "The Ultimate AI Agent Brain - Rules, Skills, and Workflows",
   "main": "cli/index.js",
-  "files": [
-    "cli",
-    ".agent",
-    "setup.js",
-    "update.js",
-    "README.md",
-    "LICENSE",
-    "VERSION",
-    "docs"
-  ],
+
   "bin": {
     "antigravity": "./cli/index.js",
     "antigravity-ide": "./cli/index.js",

@@ -1,0 +1,44 @@
+# Dev & Config
+.git/
+.github/
+.vscode/
+.idea/
+.editorconfig
+.gitignore
+.npmignore
+.eslintrc.js
+.prettierrc
+tsconfig.json
+jsconfig.json
+
+# Tests & Logs
+tests/
+test/
+*.test.js
+*.spec.js
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build & Temp
+dist/
+build/
+tmp/
+temp/
+coverage/
+node_modules/
+
+# DOCUMENTATION (Excluded from NPM package)
+docs/
+others/
+antigravity-doc/
+.temp_ag_kit/
+test-cli-project/
+lab/
+
+# Only keep Root README + Translations
+!README.md
+!README.vi.md
+!LICENSE
+!VERSION
