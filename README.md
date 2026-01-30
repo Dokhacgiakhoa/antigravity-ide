@@ -28,18 +28,24 @@ npx antigravity-ide
 ```
 
 ### ✨ Setup Wizard Features (v3.5.30)
-The new interactive CLI puts you in control:
+The new interactive CLI puts you in control with a **Premium Developer Experience**:
 
-1.  **Project Scale Selection**:
-    - **👤 Personal**: Lean setup (Core Rules + Debug).
-    - **🏢 SME / Start-Up**: Standard Big 5 Rules + Business Logic.
-    - **🏭 Enterprise**: Full Option + Compliance & Architecture Review.
+1.  **Interactive & Visual**:
+    - Navigate menus with **Arrow Keys** (No more manual typing).
+    - **Gradient Aesthetics**: Beautiful CLI visuals that inspire creativity.
+    - **Satisfaction Summary**: A clean "Success" checklist ensures you're ready to go.
 
-2.  **Context Injection**:
+2.  **Project Scale Selection**:
+    - **👤 Personal**: Lean setup (Core Rules + Debug). Perfect for hobby projects.
+    - **🏢 SME / Start-Up**: Standard Big 5 Rules + Business Logic + Security.
+    - **🏭 Enterprise**: Full Option + Compliance + Architecture Review.
+
+3.  **Context Injection**:
     - **Name your Agent**: Personalize your AI (e.g., *Jarvis*, *Friday*).
-    - **Industry Domain**: Optimize for Finance, Healthcare, Logistics, etc.
+    - **Industry Domain**: Optimize for **Finance, Healthcare, Logistics**, etc.
+    - *Auto-Injection*: These details are deeply embedded into `.agent/rules/GEMINI.md`.
 
-3.  **Global vs. Workspace Strategy**:
+4.  **Global vs. Workspace Strategy**:
     - **Global (`~/.antigravity`)**: Holds the Master Rules (Enterprise Tier).
     - **Workspace (`.agent`)**: Inherits only what matches your Project Scale.
 

@@ -28,20 +28,26 @@ npx antigravity-ide
 ```
 
 ### ✨ Tính năng Setup Wizard (v3.5.30)
-CLI tương tác mới giúp bạn làm chủ hoàn toàn môi trường:
+Trải nghiệm dòng lệnh (CLI) đẳng cấp Premium:
 
-1.  **Lựa chọn Quy mô Dự án (Project Scale)**:
-    - **👤 Personal (Cá nhân)**: Tinh gọn (Core Rules + Debug).
-    - **🏢 SME / Start-Up**: Tiêu chuẩn (Big 5 Rules + Business Logic).
-    - **🏭 Enterprise (Tập đoàn)**: Full Option + Compliance & Architecture Review.
+1.  **Tương tác & Mãn nhãn**:
+    - **Arrow Keys**: Điều hướng menu bằng phím mũi tên (Không cần gõ phím thủ công).
+    - **Visual**: Giao diện Gradient 7 màu khơi gợi cảm hứng sáng tạo.
+    - **Checklist Tổng kết**: Bảng xác nhận "Xanh mướt" 100% trước khi bắt đầu.
 
-2.  **Thông tin Ngữ cảnh (Context Injection)**:
-    - **Đặt tên Agent**: Cá nhân hóa trợ lý AI (ví dụ: *Jarvis*, *Friday*).
-    - **Lĩnh vực hoạt động**: Tối ưu hóa cho Tài chính, Y tế, Logistics, v.v.
+2.  **Lựa chọn Quy mô Dự án (Project Scale)**:
+    - **👤 Personal**: Tinh gọn (Chỉ Core Rules + Debug). Phù hợp dự án cá nhân.
+    - **🏢 SME / Start-Up**: Tiêu chuẩn (Big 5 Rules + Business Logic + Security).
+    - **🏭 Enterprise**: Full Option + Compliance + Architecture Review.
 
-3.  **Chiến lược Trung ương & Địa phương**:
+3.  **Thông tin Ngữ cảnh (Context Injection)**:
+    - **Đặt tên Agent**: Gọi tên trợ lý thân thương (ví dụ: *Jarvis*).
+    - **Lĩnh vực hoạt động**: Tối ưu luật cho **Tài chính, Y tế, Logistics**, v.v.
+    - *Auto-Inject*: Hệ thống tự động "cấy" thông tin này vào não bộ AI (`GEMINI.md`).
+
+4.  **Chiến lược Trung ương & Địa phương**:
     - **Global (`~/.antigravity`)**: Chứa Bộ luật gốc (Luôn là Enterprise).
-    - **Workspace (`.agent`)**: Chỉ thừa kế những luật phù hợp với quy mô dự án.
+    - **Workspace (`.agent`)**: Chỉ load những tài nguyên "đủ dùng" cho dự án để tiết kiệm Token.
 
 ### Chế độ Động cơ (Engine Modes)
 - **⚡ Standard (Node.js)**: Tốc độ cao, gọn nhẹ, phù hợp dự án Web/SaaS.
