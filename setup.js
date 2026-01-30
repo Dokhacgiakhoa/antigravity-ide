@@ -154,14 +154,18 @@ async function setup() {
 
         let installCmd = '';
         if (os.platform() === 'win32') {
-            installCmd = 'winget install Python.Python.3.11';
+            // Recommendation: Python 3.13 (Latest - 1 strategy for Max Stability in 2026)
+            installCmd = 'winget install Python.Python.3.13';
         } else if (os.platform() === 'darwin') {
-            installCmd = 'brew install python';
+            installCmd = 'brew install python@3.13';
         } else {
-            installCmd = 'sudo apt update && sudo apt install python3 python3-pip';
+            installCmd = 'sudo apt update && sudo apt install python3.13 python3-pip';
         }
 
         console.log(chalk.black.bgCyan.bold(`  ${installCmd}  `) + '\n');
+        console.log(chalk.gray(lang === 'vi' 
+            ? '(Đã chọn phiên bản Stable N-1 để đảm bảo tương thích tốt nhất)' 
+            : '(Selected Stable N-1 version for maximum compatibility)'));
         console.log(chalk.gray(lang === 'vi' ? '(Sau khi cài xong, hãy chạy lại setup)' : '(After installation, please run setup again)'));
         
         // Optional: Ask to auto-install? (Risk of permission issues, stick to suggestion for safety as per "Safety First" rule)
