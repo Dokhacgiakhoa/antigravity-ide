@@ -43,7 +43,7 @@ The new interactive CLI puts you in control with a **Premium Developer Experienc
 3.  **Context Injection**:
     - **Name your Agent**: Personalize your AI (e.g., *Jarvis*, *Friday*).
     - **Industry Domain**: Optimize for **Finance, Healthcare, Logistics**, etc.
-    - *Auto-Injection*: These details are deeply embedded into `.agent/rules/GEMINI.md`.
+    - *Auto-Injection*: These details are deeply embedded into `.agent/rules/GEMINI.md` (See `GEMINI_GUIDE.md`).
 
 4.  **Global vs. Workspace Strategy**:
     - **Global (`~/.antigravity`)**: Holds the Master Rules (Enterprise Tier).
