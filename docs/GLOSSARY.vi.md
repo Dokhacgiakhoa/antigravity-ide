@@ -1,75 +1,109 @@
-# Từ điển Thuật ngữ Antigravity (Glossary) 📖
+# Từ điển Hệ thống Antigravity (System Glossary) 📖
 
-Tài liệu này giải thích các từ ngữ chuyên môn được sử dụng trong hệ thống Antigravity.
-
----
-
-## 🏗️ Cốt lõi (Core Concepts)
-
-### 1. Antigravity IDE
-Không phải là một phần mềm IDE mới (như VS Code), mà là một **Hệ điều hành AI** chạy *bên trong* VS Code/Cursor. Nó biến trình biên tập mã bình thường thành một cỗ máy pair-programming thông minh.
-
-### 2. Orchestrator (Người điều phối)
-Là vai trò chính của AI khi bạn sử dụng Antigravity. Thay vì chỉ là một "thợ code" (Coder), AI đóng vai trò là "Nhạc trưởng" (Orchestrator), biết cách gọi đúng chuyên gia (Skill) cho từng việc.
-
-### 3. Agent (Tác nhân)
-Là một nhân cách AI cụ thể được tạo ra cho dự án của bạn.
-*   Ví dụ: Trong dự án Game, Agent là "Game Designer". Trong dự án Bank, Agent là "Security Expert".
+Đây là tài liệu tra cứu **toàn diện** tất cả các Thực thể (Entity), Lệnh (Command), và Từ khóa (Keyword) có trong hệ thống Antigravity.
+Hãy dùng các từ khóa này để giao tiếp chính xác với AI.
 
 ---
 
-## ⚙️ Cơ chế Vận hành (Mechanisms)
+## 1. Workflows (Quy trình) - Ký hiệu `/`
+*Gõ lệnh này để KHỞI ĐỘNG một chuỗi hành động.*
 
-### 4. Context Injection (Cấy ngữ cảnh)
-Kỹ thuật tự động nạp thông tin vào "não" của AI ngay khi bắt đầu phiên làm việc.
-*   **Ví dụ**: Khi bạn mở dự án, AI tự động biết "Đây là dự án Tài chính, dùng PostgreSQL, yêu cầu bảo mật cao" mà không cần bạn nhắc lại.
-
-### 5. Context Integrity (Toàn vẹn ngữ cảnh)
-Cơ chế "chống lú" cho AI. Trước khi thực hiện lệnh quan trọng, AI tự kiểm tra lại xem mình có đang tuân thủ đúng luật (`@rule`) và đóng đúng vai (`Identity`) không.
-
-### 6. Socratic Gate (Cổng Socratic)
-Bộ lọc thông minh: "Không làm nếu chưa hiểu". Nếu bạn đưa ra yêu cầu mơ hồ, AI sẽ chặn lại và đặt câu hỏi ngược (Phương pháp Socratic) thay vì đoán mò và làm sai.
-
----
-
-## 🧩 Thành phần (Components)
-
-### 7. Workflow (`/`) - Luồng công việc
-Là một chuỗi các bước đã được định nghĩa sẵn để hoàn thành một mục tiêu lớn.
-*   **Ký hiệu**: Bắt đầu bằng dấu gạch chéo `/`.
-*   **Ví dụ**: `/create` (Tạo dự án), `/deploy` (Triển khai), `/debug` (Sửa lỗi).
-
-### 8. Rule (`@`) - Luật lệ / Ngữ cảnh
-Là tập hợp các quy tắc chuyên môn cho một lĩnh vực cụ thể.
-*   **Ký hiệu**: Thường được gọi bằng `@` (tuy nhiên trong chat có thể gõ tên thường).
-*   **Ví dụ**: `@backend` (Luật viết API), `@security` (Luật bảo mật), `@frontend` (Luật giao diện).
-
-### 9. Skill (Kỹ năng)
-Là các gói kiến thức chuyên sâu. Antigravity có 550+ skills (Python, React, AWS...). Khi cần làm gì, AI sẽ "tải" skill đó về để dùng.
-
-### 10. Shared Module (Module chia sẻ)
-Là các thư viện chuẩn (Standard Library) nằm trong folder `.agent/.shared`. Đây là tài sản chung của mọi dự án, chứa các best practice ( ví dụ: chuẩn API, chuẩn Database) để đảm bảo dự án nào cũng có chất lượng cao như nhau.
+| Lệnh | Ý nghĩa | Khi nào dùng? |
+| :--- | :--- | :--- |
+| `/audit` | **Kiểm toán chất lượng** | Trước khi bàn giao, cần rà soát lỗi bảo mật/hiệu năng. |
+| `/brainstorm` | **Bão não ý tưởng** | Bí ý tưởng, cần AI gợi ý giải pháp/kiến trúc. |
+| `/create` | **Khởi tạo dự án** | Bắt đầu một dự án mới từ con số 0. |
+| `/debug` | **Gỡ lỗi** | Khi code chạy sai, quăng log lỗi cho AI phân tích. |
+| `/deploy` | **Triển khai** | Đóng gói và đẩy ứng dụng lên Server/Cloud. |
+| `/document` | **Viết tài liệu** | Tự động viết README, API Docs từ code. |
+| `/enhance` | **Nâng cấp** | Muốn sửa UI đẹp hơn, hoặc tối ưu code cũ. |
+| `/monitor` | **Giám sát** | Cài đặt công cụ theo dõi Server/Logs. |
+| `/onboard` | **Dẫn nhập** | Tạo tài liệu hướng dẫn cho thành viên mới (Newbie). |
+| `/orchestrate` | **Điều phối** | Gọi "Hội đồng chuyên gia" giải quyết bài toán lớn. |
+| `/plan` | **Lập kế hoạch** | Phân tích yêu cầu -> Ra file `implementation_plan.md`. |
+| `/preview` | **Xem trước** | Chạy thử web/app để xem giao diện. |
+| `/security` | **Quét bảo mật** | Kiểm tra lỗ hổng chuyên sâu (Penetration Test). |
+| `/seo` | **Tối ưu tìm kiếm** | Giúp web lên Top Google (Meta tags, Sitemap). |
+| `/status` | **Trạng thái** | Xem báo cáo tiến độ dự án. |
+| `/test` | **Kiểm thử** | Viết và chạy Unit Test/E2E Test. |
+| `/ui-ux-pro-max`| **Giao diện Đỉnh cao**| Thiết kế UI đẹp như tranh vẽ (Magic UI/Linear). |
 
 ---
 
-## 🎭 Vai trò ảo (Virtual Roles)
+## 2. Rules (Luật/Ngữ cảnh) - Ký hiệu `@`
+*Gõ từ khóa này (hoặc nói tên) để GÁN NGỮ CẢNH chuyên môn cho AI.*
 
-Trong chế độ đa tác nhân (Multi-Agent), AI sẽ tự phân thân thành:
-
-*   **DB Agent**: Chuyên lo Database, SQL, Migration.
-*   **BE Agent**: Chuyên lo API, Logic server, Bảo mật.
-*   **FE Agent**: Chuyên lo Giao diện, CSS, Animation.
-*   **DevOps Agent**: Chuyên lo Server, Docker, CI/CD.
+| Tag Rule | Chuyên môn | Nhiệm vụ |
+| :--- | :--- | :--- |
+| `@backend` | kĩ sư Backend | Viết API, xử lý Logic Server, Database. |
+| `@frontend` | Kỹ sư Frontend | Viết Giao diện, CSS, Animation, React/Vue. |
+| `@security` | Chuyên gia Bảo mật | Mã hóa, Auth, chống Hack. |
+| `@debug` | Chuyên gia Gỡ lỗi | Phân tích Log, tìm nguyên nhân lỗi. |
+| `@business` | Chuyên gia BA | Phân tích nghiệp vụ, quy trình doanh nghiệp. |
+| `@compliance` | Luật sư Compliance | Kiểm tra tuân thủ GDPR, HIPAA, PCI-DSS. |
+| `@architecture`| Kiến trúc sư | Review sơ đồ hệ thống, Clean Code. |
+| `@gemini` | **Core System** | Luật gốc của hệ thống (file cấu hình chính). |
 
 ---
 
-## 🎚️ Chế độ (Modes)
+## 3. Agents (Những nhân cách AI)
+*AI có thể tự đóng các vai này trong quá trình làm việc, hoặc bạn yêu cầu.*
 
-### 11. Standard Mode (Cơ bản)
-Chế độ chạy nhẹ nhàng, tối ưu cho Node.js/Web. Phù hợp cho máy cấu hình yếu hoặc dự án đơn giản.
+*   **Orchestrator**: Nhạc trưởng, tổng chỉ huy.
+*   **Project Planner**: Người lập kế hoạch, chia việc.
+*   **Backend Specialist**: Chuyên Back-end.
+*   **Frontend Specialist**: Chuyên Front-end.
+*   **Mobile Developer**: Chuyên App (iOS/Android).
+*   **Game Developer**: Chuyên làm Game.
+*   **Cloud Architect**: Kiến trúc sư Cloud (AWS/GCP).
+*   **Performance Optimizer**: Chuyên gia tối ưu tốc độ.
+*   **Security Auditor**: Chuyên gia rà soát bảo mật.
+*   **SEO Specialist**: Chuyên gia Marketing/SEO.
+*   **Quality Inspector**: Người kiểm tra chất lượng (QA).
+*   **Documentation Writer**: Thư ký viết tài liệu.
+*   **Test Engineer**: Kỹ sư kiểm thử.
+*   **Debugger**: Thám tử săn lỗi.
+*   **Codebase Expert**: Cuốn từ điển sống của dự án.
 
-### 12. Advanced Mode (Nâng cao)
-Chế độ "bung lụa", kích hoạt Python để chạy các thuật toán AI phức tạp, xử lý dữ liệu lớn. Yêu cầu máy cài Python 3.13+.
+---
 
-### 13. Enterprise Tier (Hạng Doanh nghiệp)
-Cấp độ dự án cao nhất. Tự động kích hoạt các luật về Compliance (Tuân thủ), Audit (Kiểm toán) và Security (Bảo mật) nghiêm ngặt nhất.
+## 4. Master Skills (Kỹ năng Lõi)
+*550+ Skills, đây là những skill "trùm cuối" hay dùng nhất.*
+
+| Skill Name | Công dụng |
+| :--- | :--- |
+| `ai-engineer` | Làm app AI, Chatbot, RAG. |
+| `api-documenter` | Viết tài liệu API chuẩn OpenAPI. |
+| `cloud-architect-master` | Thiết kế hệ thống Cloud đa nền tảng. |
+| `database-migration` | Chuyên gia chuyển đổi Database an toàn. |
+| `deployment-engineer` | Chuyên gia CI/CD và Docker. |
+| `full-stack-scaffold` | Dựng dự án chuẩn chỉnh từ đầu. |
+| `modern-web-architect` | Kiến trúc Web hiện đại (Next.js/React). |
+| `security-auditor` | Kiểm tra lỗ hổng bảo mật. |
+| `seo-expert-kit` | Bộ công cụ SEO toàn diện. |
+| `tdd-master-workflow` | Quy trình Test-Driven Development. |
+| ... | *(Và hàng trăm skill khác trong folder `.agent/skills`)* |
+
+---
+
+## 5. Shared Modules (Thư viện dùng chung)
+*Các module tiêu chuẩn Enterprise được tự động nạp.*
+
+*   `ai-master`: Chuẩn mực AI.
+*   `api-standards`: Chuẩn mực thiết kế API.
+*   `compliance`: Các quy định pháp lý.
+*   `database-master`: Chuẩn thiết kế Database.
+*   `design-system`: Hệ thống thiết kế UI.
+*   `domain-blueprints`: Kiến trúc mẫu theo ngành.
+*   `i18n-master`: Đa ngôn ngữ.
+*   `infra-blueprints`: Mẫu hạ tầng (Terraform).
+*   `metrics`: Đo đạc chỉ số.
+*   `security-armor`: Áo giáp bảo mật.
+*   `testing-master`: Chiến lược kiểm thử.
+*   `ui-ux-pro-max`: Giao diện cao cấp.
+
+---
+
+> **Mẹo**: Bạn không cần nhớ hết.
+> *   Cần hành động -> Gõ `/` rồi Tab.
+> *   Cần chuyên môn -> Gõ `@` rồi Tab (hoặc mô tả "gọi ông backend ra đây").
