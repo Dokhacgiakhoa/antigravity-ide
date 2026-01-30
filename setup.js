@@ -76,7 +76,6 @@ async function setup() {
             type: 'text',
             name: 'agentName',
             message: (prev, values) => values.lang === 'vi' ? 'Đặt tên định danh cho AI Agent của bạn:' : 'Name your AI Agent:',
-            initial: 'Antigravity',
             validate: value => value.length < 2 ? 'Minimum 2 chars' : true
         },
         {
