@@ -8,6 +8,10 @@
 const { program } = require('commander');
 const { createProject } = require('./create');
 const packageJson = require('../package.json');
+const updateNotifier = require('update-notifier');
+
+// Check for updates
+updateNotifier({ pkg: packageJson }).notify();
 
 program
   .name('google-antigravity')

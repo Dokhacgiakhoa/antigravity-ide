@@ -1,6 +1,6 @@
 {
   "name": "antigravity-ide",
-  "version": "3.5.57",
+  "version": "3.5.58",
   "description": "The Ultimate AI Agent Brain - Rules, Skills, and Workflows",
   "main": "cli/index.js",
   "bin": {
@@ -22,7 +22,8 @@
     "gradient-string": "^2.0.2",
     "ora": "^5.4.1",
     "prompts": "^2.4.2",
-    "shelljs": "^0.8.5"
+    "shelljs": "^0.8.5",
+    "update-notifier": "^5.1.0"
   },
   "devDependencies": {
     "jest": "^29.0.0"
