@@ -11,6 +11,9 @@
 tsconfig.json
 jsconfig.json
 
+jest.config.js
+test_output.txt
+
 # Tests & Logs
 tests/
 test/
