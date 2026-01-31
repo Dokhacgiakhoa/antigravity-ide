@@ -30,7 +30,7 @@ async function setup() {
     
     console.log(gradient.rainbow.multiline(branding));
     console.log(gradient.atlas('━'.repeat(60)));
-    console.log(chalk.gray(`  Google Antigravity • Global Setup Wizard • v3.5.59`));
+    console.log(chalk.gray(`  Google Antigravity • Global Setup Wizard • v3.5.60`));
     console.log(chalk.gray('  Developed with 💡 by Dokhacgiakhoa'));
     console.log(gradient.atlas('━'.repeat(60)) + '\n');
     console.log(chalk.bold.hex('#00ffee')('🚀 Antigravity Global Setup Starting...\n'));

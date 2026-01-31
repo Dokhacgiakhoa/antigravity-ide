@@ -11,8 +11,43 @@ const packageJson = require('../package.json');
 const updateNotifier = require('update-notifier');
 
 // Check for updates
+const prompts = require('prompts');
+const { execSync } = require('child_process');
+const chalk = require('chalk');
+
 // Check for updates (Aggressive: Check every time)
-updateNotifier({ pkg: packageJson, updateCheckInterval: 0 }).notify({ isGlobal: true });
+const notifier = updateNotifier({ pkg: packageJson, updateCheckInterval: 0 });
+
+if (notifier.update) {
+  const { latest, current, type } = notifier.update;
+  console.log(chalk.yellow(`\n📦 Update available: ${current} → ${chalk.green(latest)} (${type})`));
+  
+  (async () => {
+    const response = await prompts({
+      type: 'confirm',
+      name: 'shouldUpdate',
+      message: 'Do you want to update Google Antigravity now? / Bạn có muốn cập nhật ngay không?',
+      initial: true
+    });
+
+    if (response.shouldUpdate) {
+      try {
+        console.log(chalk.cyan('\n🚀 Updating Global Antigravity... Please wait...'));
+        execSync('npm install -g antigravity-ide@latest', { stdio: 'inherit' });
+        console.log(chalk.green('\n✅ Verified Update! Restarting command...'));
+        
+        // Spawn the original command again with new version
+        // execSync(`${process.argv0} ${process.argv.slice(1).join(' ')}`, { stdio: 'inherit' });
+        process.exit(0);
+      } catch (error) {
+        console.error(chalk.red('\n❌ Update failed. Please run: npm install -g antigravity-ide@latest'));
+        console.error(error.message);
+      }
+    } else {
+      console.log(chalk.gray('\nℹ️  Skipping update. You can update later using: npx antigravity-ide update'));
+    }
+  })();
+}
 
 program
   .name('google-antigravity')
