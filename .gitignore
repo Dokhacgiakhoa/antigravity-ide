@@ -2,5 +2,13 @@
 node_modules/
 .temp_ag_kit/
 antigravity-doc
-tests
 others
+
+# Logs
+*.log
+test_output.txt
+
+# Testing
+coverage/
+tests/e2e/stress_temp/
+tests/update_temp/
