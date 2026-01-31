@@ -245,7 +245,7 @@ async function getProjectConfig(skipPrompts = false, predefinedName = null) {
 
   const settings = {
     template: 'standard',
-    rules: commonRules,
+    rules: 'balanced',
     workflows: Array.from(finalWorkflows),
     packageManager: 'npm'
   };
