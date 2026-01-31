@@ -290,6 +290,7 @@ bin/* text eol=lf
 `;
   fs.writeFileSync(path.join(projectPath, '.gitattributes'), gitAttributes);
 }
+}
 
 function generateGeminiMd(rules, language = 'en', industry = 'other', agentName = 'Antigravity') {
     const strictness = {
