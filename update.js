@@ -14,51 +14,60 @@ const CONFIG_FILE = path.join(GLOBAL_DIR, '.config.json');
 const MARKER_START = '[USER_CUSTOM_START]';
 const MARKER_END = '[USER_CUSTOM_END]';
 
-console.log('🔍 Checking for updates with Content Preservation...');
+async function main() {
+    console.log('🔍 Checking for updates with Content Preservation...');
 
-if (!fs.existsSync(GLOBAL_VERSION_FILE)) {
-    console.log('⚠️ Global version not found. Please run "npx antigravity-setup" first.');
-    process.exit(1);
+    if (!fs.existsSync(GLOBAL_VERSION_FILE)) {
+        console.log('⚠️ Global version not found. Please run "npx antigravity-setup" first.');
+        process.exit(1);
+    }
+
+    const globalVer = fs.readFileSync(GLOBAL_VERSION_FILE, 'utf8').trim();
+    const workspaceVer = fs.readFileSync(WORKSPACE_VERSION_FILE, 'utf8').trim();
+
+    console.log(`Current Global Version: ${globalVer}`);
+    console.log(`Available Workspace Version: ${workspaceVer}`);
+
+    // Get language from config
+    let lang = 'vi';
+    if (fs.existsSync(CONFIG_FILE)) {
+        try {
+            const config = JSON.parse(fs.readFileSync(CONFIG_FILE, 'utf-8'));
+            lang = config.lang || 'vi';
+        } catch (e) {}
+    }
+
+    if (globalVer === workspaceVer) {
+        console.log('✅ You are already on the latest version.');
+    } else {
+        console.log('🚀 Updating global files to version ' + workspaceVer + '...');
+        
+        const syncFolders = ['rules', 'workflows', 'agents', 'skills', '.shared'];
+        const SOURCE_BASE = path.join(WORKSPACE_DIR, '.agent');
+
+        syncFolders.forEach(folder => {
+            const srcDir = path.join(SOURCE_BASE, folder);
+            const destDir = path.join(GLOBAL_DIR, folder);
+
+            if (!fs.existsSync(srcDir)) return;
+            if (!fs.existsSync(destDir)) fs.mkdirSync(destDir, { recursive: true });
+
+            syncRecursively(srcDir, destDir);
+        });
+
+        // Finalize Localization
+        localizeWorkflows(lang);
+
+        fs.copyFileSync(WORKSPACE_VERSION_FILE, GLOBAL_VERSION_FILE);
+        console.log('\n✨ Update Successful! Version ' + workspaceVer + ' is now active globally.');
+    }
 }
 
-const globalVer = fs.readFileSync(GLOBAL_VERSION_FILE, 'utf8').trim();
-const workspaceVer = fs.readFileSync(WORKSPACE_VERSION_FILE, 'utf8').trim();
-
-console.log(`Current Global Version: ${globalVer}`);
-console.log(`Available Workspace Version: ${workspaceVer}`);
-
-// Get language from config
-let lang = 'vi';
-if (fs.existsSync(CONFIG_FILE)) {
-    try {
-        const config = JSON.parse(fs.readFileSync(CONFIG_FILE, 'utf-8'));
-        lang = config.lang || 'vi';
-    } catch (e) {}
-}
-
-if (globalVer === workspaceVer) {
-    console.log('✅ You are already on the latest version.');
-} else {
-    console.log('🚀 Updating global files to version ' + workspaceVer + '...');
-    
-    const syncFolders = ['rules', 'workflows', 'agents', 'skills', '.shared'];
-    const SOURCE_BASE = path.join(WORKSPACE_DIR, '.agent');
-
-    syncFolders.forEach(folder => {
-        const srcDir = path.join(SOURCE_BASE, folder);
-        const destDir = path.join(GLOBAL_DIR, folder);
-
-        if (!fs.existsSync(srcDir)) return;
-        if (!fs.existsSync(destDir)) fs.mkdirSync(destDir, { recursive: true });
-
-        syncRecursively(srcDir, destDir);
+if (require.main === module) {
+    main().catch(err => {
+        console.error(err);
+        process.exit(1);
     });
-
-    // Finalize Localization
-    localizeWorkflows(lang);
-
-    fs.copyFileSync(WORKSPACE_VERSION_FILE, GLOBAL_VERSION_FILE);
-    console.log('\n✨ Update Successful! Version ' + workspaceVer + ' is now active globally.');
 }
 
 function syncRecursively(srcDir, destDir) {
@@ -127,3 +136,11 @@ function localizeWorkflows(lang) {
         console.error('❌ Localization failed during update:', err.message);
     }
 }
+
+module.exports = {
+   main,
+   syncRecursively,
+   localizeWorkflows,
+   MARKER_START,
+   MARKER_END
+};
