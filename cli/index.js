@@ -11,7 +11,8 @@ const packageJson = require('../package.json');
 const updateNotifier = require('update-notifier');
 
 // Check for updates
-updateNotifier({ pkg: packageJson }).notify();
+// Check for updates (Aggressive: Check every time)
+updateNotifier({ pkg: packageJson, updateCheckInterval: 0 }).notify({ isGlobal: true });
 
 program
   .name('google-antigravity')
