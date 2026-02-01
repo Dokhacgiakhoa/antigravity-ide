@@ -28,7 +28,7 @@ npx antigravity-ide my_project
 npx antigravity-ide
 ```
 
-### ✨ Setup Wizard Features (v3.5.54)
+### ✨ Setup Wizard Features (v3.5.71)
 The new interactive CLI puts you in control with a **Premium Developer Experience**:
 
 1.  **Interactive & Visual**:
@@ -36,15 +36,18 @@ The new interactive CLI puts you in control with a **Premium Developer Experienc
     - **Gradient Aesthetics**: Beautiful CLI visuals that inspire creativity.
     - **Satisfaction Summary**: A clean "Success" checklist ensures you're ready to go.
 
-2.  **Project Scale Selection**:
-    - **👤 Personal**: Lean setup (Core Rules + Debug). Perfect for hobby projects.
-    - **🏢 SME / Start-Up**: Standard Big 5 Rules + Business Logic + Security.
-    - **🏭 Enterprise**: Full Option + Compliance + Architecture Review.
+2.  **Smart Allocation Logic**:
+    - **Scale (Quy mô)**: Determines **Engine Mode** (Node vs Python) and **Operational Rules** (Flexible vs Strict).
+    - **Product Type**: Automatically loads the exact **Skills & Workflows** you need:
+        - 📱 **User Apps**: Web, PWA, Mobile, Desktop (Activates *WebDev/Mobile* Skills).
+        - 🛠️ **Dev Tools**: CLI, Library, API Services (Activates *DevOps/Testing* Skills).
+        - 🤖 **AI Agents**: Chatbots, Autonomous Agents (Activates *AI/Maker* Skills).
+        - 🎨 **Assets**: Games, Templates (Activates *GameDev/SEO* Skills).
 
 3.  **Context Injection**:
     - **Name your Agent**: Personalize your AI (e.g., *Jarvis*, *Friday*).
-    - **Industry Domain**: Optimize for **Finance, Healthcare, Logistics**, etc.
-    - *Auto-Injection*: These details are deeply embedded into `.agent/rules/GEMINI.md` (See `GEMINI_GUIDE.md`).
+    - **All-Fields Access**: Industry restrictions are removed. You now get access to **ALL Workflows** (Finance, Health, etc.) by default.
+    - *Auto-Injection*: These details are deeply embedded into `.agent/rules/GEMINI.md`.
 
 4.  **Global vs. Workspace Strategy**:
     - **Global (`~/.antigravity`)**: Holds the Master Rules (Enterprise Tier).

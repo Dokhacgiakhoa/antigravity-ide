@@ -6,7 +6,7 @@
 
 ## 0. Phân Loại Quy Mô Dự Án (Project Scale)
 
-Từ phiên bản **v3.5.61**, mức độ nghiêm ngặt của Luật (Rules) được tự động cấu hình dựa trên quy mô dự án bạn chọn lúc cài đặt:
+Từ phiên bản **v3.5.71**, mức độ nghiêm ngặt của Luật (Rules) được tự động cấu hình dựa trên quy mô dự án bạn chọn lúc cài đặt:
 
 | Quy Mô (Scale) | Chế độ Luật (Rule Mode) | Đặc điểm | Phù hợp với |
 | :--- | :--- | :--- | :--- |

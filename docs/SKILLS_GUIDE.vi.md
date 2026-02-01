@@ -18,53 +18,56 @@ Hệ thống **KHÔNG** nạp tất cả 22 chuyên gia cùng lúc (vì sẽ qu�
 
 ---
 
-## 1.5. Phân Bổ Theo Quy Mô (Scale-Based Allocation)
+## 1.5. Phân Bổ Thông Minh (Smart Allocation)
+(Cập nhật v3.5.71)
 
-Từ v3.5.61, số lượng Skills được cài đặt sẽ phụ thuộc vào **Quy mô dự án** để tối ưu tài nguyên:
+Hệ thống không còn cài đặt "đại trà". Thay vào đó, "Vũ khí" được cấp phát dựa trên **2 Yếu Tố**:
 
-*   **👤 Cá nhân (Personal)**:
-    *   **Engine**: Standard (Node.js).
-    *   **Skills**: Tinh gọn. Chỉ gồm nhóm **WebDev** và **AI**.
-    *   **Mục tiêu**: Nhanh, nhẹ, không rườm rà.
+### A. Theo Quy Mô (Project Scale)
+*   **👤 Personal**: Core Rules + AI Skills.
+*   **👥 Team**: Thêm DevOps, Growth, Testing.
+*   **🏢 Enterprise**: Full Security, Audit, Deep Orchestration.
 
-*   **👥 Team (Nhóm)**:
-    *   **Engine**: Advanced (Node.js + Python).
-    *   **Skills**: Hybrid. Thêm **Mobile**, **DevOps**, **Growth**.
-    *   **Mục tiêu**: Đủ công cụ để collab và deploy sản phẩm hoàn chỉnh.
-
-*   **🏢 Doanh nghiệp (Enterprise)**:
-    *   **Engine**: Advanced (Full Power).
-    *   **Skills**: **FULL**. Kích hoạt toàn bộ Security, Audit, Big Data.
-    *   **Mục tiêu**: Bảo mật, Tuân thủ, và Khả năng mở rộng tối đa.
+### B. Theo Loại Sản Phẩm (Product Type)
+*   📱 **User Apps** (Web/Mobile): Tự động nạp `webdev`, `mobile`.
+*   🛠️ **Dev Tools** (CLI/Library): Tự động nạp `devops`, `testing`.
+*   🤖 **AI Agents** (Chatbot): Tự động nạp `ai`, `maker`.
+*   🎨 **Assets** (Game/Template): Tự động nạp `game-development`, `seo`.
 
 ---
 
 ## 2. Danh Sách Các Chuyên Gia (Master Skills)
 
 ### 💻 Nhóm Phát Triển (Development)
-*   **`nextjs-react-expert`**: Trùm Frontend, Next.js App Router.
-*   **`backend-specialist`**: Trùm Backend (Node.js/Python/Go), API Design.
-*   **`mobile-developer`**: Chuyên trị React Native, Flutter, iOS.
-*   **`database-architect`**: Thiết kế DB (SQL/NoSQL) chuẩn 3NF, tối ưu Index.
+*   **`modern-web-architect`**: Trùm Frontend, Next.js, React 19 Best Practices.
+*   **`backend-specialist`**: API Design, Microservices.
+*   **`mobile-design`**: React Native Patterns, Flutter.
+*   **`game-development`**: WebGL, Canvas, Mobile Game Logic.
 
-### ☁️ Nhóm Hạ Tầng (DevOps & Cloud)
+### ☁️ Nhóm Hạ Tầng (DevOps & Testing)
 *   **`devops-engineer`**: Docker, CI/CD, Kubernetes.
-*   **`cloud-architect`**: Kiến trúc AWS/GCP/Azure.
-*   **`incident-responder`**: Xử lý sự cố sập server, SRE.
+*   **`mcp-builder`**: Xây dựng Model Context Protocol Server.
+*   **`tdd-master-workflow`**: Quy trình Test-Driven Development chuẩn chỉ.
+*   **`qa-automation`**: Tự động hóa kiểm thử (Cypress/Jest).
 
 ### 🛡️ Nhóm Bảo Mật (Security)
-*   **`security-auditor`**: Soát xét code tìm lỗ hổng.
+*   **`security-auditor`**: Soát xét code tìm lỗ hổng OWASP Top 10.
 *   **`penetration-tester`**: Đóng vai hacker mũ trắng tấn công thử nghiệm.
 
-### 🤖 Nhóm Trí Tuệ Nhân Tạo (AI & Data)
+### 🤖 Nhóm Trí Tuệ Nhân Tạo (AI Agent)
 *   **`ai-engineer`**: Xây dựng ứng dụng LLM, RAG System.
-*   **`data-engineer`**: Xử lý dữ liệu lớn, ETL Pipeline.
-*   **`prompt-engineer`**: Tối ưu hóa câu lệnh cho AI.
+*   **`voice-ai-engine`**: Xử lý giọng nói, Text-to-Speech.
+*   **`prompt-engineer`**: Kỹ thuật viết prompt tối ưu.
+
+### 🛠️ Nhóm Maker & Indie Hacking (Mới)
+*   **`telegram-bot-builder`**: Xây dựng bot Telegram/Discord siêu tốc.
+*   **`viral-generator`**: Tạo tool viral, marketing loops.
+*   **`nocode-automation`**: Tự động hóa quy trình không cần code sâu.
 
 ### 🎨 Nhóm Thẩm Mỹ & Growth
 *   **`ui-ux-pro-max`**: Thiết kế giao diện đẹp mê ly (Linear/Magic UI).
-*   **`seo-specialist`**: Tối ưu từ khóa, đưa Web lên Top Google.
-*   **`business-analyst`**: Phân tích nghiệp vụ, viết PRD.
+*   **`copywriting-master`**: Viết nội dung bán hàng đỉnh cao.
+*   **`paid-ads-specialist`**: Tối ưu quảng cáo chuyển đổi.
 
 ---
 
