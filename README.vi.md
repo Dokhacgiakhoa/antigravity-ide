@@ -20,12 +20,15 @@
 Sử dụng CLI để thiết lập môi trường tác chiến trong 30 giây:
 
 ```sh
-# 1. Tạo dự án mới (Khuyến nghị)
-npx antigravity-ide ten_du_an
+# 1. Tạo dự án mới (Khuyên dùng - Luôn tải bản mới nhất)
+npx antigravity-ide@latest ten_du_an
 
 # 2. Cài đặt trực tiếp vào thư mục hiện tại
-npx antigravity-ide
+npx antigravity-ide@latest
 ```
+
+> [!WARNING]
+> **Lưu ý quan trọng:** Không nên cài đặt Global (`npm install -g antigravity-ide`) vì sẽ gây xung đột phiên bản cũ/mới. Luôn dùng `npx ...@latest` để đảm bảo project được khởi tạo với Engine mới nhất.
 
 ### ✨ Tính năng Setup Wizard (v3.5.54)
 Trải nghiệm dòng lệnh (CLI) đẳng cấp Premium:

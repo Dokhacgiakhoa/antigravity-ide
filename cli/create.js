@@ -476,14 +476,16 @@ function printSuccessMessage(projectName, config) {
     console.log(chalk.bold.cyan(config.language === 'vi' ? '🤖 Kích hoạt AI Agent' : '🤖 AI Agent Activation'));
     console.log('');
 
+    const agentName = config.agentName || 'Agent';
+
     if (config.language === 'vi') {
-        console.log(chalk.gray('  1. Mở dự án:      ') + chalk.white(`cd ${projectName}`));
-        console.log(chalk.gray('  2. Mở khung chat: ') + chalk.white('(Claude, Gemini, v.v...)'));
-        console.log(chalk.gray('  3. Kích hoạt:     ') + chalk.green('Đọc nội dung .agent/GEMINI.md'));
+        console.log(chalk.gray('  1. Mở khung chat: ') + chalk.white('(IDE AI Chat)'));
+        console.log(chalk.gray('  2. Cấu hình:      ') + chalk.white('Conversation: ') + chalk.cyan('Planing') + chalk.gray(' • ') + chalk.white('Model: ') + chalk.cyan('Gemini'));
+        console.log(chalk.gray('  3. Kích hoạt:     ') + chalk.green(`Soạn tin: "thức dậy đi ${agentName}"`));
     } else {
-        console.log(chalk.gray('  1. Open project:  ') + chalk.white(`cd ${projectName}`));
-        console.log(chalk.gray('  2. Open AI chat:  ') + chalk.white('(Claude, Gemini, etc.)'));
-        console.log(chalk.gray('  3. Activate:      ') + chalk.green('Read .agent/START_HERE.md'));
+        console.log(chalk.gray('  1. Open chat:     ') + chalk.white('(IDE AI Chat)'));
+        console.log(chalk.gray('  2. Configure:     ') + chalk.white('Conversation: ') + chalk.cyan('Planing') + chalk.gray(' • ') + chalk.white('Model: ') + chalk.cyan('Gemini'));
+        console.log(chalk.gray('  3. Activate:      ') + chalk.green(`Type: "wake up ${agentName}"`));
     }
 
     // Stats Display

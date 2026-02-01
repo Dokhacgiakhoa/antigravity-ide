@@ -41,3 +41,13 @@ Tổng hợp các vấn đề thường gặp khi sử dụng Antigravity IDE v�
 
 ## 🆘 Vẫn không sửa được?
 Hãy tạo Issue trên [GitHub](https://github.com/Dokhacgiakhoa/google-antigravity/issues) để team hỗ trợ nhé!
+
+## 🐛 Known Bugs (Các lỗi đã biết)
+
+### `ReferenceError: commonRules is not defined`
+-   **Nguyên nhân**: Máy bạn đang cài sẵn phiên bản cũ (v3.5.54 hoặc cũ hơn) ở chế độ Global, gây xung đột với lệnh `npx`.
+-   **Cách sửa triệt để**: Gỡ bỏ bản Global cũ để npx tải bản mới nhất.
+    ```bash
+    npm uninstall -g antigravity-ide
+    npx antigravity-ide@latest
+    ```

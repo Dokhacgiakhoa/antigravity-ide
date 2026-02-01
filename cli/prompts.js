@@ -65,10 +65,10 @@ const skillCategories = {
     skills: [
       'ai-engineer',
       'geo-fundamentals',
-      'prompt-engineer' // Assuming this exists or will be mapped to ai-engineer capabilities
+      'prompt-engineer'
     ]
   },
-  growth: { // Renamed from data for better fit
+  growth: {
     name: 'Growth & Data',
     skills: [
       'cro-expert-kit',
@@ -102,12 +102,23 @@ async function getProjectConfig(skipPrompts = false, predefinedName = null) {
 
   /* 
     PHASE 1: BASIC INFORMATION
+    Order: Language -> Name -> Scale -> Industry -> Agent Name
   */
-  const basics = await prompts([
+  const responses = await prompts([
+    {
+      type: 'select',
+      name: 'language',
+      message: 'Select Language / Chọn ngôn ngữ:',
+      choices: [
+        { title: '1. English', value: 'en' },
+        { title: '2. Tiếng Việt', value: 'vi' }
+      ],
+      initial: 1
+    },
     {
       type: predefinedName ? null : 'text',
       name: 'projectName',
-      message: 'Project name:',
+      message: (prev, values) => values.language === 'vi' ? 'Tên dự án (Project name):' : 'Project name:',
       initial: 'my-agent-project',
       validate: (value) => {
         if (!/^[a-z0-9-_]+$/.test(value)) {
@@ -118,37 +129,23 @@ async function getProjectConfig(skipPrompts = false, predefinedName = null) {
     },
     {
       type: 'select',
-      name: 'language',
-      message: 'Select Language (en/vi):',
-      choices: [
-        { title: '1. en', value: 'en' },
-        { title: '2. vi', value: 'vi' }
-      ],
-      initial: 0
-    },
-    {
-      type: 'select',
-      name: 'engineMode',
-      message: (prev, values) => values.language === 'vi' ? 'Chọn Loại Động cơ Agent (Engine):' : 'Select Agent Engine:',
+      name: 'scale', // Maps to 'rules'
+      message: (prev, values) => values.language === 'vi' ? 'Quy mô dự án:' : 'Project Scale:',
       choices: (prev, values) => values.language === 'vi' ? [
-        { title: '⚡ Standard (Node.js) - Tốc độ cao, gọn nhẹ, không cần cấu hình', value: 'standard' },
-        { title: '🧠 Advanced (Python) - Tối ưu lập trình AI chuyên sâu & Khoa học dữ liệu', value: 'advanced' },
+        { title: '👤 Cá nhân (Personal) - Cơ chế linh hoạt, tự chủ', value: 'flexible' },
+        { title: '👥 Team (Nhóm) - Cân bằng, hỏi trước khi sửa file', value: 'balanced' },
+        { title: '🏢 Doanh nghiệp (Enterprise) - Nghiêm ngặt, kiểm soát 100%', value: 'strict' }
       ] : [
-        { title: '⚡ Standard (Node.js) - Fast, Lightweight, Zero-Config', value: 'standard' },
-        { title: '🧠 Advanced (Python) - Deep AI, Data Science support', value: 'advanced' },
+        { title: '👤 Personal - Flexible, High Autonomy', value: 'flexible' },
+        { title: '👥 Team - Balanced, Confirm core changes', value: 'balanced' },
+        { title: '🏢 Enterprise - Strict, 100% Control', value: 'strict' }
       ],
       initial: 0
-    },
-    {
-      type: 'text',
-      name: 'agentName',
-      message: (prev, values) => values.language === 'vi' ? 'Đặt tên định danh cho AI Agent của sếp (Ví dụ: Jarvis, Antigravity):' : 'Choose a name for your AI Agent (e.g., Jarvis, Antigravity):',
-      validate: (value) => value.length < 2 ? (process.env.LANG?.includes('vi') ? 'Tên Agent phải có ít nhất 2 ký tự' : 'Name must be at least 2 characters long') : true
     },
     {
       type: 'select',
       name: 'industryDomain',
-      message: (prev, values) => values.language === 'vi' ? 'Chọn Lĩnh vực dự án (Industry):' : 'Select Industry Domain:',
+      message: (prev, values) => values.language === 'vi' ? 'Lĩnh vực dự án (Industry):' : 'Select Industry Domain:',
       choices: (prev, values) => values.language === 'vi' ? [
         { title: '💰 Finance (Tài chính - Fintech)', value: 'finance' },
         { title: '🎓 Education (Giáo dục - EdTech)', value: 'education' },
@@ -167,6 +164,12 @@ async function getProjectConfig(skipPrompts = false, predefinedName = null) {
         { title: '🔮 Other (General Web/App)', value: 'other' }
       ],
       initial: 6
+    },
+    {
+      type: 'text',
+      name: 'agentName',
+      message: (prev, values) => values.language === 'vi' ? 'Đặt tên cho Agent (VD: Jarvis, Friday):' : 'Name your Agent (e.g., Jarvis, Friday):',
+      validate: (value) => value.length < 2 ? (process.env.LANG?.includes('vi') ? 'Tên Agent phải có ít nhất 2 ký tự' : 'Name must be at least 2 characters long') : true
     }
   ], {
     onCancel: () => {
@@ -175,87 +178,64 @@ async function getProjectConfig(skipPrompts = false, predefinedName = null) {
     }
   });
   
-  // If predefinedName was used, inject it back into basics if it wasn't prompted
+  // Inject predefined name if it exists (so logic downstream works)
   if (predefinedName) {
-    basics.projectName = predefinedName;
+    responses.projectName = predefinedName;
   }
 
   // PRESETS CONFIGURATION
-  // All selections now use preset values with full skills
-  // PER-INDUSTRY WORKFLOW MAPPING
-  // This ensures users get the right "Tools" for their "Job"
-  const baseWorkflows = ['git', 'plan', 'status']; // Core workflows for everyone
+  const baseWorkflows = ['git', 'plan', 'status'];
 
   const industryWorkflows = {
-    finance: ['security', 'audit', 'test'],      // Finance needs security & audit
-    education: ['explain', 'visually', 'test'],   // Education needs clarity
-    fnb: ['performance', 'mobile', 'deploy'],     // F&B needs speed & mobile
-    personal: ['blog', 'portfolio', 'seo'],       // Personal needs SEO & content
-    healthcare: ['compliance', 'security', 'audit'], // Healthcare needs compliance
-    logistics: ['api', 'realtime', 'deploy'],     // Logistics needs API & realtime
-    other: ['create', 'debug', 'enhance']         // General needs basic dev cycle
+    finance: ['security', 'audit', 'test'],
+    education: ['explain', 'visually', 'test'],
+    fnb: ['performance', 'mobile', 'deploy'],
+    personal: ['blog', 'portfolio', 'seo'],
+    healthcare: ['compliance', 'security', 'audit'],
+    logistics: ['api', 'realtime', 'deploy'],
+    other: ['create', 'debug', 'enhance']
   };
 
-  // Map industry selection to specific workflow files
-  // Note: These map to .md files in .agent/workflows/
-  // We use a safe fallback if specific industry workflows aren't fully modularized yet
-  const specificWorkflows = industryWorkflows[basics.industryDomain] || ['create', 'debug', 'enhance'];
+  const specificWorkflows = industryWorkflows[responses.industryDomain] || ['create', 'debug', 'enhance'];
   
-  // Combine all valid workflows
-  // Filter to ensure we only include workflows that actually exist in our system
   const availableWorkflows = [
     'audit', 'brainstorm', 'create', 'debug', 'deploy', 'document', 'enhance', 
     'monitor', 'onboard', 'orchestrate', 'plan', 'preview', 'security', 'seo', 
     'status', 'test', 'ui-ux-pro-max'
   ];
 
-  /* 
-    Smart Logic:
-    - Always include: git (internal), plan, status, debug, enhance
-    - Add Industry-specific workflows (specificWorkflows)
-    - Add Skill-based workflows
-  */
-  
-  const finalWorkflows = new Set(['plan', 'status', 'brainstorm', 'debug', 'enhance']); 
+  const finalWorkflows = new Set(['plan', 'status', 'brainstorm', 'debug', 'enhance']);
 
   // Add industry-specific workflows
   if (specificWorkflows && Array.isArray(specificWorkflows)) {
     specificWorkflows.forEach(w => {
-      // Only add if it's a valid workflow (exists in availableWorkflows)
       if (availableWorkflows.includes(w)) {
         finalWorkflows.add(w);
       }
     });
   }
 
-  // Logic based on Skill Categories (users selected implicitly or explicitly)
-  // Since we load ALL skills by default for industry presets, we infer based on Industry
-  
-  if (basics.industryDomain === 'personal' || basics.industryDomain === 'fnb') {
+  // Logic based on Industry and implicit skills
+  if (responses.industryDomain === 'personal' || responses.industryDomain === 'fnb') {
     finalWorkflows.add('ui-ux-pro-max');
   }
-
-  if (basics.industryDomain === 'finance' || basics.industryDomain === 'healthcare') {
-    finalWorkflows.add('orchestrate'); // For complex logic
+  if (responses.industryDomain === 'finance' || responses.industryDomain === 'healthcare') {
+    finalWorkflows.add('orchestrate');
   }
-
-  if (basics.industryDomain === 'logistics' || basics.industryDomain === 'other') {
+  if (responses.industryDomain === 'logistics' || responses.industryDomain === 'other') {
     finalWorkflows.add('create');
   }
 
   const settings = {
     template: 'standard',
-    rules: 'balanced',
+    rules: responses.scale,
     workflows: Array.from(finalWorkflows),
-    packageManager: 'npm'
+    packageManager: 'npm',
+    engineMode: 'standard' // Default since prompt was removed
   };
   
   // Return configuration with presets
-  return { ...basics, ...settings, skillCategories: Object.keys(skillCategories) };
-
-
-  
-
+  return { ...responses, ...settings, skillCategories: Object.keys(skillCategories) };
 }
 
 function getSkillsForCategories(categories) {
