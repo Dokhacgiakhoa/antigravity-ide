@@ -30,34 +30,38 @@ npx antigravity-ide@latest
 > [!WARNING]
 > **Lưu ý quan trọng:** Không nên cài đặt Global (`npm install -g antigravity-ide`) vì sẽ gây xung đột phiên bản cũ/mới. Luôn dùng `npx ...@latest` để đảm bảo project được khởi tạo với Engine mới nhất.
 
-### ✨ Tính năng Setup Wizard (v3.5.54)
-Trải nghiệm dòng lệnh (CLI) đẳng cấp Premium:
+### ✨ Tính năng Setup Wizard (v3.5.61)
+Trải nghiệm dòng lệnh (CLI) đẳng cấp Premium với quy trình **4 bước cấu hình** được tối ưu hóa:
 
-1.  **Tương tác & Mãn nhãn**:
-    - **Arrow Keys**: Điều hướng menu bằng phím mũi tên (Không cần gõ phím thủ công).
-    - **Visual**: Giao diện Gradient 7 màu khơi gợi cảm hứng sáng tạo.
-    - **Checklist Tổng kết**: Bảng xác nhận "Xanh mướt" 100% trước khi bắt đầu.
+> **Lưu ý**: Bạn có thể nhập tên dự án ngay trong lệnh: `npx antigravity-ide@latest <tên-dự-án>`
 
-2.  **Lựa chọn Quy mô Dự án (Project Scale)**:
-    - **👤 Personal**: Tinh gọn (Chỉ Core Rules + Debug). Phù hợp dự án cá nhân.
-    - **🏢 SME / Start-Up**: Tiêu chuẩn (Big 5 Rules + Business Logic + Security).
-    - **🏭 Enterprise**: Full Option + Compliance + Architecture Review.
+1.  **Chọn Ngôn ngữ (Language)**:
+    - 🇻🇳 **Tiếng Việt**: Tối ưu hiển thị và tư duy ngữ nghĩa cho người Việt.
+    - 🇺🇸 **English**: Chuẩn quốc tế.
 
-3.  **Thông tin Ngữ cảnh (Context Injection)**:
-    - **Đặt tên Agent**: Gọi tên trợ lý thân thương (ví dụ: *Jarvis*).
-    - **Lĩnh vực hoạt động**: Tối ưu luật cho **Tài chính, Y tế, Logistics**, v.v.
-    - *Auto-Inject*: Hệ thống tự động "cấy" thông tin này vào não bộ AI (xem `GEMINI_GUIDE.md`).
+2.  **Lựa chọn Quy mô (Scale)**:
+    - **👤 Cá nhân (Flexible)**: Tự do sáng tạo, ít ràng buộc.
+    - **👥 Team (Balanced)**: Cân bằng giữa tốc độ và kiểm soát.
+    - **🏢 Enterprise (Strict)**: Nghiêm ngặt tuyệt đối, tuân thủ Compliance.
 
-4.  **Chiến lược Trung ương & Địa phương**:
-    - **Global (`~/.antigravity`)**: Chứa Bộ luật gốc (Luôn là Enterprise).
-    - **Workspace (`.agent`)**: Chỉ load những tài nguyên "đủ dùng" cho dự án để tiết kiệm Token.
+3.  **Lĩnh vực chuyên sâu (Industry)**:
+    - Tự động nạp bộ Workflows & Skills: **Tài chính, Y tế, F&B, Logistics**, v.v.
 
-### Chế độ Động cơ (Engine Modes)
-- **⚡ Standard (Node.js)**: Tốc độ cao, gọn nhẹ, phù hợp dự án Web/SaaS.
-- **🧠 Advanced (Python)**: Chuyên sâu cho AI, Data Science & Security Scanners.
+4.  **Định danh Agent**:
+    - Đặt tên riêng cho trợ lý (ví dụ: *Jarvis, Friday*) để tạo "linh hồn" cho AI.
 
-### Định danh & Chống rớt não (Identity Awareness)
-Dự án hỗ trợ đặt tên riêng cho Agent (ví dụ: *Jarvis*). Đây là "mỏ neo" danh tính giúp kiểm tra AI có đang tuân thủ đúng luồng quy tắc hay không.
+### 🤖 Hướng dẫn Kích hoạt (Activation Protocol)
+Sau khi cài đặt xong, hãy "đánh thức" bộ não AI trong **IDE AI Chat** của bạn:
+
+1.  **Mở khung chat** (Cursor/Windsurf/VSCode...).
+2.  **Cấu hình**: Chọn Mode `Planing` (hoặc Normal) và Model `Gemini 2.0` (Ưu tiên) hoặc Claude 3.5.
+3.  **Gửi lệnh kích hoạt**:
+
+    > **"thức dậy đi [tên-agent]"**
+    
+    *(Ví dụ: "thức dậy đi Jarvis" hoặc "wake up Jarvis")*
+
+Ai sẽ tự động đọc file cấu hình `.agent/GEMINI.md` và tải toàn bộ kỹ năng vào bộ nhớ đệm.
 
 ---
 
