@@ -342,7 +342,8 @@
 <a name='L277'></a><a href='#L277'>277</a>
 <a name='L278'></a><a href='#L278'>278</a>
 <a name='L279'></a><a href='#L279'>279</a>
-<a name='L280'></a><a href='#L280'>280</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L280'></a><a href='#L280'>280</a>
+<a name='L281'></a><a href='#L281'>281</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -530,6 +531,15 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -567,18 +577,10 @@
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">27x</span>
-<span class="cline-any cline-yes">27x</span>
+<span class="cline-any cline-yes">73x</span>
+<span class="cline-any cline-yes">73x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -776,7 +778,7 @@ async function getProjectConfig(skipPrompts = false, predefinedName = null) {
         { title: '👤 Personal / Portfolio (Cá nhân)', value: 'personal' },
         { title: '🏥 Healthcare (Y tế - HealthTech)', value: 'healthcare' },
         { title: '🚚 Logistics (Vận tải)', value: 'logistics' },
-        { title: '🔮 Other (Khác - Web/App cơ bản)', value: 'other' }
+        { title: '🔮 Other (Khác - Tất cả lĩnh vực)', value: 'other' }
       ] : [
         { title: '💰 Finance (Fintech)', value: 'finance' },
         { title: '🎓 Education (EdTech)', value: 'education' },
@@ -784,7 +786,7 @@ async function getProjectConfig(skipPrompts = false, predefinedName = null) {
         { title: '👤 Personal / Portfolio', value: 'personal' },
         { title: '🏥 Healthcare (HealthTech)', value: 'healthcare' },
         { title: '🚚 Logistics', value: 'logistics' },
-        { title: '🔮 Other (General Web/App)', value: 'other' }
+        { title: '🔮 Other (General / All Fields)', value: 'other' }
       ],
       initial: 6
     },
@@ -808,6 +810,15 @@ async function getProjectConfig(skipPrompts = false, predefinedName = null) {
 &nbsp;
   // PRESETS CONFIGURATION
   const baseWorkflows = ['git', 'plan', 'status'];
+  
+  // Define available industry-specific workflows 
+  // (Whitelist to ensure we only include real files)
+  const availableWorkflows = [
+    'audit', 'brainstorm', 'create', 'debug', 'deploy', 'document', 'enhance', 
+    'monitor', 'onboard', 'orchestrate', 'plan', 'preview', 'security', 'seo', 
+    'status', 'test', 'ui-ux-pro-max',
+    'explain', 'visually', 'mobile', 'performance', 'compliance', 'api', 'realtime', 'blog', 'portfolio'
+  ];
 &nbsp;
   const industryWorkflows = {
     finance: ['security', 'audit', 'test'],
@@ -816,7 +827,7 @@ async function getProjectConfig(skipPrompts = false, predefinedName = null) {
     personal: ['blog', 'portfolio', 'seo'],
     healthcare: ['compliance', 'security', 'audit'],
     logistics: ['api', 'realtime', 'deploy'],
-    other: ['create', 'debug', 'enhance']
+    other: availableWorkflows // 'Other' now means EVERYTHING (General / All Fields)
   };
 &nbsp;
   // Determine Engine Mode and Workflows based on Scale
@@ -846,14 +857,6 @@ async function getProjectConfig(skipPrompts = false, predefinedName = null) {
   const finalWorkflows = new Set(scaleBasedWorkflows);
 &nbsp;
   // Add industry-specific workflows
-  // Filter to ensure we only include workflows that actually exist in the whitelist
-  const availableWorkflows = [
-    'audit', 'brainstorm', 'create', 'debug', 'deploy', 'document', 'enhance', 
-    'monitor', 'onboard', 'orchestrate', 'plan', 'preview', 'security', 'seo', 
-    'status', 'test', 'ui-ux-pro-max',
-    'explain', 'visually', 'mobile', 'performance', 'compliance', 'api', 'realtime', 'blog', 'portfolio'
-  ];
-&nbsp;
   <span class="missing-if-branch" title="else path not taken" >E</span>if (specificWorkflows &amp;&amp; Array.isArray(specificWorkflows)) {
     specificWorkflows.forEach(w =&gt; {
       <span class="missing-if-branch" title="else path not taken" >E</span>if (availableWorkflows.includes(w)) {
@@ -862,7 +865,7 @@ async function getProjectConfig(skipPrompts = false, predefinedName = null) {
     });
   }
 &nbsp;
-  // Implicit industry workflows
+  // Implicit industry workflows (Additional logic)
   if (responses.industryDomain === 'personal' || responses.industryDomain === 'fnb') {
     finalWorkflows.add('ui-ux-pro-max');
   }
@@ -907,7 +910,7 @@ module.exports = {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-02-01T20:55:36.825Z
+                at 2026-02-01T21:05:14.145Z
             </div>
         <script src="prettify.js"></script>
         <script>

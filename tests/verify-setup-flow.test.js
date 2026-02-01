@@ -99,8 +99,8 @@ describe('Project Setup 10 Scenarios Verification', () => {
         expect(config.workflows).toContain('api');
     });
 
-    // Case 6: EN language, Team scale, Other (General)
-    test('Case 6: EN / Team -> Advanced Engine', async () => {
+    // Case 6: EN language, Team scale, Other (All Fields)
+    test('Case 6: EN / Team -> Advanced Engine, All Workflows', async () => {
         prompts.mockResolvedValueOnce({
             language: 'en',
             projectName: 'random-app',
@@ -112,7 +112,11 @@ describe('Project Setup 10 Scenarios Verification', () => {
         const config = await getProjectConfig();
 
         expect(config.engineMode).toBe('advanced');
+        // Now 'other' should include everything
         expect(config.workflows).toContain('debug');
+        expect(config.workflows).toContain('explain'); // From Education
+        expect(config.workflows).toContain('security'); // From Finance
+        expect(config.workflows).toContain('mobile'); // From F&B
     });
 
     // Case 7: Skip Prompts (Non-interactive mode)

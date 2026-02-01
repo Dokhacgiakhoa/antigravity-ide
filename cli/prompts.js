@@ -153,7 +153,7 @@ async function getProjectConfig(skipPrompts = false, predefinedName = null) {
         { title: '👤 Personal / Portfolio (Cá nhân)', value: 'personal' },
         { title: '🏥 Healthcare (Y tế - HealthTech)', value: 'healthcare' },
         { title: '🚚 Logistics (Vận tải)', value: 'logistics' },
-        { title: '🔮 Other (Khác - Web/App cơ bản)', value: 'other' }
+        { title: '🔮 Other (Khác - Tất cả lĩnh vực)', value: 'other' }
       ] : [
         { title: '💰 Finance (Fintech)', value: 'finance' },
         { title: '🎓 Education (EdTech)', value: 'education' },
@@ -161,7 +161,7 @@ async function getProjectConfig(skipPrompts = false, predefinedName = null) {
         { title: '👤 Personal / Portfolio', value: 'personal' },
         { title: '🏥 Healthcare (HealthTech)', value: 'healthcare' },
         { title: '🚚 Logistics', value: 'logistics' },
-        { title: '🔮 Other (General Web/App)', value: 'other' }
+        { title: '🔮 Other (General / All Fields)', value: 'other' }
       ],
       initial: 6
     },
@@ -185,6 +185,15 @@ async function getProjectConfig(skipPrompts = false, predefinedName = null) {
 
   // PRESETS CONFIGURATION
   const baseWorkflows = ['git', 'plan', 'status'];
+  
+  // Define available industry-specific workflows 
+  // (Whitelist to ensure we only include real files)
+  const availableWorkflows = [
+    'audit', 'brainstorm', 'create', 'debug', 'deploy', 'document', 'enhance', 
+    'monitor', 'onboard', 'orchestrate', 'plan', 'preview', 'security', 'seo', 
+    'status', 'test', 'ui-ux-pro-max',
+    'explain', 'visually', 'mobile', 'performance', 'compliance', 'api', 'realtime', 'blog', 'portfolio'
+  ];
 
   const industryWorkflows = {
     finance: ['security', 'audit', 'test'],
@@ -193,7 +202,7 @@ async function getProjectConfig(skipPrompts = false, predefinedName = null) {
     personal: ['blog', 'portfolio', 'seo'],
     healthcare: ['compliance', 'security', 'audit'],
     logistics: ['api', 'realtime', 'deploy'],
-    other: ['create', 'debug', 'enhance']
+    other: availableWorkflows // 'Other' now means EVERYTHING (General / All Fields)
   };
 
   // Determine Engine Mode and Workflows based on Scale
@@ -223,14 +232,6 @@ async function getProjectConfig(skipPrompts = false, predefinedName = null) {
   const finalWorkflows = new Set(scaleBasedWorkflows);
 
   // Add industry-specific workflows
-  // Filter to ensure we only include workflows that actually exist in the whitelist
-  const availableWorkflows = [
-    'audit', 'brainstorm', 'create', 'debug', 'deploy', 'document', 'enhance', 
-    'monitor', 'onboard', 'orchestrate', 'plan', 'preview', 'security', 'seo', 
-    'status', 'test', 'ui-ux-pro-max',
-    'explain', 'visually', 'mobile', 'performance', 'compliance', 'api', 'realtime', 'blog', 'portfolio'
-  ];
-
   if (specificWorkflows && Array.isArray(specificWorkflows)) {
     specificWorkflows.forEach(w => {
       if (availableWorkflows.includes(w)) {
@@ -239,7 +240,7 @@ async function getProjectConfig(skipPrompts = false, predefinedName = null) {
     });
   }
 
-  // Implicit industry workflows
+  // Implicit industry workflows (Additional logic)
   if (responses.industryDomain === 'personal' || responses.industryDomain === 'fnb') {
     finalWorkflows.add('ui-ux-pro-max');
   }
