@@ -9,11 +9,11 @@ glob: "**/*.{js,jsx,ts,tsx,css,scss,html,vue,svelte,dart,swift,kt,xml}"
 
 ---
 
-## 🎨 1. PREMIUM UX/UI
+## 🎨 1. PREMIUM UX/UI (Ref: .shared/ui-ux-pro-max/AESTHETICS.md)
 
-1. **Aesthetics**: Màu sắc HSL tinh chỉnh, Typography chuẩn (Inter/Roboto).
+1. **Aesthetics**: Màu sắc HSL tinh chỉnh, Typography chuẩn (Inter/Roboto). Tuân thủ Glassmorphism 2.0.
 2. **Spacing**: Hệ thống lưới 4px/8px. Whitespace là sang trọng.
-3. **Feedback**: Mọi tương tác (Click, Tap) đều phải có phản hồi thị giác ngay lập tức.
+3. **Feedback**: Mọi tương tác (Click, Tap) đều phải có phản hồi thị giác ngay lập tức (Framer Motion).
 
 ---
 

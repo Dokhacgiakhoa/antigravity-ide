@@ -34,6 +34,8 @@ Before coding, calculate the **Frontend Feasibility & Complexity Index (FFCI)**:
 ## 2. React 19 & Next.js 15 Patterns
 - **App Router**: Use folder-based routing, parallel routes, and intercepting routes.
 - **Server Components (RSC)**: Default to Server Components for data fetching. Use `'use client'` only for interactivity.
+- **Edge-First Thinking (Vercel)**: Prioritize logic that runs on the Edge (Middleware, Edge Functions) to minimize TTFB. Use Edge Runtime for high-performance dynamic routing.
+- **Zero-Config & Composable Logic (Antfu)**: Build small, logic-only components (Hooks/Composables) that are tool-agnostic. Prefer `Vite` for development and `Vitest` for lightening-fast testing.
 - **New Hooks**: Leverage `useActionState`, `useOptimistic`, and the `use` API.
 - **Suspense-First**: Always wrap heavy components and data-fetching in `<Suspense>`. **No manual `isLoading` flags.**
 
@@ -46,6 +48,7 @@ Before coding, calculate the **Frontend Feasibility & Complexity Index (FFCI)**:
   - `Zustand` for complex global state.
   - `Context` for subtree configuration.
 - **Doctrine**: "Props down, Actions up."
+- **Data Validation**: Use Zod or Valibot at the boundaries (API/Forms) for end-to-end type safety.
 
 ---
 
@@ -57,16 +60,18 @@ Evaluate via **Design Feasibility & Impact Index (DFII)**:
 
 - **Mandate**: 
   - ❌ No generic "AI UI" or default Tailwind/ShadCN layouts.
-  - ✅ Custom typography, purposeful motion, and textured depth.
-  - ✅ One "Memorable Anchor" per page.
+  - ✅ Custom typography, purposeful motion (Framer Motion), and textured depth.
+  - ✅ One "Memorable Anchor" per page (Magic UI component e.g., Bento Grid).
 
 ---
 
 ## 5. Performance & Optimization
+- **Vercel Performance**: Implement ISR (Incremental Static Regeneration) and PPR (Partial Prerendering) where possible.
+- **Turborepo Master**: Use intelligent caching to speed up builds and tests in monorepos.
 - **Code Splitting**: Dynamic imports (`React.lazy`) for heavy modules.
 - **Rendering**: Optimize for Core Web Vitals (LCP < 2.5s, CLS < 0.1).
 - **Images**: Use Next.js `<Image>` for automatic optimization.
-- **Bundle**: Audit dependencies to avoid bloat.
+- **Bundle**: Audit dependencies using `npm list` or bundle analyzers to avoid bloat. Prefer lightweight libraries (e.g., `lucide-react` over `font-awesome`).
 
 ---
 
