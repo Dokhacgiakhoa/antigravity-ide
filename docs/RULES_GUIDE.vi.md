@@ -4,15 +4,23 @@
 
 ---
 
-## 0. Phân Loại Quy Mô Dự Án (Project Scale)
+## 0. Chế độ Vận hành Thích ứng (Operation Modes v4.0)
 
-Từ phiên bản **v3.5.71**, mức độ nghiêm ngặt của Luật (Rules) được tự động cấu hình dựa trên quy mô dự án bạn chọn lúc cài đặt:
+Từ phiên bản **v4.0.0**, hệ thống Rules không còn là các file rời rạc mà được gắn chặt vào **Cơ chế vận hành (Operation Modes)** dựa trên quy mô dự án:
 
-| Quy Mô (Scale) | Chế độ Luật (Rule Mode) | Đặc điểm | Phù hợp với |
+| Quy Mô (Scale) | Chế độ Vận hành | Đặc điểm | Liên kết (Linkage) |
 | :--- | :--- | :--- | :--- |
-| **👤 Cá nhân** | **Flexible** (Linh hoạt) | Tự do sáng tạo. Ít cảnh báo. Tối ưu tốc độ dev. | Portfolio, Blog, Test Project. |
-| **👥 Team** | **Balanced** (Cân bằng) | Cảnh báo khi sửa file gốc. Bắt buộc test cơ bản. | Startup, SME, MVP. |
-| **🏢 Enterprise** | **Strict** (Nghiêm ngặt) | Quy trình Audit/Security chặt chẽ. Cấm sửa core nếu không có Plan. | Fintech, Y tế, Hệ thống lớn. |
+| **👤 Cá nhân** | **Solo-Ninja** (Flexible) | Agent đa nhiệm. Cho phép sửa code chéo Domain. Tối ưu tốc độ. | DNA Hybrid. |
+| **👥 Team** | **Agile-Squad** (Balanced) | Phân hóa FE/BE rõ ràng. Phải có Verify Plan. | DNA Module-based. |
+| **🏢 Doanh nghiệp** | **Software-Factory** (Strict) | Ép buộc PDCA 5 bước. Luôn có Security Audit & Quality Check. | DNA Standardized. |
+
+---
+
+## 🛡️ 1. Hiến pháp GEMINI.md & Mạch máu DNA
+
+Trong kiến trúc mới, mọi luật lệ đều xoay quanh 2 trục chính:
+1. **GEMINI.md (Constitution)**: Định hình nhân dạng và rào chắn vận hành.
+2. **.shared/ (DNA)**: Chứa các "Luật vật lý" của dự án (API chuẩn, Design chuẩn, AI chuẩn). Mọi Rules (`frontend.md`, `backend.md`) đều **bắt buộc** phải soi chiếu vào DNA này trước khi phê duyệt code.
 
 ---
 

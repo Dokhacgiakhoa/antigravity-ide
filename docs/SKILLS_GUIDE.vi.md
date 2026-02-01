@@ -4,35 +4,30 @@
 
 ---
 
-## 1. Cơ Chế Hoạt Động
+## 1. Cơ Chế Hoạt Động (v4.0.0 - Big Update)
 
-### 🧩 Skill là gì?
-Hãy tưởng tượng **Skill** giống như việc "cài phần mềm vào não" của AI.
-*   Bình thường: AI biết chung chung về mọi thứ.
-*   Khi nạp Skill `react-nextjs-expert`: AI đột nhiên trở thành chuyên gia React 19, biết rõ Server Components, Hooks tối ưu, và Folder Structure chuẩn.
-
-### ⚡ Lazy Loading (Nạp Theo Nhu Cầu)
-Hệ thống **KHÔNG** nạp tất cả 22 chuyên gia cùng lúc (vì sẽ quá tải).
-*   Khi bạn nói: *"Giúp tôi code giao diện mobile"* -> Hệ thống tự động gọi ông `mobile-design` và `react-native-architecture` vào phòng họp.
-*   Khi bạn nói: *"Check lỗi bảo mật"* -> Hệ thống gọi ông `security-auditor` vào.
+### 🧩 Sci-Link (Scientific Metadata Linkage)
+Ở phiên bản v4.0, mỗi **Skill** không chỉ là một file hướng dẫn. Nó là một thực thể được liên kết khoa học:
+- **`domain`**: Xác định mảng chuyên môn (AI, UI, Security).
+- **`dna_ref`**: Mỗi Skill luôn soi chiếu vào **Hạt nhân DNA** (nằm trong `.shared/`) để đảm bảo code sinh ra luôn đúng tiêu chuẩn của sếp.
+- **`rule_ref`**: Skill được giám sát bởi các bộ luật rào chắn tương ứng.
 
 ---
 
-## 1.5. Phân Bổ Thông Minh (Smart Allocation)
-(Cập nhật v3.5.73)
+## 1.5. Phân Bổ Thích Ứng (Scale-Adaptive Allocation)
 
-Hệ thống không còn cài đặt "đại trà". Thay vào đó, "Vũ khí" được cấp phát dựa trên **2 Yếu Tố**:
+Vũ khí (Skills) được cấp phát thông minh dựa trên **Quy mô dự án**:
 
-### A. Theo Quy Mô (Project Scale)
-*   **👤 Personal**: Core Rules + AI Skills.
-*   **👥 Team**: Thêm DevOps, Growth, Testing.
-*   **🏢 Enterprise**: Full Security, Audit, Deep Orchestration.
+### A. Theo Chế độ Vận hành (Operation Mode)
+*   **👤 Solo-Ninja (Flexible)**: Nạp "Hybrid Skills". Agent có thể sử dụng đa chuyên môn (UI + Backend) cùng lúc để đạt tốc độ tối đa.
+*   **👥 Agile-Squad (Balanced)**: Phân hóa kỹ năng theo Domain. Agent Frontend chỉ dùng Skill giao diện, Backend dùng Skill API.
+*   **🏢 Software-Factory (Strict)**: Ép buộc nạp các Skill kiểm định (Audit, Security, Testing) cho mọi bước thực thi.
 
 ### B. Theo Loại Sản Phẩm (Product Type)
-*   📱 **User Application** (App/Web/Mobile): Tự động nạp `webdev`, `mobile`, `testing`.
-*   🛠️ **Developer Tool** (CLI/Library): Tự động nạp `devops`, `testing`.
-*   🤖 **AI Agent** (Chatbot/Auto): Tự động nạp `ai`, `maker`.
-*   🎨 **Digital Asset** (Game/Template): Tự động nạp `game-development`, `webdev`, `seo`.
+*   📱 **User Application**: Tự động nạp `webdev`, `mobile`, `testing`, `uiux` (Magic UI).
+*   🛠️ **Developer Tool**: Tự động nạp `devops`, `testing`, `performance`.
+*   🤖 **AI Agent**: Tự động nạp `ai`, `maker`, `research` (Fabric Patterns).
+*   🎨 **Digital Asset**: Tự động nạp `game-development`, `webdev`, `seo`, `uiux`.
 
 ---
 

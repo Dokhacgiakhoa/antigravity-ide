@@ -28,30 +28,30 @@ npx antigravity-ide my_project
 npx antigravity-ide
 ```
 
-### ✨ Setup Wizard Features (v3.5.73)
-The new interactive CLI puts you in control with a **Premium Developer Experience**:
+### ✨ Setup Wizard Features (v4.0.0 - Big Update)
+The new interactive CLI puts you in control with a **Scale-Adaptive Engine**:
 
-1.  **Interactive & Visual**:
-    - Navigate menus with **Arrow Keys** (No more manual typing).
-    - **Gradient Aesthetics**: Beautiful CLI visuals that inspire creativity.
-    - **Satisfaction Summary**: A clean "Success" checklist ensures you're ready to go.
+1.  **Scale-Adaptive Architecture**:
+    - **Flexible (Solo-Ninja)**: Optimized for speed. Hybrid agents with cross-domain capabilities. Fast-track execution.
+    - **Balanced (Agile-Squad)**: Coordinated workflow with plan verification. Focused specialist agents.
+    - **Strict (Software-Factory)**: Enterprise-grade standardization. Mandatory security audits and quality gates.
 
-2.  **Smart Allocation Logic**:
-    - **Scale (Quy mô)**: Determines **Engine Mode** (Node vs Python) and **Operational Rules** (Flexible vs Strict).
+2.  **Scientific Metadata Linkage**:
+    - **Unified Connection**: Every file in `.agent` is linked via YAML metadata to its **DNA** (`.shared`), **Rules** (`rules/`), and **Skills** (`skills/`).
+    - **Context-Aware Invocations**: Agents automatically summon the right knowledge based on the file domain and project scale.
+
+3.  **Smart Allocation Logic**:
+    - **Scale (Quy mô)**: Determines the **Operation Mode** (Ninja vs Squad vs Factory) and **Compliance Depth**.
     - **Product Type**: Automatically loads the exact **Skills & Workflows** you need:
-        - 📱 **User Application**: App/Web/Mobile/Desktop (Activates *WebDev/Mobile/Testing* Skills).
+        - 📱 **User Application**: App/Web/Mobile/Desktop (Activates *WebDev/Mobile/Testing/UIUX* Skills).
         - 🛠️ **Developer Tool**: CLI/Library/API (Activates *DevOps/Testing* Skills).
-        - 🤖 **AI Agent**: Chatbot/Automation (Activates *AI/Maker* Skills).
-        - 🎨 **Digital Asset**: Game/Template/Media (Activates *GameDev/SEO* Skills).
+        - 🤖 **AI Agent**: Chatbot/Automation (Activates *AI/Maker/Research* Skills).
+        - 🎨 **Digital Asset**: Game/Template/Media (Activates *GameDev/SEO/UIUX* Skills).
 
-3.  **Context Injection**:
+4.  **Context Injection**:
     - **Name your Agent**: Personalize your AI (e.g., *Jarvis*, *Friday*).
-    - **All-Fields Access**: Industry restrictions are removed. You now get access to **ALL Workflows** (Finance, Health, etc.) by default.
+    - **Multi-Persona Orchestration**: Coordinate up to 15 specialist agents through a unified command.
     - *Auto-Injection*: These details are deeply embedded into `.agent/rules/GEMINI.md`.
-
-4.  **Global vs. Workspace Strategy**:
-    - **Global (`~/.antigravity`)**: Holds the Master Rules (Enterprise Tier).
-    - **Workspace (`.agent`)**: Inherits only what matches your Project Scale.
 
 ### Engine Modes
 - **⚡ Standard (Node.js)**: High-speed, lightweight, perfect for Web/SaaS projects.
