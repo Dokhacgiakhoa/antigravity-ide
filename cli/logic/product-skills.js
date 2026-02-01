@@ -11,6 +11,7 @@ function getProductSkills(productType) {
         skillsToAdd.add('webdev');
         skillsToAdd.add('mobile');
         skillsToAdd.add('testing');
+        skillsToAdd.add('uiux'); // High-end UI for user apps
     }
 
     // 2. Developer Tools (CLI/Lib/API)
@@ -23,6 +24,7 @@ function getProductSkills(productType) {
     if (productType === 'ai_agent') {
         skillsToAdd.add('ai');
         skillsToAdd.add('maker');
+        skillsToAdd.add('research'); // Strategic intelligence for AI agents
     }
 
     // 4. Digital Assets (Game/Template)
@@ -30,6 +32,7 @@ function getProductSkills(productType) {
         skillsToAdd.add('mobile'); // For Game Dev skills
         skillsToAdd.add('webdev'); // For Templates
         skillsToAdd.add('growth'); // For SEO/Marketing
+        skillsToAdd.add('uiux');
     }
 
     return Array.from(skillsToAdd);

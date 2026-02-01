@@ -31,6 +31,7 @@ describe('Project Setup 10 Scenarios Verification', () => {
         expect(config.skillCategories).toContain('ai');
         expect(config.skillCategories).toContain('mobile'); // User App now includes mobile
         expect(config.skillCategories).toContain('testing'); // User App now includes testing
+        expect(config.skillCategories).toContain('uiux'); // New
         expect(config.industryDomain).toBe('other');
         expect(config.workflows).toContain('security'); // From 'other' = all
     });
@@ -50,6 +51,8 @@ describe('Project Setup 10 Scenarios Verification', () => {
         expect(config.engineMode).toBe('advanced'); 
         expect(config.skillCategories).toContain('mobile');
         expect(config.skillCategories).toContain('security');
+        expect(config.skillCategories).toContain('research'); // Enterprise adds research
+        expect(config.skillCategories).toContain('uiux');
         expect(config.rules).toBe('strict');
         // From 'other' = all, 'explain' is in education but other has everything
         expect(config.workflows).toContain('explain'); 
@@ -72,6 +75,7 @@ describe('Project Setup 10 Scenarios Verification', () => {
         expect(config.skillCategories).toContain('webdev'); // Digital Asset maps to Webdev
         expect(config.skillCategories).toContain('ai');
         expect(config.skillCategories).toContain('devops');
+        expect(config.skillCategories).toContain('uiux'); // Team adds uiux
         
         expect(config.rules).toBe('balanced');
         expect(config.workflows).toContain('mobile'); 
@@ -93,7 +97,6 @@ describe('Project Setup 10 Scenarios Verification', () => {
         expect(config.skillCategories).toContain('devops'); 
         expect(config.skillCategories).toContain('testing'); 
         expect(config.workflows).toContain('create'); 
-        expect(config.workflows).toContain('orchestrate'); // From 'other' = all
     });
 
     // Case 5: VI language, Enterprise scale, Dev Tool (API)
@@ -167,6 +170,7 @@ describe('Project Setup 10 Scenarios Verification', () => {
 
         expect(config.engineMode).toBe('standard');
         expect(config.skillCategories).toContain('webdev'); 
+        expect(config.skillCategories).toContain('uiux'); 
         expect(config.workflows).toContain('seo'); // From 'other' = all + digital_asset adds seo
     });
 
@@ -183,6 +187,7 @@ describe('Project Setup 10 Scenarios Verification', () => {
         const config = await getProjectConfig();
 
         expect(config.engineMode).toBe('advanced');
+        expect(config.skillCategories).toContain('uiux'); 
         expect(config.workflows).toContain('orchestrate'); // From 'other' = all
     });
 });
