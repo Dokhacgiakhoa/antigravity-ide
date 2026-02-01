@@ -10,8 +10,8 @@ Antigravity Kit là một hệ thống nhất thể hóa (Unified), được thi
 
 - **15 Chuyên gia Agent** - Các nhân dạng AI dựa trên vai trò, hoạt động theo 3 chế độ: Solo, Squad, và Factory.
 - **26 Bộ Kỹ năng (Skills)** - Các mô-đun tri thức "Sci-Link" (Liên kết khoa học) chứa đựng 600+ năng lực.
-- **11 Quy trình (Workflows)** - Các chiến dịch thực thi lệnh slash command được điều phối bởi Metadata.
-- **13 Mô-đun DNA (Shared)** - Hạt nhân tri thức nền tảng và tiêu chuẩn bất biến.
+- **17 Quy trình (Workflows)** - Các chiến dịch thực thi lệnh slash command được điều phối bởi Metadata.
+- **17 Mô-đun DNA (Shared)** - Hạt nhân tri thức nền tảng và tiêu chuẩn bất biến.
 
 ---
 
@@ -99,7 +99,7 @@ Hệ thống sử dụng các kịch bản kiểm tra tự động để đảm 
 | ------ | ----- |
 | **Tổng số Agent** | 15 |
 | **Tổng số Kỹ năng** | 26 Master Kits (Chứa 600+ năng lực) |
-| **Quy trình tiêu chuẩn** | 11 |
+| **Quy trình tiêu chuẩn** | 17 |
 | **Độ phủ nghiệp vụ** | ~98% Web/Mobile/DevOps/AI/Security |
 
 ---

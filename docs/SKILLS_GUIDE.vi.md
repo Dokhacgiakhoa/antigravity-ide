@@ -1,6 +1,6 @@
 # 🧠 Hướng Dẫn Về "Kỹ Năng" (Skills System)
 
-> **Antigravity IDE** không chỉ là một con bot chat. Nó là một tập hợp của **22 Chuyên Gia Ảo (Master Skills)**, mỗi người phụ trách một mảng công nghệ chuyên sâu.
+> **Antigravity IDE** không chỉ là một con bot chat. Nó là một tập hợp của **26 Chuyên Gia Ảo (Master Skills)**, mỗi người phụ trách một mảng công nghệ chuyên sâu.
 
 ---
 

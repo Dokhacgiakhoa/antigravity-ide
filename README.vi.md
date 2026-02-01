@@ -9,9 +9,9 @@
 
 **Google Antigravity** không chỉ là một bộ skill, mà là một **Khung vận hành (Orchestration Framework)** toàn diện. Nó cung cấp một môi trường "Phòng tác chiến AI" giúp các AI Agent phối hợp theo dây chuyền sản xuất chuyên nghiệp (PDCA), đảm bảo mọi dòng code ra đời đều qua thẩm định và tối ưu hóa.
 
-| **22** Bộ Kỹ năng (Skills) | **15** Agent Chuyên gia | **11** Quy trình (Workflows) | **13** Mô-đun DNA (Shared) |
+| **26** Bộ Kỹ năng (Skills) | **15** Agent Chuyên gia | **17** Quy trình (Workflows) | **17** Mô-đun DNA (Shared) |
 | :---: | :---: | :---: | :---: |
-| Chứa 550+ Năng lực | Role-Based Personas | Chu kỳ PDCA | Tri thức nghiệp vụ mẫu |
+| Chứa 600+ Năng lực | Role-Based Personas | Chu kỳ PDCA | Tri thức nghiệp vụ mẫu |
 
 ---
 
@@ -30,25 +30,28 @@ npx antigravity-ide@latest
 > [!WARNING]
 > **Lưu ý quan trọng:** Không nên cài đặt Global (`npm install -g antigravity-ide`) vì sẽ gây xung đột phiên bản cũ/mới. Luôn dùng `npx ...@latest` để đảm bảo project được khởi tạo với Engine mới nhất.
 
-### ✨ Tính năng Setup Wizard (v3.5.61)
-Trải nghiệm dòng lệnh (CLI) đẳng cấp Premium với quy trình **4 bước cấu hình** được tối ưu hóa:
+### ✨ Tính năng Setup Wizard (v4.0.0 - Big Update)
+Trải nghiệm dòng lệnh (CLI) đẳng cấp Premium với **Cơ chế Thích ứng theo Quy mô**:
 
-> **Lưu ý**: Bạn có thể nhập tên dự án ngay trong lệnh: `npx antigravity-ide@latest <tên-dự-án>`
+1.  **Kiến trúc Thích ứng theo Quy mô (Scale-Adaptive)**:
+    - **👤 Cá nhân (Solo-Ninja)**: Tối ưu tốc độ. Agent đa nhiệm "Hybrid" với khả năng xử lý đa domain.
+    - **👥 Team (Agile-Squad)**: Quy trình phối hợp có xác thực kế hoạch. Các Agent chuyên biệt hóa.
+    - **🏢 Doanh nghiệp (Software-Factory)**: Chuẩn hóa cấp độ Enterprise. Bắt buộc Audit bảo mật và kiểm soát chất lượng.
 
-1.  **Chọn Ngôn ngữ (Language)**:
-    - 🇻🇳 **Tiếng Việt**: Tối ưu hiển thị và tư duy ngữ nghĩa cho người Việt.
-    - 🇺🇸 **English**: Chuẩn quốc tế.
+2.  **Liên kết Metadata Khoa học (Scientific Linkage)**:
+    - **Kết nối Nhất thể**: Mọi file trong `.agent` đều được liên kết qua Metadata YAML tới **DNA** (`.shared`), **Luật** (`rules/`), và **Kỹ năng** (`skills/`).
+    - **Triệu hồi Ngữ cảnh**: Agent tự động nạp tri thức đúng dựa trên Domain của file và Quy mô dự án.
 
-2.  **Lựa chọn Quy mô (Scale)**:
-    - **👤 Cá nhân (Flexible)**: Tự do sáng tạo, ít ràng buộc.
-    - **👥 Team (Balanced)**: Cân bằng giữa tốc độ và kiểm soát.
-    - **🏢 Enterprise (Strict)**: Nghiêm ngặt tuyệt đối, tuân thủ Compliance.
-
-3.  **Lĩnh vực chuyên sâu (Industry)**:
-    - Tự động nạp bộ Workflows & Skills: **Tài chính, Y tế, F&B, Logistics**, v.v.
+3.  **Cấp phát Kỹ năng Thông minh**:
+    - **Dựa trên Sản phẩm**: Tự động nạp đúng bộ Skills & Workflows bạn cần:
+        - 📱 **User Application**: Web/Mobile/Testing/UIUX.
+        - 🛠️ **Developer Tool**: DevOps/Testing/Performance.
+        - 🤖 **AI Agent**: AI/Maker/Research (Fabric).
+        - 🎨 **Digital Asset**: GameDev/SEO/UIUX.
 
 4.  **Định danh Agent**:
     - Đặt tên riêng cho trợ lý (ví dụ: *Jarvis, Friday*) để tạo "linh hồn" cho AI.
+    - Phối hợp đa Agent (lên đến 15 chuyên gia) qua một bộ chỉ huy thống nhất.
 
 ### 🤖 Hướng dẫn Kích hoạt (Activation Protocol)
 Sau khi cài đặt xong, hãy "đánh thức" bộ não AI trong **IDE AI Chat** của bạn:
@@ -99,7 +102,7 @@ ten-du-an/
 ├── .agent/           # 🧠 BỘ NÃO: Agent DNA, Skills & Quy tắc
 │   ├── .shared/      # ⛩️ Master Knowledge (API, DB, Design)
 │   ├── agents/       # 🎭 Hệ thống nhân vật Chuyên gia
-│   └── skills/       # 🛠️ 550+ Công cụ tác chiến
+│   └── skills/       # 🛠️ 600+ Công cụ tác chiến
 └── cli/              # ⚡ CLI: Quản lý scaffolding
 ```
 
