@@ -201,7 +201,8 @@ async function getProjectConfig(skipPrompts = false, predefinedName = null) {
   const availableWorkflows = [
     'audit', 'brainstorm', 'create', 'debug', 'deploy', 'document', 'enhance', 
     'monitor', 'onboard', 'orchestrate', 'plan', 'preview', 'security', 'seo', 
-    'status', 'test', 'ui-ux-pro-max'
+    'status', 'test', 'ui-ux-pro-max',
+    'explain', 'visually', 'mobile', 'performance', 'compliance', 'api', 'realtime', 'blog', 'portfolio'
   ];
 
   const finalWorkflows = new Set(['plan', 'status', 'brainstorm', 'debug', 'enhance']);
