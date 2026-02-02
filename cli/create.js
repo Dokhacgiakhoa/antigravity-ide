@@ -381,6 +381,10 @@ The following **13 Shared Modules** in \`.agent/.shared\` must be respected:
 11. **Testing Master**: TDD & E2E strategies.
 12. **UI/UX Pro Max**: Advanced interactions.
 13. **Vitals Templates**: Performance benchmarks.
+14. **Malware Protection**: Threat intelligence.
+15. **Auto-Update**: Self-maintenance protocols.
+16. **Error Logging**: Automatic learning system.
+17. **Docs Sync**: Documentation integrity.
 
 ## Custom Instructions
 
@@ -445,6 +449,10 @@ Vui lòng sử dụng các kỹ năng phù hợp nhất cho **${industryFocus}**
 11. **Testing Master**: Chiến lược TDD & E2E.
 12. **UI/UX Pro Max**: Tương tác nâng cao.
 13. **Vitals Templates**: Tiêu chuẩn Hiệu năng.
+14. **Malware Protection**: Chống mã độc & Phishing.
+15. **Auto-Update**: Giao thức tự bảo trì.
+16. **Error Logging**: Hệ thống tự học từ lỗi.
+17. **Docs Sync**: Đồng bộ tài liệu.
 
 ## Hướng dẫn tùy chỉnh
 
@@ -490,7 +498,7 @@ function printSuccessMessage(projectName, config) {
 
     // Stats Display
     console.log('');
-    console.log(gradient.pastel('  ✨ Installed: ') + chalk.white('20+ Master Skills') + chalk.gray(' • ') + chalk.white('15+ Agents') + chalk.gray(' • ') + chalk.white('13 Shared Modules'));
+    console.log(gradient.pastel('  ✨ Installed: ') + chalk.white('27 Master Skills') + chalk.gray(' • ') + chalk.white('15 Specialists') + chalk.gray(' • ') + chalk.white('17 Shared Modules'));
 
     console.log('');
     console.log(chalk.dim(config.language === 'vi' ? '     AI sẽ tự động tải các kỹ năng và quy tắc.' : '     The AI will load all skills and rules automatically.'));
