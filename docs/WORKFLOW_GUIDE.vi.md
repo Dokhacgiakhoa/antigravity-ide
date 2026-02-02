@@ -97,6 +97,10 @@
 - **Khi nào dùng**: Sau khi thêm Skills/Workflows/Rules mới để đồng bộ docs.
 - **Cách dùng**: `/update-docs`
 
+### `/release` - Phát hành phiên bản
+- **Khi nào dùng**: Tự động cập nhật version, đồng bộ số liệu stats và chuẩn bị commit.
+- **Cách dùng**: `/release [version_mới]`
+
 ### `/monitor` - Giám sát
 - **Khi nào dùng**: Setup logging, theo dõi lỗi trên Production.
 - **Cách dùng**: `/monitor setup`
