@@ -1,6 +1,6 @@
 # Using Antigravity IDE with Google Gemini
 
-**All 550+ skills are fully compatible with Google Gemini AI!**
+**All 27 Master Skills (600+ capabilities) are fully compatible with Google Gemini AI!**
 
 ## Why Antigravity IDE + Gemini?
 
@@ -8,7 +8,7 @@
 
 | Feature | Benefit for Gemini |
 |---------|-------------------|
-| **550+ Skills** | Instant expertise in 8 domains |
+| **27 Skills** | Instant expertise in 8 domains |
 | **Universal Format** | No vendor lock-in, works with any Gemini model |
 | **Large Context** | Gemini 1.5 Pro (2M tokens) loads multiple skills easily |
 | **Multimodal Support** | Skills cover text, vision, audio - all Gemini capabilities |
@@ -108,7 +108,7 @@ If a workflow/skill is found in Global, use it as the default.
 ## 📊 Skill Categories Breakdown
 
 ```
-Total: 550+ skills across 8 categories
+Total: 27 Master Skills (600+ capabilities) across 8 categories
 
 Development (180+ skills)
 ├── Frontend (React, Next.js, Vue, Svelte)
@@ -187,7 +187,7 @@ Tools (10+ skills)
 **Option 1: Load All (Gemini Pro)**
 ```javascript
 // Gemini 1.5 Pro has 2M token context
-// Can load ALL 550 skills!
+// Can load multiple Master Skills!
 const allSkills = loadAllSkills(".agent/skills");
 ```
 
@@ -291,4 +291,4 @@ console.log(result.response.text());
 
 ---
 
-**Ready to build with Gemini + 550 skills? Let's go! 🚀**
+**Ready to build with Gemini + 27 Master Skills? Let's go! 🚀**

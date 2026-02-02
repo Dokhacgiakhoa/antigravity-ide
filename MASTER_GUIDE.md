@@ -1,5 +1,5 @@
 # 🛰️ Antigravity IDE - Master Operations Guide
-**Version**: 3.5.54 (Enterprise Multi-Agent Edition)
+**Version**: 4.0.3 (Enterprise Multi-Agent Edition)
 **Language**: Tiếng Việt (Giao diện) - English (Technical)
 
 Chào mừng bạn đến với hệ thống Antigravity IDE đã được "độ" lên mức tối đa. Đây không còn là một công cụ lập trình thông thường, mà là một **Phòng tác chiến AI** với đầy đủ tri thức nghiệp vụ và dây chuyền sản xuất chuyên nghiệp.
@@ -92,6 +92,9 @@ Sử dụng phím **`/`** trong khung chat để kích hoạt các Workflow chuy
 - `/document`: Tự động viết tài liệu.
 - `/monitor`: Thiết lập giám sát vận hành.
 - `/status`: Xem Dashboard tiến độ.
+- `/update`: Kiểm tra và nâng cấp Antigravity IDE.
+- `/log-error`: Ghi lỗi tự động (chạy ngầm).
+- `/update-docs`: Cập nhật tài liệu sau khi thêm tính năng mới.
 
 ---
 
