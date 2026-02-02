@@ -93,6 +93,10 @@
 - **Khi nào dùng**: Tự động update README, API Docs từ code.
 - **Cách dùng**: `/document all`
 
+### `/update-docs` - Cập nhật tài liệu tự động
+- **Khi nào dùng**: Sau khi thêm Skills/Workflows/Rules mới để đồng bộ docs.
+- **Cách dùng**: `/update-docs`
+
 ### `/monitor` - Giám sát
 - **Khi nào dùng**: Setup logging, theo dõi lỗi trên Production.
 - **Cách dùng**: `/monitor setup`

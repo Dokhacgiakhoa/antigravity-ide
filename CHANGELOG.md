@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.0.3] - 2026-02-02
+### Added
+- **Feature**: Auto-Update Documentation System - Never forget to update docs again
+- **Workflow**: New `/update-docs` workflow for systematic docs synchronization
+- **Rule**: New `docs-update.md` rule with checklist for all doc types
+- **Script**: `update-docs.js` for automatic statistics collection
+- **Automation**: AI now auto-checks and updates docs when adding Skills/Workflows/Rules
+
+### Changed
+- Updated workflow count from 19 to 21 (added update-docs and plan-auto-update-chat)
+- Updated all documentation with new feature descriptions
+- Enhanced `RULES_GUIDE.vi.md` with docs-update rule
+- Enhanced `WORKFLOW_GUIDE.vi.md` with /update-docs workflow
+
+### Improved
+- Documentation consistency across all files
+- Automatic statistics tracking (27 Skills, 21 Workflows, 12 Rules)
+- Reduced manual effort in maintaining docs
+
 ## [4.0.2] - 2026-02-02
 ### Added
 - **Feature**: Automatic Error Logging System - AI tracks all errors to `ERRORS.md` for learning

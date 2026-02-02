@@ -38,6 +38,7 @@ Trong kiến trúc mới, mọi luật lệ đều xoay quanh 2 trục chính:
 | **`backend`** | File `.py`, `.go`, `.sql` | Chuẩn Clean Architecture, API Response. |
 | **`gemini`** | **Luôn luôn** | Cấu hình lõi, tính cách Agent. |
 | **`system-update`** | Khi hỏi về Version | Tự động kiểm tra và nâng cấp Antigravity IDE. |
+| **`docs-update`** | **Luôn luôn** | Checklist cập nhật docs khi thêm tính năng mới. |
 
 ### 🛠️ Nhóm Theo Yêu Cầu (On-Demand / @Tags)
 *Chỉ chạy khi có ngữ cảnh phù hợp hoặc được bạn gọi đích danh.*
