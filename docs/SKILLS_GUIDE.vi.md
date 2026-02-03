@@ -1,6 +1,6 @@
 # 🧠 Hướng Dẫn Về "Kỹ Năng" (Skills System)
 
-> **Antigravity IDE** không chỉ là một con bot chat. Nó là một tập hợp của **26 Chuyên Gia Ảo (Master Skills)**, mỗi người phụ trách một mảng công nghệ chuyên sâu.
+> **Antigravity IDE** không chỉ là một con bot chat. Nó là một tập hợp của **58 Chuyên Gia Ảo (Master Skills)**, mỗi người phụ trách một mảng công nghệ chuyên sâu.
 
 ---
 
@@ -35,33 +35,60 @@ Vũ khí (Skills) được cấp phát thông minh dựa trên **Quy mô dự á
 
 ### 💻 Nhóm Phát Triển (Development)
 *   **`modern-web-architect`**: Trùm Frontend, Next.js, React 19 Best Practices.
+*   **`nextjs-react-expert`** *(Mới)*: Chuyên sâu Next.js 14+ App Router và React optimization.
 *   **`backend-specialist`**: API Design, Microservices.
+*   **`nodejs-best-practices`** *(Mới)*: Node.js patterns, async patterns, security.
+*   **`python-patterns`** *(Mới)*: Python development, Django/Flask, type hints.
 *   **`mobile-design`**: React Native Patterns, Flutter.
 *   **`game-development`**: WebGL, Canvas, Mobile Game Logic.
+*   **`frontend-design`** *(Mới)*: UI/UX design thinking, component design.
+*   **`tailwind-patterns`** *(Mới)*: Tailwind CSS v4, design systems.
+
+### 🏗️ Nhóm Kiến Trúc & Thiết Kế *(Mới)*
+*   **`architecture`** *(Mới)*: Architectural decision-making, ADR.
+*   **`api-patterns`** *(Mới)*: REST vs GraphQL vs tRPC, API design.
+*   **`database-design`** *(Mới)*: Schema design, indexing strategy.
+*   **`app-builder`** *(Mới)*: Full-stack scaffolding từ natural language.
+*   **`clean-code`** *(Mới)*: Pragmatic coding standards, SOLID.
 
 ### ☁️ Nhóm Hạ Tầng (DevOps & Testing)
 *   **`devops-engineer`**: Docker, CI/CD, Kubernetes.
+*   **`deployment-procedures`** *(Mới)*: Safe deployment workflows, rollback.
 *   **`mcp-builder`**: Xây dựng Model Context Protocol Server.
 *   **`tdd-master-workflow`**: Quy trình Test-Driven Development chuẩn chỉ.
-*   **`qa-automation`**: Tự động hóa kiểm thử (Cypress/Jest).
+*   **`tdd-workflow`** *(Mới)*: RED-GREEN-REFACTOR cycle.
+*   **`testing-patterns`** *(Mới)*: Unit, integration, mocking strategies.
+*   **`webapp-testing`** *(Mới)*: E2E, Playwright, deep audit.
+*   **`server-management`** *(Mới)*: Process management, monitoring.
 
 ### 🛡️ Nhóm Bảo Mật (Security)
 *   **`security-auditor`**: Soát xét code tìm lỗ hổng OWASP Top 10.
 *   **`malware-analyst`**: Quét mã độc, phát hiện Phishing và phân tích URL độc hại.
-*   **`penetration-tester`**: Đóng vai hacker mũ trắng tấn công thử nghiệm.
+*   **`penetration-tester-master`**: Đóng vai hacker mũ trắng tấn công thử nghiệm.
+*   **`vulnerability-scanner`** *(Mới)*: OWASP 2025, Supply Chain Security.
+*   **`red-team-tactics`** *(Mới)*: MITRE ATT&CK, detection evasion.
 
 ### 🤖 Nhóm Trí Tuệ Nhân Tạo (AI Agent)
 *   **`ai-engineer`**: Xây dựng ứng dụng LLM, RAG System.
-*   **`voice-ai-engine`**: Xử lý giọng nói, Text-to-Speech.
-*   **`prompt-engineer`**: Kỹ thuật viết prompt tối ưu.
+*   **`brainstorming`** *(Mới)*: Socratic questioning, user communication.
+*   **`parallel-agents`** *(Mới)*: Multi-agent orchestration patterns.
+*   **`intelligent-routing`** *(Mới)*: Auto agent selection.
 
-### 🛠️ Nhóm Maker & Indie Hacking (Mới)
-*   **`telegram-bot-builder`**: Xây dựng bot Telegram/Discord siêu tốc.
-*   **`viral-generator`**: Tạo tool viral, marketing loops.
-*   **`nocode-automation`**: Tự động hóa quy trình không cần code sâu.
+### 🛠️ Nhóm Công Cụ & Tiện Ích *(Mới)*
+*   **`bash-linux`** *(Mới)*: Bash/Linux terminal patterns.
+*   **`powershell-windows`** *(Mới)*: PowerShell Windows patterns.
+*   **`systematic-debugging`** *(Mới)*: 4-phase debugging methodology.
+*   **`plan-writing`** *(Mới)*: Structured task planning.
+*   **`behavioral-modes`** *(Mới)*: AI operational modes.
+*   **`code-review-checklist`** *(Mới)*: Code review guidelines.
+*   **`documentation-templates`** *(Mới)*: README, API docs templates.
+*   **`i18n-localization`** *(Mới)*: Internationalization patterns.
+*   **`performance-profiling`** *(Mới)*: Performance measurement & analysis.
+*   **`web-design-guidelines`** *(Mới)*: Web Interface Guidelines compliance.
 
 ### 🎨 Nhóm Thẩm Mỹ & Growth
 *   **`ui-ux-pro-max`**: Thiết kế giao diện đẹp mê ly (Linear/Magic UI).
+*   **`seo-fundamentals`** *(Mới)*: E-E-A-T, Core Web Vitals.
 *   **`copywriting-master`**: Viết nội dung bán hàng đỉnh cao.
 *   **`paid-ads-specialist`**: Tối ưu quảng cáo chuyển đổi.
 

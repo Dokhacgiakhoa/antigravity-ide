@@ -18,6 +18,13 @@ const skillCategories = {
       'vitest-pro'
     ]
   },
+  mobile: {
+    name: 'Mobile Development (iOS, Android, Cross-Platform)',
+    skills: [
+      'mobile-design',
+      'game-development'
+    ]
+  },
   ai: {
     name: 'Advanced AI & Research (AutoGen & LangGraph)',
     skills: [

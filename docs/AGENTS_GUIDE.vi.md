@@ -31,17 +31,40 @@ Dưới đây là danh sách các nhân viên ảo sẽ phục vụ bạn:
 *   **`mobile-developer`**:
     *   *Vai trò*: Mobile Dev.
     *   *Task*: Code iOS/Android (React Native/Flutter).
+*   **`game-developer`**:
+    *   *Vai trò*: Game Dev.
+    *   *Task*: Phát triển game với Unity/Godot/WebGL.
+*   **`code-archaeologist`** *(Mới)*:
+    *   *Vai trò*: Legacy Code Explorer.
+    *   *Nhiệm vụ*: Phân tích và hiểu mã nguồn cũ, tìm kiếm pattern.
+*   **`explorer-agent`** *(Mới)*:
+    *   *Vai trò*: Codebase Navigator.
+    *   *Nhiệm vụ*: Khám phá cấu trúc dự án mới, mapping dependencies.
 
 ### 🛡️ Ban Chất Lượng & Vận Hành
 *   **`security-auditor`**:
     *   *Vai trò*: Chuyên gia bảo mật.
     *   *Nhiệm vụ*: Tìm lỗ hổng, rà soát key lộ.
+*   **`penetration-tester`** *(Mới)*:
+    *   *Vai trò*: Ethical Hacker.
+    *   *Nhiệm vụ*: Tấn công thử nghiệm, kiểm tra bảo mật.
 *   **`test-engineer`**:
     *   *Vai trò*: QA/QC.
     *   *Nhiệm vụ*: Viết test case, chạy kiểm thử tự động.
+*   **`qa-automation-engineer`** *(Mới)*:
+    *   *Vai trò*: Test Automation Lead.
+    *   *Nhiệm vụ*: Thiết kế framework tự động hóa kiểm thử.
 *   **`devops-engineer`**:
     *   *Vai trò*: SysAdmin.
     *   *Nhiệm vụ*: Cấu hình Server, Docker, Deploy.
+
+### 📊 Ban Sản Phẩm & Chiến Lược *(Mới)*
+*   **`product-manager`** *(Mới)*:
+    *   *Vai trò*: Product Manager.
+    *   *Nhiệm vụ*: Lên chiến lược sản phẩm, viết PRD.
+*   **`product-owner`** *(Mới)*:
+    *   *Vai trò*: Product Owner.
+    *   *Nhiệm vụ*: Quản lý Backlog, ưu tiên tính năng.
 
 ### 🎨 Ban Sáng Tạo & Growth
 *   **`ui-ux-designer`**:

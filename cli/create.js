@@ -498,7 +498,7 @@ function printSuccessMessage(projectName, config) {
 
     // Stats Display
     console.log('');
-    console.log(gradient.pastel('  ✨ Installed: ') + chalk.white('27 Master Skills') + chalk.gray(' • ') + chalk.white('15 Specialists') + chalk.gray(' • ') + chalk.white('17 Shared Modules'));
+    console.log(gradient.pastel('  ✨ Installed: ') + chalk.white('58 Master Skills') + chalk.gray(' • ') + chalk.white('23 Specialists') + chalk.gray(' • ') + chalk.white('17 Shared Modules'));
 
     console.log('');
     console.log(chalk.dim(config.language === 'vi' ? '     AI sẽ tự động tải các kỹ năng và quy tắc.' : '     The AI will load all skills and rules automatically.'));

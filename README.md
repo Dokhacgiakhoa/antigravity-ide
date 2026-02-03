@@ -10,7 +10,7 @@
 
 **Google Antigravity** is more than just a skill collection; it is a comprehensive **Orchestration Framework**. it provides an "AI Battlefield" environment where AI agents collaborate through a professional production line (PDCA), ensuring every line of code is audited and optimized.
 
-| **27** Master Skills | **15** Specialist Agents | **22** Workflows | **17** Shared DNA Modules |
+| **58** Master Skills | **23** Specialist Agents | **22** Workflows | **17** Shared DNA Modules |
 | :---: | :---: | :---: | :---: |
 | Containing 600+ Capabilities | Role-Based Personas | PDCA Cycle | Industry Blueprints |
 
@@ -50,7 +50,7 @@ The new interactive CLI puts you in control with a **Scale-Adaptive Engine**:
 
 4.  **Context Injection**:
     - **Name your Agent**: Personalize your AI (e.g., *Jarvis*, *Friday*).
-    - **Multi-Persona Orchestration**: Coordinate up to 15 specialist agents through a unified command.
+    - **Multi-Persona Orchestration**: Coordinate up to 23 specialist agents through a unified command.
     - *Auto-Injection*: These details are deeply embedded into `.agent/rules/GEMINI.md`.
 
 5.  **Security & Learning Systems (v4.0.x)**:

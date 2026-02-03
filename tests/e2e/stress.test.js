@@ -65,12 +65,13 @@ describe('CLI E2E Stress Test (10 Scenarios)', () => {
             fs.removeSync(projectPath);
 
             // Test setup setup mock responses for prompts
+            // Must match the fields in cli/prompts.js: language, projectName, scale, productType, agentName
             prompts.mockResolvedValueOnce({
                 projectName: scenario.name,
                 language: scenario.lang,
-                engineMode: 'standard', // Keep simple for speed
-                agentName: 'TestAgent',
-                industryDomain: scenario.industry
+                scale: scenario.rules, // maps to rules (flexible/balanced/strict)
+                productType: 'user_app', // Required field
+                agentName: 'TestAgent'
             });
 
             // Run the creator

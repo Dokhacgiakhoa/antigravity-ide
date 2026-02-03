@@ -9,7 +9,7 @@
 
 **Google Antigravity** không chỉ là một bộ skill, mà là một **Khung vận hành (Orchestration Framework)** toàn diện. Nó cung cấp một môi trường "Phòng tác chiến AI" giúp các AI Agent phối hợp theo dây chuyền sản xuất chuyên nghiệp (PDCA), đảm bảo mọi dòng code ra đời đều qua thẩm định và tối ưu hóa.
 
-| **27** Bộ Kỹ năng (Skills) | **15** Agent Chuyên gia | **22** Quy trình (Workflows) | **17** Mô-đun DNA (Shared) |
+| **58** Bộ Kỹ năng (Skills) | **23** Agent Chuyên gia | **22** Quy trình (Workflows) | **17** Mô-đun DNA (Shared) |
 | :---: | :---: | :---: | :---: |
 | Chứa 600+ Năng lực | Role-Based Personas | Chu kỳ PDCA | Tri thức nghiệp vụ mẫu |
 
@@ -51,7 +51,7 @@ Trải nghiệm dòng lệnh (CLI) đẳng cấp Premium với **Cơ chế Thíc
 
 4.  **Định danh Agent**:
     - Đặt tên riêng cho trợ lý (ví dụ: *Jarvis, Friday*) để tạo "linh hồn" cho AI.
-    - Phối hợp đa Agent (lên đến 15 chuyên gia) qua một bộ chỉ huy thống nhất.
+    - Phối hợp đa Agent (lên đến 23 chuyên gia) qua một bộ chỉ huy thống nhất.
 
 5.  **Hệ thống Bảo vệ & Cập nhật Thông minh**:
     - **🛡️ Malware Protection**: Tự động rà soát link độc hại và mã độc trước khi tải tài nguyên bên ngoài.
