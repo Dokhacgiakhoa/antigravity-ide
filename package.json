@@ -1,6 +1,6 @@
 {
   "name": "antigravity-ide",
-  "version": "4.0.3",
+  "version": "4.0.4",
   "description": "The Ultimate AI Agent Brain - Rules, Skills, and Workflows",
   "main": "cli/index.js",
   "bin": {
