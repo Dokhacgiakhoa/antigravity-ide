@@ -1,4 +1,4 @@
-# 📜 Hướng Dẫn Sử Dụng "Luật Hệ Thống" (Rules System) v4.0.6
+# 📜 Hướng Dẫn Sử Dụng "Luật Hệ Thống" (Rules System) v4.0.8
 
 > **Cơ chế hoạt động**: Antigravity sử dụng cơ chế **Hybrid Language Protocol** (Song ngữ Anh-Việt) để tối ưu hóa cả khả năng hiểu của AI và sự tiện lợi cho đội ngũ phát triển.
 

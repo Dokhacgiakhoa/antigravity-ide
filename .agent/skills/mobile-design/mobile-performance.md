@@ -498,7 +498,7 @@ Everything else causes layout recalculation.
 | Micro-interaction | 100-200ms | ease-out |
 | Standard transition | 200-300ms | ease-out |
 | Page transition | 300-400ms | ease-in-out |
-| Complex/dramatic | 400-600ms | ease-in-out |
+| Complex/dramatic | 4.0.800ms | ease-in-out |
 | Loading skeletons | 1000-1500ms | linear (loop) |
 
 ### Spring Physics

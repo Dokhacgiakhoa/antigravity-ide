@@ -73,7 +73,7 @@ Meet your new virtual team:
 
 #### v4.0.5 (Final Sync)
 - Rebranded to AntiGravity IDE.
-- Standardized all 72 Master Skills to v4.0.6 metadata.
+- Standardized all 72 Master Skills to v4.0.8 metadata.
 - Integrated Python environment awareness.
 - Unified License & Credits.
 

@@ -39,7 +39,7 @@ Trải nghiệm một lệnh duy nhất để quản trị toàn bộ vòng đ�
     - Bộ lọc cross-engine thông minh: Tự động loại bỏ file thừa nếu project chỉ dùng Node.js.
 3.  **Đồng bộ DNA**:
     - Tự động tích hợp các tiêu chuẩn DNA cốt lõi (API, Database, Cloud, SEO/GEO) của hệ thống.
-4.  **Hệ thống Giám sát "The Watchdog" (v4.0.6)**: 
+4.  **Hệ thống Giám sát "The Watchdog" (v4.0.8)**: 
     - Cơ chế tự động phát hiện treo (Hang Detection) và ngăn chặn vòng lặp vô hạn.
     - **Zero-Silent-Failure**: Mọi lỗi hệ thống và sai sót của Agent đều được lưu lại tại `ERRORS.md` để tự động học hỏi.
 
@@ -64,14 +64,14 @@ Chúng tôi cung cấp thư viện 72 kỹ năng "Senior-Grade" được phân l
 
 ---
 
-#### v4.0.6 (Nâng cấp tài liệu & CLI)
+#### v4.0.8 (Nâng cấp tài liệu & CLI)
 - Đồng bộ hóa toàn bộ 30 Workflows và 22 Agents.
 - Bổ sung tài liệu FAQ, Update và Uninstall.
 - Tối ưu hóa cơ chế xử lý xung đột file (--force).
 
 #### v4.0.5 (Đồng bộ cuối)
 - Đổi tên thương hiệu thành AntiGravity IDE.
-- Chuẩn hóa toàn bộ 72 Master Skills sang metadata v4.0.6.
+- Chuẩn hóa toàn bộ 72 Master Skills sang metadata v4.0.8.
 - Tích hợp nhận diện môi trường Python.
 - Nhất quán License & Credits.
 

@@ -26,7 +26,7 @@ Factors that determine animation speed:
 | Micro-interactions | 100-200ms | Quick but noticeable |
 | Standard transitions | 200-300ms | Comfortable pace |
 | Complex animations | 300-500ms | Time to follow |
-| Page transitions | 400-600ms | Smooth handoff |
+| Page transitions | 4.0.800ms | Smooth handoff |
 | **Wow/Premium Effects** | 800ms+ | Dramatic, organic spring-based, layered |
 
 ### Choosing Duration

@@ -146,7 +146,7 @@ CSS 3D Space:
 
 ### Principles
 
-- Perspective: 800-1200px for subtle, 400-600px for dramatic
+- Perspective: 800-1200px for subtle, 4.0.800px for dramatic
 - Keep transforms simple (rotate + translate)
 - Ensure backface-visibility: hidden for flips
 - Test on Safari (different rendering)
