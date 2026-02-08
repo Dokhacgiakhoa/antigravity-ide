@@ -1,8 +1,8 @@
 # AntiGravity IDE (Phiên bản Nâng cao)
 
-[![npm version](https://img.shields.io/npm/v/antigravity-ide.svg?style=flat-square)](https://www.npmjs.com/package/antigravity-ide)
-[![npm downloads](https://img.shields.io/npm/dm/antigravity-ide.svg?style=flat-square)](https://www.npmjs.com/package/antigravity-ide)
-[![license](https://img.shields.io/npm/l/antigravity-ide.svg?style=flat-square)](LICENSE)
+[![npm version](https://img.shields.io/npm/v/antigravity-ide.svg?style=flat-square&color=crimson)](https://www.npmjs.com/package/antigravity-ide)
+[![npm downloads](https://img.shields.io/npm/dm/antigravity-ide.svg?style=flat-square&color=blueviolet)](https://www.npmjs.com/package/antigravity-ide)
+[![license](https://img.shields.io/npm/l/antigravity-ide.svg?style=flat-square&color=2ea44f)](LICENSE)
 
 | **15** Quy tắc | **22** Agent | **72** Chuyên gia | **600+** Chiến thuật | **30** Quy trình | **52** Thư viện DNA |
 | :---: | :---: | :---: | :---: | :---: | :---: |
