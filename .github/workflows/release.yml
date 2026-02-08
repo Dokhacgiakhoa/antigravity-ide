@@ -62,10 +62,13 @@ jobs:
             const pkg = require('./package.json');
             // Assuming the repo owner is the scope
             pkg.name = '@${{ github.repository_owner }}/antigravity-ide';
+            pkg.publishConfig = {
+              registry: 'https://npm.pkg.github.com'
+            };
             fs.writeFileSync('package.json', JSON.stringify(pkg, null, 2));
           "
       - run: npm ci
       - name: Publish to GitHub Packages
-        run: npm publish
+        run: npm publish --registry=https://npm.pkg.github.com
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
