@@ -1,9 +1,0 @@
-HTTP_Status,Internal_Code,Description,Vietnamese_Message
-200,SUCCESS,Yêu cầu thành công,Thao tác thành công!
-400,BAD_REQUEST,Dữ liệu đầu vào không hợp lệ,Yêu cầu không hợp lệ. Vui lòng kiểm tra lại.
-401,UNAUTHORIZED,Token hết hạn hoặc không tồn tại,Bạn cần đăng nhập để thực hiện thao tác này.
-403,FORBIDDEN,Không có quyền truy cập,Bạn không có quyền thực hiện hành động này.
-404,NOT_FOUND,Tài nguyên không tồn tại,Không tìm thấy dữ liệu yêu cầu.
-422,VALIDATION_ERROR,Lỗi kiểm tra tính hợp lệ của dữ liệu,Dữ liệu không đúng định dạng.
-429,TOO_MANY_REQUESTS,Gửi yêu cầu quá nhanh,Bạn đã gửi quá nhiều yêu cầu. Vui lòng đợi một chút.
-500,INTERNAL_SRV_ERR,Lỗi máy chủ không xác định,Hệ thống gặp sự cố. Vui lòng thử lại sau.
