@@ -1,5 +1,5 @@
 # 🛰️ AntiGravity IDE - Master Operations Guide
-**Version**: 4.0.5 (Enterprise Multi-Agent Edition)
+**Version**: 4.0.8 (Alpha Marketing & NPM)
 **Language**: Tiếng Việt (Giao diện) - English (Technical)
 
 Chào mừng bạn đến với hệ thống AntiGravity IDE đã được "độ" lên mức tối đa. Đây không còn là một công cụ lập trình thông thường, mà là một **Phòng tác chiến AI** với đầy đủ tri thức nghiệp vụ và dây chuyền sản xuất chuyên nghiệp.
@@ -15,9 +15,9 @@ Chào mừng bạn đến với hệ thống AntiGravity IDE đã được "đ�
 
 Để cài đặt hoặc cập nhật hệ thống lên mức Global (toàn cục), hãy sử dụng các lệnh sau:
 
-- **Cài đặt mới**: `npx antigravity-ide@latest [tên-dự-án]` (Hoặc tên project mặc định nếu bỏ trống).
-- **Khởi tạo nhanh**: `npx antigravity-ide@latest --skip-prompts` (Sử dụng cấu hình Creative mặc định).
-- **Cập nhật tính năng**: `npx antigravity-ide update` (Bảo tồn nội dung custom qua cơ chế Marker).
+- **Cài đặt mới**: `npx antigravity-ide [tên-dự-án]`
+- **Khởi tạo nhanh**: `npx antigravity-ide --skip-prompts` (Sử dụng cấu hình mặc định).
+- **Cập nhật tính năng**: `npx antigravity-ide` (Chạy lệnh trong folder dự án sẽ tự động kích hoạt update).
 
 ---
 

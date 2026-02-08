@@ -16,7 +16,7 @@ Khi user bắt đầu một phiên làm việc:
     *   *Luật lệ*: Tôi biết những gì ĐƯỢC làm và CẤM làm (ví dụ: cấm xóa DB).
 2.  **Nạp Kỹ năng (Skill Injection)**:
     *   Dựa vào yêu cầu user (ví dụ: "Code React"), tôi tự động vào kho `.agent/skills` để lôi cổ thằng `nextjs-react-expert` ra dùng.
-    *   Tôi không nạp hết 550 skill (tràn bộ nhớ), chỉ nạp cái cần thiết (Lazy Loading).
+    *   Tôi không nạp hết 72 Master Skills (tràn bộ nhớ), chỉ nạp cái cần thiết (Lazy Loading).
 
 ## 2. Quy Trình Xử Lý Một Yêu Cầu (The Thinking Process)
 

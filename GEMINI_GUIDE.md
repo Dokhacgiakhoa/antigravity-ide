@@ -1,6 +1,6 @@
 # Using Antigravity IDE with Google Gemini
 
-**All 27 Master Skills (600+ capabilities) are fully compatible with Google Gemini AI!**
+**All 72 Master Skills (600+ AI Patterns) are fully compatible with Google Gemini AI!**
 
 ## Why Antigravity IDE + Gemini?
 
@@ -8,7 +8,7 @@
 
 | Feature | Benefit for Gemini |
 |---------|-------------------|
-| **27 Skills** | Instant expertise in 8 domains |
+| **72 Master Skills** | Instant expertise in 8 domains (Standard v4.0.8) |
 | **Universal Format** | No vendor lock-in, works with any Gemini model |
 | **Large Context** | Gemini 1.5 Pro (2M tokens) loads multiple skills easily |
 | **Multimodal Support** | Skills cover text, vision, audio - all Gemini capabilities |

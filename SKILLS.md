@@ -1,14 +1,14 @@
 # Skills Inventory - Antigravity IDE
 
 **Last Updated:** 2026-02-08  
-**Total Skills:** 72 Master Skills (Encapsulating 700+ Capabilities/Patterns)  
+**Total Skills:** 72 Master Skills (Encapsulating 600+ AI Patterns)  
 **Source:** [Dokhacgiakhoa/antigravity-ide](https://github.com/Dokhacgiakhoa/antigravity-ide)
 
 ---
 
 ## 🎯 Overview
 
-Antigravity IDE organizes intelligence into **72 high-density Master Skills**. Each skill consolidates the best practices and instructions of over **700+ capabilities & patterns** from our open-source lineage, optimized for high-performance AI orchestration.
+Antigravity IDE organizes intelligence into **72 high-density Master Skills**. Each skill consolidates the best practices and instructions of over **600+ capabilities & patterns** from our open-source lineage, optimized for high-performance AI orchestration.
 
 ### ✨ Key Features
 

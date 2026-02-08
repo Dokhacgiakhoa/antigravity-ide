@@ -2,7 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
-## [4.0.3] - 2026-02-02
+## [4.0.8] - 2026-02-08
+### Added
+- **Marketing**: New "One Command" slogan and high-contrast NPM badges.
+- **Documentation**: Synchronized all guides with 72 Master Skills and 600+ AI Patterns.
+- **Stats**: Added project statistics bar to READMEs.
+- **Reference**: Updated `GEMINI_GUIDE.md`, `SKILLS.md`, and `MASTER_GUIDE.md`.
+
+### Changed
+- Refined `README.md` and `README.vi.md` for maximum marketing impact.
+- Standardized badge colors: Green (Version), Purple (Downloads), Orange (License).
+- Clarified distinction between Master Skills (72) and AI Patterns (600+).
+
 ### Added
 - **Feature**: Auto-Update Documentation System - Never forget to update docs again
 - **Workflow**: New `/update-docs` workflow for systematic docs synchronization

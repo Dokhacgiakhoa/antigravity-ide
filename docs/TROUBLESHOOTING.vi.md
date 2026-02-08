@@ -57,5 +57,5 @@ Hãy tạo Issue trên [GitHub](https://github.com/Dokhacgiakhoa/antigravity-ide
 -   **Cách sửa triệt để**: Gỡ bỏ bản Global cũ để npx tải bản mới nhất.
     ```bash
     npm uninstall -g antigravity-ide
-    npx antigravity-ide@latest
+    npx antigravity-ide
     ```
