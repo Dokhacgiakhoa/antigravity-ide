@@ -14,11 +14,11 @@ IDE đầu tiên được thiết kế dành riêng cho "Vibe Coding" và Quy tr
 Cách tốt nhất để sử dụng Antigravity IDE là thông qua **npx**. Điều này đảm bảo bạn luôn có Engine và Master Skills mới nhất mà không làm rác máy bởi các gói cài đặt global.
 
 ```sh
-# Khởi tạo dự án AI Agent mới
-npx antigravity-ide@latest init
+# Khởi tạo dự án AI Agent mới trong thư mục hiện tại
+npx antigravity-ide init
 
-# Khởi tạo nhanh với cấu hình mặc định
-npx antigravity-ide@latest my-project --skip-prompts
+# Khởi tạo nhanh với cấu hình mặc định trong thư mục mới
+npx antigravity-ide my-project --skip-prompts
 ```
 
 > [!TIP]

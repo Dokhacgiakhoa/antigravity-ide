@@ -8,11 +8,14 @@ AntiGravity IDE có cơ chế cập nhật "kép" độc đáo. Bạn cần hi�
 Đây là việc cập nhật bản thân công cụ `npx antigravity-ide`.
 
 ### Cách làm:
-Luôn sử dụng tag `@latest` khi chạy lệnh khởi tạo:
+Chỉ cần chạy lệnh khởi tạo thông thường, hệ thống sẽ tự động phát hiện và hỏi bạn có muốn nâng cấp lên bản mới nhất không:
 ```bash
-npx antigravity-ide@latest init
+npx antigravity-ide init
 ```
-Hệ thống sẽ tự động tải phiên bản mới nhất từ NPM.
+Nếu bạn muốn cưỡng bức cập nhật khi nghi ngờ cache bị lỗi:
+```bash
+npx antigravity-ide update
+```
 
 ### Kiểm tra phiên bản hiện tại:
 ```bash

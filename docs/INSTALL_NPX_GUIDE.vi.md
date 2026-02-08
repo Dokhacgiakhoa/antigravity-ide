@@ -39,16 +39,16 @@ Nếu bạn dự định sử dụng các tính năng cao cấp (Advanced AI, Da
 ---
 
 ## 3. Khởi động AntiGravity IDE
-Sau khi đã có `npx`, bạn chỉ cần chạy lệnh sau để bắt đầu "Vibe Coding":
+Sau khi đã có `npx`, bạn chỉ cần chạy lệnh sau để bắt đầu "Vibe Coding" (Hệ thống sẽ tự động kiểm tra và cập nhật bản mới nhất cho bạn):
 
 ```bash
 # Tạo dự án mới trong thư mục 'my-vibe-app'
-npx antigravity-ide@latest my-vibe-app
+npx antigravity-ide my-vibe-app
 ```
 
 Nếu bạn muốn cài đặt ngay vào thư mục hiện tại:
 ```bash
-npx antigravity-ide@latest
+npx antigravity-ide .
 ```
 
 ---
@@ -59,7 +59,7 @@ npx antigravity-ide@latest
 | :--- | :--- | :--- |
 | `npx antigravity-ide init` | Khởi tạo Agent vào dự án có sẵn. | `-v` (Verbose) |
 | `npx antigravity-ide [name]` | Tạo dự án mới hoàn toàn. | `-t` (Template), `-s` (Skip Prompts) |
-| `npx antigravity-ide update` | Cài đặt bản IDE mới nhất. | N/A |
+| `npx antigravity-ide update` | Cưỡng bức cập nhật bản IDE mới nhất. | N/A |
 | `npx antigravity-ide init` | Khởi tạo Agent vào dự án có sẵn. | `--force`, `-v` |
 | `--version` / `-V` | Kiểm tra phiên bản hiện tại. | N/A |
 | `--help` / `-h` | Xem hướng dẫn sử dụng lệnh. | N/A |
@@ -77,21 +77,7 @@ Nếu bạn là người dùng chuyên nghiệp hoặc muốn dùng trong script
 
 ```bash
 # Khởi tạo dự án nhanh với cấu hình mặc định (Creative Scale)
-npx antigravity-ide@latest my-quick-project --skip-prompts
-```
-
-> [!NOTE]
-> Khi dùng tùy chọn này, hệ thống sẽ tự động chọn:
-> - Ngôn ngữ: **English**
-> - Quy mô: **Creative** (Full AI & Data features)
-> - Loại sản phẩm: **User Application**
-> - Tên Agent: **Agent**
-
----
-
----
-
-## 6. Xử lý Trùng lặp File (Conflict Resolution)
+## 7. Xử lý Trùng lặp File (Conflict Resolution)
 Nếu bạn cài đặt vào một thư mục đã có sẵn các file cấu hình (như `GEMINI.md`, `package.json`), hệ thống sẽ hỏi bạn cách xử lý để bảo vệ dữ liệu cũ.
 
 ### 🛡️ Cơ chế Tương tác (Mặc định)
@@ -105,7 +91,7 @@ Hệ thống sẽ dừng lại và hỏi bạn từng file:
 ### 🔥 Ghi đè Cưỡng bức (Force Overwrite)
 Nếu bạn muốn reset dự án và chấp nhận mất cấu hình cũ, hãy dùng cờ `--force`:
 ```bash
-npx antigravity-ide@latest init --force
+npx antigravity-ide init --force
 ```
 > **Tác dụng**: Bỏ qua tất cả câu hỏi và ghi đè toàn bộ file trùng lặp.
 
@@ -122,7 +108,7 @@ Nếu bạn dùng trong CI/CD hoặc script tự động, hãy dùng cờ `--ski
 
 ### 2. Lỗi quyền truy cập (`EACCES` hoặc `Permission Denied`)
 - **Windows**: Hãy chạy Terminal dưới quyền **Administrator**.
-- **Mac/Linux**: Bạn có thể cần thêm `sudo` trước lệnh: `sudo npx antigravity-ide@latest`.
+- **Mac/Linux**: Bạn có thể cần thêm `sudo` trước lệnh: `sudo npx antigravity-ide`.
 
 ### 3. Phiên bản Node.js quá cũ
 - **Yêu cầu**: AntiGravity IDE hoạt động tốt nhất trên Node.js **v18** trở lên.
@@ -130,11 +116,5 @@ Nếu bạn dùng trong CI/CD hoặc script tự động, hãy dùng cờ `--ski
 
 ---
 
-## 💡 Tại sao luôn nên dùng `@latest`?
-Khi bạn chạy `npx antigravity-ide@latest`, hệ thống sẽ:
-1. Kiểm tra phiên bản mới nhất trên máy chủ npm.
-2. Tải về những cải tiến, Agent mới và Rule mới nhất.
-3. Xóa bộ nhớ đệm (cache) cũ để tránh lỗi "version mismatch".
-
-> [!IMPORTANT]
-> **Khuyến nghị**: Luôn ưu tiên dùng `npx` thay vì `npm install -g` để giữ cho hệ thống của bạn luôn sạch sẽ và cập nhật.
+## 💡 Luôn luôn cập nhật?
+Bạn không cần gõ `@latest` nữa. Mỗi khi bạn chạy `npx antigravity-ide`, hệ thống sẽ tự động kiểm tra và nâng cấp lên phiên bản mới nhất từ NPM để đảm bảo bạn luôn có những Kỹ năng và Agent hiện đại nhất.

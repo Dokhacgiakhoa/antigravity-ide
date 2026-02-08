@@ -14,11 +14,11 @@ The First AI-Native IDE designed for Vibe Coding & Agentic Workflow. 🛰️🚀
 The recommended way to use Antigravity IDE is via **npx**. This ensures you always have the latest engine and master skills without messy global installs.
 
 ```sh
-# Initialize a new AI Agent project
-npx antigravity-ide@latest init
+# Initialize a new AI Agent project in current directory
+npx antigravity-ide init
 
-# Initialize quickly with default settings
-npx antigravity-ide@latest my-project --skip-prompts
+# Initialize quickly with default settings in a new folder
+npx antigravity-ide my-project --skip-prompts
 ```
 
 > [!TIP]

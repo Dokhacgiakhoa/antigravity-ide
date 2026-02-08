@@ -14,28 +14,21 @@ async function checkAndApplyUpdates(packageJson, options = {}) {
   const notifier = notifierLib({ pkg: packageJson, updateCheckInterval: 0 });
 
   if (notifier.update) {
-    const { latest, current, type } = notifier.update;
-    console.log(chalk.yellow(`\n📦 Update available: ${current} → ${chalk.green(latest)} (${type})`));
-    
-    const response = await promptsLib({
-      type: 'confirm',
-      name: 'shouldUpdate',
-      message: 'Do you want to update Google Antigravity now? / Bạn có muốn cập nhật ngay không?',
-      initial: true
-    });
+    const { latest, current } = notifier.update;
+    console.log(chalk.yellow(`\n📦 New version detected: ${chalk.green(latest)} (Current: ${current})`));
+    console.log(chalk.cyan('🚀 Auto-updating Google Antigravity to ensure you have the latest features...'));
 
-    if (response.shouldUpdate) {
-      try {
-        console.log(chalk.cyan('\n🚀 Updating Global Antigravity... Please wait...'));
-        execSyncLib('npm install -g antigravity-ide@latest', { stdio: 'inherit' });
-        console.log(chalk.green('\n✅ Verified Update! Restarting command...'));
-        exitLib(0);
-      } catch (error) {
-        console.error(chalk.red('\n❌ Update failed. Please run: npm install -g antigravity-ide@latest'));
-        console.error(error.message);
-      }
-    } else {
-      console.log(chalk.gray('\nℹ️  Skipping update. You can update later using: npx antigravity-ide update'));
+    try {
+      // Use --no-save to avoid polluting local package.json if run in a project
+      // But -g is what actually updates the global/npx cached version for next runs
+      execSyncLib('npm install -g antigravity-ide@latest', { stdio: 'inherit' });
+      console.log(chalk.green('\n✅ Version ' + latest + ' installed successfully!'));
+      console.log(chalk.bold.yellow('🔄 Please run your command again to use the new version.\n'));
+      exitLib(0);
+    } catch (error) {
+      console.log(chalk.gray('\n⚠️  Automatic update failed (possibly due to permissions).'));
+      console.log(chalk.gray(`   Please run manually: ${chalk.white('npm install -g antigravity-ide@latest')}\n`));
+      // In case of failure, we continue with current version so we don't block the user
     }
   }
 }
