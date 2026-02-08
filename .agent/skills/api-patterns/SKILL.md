@@ -1,7 +1,9 @@
 ---
 name: api-patterns
-description: API design principles and decision-making. REST vs GraphQL vs tRPC selection, response formats, versioning, pagination.
-allowed-tools: Read, Write, Edit, Glob, Grep
+description: API design principles and decision-making.
+category: architecture
+version: 4.0.5
+layer: master-skill
 ---
 
 # API Patterns

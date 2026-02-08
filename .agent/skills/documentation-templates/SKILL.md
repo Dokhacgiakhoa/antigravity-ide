@@ -1,7 +1,9 @@
 ---
 name: documentation-templates
-description: Documentation templates and structure guidelines. README, API docs, code comments, and AI-friendly documentation.
-allowed-tools: Read, Glob, Grep
+description: Documentation templates and structure guidelines. README, API docs, code comments.
+category: tools
+version: 4.0.5
+layer: master-skill
 ---
 
 # Documentation Templates

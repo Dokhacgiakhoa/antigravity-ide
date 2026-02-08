@@ -17,25 +17,39 @@ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 ================================================================================
-ACKNOWLEDGEMENTS & REFERENCES
+UNIVERSAL ACKNOWLEDGEMENTS & REFERENCES
 ================================================================================
 
-This project is maintained by Dokhacgiakhoa.
-It incorporates concepts and references from the following open source projects:
+This project is authored and maintained by Dokhacgiakhoa.
+Antigravity IDE (Enhanced Edition) draws significant inspiration and inherits 
+open-source knowledge from the following masters and repositories:
 
-1. Antigravity Kit (Ref: Structure)
-   - Original Author: VUDOVN
+1. Antigravity Kit (Core Reference)
+   - Original Author: vudovn
    - Link: https://github.com/vudovn/antigravity-kit
 
-2. Antigravity Awesome Skills (Ref: Skill Data)
+2. Antigravity Awesome Skills (Skill Metadata Reference)
    - Original Author: sickn33
    - Link: https://github.com/sickn33/antigravity-awesome-skills
 
-3. UI/UX Pro Max (Ref: Design Standards)
+3. UI/UX Pro Max (Design Philosophy Reference)
    - Original Author: sickn33
    - Link: https://github.com/sickn33/ui-ux-pro-max
 
-*Note: The original authors listed above are credited for their antecedent work but are not involved in the maintenance of this derived repository.*
+4. Model Context Protocol (MCP) standards
+   - Authors: Anthropic & Ecosystem Contributors
+   - Link: https://modelcontextprotocol.io/
+
+5. High-Performance Web Standards
+   - Inspiration: Vercel Engineering & Anthony Fu (antfu)
+
+6. Strategic Knowledge Extraction
+   - Inspiration: Fabric Patterns (danielmiessler)
+
+*Note: All trademarks and copyrights belong to their respective owners. 
+The references above reflect research-level inspiration and antecedent 
+contributions. These parties are not involved in the management of this repository.*

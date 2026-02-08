@@ -1,6 +1,9 @@
 # Hướng Dẫn Đóng Góp (Contributing)
 
-Cảm ơn bạn đã quan tâm đến dự án Antigravity IDE! Chúng tôi luôn chào đón mọi sự đóng góp từ cộng đồng.
+Cảm ơn bạn đã quan tâm đến dự án AntiGravity IDE! Chúng tôi luôn chào đón mọi sự đóng góp từ cộng đồng để cùng xây dựng một hệ sinh thái mã nguồn mở vững mạnh. 
+
+> [!NOTE]
+> Khi đóng góp, vui lòng tôn trọng bản quyền và các nguồn tham khảo (References) chính của dự án.
 
 ## 🤝 Quy Tắc Ứng Xử
 Khi tham gia dự án, vui lòng giữ thái độ tôn trọng, lịch sự và chuyên nghiệp.
@@ -26,12 +29,18 @@ Khi tham gia dự án, vui lòng giữ thái độ tôn trọng, lịch sự và
 -   **Kiểm thử**: Đảm bảo chạy `npm test` thành công.
 -   **Lint Code**: Chạy `npm run lint` để code sạch đẹp.
 
+### 4. Quy trình đăng ký Skill/Workflow mới
+Để một Skill hoặc Workflow mới xuất hiện trong Setup Wizard, bạn cần:
+1.  **Skill**: Thêm định dạng vào `cli/logic/skill-definitions.js`.
+2.  **Workflow**: Thêm tên vào `cli/logic/workflow-manager.js`.
+3.  **Lựa chọn (Scale)**: Cấu hình quy mô xuất hiện (Instant/SME/Creative) trong `cli/logic/manifest-manager.js`.
+
 ## 🛠️ Cài Đặt Môi Trường Dev
 
 1.  Clone fork của bạn:
     ```bash
-    git clone https://github.com/your-username/google-antigravity.git
-    cd google-antigravity
+    git clone https://github.com/your-username/antigravity-ide.git
+    cd antigravity-ide
     ```
 2.  Cài đặt thư viện:
     ```bash

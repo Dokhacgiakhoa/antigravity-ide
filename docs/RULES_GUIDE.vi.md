@@ -1,84 +1,95 @@
-# 📜 Hướng Dẫn Sử Dụng "Luật Hệ Thống" (Rules System)
+# 📜 Hướng Dẫn Sử Dụng "Luật Hệ Thống" (Rules System) v4.0.5
 
-> **Cơ chế hoạt động**: Antigravity sử dụng cơ chế **Hybrid Trigger** (Kết hợp Tự động & Gọi tên) để đảm bảo code vừa nhanh vừa chuẩn.
+> **Cơ chế hoạt động**: Antigravity sử dụng cơ chế **Hybrid Language Protocol** (Song ngữ Anh-Việt) để tối ưu hóa cả khả năng hiểu của AI và sự tiện lợi cho đội ngũ phát triển.
 
 ---
 
-## 0. Chế độ Vận hành Thích ứng (Operation Modes v4.0)
+## 0. Triết lý "Mục đích kép" (Dual Audience)
 
-Từ phiên bản **v4.0.0**, hệ thống Rules không còn là các file rời rạc mà được gắn chặt vào **Cơ chế vận hành (Operation Modes)** dựa trên quy mô dự án:
+Các file trong thư mục `.agent/rules/` được thiết kế để phục vụ cùng lúc 2 đối tượng:
 
-| Quy Mô (Scale) | Chế độ Vận hành | Đặc điểm | Liên kết (Linkage) |
+1.  **🤖 AI Agent (Constraint Layer)**:
+    -   Đóng vai trò là "Rào chắn" (Guardrails).
+    -   Ví dụ: Khi Agent đọc rule `code-quality.md`, nó biết ngay lệnh cấm: *"No console.log in production"*.
+    -   Agent hiểu hoàn hảo cả Tiếng Anh (Keyword) và Tiếng Việt (Context).
+
+2.  **👨‍💻 Human Team (Standard Layer)**:
+    -   Đóng vai trò là "Cẩm nang phát triển" (Wiki).
+    -   Thành viên mới gia nhập dự án có thể đọc để nắm bắt Coding Style, Quy trình Git, Bảo mật.
+    -   Sử dụng Tiếng Việt giúp anh em dev nắm bắt nhanh hơn, tránh rào cản ngôn ngữ.
+
+3.  **🏢 Professional Protocol (Compliance Layer)**:
+    -   Mọi Rule hiện nay đều được liên kết trực tiếp vào các Phase của **Unified Protocol** (Discovery, Planning, Execution, Audit).
+    -   Agent không thể bỏ qua Rule nếu muốn pass qua giai đoạn **Audit**.
+
+---
+
+## 1. Giao thức Ngôn ngữ Lai (Hybrid Language Protocol)
+
+Để đạt hiệu quả tối đa, hệ thống áp dụng quy tắc ngôn ngữ sau:
+
+| Thành phần | Ngôn ngữ | Lý do | Ví dụ |
 | :--- | :--- | :--- | :--- |
-| **👤 Cá nhân** | **Solo-Ninja** (Flexible) | Agent đa nhiệm. Cho phép sửa code chéo Domain. Tối ưu tốc độ. | DNA Hybrid. |
-| **👥 Team** | **Agile-Squad** (Balanced) | Phân hóa FE/BE rõ ràng. Phải có Verify Plan. | DNA Module-based. |
-| **🏢 Doanh nghiệp** | **Software-Factory** (Strict) | Ép buộc PDCA 5 bước. Luôn có Security Audit & Quality Check. | DNA Standardized. |
+| **Logic Cốt lõi** | 🇬🇧 **Tiếng Anh** | Chính xác cho máy, keyword chuẩn quốc tế. | `Metadata`, `Variable Name`, `Anti-Patterns` |
+| **Giải thích/Ngữ cảnh** | 🇻🇳 **Tiếng Việt** | Tự nhiên, dễ hiểu cho người Việt. | "Mục tiêu: Đảm bảo mã nguồn sạch..." |
+| **Cấu hình (Config)** | 🇬🇧 **Tiếng Anh** | Bắt buộc do cú pháp hệ thống. | `json`, `yaml`, `regex` |
 
 ---
 
-## 🛡️ 1. Hiến pháp GEMINI.md & Mạch máu DNA
-
-Trong kiến trúc mới, mọi luật lệ đều xoay quanh 2 trục chính:
-1. **GEMINI.md (Constitution)**: Định hình nhân dạng và rào chắn vận hành.
-2. **.shared/ (DNA)**: Chứa các "Luật vật lý" của dự án (API chuẩn, Design chuẩn, AI chuẩn). Mọi Rules (`frontend.md`, `backend.md`) đều **bắt buộc** phải soi chiếu vào DNA này trước khi phê duyệt code.
-
----
-
-## 1. Phân Loại Rules
+## 2. Phân Loại Rules
 
 ### 🤖 Nhóm Tự Động (Auto-Active)
 *Luôn chạy ngầm, bạn không cần gọi.*
 
-| Rule | Kích hoạt khi | Chức năng |
+| Rule | Chức năng | Ngôn ngữ |
 | :--- | :--- | :--- |
-| **`security`** | **Luôn luôn** | Chặn hardcode API Key, SQL Injection, XSS. |
-| **`malware-protection`** | **Luôn luôn** | Chống virus, link độc hại và kiểm soát package. |
-| **`error-logging`** | **Luôn luôn** | Tự động ghi lại mọi lỗi vào ERRORS.md để học tập. |
-| **`frontend`** | File `.js`, `.css`, `.tsx` | Chuẩn hóa UI, Spacing, Responsive. |
-| **`backend`** | File `.py`, `.go`, `.sql` | Chuẩn Clean Architecture, API Response. |
-| **`gemini`** | **Luôn luôn** | Cấu hình lõi, tính cách Agent. |
-| **`system-update`** | Khi hỏi về Version | Tự động kiểm tra và nâng cấp Antigravity IDE. |
-| **`docs-update`** | **Luôn luôn** | Checklist cập nhật docs khi thêm tính năng mới. |
+| **`GEMINI.md`** | **Hiến pháp lõi**: Định hình nhân dạng, tính cách và các mode vận hành (Solo/Team/Factory). | Hybrid |
+| **`security.md`** | **Bảo mật**: Chặn hardcode API Key, SQL Injection, XSS. | Hybrid |
+| **`code-quality.md`** | **Chất lượng**: Quy định về Naming, Comments, Error Handling. | Hybrid |
+| **`frontend.md`** | **Giao diện**: Chuẩn hóa UI/UX, Responsive, Performance. | Hybrid |
+| **`backend.md`** | **Hệ thống**: Chuẩn Clean Architecture, API Response, DB Schema. | Hybrid |
+| **`testing-standard.md`** | **Kiểm thử**: Quy chuẩn Pyramid, Naming, Mocking & Coverage. | Hybrid |
+| **`malware-protection`** | **An toàn**: Chống virus, link độc hại và kiểm soát package. | English |
+| **`error-logging`** | **Học tập**: Tự động ghi lại lỗi vào ERRORS.md. | Hybrid |
+| **`docs-update`** | **Tài liệu**: Checklist tự động cập nhật docs khi có tính năng mới. | Hybrid |
+| **`system-update`** | **Hệ thống**: Tự động kiểm tra và nâng cấp Antigravity IDE. | Hybrid |
 
 ### 🛠️ Nhóm Theo Yêu Cầu (On-Demand / @Tags)
 *Chỉ chạy khi có ngữ cảnh phù hợp hoặc được bạn gọi đích danh.*
 
 | Tag Gọi | Tên Rule | Chức năng |
 | :--- | :--- | :--- |
-| **`@biz`** | `business` | Kiểm tra logic nghiệp vụ, tính tiền, quyền hạn. |
-| **`@legal`** | `compliance` | Rà soát GDPR, bảo mật dữ liệu, Logging chuẩn. |
-| **`@arch`** | `architecture-review` | Đánh giá khả năng chịu tải, HA, Microservices. |
-| **`@debug`** | `debug` | Kích hoạt quy trình 4 bước: Điều tra -> Test -> Sửa -> Báo cáo. |
+| **`@biz`** | `business.md` | Kiểm tra logic nghiệp vụ, tính tiền, quyền hạn. |
+| **`@legal`** | `compliance.md` | Rà soát GDPR, bảo mật dữ liệu, Logging chuẩn. |
+| **`@arch`** | `architecture-review.md` | Đánh giá khả năng chịu tải, HA, Microservices. |
+| **`@debug`** | `debug.md` | Kích hoạt quy trình 4 bước: Điều tra -> Test -> Sửa -> Báo cáo. |
 
 ---
 
-## 2. Cách Sử Dụng Semantic Tags (@)
+## 3. Cách Sử Dụng Semantic Tags (@)
 
 Bạn có thể dùng ký tự `@` trong lệnh chat để **ép buộc** Agent tập trung vào một khía cạnh cụ thể.
 
-### Ví dụ thực tế:
+**Ví dụ thực tế:**
 
-**1. Khi Review Logic Tính Tiền:**
-> "Agent, hãy `@biz` check lại hàm tính thuế này xem có bị lỗi làm tròn số (Float) không?"
-*(Agent sẽ lôi `rules/business.md` ra để soi kỹ vấn đề Decimal vs Float)*
+1.  **Khi Review Logic Tính Tiền:**
+    > "Agent, hãy `@biz` check lại hàm tính thuế này xem có bị lỗi làm tròn số (Float) không?"
+    *(Agent sẽ lôi `rules/business.md` ra để soi kỹ vấn đề Decimal vs Float)*
 
-**2. Khi Audit Bảo Mật Dữ Liệu:**
-> "Code này `@legal` có vi phạm quy tắc log email người dùng không?"
-*(Agent sẽ đối chiếu với `rules/compliance.md` về PII masking)*
+2.  **Khi Audit Bảo Mật Dữ Liệu:**
+    > "Code này `@legal` có vi phạm quy tắc log email người dùng không?"
+    *(Agent sẽ đối chiếu với `rules/compliance.md` về PII masking)*
 
-**3. Khi Sửa Lỗi Khó:**
-> "Hệ thống đang bị lỗi 500, `@debug` điều tra giúp tôi."
-*(Agent kích hoạt chế độ Sherlock Holmes)*
-
-**4. Khi Thiết Kế Hệ Thống Lớn:**
-> "Tôi muốn xây dựng module Payment, `@arch` tư vấn giải pháp chịu tải cao."
-*(Agent dùng `rules/architecture-review.md` để tư vấn Redis/Queue)*
+3.  **Khi Sửa Lỗi Khó:**
+    > "Hệ thống đang bị lỗi 500, `@debug` điều tra giúp tôi."
+    *(Agent kích hoạt chế độ Sherlock Holmes)*
 
 ---
 
-## 3. Tại sao cần chia ra như vậy?
+## 4. Tại sao cần chia ra như vậy?
 
-*   Nếu nạp **tất cả** luật cùng lúc: Agent sẽ bị "quá tải" (Cognitive Overload), dẫn đến xử lý chậm và hay quên các chi tiết nhỏ.
-*   Cơ chế **@Tags** giúp bạn điều hướng sự tập trung của Agent vào đúng chỗ cần thiết nhất tại thời điểm đó.
+*   **Tránh Overload**: Nếu nạp **tất cả** luật cùng lúc, Agent sẽ bị "quá tải" (Cognitive Overload).
+*   **Tăng độ chính xác**: Cơ chế **@Tags** giúp bạn điều hướng sự tập trung của Agent vào đúng chỗ cần thiết nhất.
+*   **Thân thiện**: Cách viết Hybrid giúp Rule trở nên "có hồn" hơn, giống như một người mentor đang hướng dẫn team.
 
-> **Mẹo**: Hãy coi các Rule này là các "Cố vấn chuyên môn". Khi cần ai, hãy gọi tên người đó!
+> **Lời khuyên**: Hãy coi `rules/` là thư viện luật pháp của dự án. Khi cần ban hành luật mới, hãy tạo file mới hoặc sửa file cũ theo chuẩn Hybrid này.

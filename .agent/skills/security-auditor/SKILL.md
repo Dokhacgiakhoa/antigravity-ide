@@ -1,8 +1,9 @@
 ---
 name: security-auditor
-description: >
-  MASTER SECURITY: OWASP Top 10, SAST/DAST, PenTest, Auth/JWT Audit, Data Encryption, 
-  Incident Response. Use for Code Security, Armor config, and Audits.
+description: MASTER SECURITY: OWASP Top 10, SAST/DAST, PenTest.
+category: security
+version: 4.0.5
+layer: master-skill
 ---
 
 # 🛡️ Security Auditor & DevSecOps Master

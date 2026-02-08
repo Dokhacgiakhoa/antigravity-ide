@@ -1,7 +1,9 @@
 ---
 name: geo-fundamentals
 description: Generative Engine Optimization for AI search engines (ChatGPT, Claude, Perplexity).
-allowed-tools: Read, Glob, Grep
+category: seo
+version: 4.0.5
+layer: master-skill
 ---
 
 # GEO Fundamentals

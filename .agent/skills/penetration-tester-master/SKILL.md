@@ -1,9 +1,9 @@
 ---
 name: penetration-tester-master
-description: >
-  Ultimate Offensive Security Master Skill. Covers Ethical Hacking Methodology, 
-  Infrastructure Attacks (AD, AWS), Web Vulnerabilities (OWASP Top 10, Bug Bounty), 
-  and Advanced Toolsets (Metasploit, Burp Suite, SQLMap).
+description: Ultimate Offensive Security Master Skill.
+category: security
+version: 4.0.5
+layer: master-skill
 ---
 
 # 🗡️ Penetration Tester Master Kit

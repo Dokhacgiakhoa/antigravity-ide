@@ -10,19 +10,20 @@ const skillCategories = {
       'full-stack-scaffold',
       'api-documenter',
       'i18n-localization',
-      'react-best-practices',
+      'modern-web-performance',
+      'nextjs-react-expert',
       'tailwind-patterns',
       'frontend-design',
-      'edge-runtime-expert',
-      'turborepo-master',
-      'vitest-pro'
+      'antfu-coding-style',
+      'lint-and-validate'
     ]
   },
   mobile: {
     name: 'Mobile Development (iOS, Android, Cross-Platform)',
     skills: [
       'mobile-design',
-      'game-development'
+      'game-development',
+      'react-native-best-practices'
     ]
   },
   ai: {
@@ -30,44 +31,43 @@ const skillCategories = {
     skills: [
       'ai-engineer',
       'geo-fundamentals',
-      'prompt-engineer',
-      'voice-ai-engine',
-      'rag-architect',
-      'multi-agent-orchestration',
-      'stateful-graph-design',
-      'agent-evaluation-system'
+      'langgraph-engineering',
+      'intelligent-routing',
+      'parallel-agents',
+      'agent-orchestration',
+      'behavioral-modes'
     ]
   },
   research: {
     name: 'Strategic Research & Wisdom (Fabric Patterns)',
     skills: [
-      'paper-analysis-pro',
-      'market-competitor-intelligence',
-      'wisdom-extraction-engine',
-      'strategic-problem-solving',
-      'content-synthesis-master'
+      'strategic-research',
+      'brainstorming',
+      'plan-writing',
+      'architecture',
+      'systematic-debugging'
     ]
   },
   uiux: {
     name: 'UI/UX Pro Max (NextLevel Aesthetics)',
     skills: [
-      'magic-ui-patterns',
-      'framer-motion-master',
-      'micro-interactions-design',
-      'premium-glassmorphism-kit',
-      'design-system-architect'
+      'ui-ux-pro-max-skill',
+      'frontend-design',
+      'web-design-guidelines'
     ]
   },
   devops: {
     name: 'DevOps & Cloud (Enterprise Grade)',
     skills: [
       'cloud-architect-master',
+      'deployment-procedures',
       'deployment-engineer',
       'incident-responder',
       'mcp-builder',
-      'docker-expert',
-      'k8s-orchestration',
-      'zero-downtime-deployment'
+      'server-management',
+      'vercel-deploy',
+      'bash-linux',
+      'powershell-windows'
     ]
   },
   security: {
@@ -77,8 +77,8 @@ const skillCategories = {
       'penetration-tester-master',
       'production-code-audit',
       'vulnerability-scanner',
-      'owasp-top-10',
-      'gdpr-compliance-expert'
+      'red-team-tactics',
+      'malware-analyst'
     ]
   },
   growth: {
@@ -86,31 +86,35 @@ const skillCategories = {
     skills: [
       'cro-expert-kit',
       'seo-expert-kit',
+      'seo-fundamentals',
+      'database-design',
       'database-migration',
       'performance-engineer',
-      'copywriting-master',
-      'paid-ads-specialist',
-      'product-metrics-analytics'
+      'performance-profiling'
     ]
   },
   maker: {
-    name: 'Maker & Indie Hacking (Sickn33 & Numman-Ali)',
+    name: 'Maker & Indie Hacking (Sickn33) ',
     skills: [
-      'telegram-bot-builder',
-      'viral-generator',
-      'product-hunt-launch',
-      'nocode-automation',
-      'rapid-mvp-scaffolding'
+      'app-builder',
+      'api-patterns',
+      'nodejs-best-practices',
+      'python-patterns',
+      'filesystem-mcp',
+      'github-mcp',
+      'notion-mcp',
+      'postgres-mcp',
+      'puppeteer-mcp'
     ]
   },
   testing: {
     name: 'Professional QA & Testing',
     skills: [
       'tdd-master-workflow',
-      'qa-automation',
-      'cypress-testing',
-      'jest-expert',
-      'load-stress-testing'
+      'tdd-workflow',
+      'testing-patterns',
+      'webapp-testing',
+      'code-review-checklist'
     ]
   }
 };

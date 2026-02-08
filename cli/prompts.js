@@ -2,12 +2,27 @@ const prompts = require('prompts');
 const chalk = require('chalk');
 const gradient = require('gradient-string');
 const packageJson = require('../package.json');
+const { execSync } = require('child_process');
 
 // Import Logic Modules
 const { skillCategories, getSkillsForCategories } = require('./logic/skill-definitions');
 const { getScaleConfig } = require('./logic/scale-rules');
-const { getProductSkills } = require('./logic/product-skills');
+const { getProductConfig } = require('./logic/product-skills');
 const { getWorkflows } = require('./logic/workflow-manager');
+
+function checkPython() {
+  try {
+    execSync('python --version', { stdio: 'ignore' });
+    return true;
+  } catch (e) {
+    try {
+      execSync('python3 --version', { stdio: 'ignore' });
+      return true;
+    } catch (e2) {
+      return false;
+    }
+  }
+}
 
 // Display concise banner with gradient
 function displayBanner() {
@@ -20,7 +35,7 @@ function displayBanner() {
   console.log(gradient.pastel.multiline(' / ___ |/ / / / /_/ / /_/ / /  / /_/ /| |/ / / /_/ /_/ / '));
   console.log(gradient.pastel.multiline('/_/  |_/_/ /_/\\__/_/\\____/_/   \\__,_/ |___/_/\\__/\\__, /  '));
   console.log(gradient.pastel.multiline('                                                 /____/   '));
-  console.log(chalk.gray(`  Google Antigravity • v${packageJson.version}`));
+  console.log(chalk.gray(`  AntiGravity IDE • v${packageJson.version}`));
   console.log(chalk.gray('  Developed with 💡 by Dokhacgiakhoa'));
   console.log(gradient.rainbow('━'.repeat(60)));
   console.log('');
@@ -31,9 +46,9 @@ async function getProjectConfig(skipPrompts = false, predefinedName = null) {
     return {
       projectName: predefinedName || 'my-agent-project',
       template: 'standard',
-      rules: 'balanced',
+      rules: 'creative',
       skillCategories: ['webdev'],
-      workflows: ['git', 'testing'],
+      workflows: ['test', 'debug'],
       includeDashboard: false,
       language: 'en',
       packageManager: 'npm',
@@ -42,6 +57,8 @@ async function getProjectConfig(skipPrompts = false, predefinedName = null) {
       industryDomain: 'other' // Default
     };
   }
+
+  const hasPython = checkPython();
 
   // Display beautiful banner
   displayBanner();
@@ -81,13 +98,13 @@ async function getProjectConfig(skipPrompts = false, predefinedName = null) {
       name: 'scale', // Maps to 'rules'
       message: (prev, values) => values.language === 'vi' ? 'Quy mô dự án:' : 'Project Scale:',
       choices: (prev, values) => values.language === 'vi' ? [
-        { title: '👤 Cá nhân (Personal) - Cơ chế linh hoạt, tự chủ', value: 'flexible' },
-        { title: '👥 Team (Nhóm) - Cân bằng, hỏi trước khi sửa file', value: 'balanced' },
-        { title: '🏢 Doanh nghiệp (Enterprise) - Nghiêm ngặt, kiểm soát 100%', value: 'strict' }
+        { title: '🍜 Mì ăn liền (Instant) - MVP, nhanh gọn, tập trung Frontend', value: 'instant' },
+        { title: '🎨 Sáng tạo (Creative) - Nghiên cứu, Sandbox, Full tính năng', value: 'creative' },
+        { title: '🏢 SME (Enterprise) - Ổn định, Vận hành, Clean Code', value: 'sme' }
       ] : [
-        { title: '👤 Personal - Flexible, High Autonomy', value: 'flexible' },
-        { title: '👥 Team - Balanced, Confirm core changes', value: 'balanced' },
-        { title: '🏢 Enterprise - Strict, 100% Control', value: 'strict' }
+        { title: '🍜 Instant - MVP, Fast, Frontend Focus', value: 'instant' },
+        { title: '🎨 Creative - Research, Sandbox, Full Features', value: 'creative' },
+        { title: '🏢 SME - Stable, Operations, Clean Code', value: 'sme' }
       ],
       initial: 0
     },
@@ -96,10 +113,10 @@ async function getProjectConfig(skipPrompts = false, predefinedName = null) {
       name: 'productType',
       message: (prev, values) => values.language === 'vi' ? 'Loại sản phẩm (Product Type):' : 'Select Product Type:',
       choices: (prev, values) => values.language === 'vi' ? [
-        { title: '📱 User Application (App/Web/Mobile/Desktop)', value: 'user_app' },
-        { title: '🛠️ Developer Tool (CLI/Library/API)', value: 'dev_tool' },
-        { title: '🤖 AI Agent (Chatbot/Automation)', value: 'ai_agent' },
-        { title: '🎨 Digital Asset (Game/Template/Media)', value: 'digital_asset' }
+        { title: '📱 Ứng dụng Người dùng (App/Web/Mobile)', value: 'user_app' },
+        { title: '🛠️ Công cụ Lập trình (CLI/Library/API)', value: 'dev_tool' },
+        { title: '🤖 Trợ lý AI (Chatbot/Automation)', value: 'ai_agent' },
+        { title: '🎨 Tài sản Số (Game/Template/Media)', value: 'digital_asset' }
       ] : [
         { title: '📱 User Application (App/Web/Mobile/Desktop)', value: 'user_app' },
         { title: '🛠️ Developer Tool (CLI/Library/API)', value: 'dev_tool' },
@@ -121,6 +138,12 @@ async function getProjectConfig(skipPrompts = false, predefinedName = null) {
     }
   });
   
+  // Warning for missing Python in Advanced Modes
+  if (responses.scale !== 'instant' && !hasPython) {
+    console.log(chalk.yellow(`\n⚠️  Warning: Python is recommended for ${responses.scale.toUpperCase()} mode (AI & Data features).`));
+    console.log(chalk.gray('   Follow Python installation guide in docs/INSTALL_NPX_GUIDE.vi.md if needed.'));
+  }
+
   // Inject predefined name if it exists (so logic downstream works)
   console.log(`\n${chalk.green('✔')} Setup Complete! Generating Project Plan...`);
   if (predefinedName) {
@@ -136,7 +159,7 @@ async function getProjectConfig(skipPrompts = false, predefinedName = null) {
   const scaleConfig = getScaleConfig(responses.scale);
 
   // 2. Get Product Skills
-  const productSkills = getProductSkills(responses.productType);
+  const { skills: productSkills, sharedModules } = getProductConfig(responses.productType);
 
   // 3. Combine Skills (Core + Product)
   const allSkills = new Set([...scaleConfig.coreSkillCategories, ...productSkills]);

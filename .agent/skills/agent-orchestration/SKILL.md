@@ -1,3 +1,11 @@
+---
+name: agent-orchestration
+description: Multi-agent orchestration and state management.
+category: orchestration
+version: 4.0.5
+layer: master-skill
+---
+
 # 🤖 Multi-Agent Orchestration & State Management
 > **Source**: Microsoft AutoGen / LangGraph / Semantic Kernel
 

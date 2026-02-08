@@ -1,7 +1,9 @@
 ---
 name: powershell-windows
-description: PowerShell Windows patterns. Critical pitfalls, operator syntax, error handling.
-allowed-tools: Read, Write, Edit, Glob, Grep, Bash
+description: PowerShell Windows patterns and pitfalls.
+category: tools
+version: 4.0.5
+layer: master-skill
 ---
 
 # PowerShell Windows Patterns

@@ -1,9 +1,9 @@
 ---
 name: legacy-modernizer
-description: >
-  Refactor legacy codebases, migrate outdated frameworks, and implement gradual 
-  modernization. Handles technical debt, dependency updates, and backward compatibility. 
-  Uses the Strangler Fig pattern for safe transitions.
+description: Refactor legacy codebases, migrate outdated frameworks, and implement gradual modernization.
+category: development
+version: 4.0.5
+layer: master-skill
 ---
 
 # 🏛️ Legacy Modernizer Master Kit

@@ -40,7 +40,7 @@ Tổng hợp các vấn đề thường gặp khi sử dụng Antigravity IDE v�
 ---
 
 ## 🆘 Vẫn không sửa được?
-Hãy tạo Issue trên [GitHub](https://github.com/Dokhacgiakhoa/google-antigravity/issues) để team hỗ trợ nhé!
+Hãy tạo Issue trên [GitHub](https://github.com/Dokhacgiakhoa/antigravity-ide/issues) để team hỗ trợ nhé!
 
 ## 🐛 Known Bugs (Các lỗi đã biết)
 

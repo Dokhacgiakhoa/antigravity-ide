@@ -1,9 +1,9 @@
 ---
 name: seo-expert-kit
-description: >
-  Comprehensive SEO Master Skill covering fundamentals, audit, content creation, 
-  technical optimization, and scaling. Replaces all fragmented SEO skills. 
-  Covers E-E-A-T, Core Web Vitals, Programmatic SEO, and Content Strategy.
+description: Comprehensive SEO Master Skill covering fundamentals, audit, content creation, technical optimization, and scaling.
+category: seo
+version: 4.0.5
+layer: master-skill
 ---
 
 # 🚀 SEO Expert Kit (Master Skill)

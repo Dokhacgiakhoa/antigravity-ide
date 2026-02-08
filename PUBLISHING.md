@@ -176,3 +176,28 @@ npm owner add <username> antigravity-ide
 ---
 
 **Congratulations! Your package is now live on npm! 🎉**
+
+---
+
+## GitHub Packages Support
+
+This project is configured to **Dual Publish**:
+1. **npm Registry**: `antigravity-ide` (Public, Unscoped)
+2. **GitHub Packages**: `@Dokhacgiakhoa/antigravity-ide` (Scoped to repository owner)
+
+### How it works
+The `release.yml` workflow automatically renames the package to `@Dokhacgiakhoa/antigravity-ide` *only* during the GitHub Packages publishing step. This ensures the source code remains `antigravity-ide` for npm compatibility.
+
+### Installing from GitHub Packages
+To install the scoped version from GitHub:
+
+1. Create a `.npmrc` file in your project:
+   ```ini
+   @Dokhacgiakhoa:registry=https://npm.pkg.github.com
+   //npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN
+   ```
+
+2. Install:
+   ```bash
+   npm install @Dokhacgiakhoa/antigravity-ide
+   ```

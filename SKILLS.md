@@ -1,18 +1,18 @@
 # Skills Inventory - Antigravity IDE
 
-**Last Updated:** 2026-02-04  
-**Total Skills:** 58 Master Skills (Encapsulating 600+ Capabilities/Patterns)  
-**Source:** [Dokhacgiakhoa/google-antigravity](https://github.com/Dokhacgiakhoa/google-antigravity)
+**Last Updated:** 2026-02-08  
+**Total Skills:** 72 Master Skills (Encapsulating 700+ Capabilities/Patterns)  
+**Source:** [Dokhacgiakhoa/antigravity-ide](https://github.com/Dokhacgiakhoa/antigravity-ide)
 
 ---
 
 ## 🎯 Overview
 
-Antigravity IDE organizes intelligence into **58 high-density Master Skills**. Each skill consolidates the best practices and instructions of over **600+ capabilities & patterns** from our open-source lineage, optimized for high-performance AI orchestration.
+Antigravity IDE organizes intelligence into **72 high-density Master Skills**. Each skill consolidates the best practices and instructions of over **700+ capabilities & patterns** from our open-source lineage, optimized for high-performance AI orchestration.
 
 ### ✨ Key Features
 
-- **🤖 AI-Agnostic**: Tối ưu hóa cho Gemini 3.5 Pro, Flash và Ultra
+- **🤖 AI-Agnostic**: Optimized for Gemini 2.0 Pro, Flash, and Ultra
 - **📦 Production-Ready**: Battle-tested by 500+ contributors
 - **🔄 Auto-Sync**: Skills continuously updated from source repo
 - **📚 Well-Documented**: Each skill has clear instructions and examples
@@ -25,22 +25,27 @@ Antigravity IDE organizes intelligence into **58 high-density Master Skills**. E
 ### 1. 💻 Development (180+ skills)
 
 **Frontend Development**
-- `nextjs-react-expert` - Next.js 14+ App Router and React 19 optimization
-- `react-patterns` - Modern React patterns and hooks
+- `nextjs-react-expert` - Next.js 15+ App Router and React 19 optimization
+- `red-team-tactics` - Offensive security operations
+- `filesystem-mcp` - Secure local file operations (Read/Write/Move) and hooks
 - `typescript-pro` - Advanced TypeScript with type-level programming
-- `tailwind-patterns` - Tailwind CSS v4 and design systems
+- `tailwind-patterns` - Tailwind CSS v4 and modern design tokens
 - `frontend-design` - UI/UX principles and production-grade interfaces
+- `react-best-practices` - Vercel Engineering standards for React 19 & Next.js 14+
+- `antfu-coding-style` - Opinionated Vue/TS style guide by Anthony Fu
 
 **Backend Development**
 - `fastapi-pro` - Async Python APIs with FastAPI
 - `nodejs-backend-patterns` - Express/Fastify production patterns
 - `golang-pro` - Go 1.21+ with modern concurrency
-- `rust-pro` - Rust 1.75+ systems programming
+- `golang-pro` - Go 1.21+ with modern concurrency
+- `rust-pro` - Rust 1.75+ systems programming (Async, Memory Safety)
 - `dotnet-architect` - C#/.NET Core enterprise patterns
 
 **Mobile Development**
 - `mobile-design` - Mobile-first design and engineering
 - `react-native-architecture` - Cross-platform app development
+- `react-native-best-practices` - Expo Router, FlashList, NativeWind patterns (Vercel Labs)
 - `flutter-expert` - Flutter with Dart 3
 - `ios-developer` - Native iOS with Swift/SwiftUI
 
@@ -60,6 +65,8 @@ Antigravity IDE organizes intelligence into **58 high-density Master Skills**. E
 
 **CI/CD & Deployment**
 - `deployment-engineer` - GitHub Actions, ArgoCD, GitOps
+- `github-mcp` - Official GitHub repository management (Issues, PRs, Tree)
+- `vercel-deploy` - Automated Vercel deployment with framework detection
 - `docker-expert` - Container optimization and security
 - `gitops-workflow` - Declarative infrastructure management
 
@@ -75,6 +82,8 @@ Antigravity IDE organizes intelligence into **58 high-density Master Skills**. E
 **Database Design**
 - `database-architect` - Schema design and technology selection
 - `database-optimizer` - Query optimization and performance
+- `postgres-mcp` - Official PostgreSQL schema inspection & querying
+- `postgres-best-practices` - Supabase/PostgreSQL optimization, RLS, Indexing
 - `postgresql` - PostgreSQL-specific patterns
 - `nosql-expert` - Cassandra, DynamoDB, MongoDB
 
@@ -100,10 +109,10 @@ Antigravity IDE organizes intelligence into **58 high-density Master Skills**. E
 - `langchain-architecture` - Agent frameworks
 
 **Agent Development**
-- `ai-agents-architect` - Autonomous agent design
-- `agent-orchestration` - Multi-agent systems
-- `crewai` - Role-based agent frameworks
-- `langgraph` - Stateful agent workflows
+- `langgraph-engineering` - Advanced stateful agents with persistence & cycles (v1.0)
+- `voice-ai-engine-development` - Real-time Voice AI architecture (VAD, STT, LLM, TTS)
+- `daily-news-report` - Automated news aggregation agent
+- `notion-mcp` - Notion workspace integration (Pages, Databases)
 
 **Model Integration**
 - `llm-app-patterns` - RAG, agents, LLMOps
@@ -150,6 +159,8 @@ Antigravity IDE organizes intelligence into **58 high-density Master Skills**. E
 
 **SEO & Content**
 - `seo-fundamentals` - E-E-A-T, Core Web Vitals
+- `geo-fundamentals` - Generative Engine Optimization
+- `puppeteer-mcp` - Browser automation & UI testing (Screenshots, Clicks)als
 - `seo-audit` - Technical SEO diagnosis
 - `content-marketer` - Content strategy and optimization
 
@@ -273,5 +284,5 @@ Instructions, examples, and best practices...
 
 ---
 
-*For the complete list of all 550 skills, explore the `.agent/skills` directory or visit [Dokhacgiakhoa/google-antigravity](https://github.com/Dokhacgiakhoa/google-antigravity)*
+*For the complete list of all 550 skills, explore the `.agent/skills` directory or visit [Dokhacgiakhoa/antigravity-ide](https://github.com/Dokhacgiakhoa/antigravity-ide)*
 

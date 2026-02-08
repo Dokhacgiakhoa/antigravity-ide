@@ -1,11 +1,9 @@
 ---
 name: incident-responder
-description: >
-  Expert SRE incident responder specializing in rapid problem resolution, 
-  modern observability, and comprehensive incident management. Masters 
-  incident command, blameless post-mortems, error budget management, 
-  and system reliability patterns. Handles critical outages, communication 
-  strategies, and continuous improvement.
+description: Expert SRE incident responder specializing in rapid problem resolution.
+category: infrastructure
+version: 4.0.5
+layer: master-skill
 ---
 
 # 🚨 Incident Responder Master Kit

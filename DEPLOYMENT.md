@@ -69,8 +69,8 @@ antigravity-ide
 ## Links
 
 - **npm Package:** https://www.npmjs.com/package/antigravity-ide
-- **GitHub Repository:** https://github.com/Dokhacgiakhoa/google-antigravity
-- **Documentation:** https://github.com/Dokhacgiakhoa/google-antigravity#readme
+- **GitHub Repository:** https://github.com/Dokhacgiakhoa/antigravity-ide
+- **Documentation:** https://github.com/Dokhacgiakhoa/antigravity-ide#readme
 
 ---
 

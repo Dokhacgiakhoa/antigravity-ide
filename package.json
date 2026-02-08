@@ -1,7 +1,7 @@
 {
   "name": "antigravity-ide",
-  "version": "4.0.4",
-  "description": "The Ultimate AI Agent Brain - Rules, Skills, and Workflows",
+  "version": "4.0.5",
+  "description": "The First AI-Native IDE designed for Vibe Coding & Agentic Workflow.",
   "main": "cli/index.js",
   "bin": {
     "antigravity": "./cli/index.js",
@@ -30,14 +30,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Dokhacgiakhoa/google-antigravity.git"
+    "url": "git+https://github.com/Dokhacgiakhoa/antigravity-ide.git"
   },
   "keywords": [
     "antigravity",
-    "antigravity-ide",
-    "cli",
-    "rules",
-    "agent",
+    "vibe-coding",
+    "ai-agent",
+    "ide",
+    "agentic-workflow",
+    "cursor",
+    "code-generation",
     "ai",
     "productivity",
     "workflow",
@@ -45,5 +47,9 @@
     "llm"
   ],
   "author": "Dokhacgiakhoa",
+  "contributors": [
+    "vudovn (Reference Author)",
+    "sickn33 (Reference Author)"
+  ],
   "license": "MIT"
 }

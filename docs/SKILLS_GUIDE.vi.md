@@ -1,6 +1,6 @@
 # 🧠 Hướng Dẫn Về "Kỹ Năng" (Skills System)
 
-> **Antigravity IDE** không chỉ là một con bot chat. Nó là một tập hợp của **58 Chuyên Gia Ảo (Master Skills)**, mỗi người phụ trách một mảng công nghệ chuyên sâu.
+> **AntiGravity IDE** không chỉ là một con bot chat. Nó là một tập hợp của **72 Chuyên Gia Ảo (Master Skills)**, mỗi chuyên gia phụ trách một mảng công nghệ chuyên sâu đạt chuẩn v4.0.5.
 
 ---
 
@@ -8,9 +8,9 @@
 
 ### 🧩 Sci-Link (Scientific Metadata Linkage)
 Ở phiên bản v4.0, mỗi **Skill** không chỉ là một file hướng dẫn. Nó là một thực thể được liên kết khoa học:
-- **`domain`**: Xác định mảng chuyên môn (AI, UI, Security).
-- **`dna_ref`**: Mỗi Skill luôn soi chiếu vào **Hạt nhân DNA** (nằm trong `.shared/`) để đảm bảo code sinh ra luôn đúng tiêu chuẩn của sếp.
-- **`rule_ref`**: Skill được giám sát bởi các bộ luật rào chắn tương ứng.
+- **`layer`**: Phân lớp kỹ năng (master-skill, tool-skill).
+- **`category`**: Phân loại theo mục đích sử dụng (development, security, performance...).
+- **`version`**: Phiên bản chuẩn hóa 4.0.5.
 
 ---
 
@@ -35,25 +35,33 @@ Vũ khí (Skills) được cấp phát thông minh dựa trên **Quy mô dự á
 
 ### 💻 Nhóm Phát Triển (Development)
 *   **`modern-web-architect`**: Trùm Frontend, Next.js, React 19 Best Practices.
-*   **`nextjs-react-expert`** *(Mới)*: Chuyên sâu Next.js 14+ App Router và React optimization.
+*   **`react-best-practices`** *(Mới)*: Chuẩn Vercel Engineering cho Next.js 14+ & React 19.
+*   **`antfu-coding-style`** *(Mới)*: Phong cách code Minimalist & High-Performance của Anthony Fu.
+*   **`nextjs-react-expert`**: Chuyên sâu Next.js 15+ App Router và React optimization.
 *   **`backend-specialist`**: API Design, Microservices.
 *   **`nodejs-best-practices`** *(Mới)*: Node.js patterns, async patterns, security.
 *   **`python-patterns`** *(Mới)*: Python development, Django/Flask, type hints.
 *   **`mobile-design`**: React Native Patterns, Flutter.
+*   **`react-native-best-practices`** *(Mới)*: Expo Router, FlashList, NativeWind (Vercel Labs).
+*   **`github-mcp`** *(Official)*: Quản lý Git Repo, Issue, PR chuẩn MCP.
 *   **`game-development`**: WebGL, Canvas, Mobile Game Logic.
 *   **`frontend-design`** *(Mới)*: UI/UX design thinking, component design.
 *   **`tailwind-patterns`** *(Mới)*: Tailwind CSS v4, design systems.
+*   **`rust-pro`** *(Mới)*: Rust Systems Programming (Async, Memory Safety).
 
 ### 🏗️ Nhóm Kiến Trúc & Thiết Kế *(Mới)*
 *   **`architecture`** *(Mới)*: Architectural decision-making, ADR.
 *   **`api-patterns`** *(Mới)*: REST vs GraphQL vs tRPC, API design.
 *   **`database-design`** *(Mới)*: Schema design, indexing strategy.
+*   **`postgres-mcp`** *(Official)*: Truy vấn & Kiểm tra Schema PostgreSQL an toàn.
+*   **`postgres-best-practices`** *(Mới)*: Tối ưu hóa Supabase/PostgreSQL (Index, RLS).
 *   **`app-builder`** *(Mới)*: Full-stack scaffolding từ natural language.
 *   **`clean-code`** *(Mới)*: Pragmatic coding standards, SOLID.
 
 ### ☁️ Nhóm Hạ Tầng (DevOps & Testing)
 *   **`devops-engineer`**: Docker, CI/CD, Kubernetes.
 *   **`deployment-procedures`** *(Mới)*: Safe deployment workflows, rollback.
+*   **`vercel-deploy`** *(Mới)*: Deploy tự động lên Vercel Network.
 *   **`mcp-builder`**: Xây dựng Model Context Protocol Server.
 *   **`tdd-master-workflow`**: Quy trình Test-Driven Development chuẩn chỉ.
 *   **`tdd-workflow`** *(Mới)*: RED-GREEN-REFACTOR cycle.
@@ -63,6 +71,7 @@ Vũ khí (Skills) được cấp phát thông minh dựa trên **Quy mô dự á
 
 ### 🛡️ Nhóm Bảo Mật (Security)
 *   **`security-auditor`**: Soát xét code tìm lỗ hổng OWASP Top 10.
+*   **`filesystem-mcp`** *(Official)*: Thao tác file nội bộ an toàn (Read, Write, Move).
 *   **`malware-analyst`**: Quét mã độc, phát hiện Phishing và phân tích URL độc hại.
 *   **`penetration-tester-master`**: Đóng vai hacker mũ trắng tấn công thử nghiệm.
 *   **`vulnerability-scanner`** *(Mới)*: OWASP 2025, Supply Chain Security.
@@ -73,6 +82,10 @@ Vũ khí (Skills) được cấp phát thông minh dựa trên **Quy mô dự á
 *   **`brainstorming`** *(Mới)*: Socratic questioning, user communication.
 *   **`parallel-agents`** *(Mới)*: Multi-agent orchestration patterns.
 *   **`intelligent-routing`** *(Mới)*: Auto agent selection.
+*   **`voice-ai-engine-development`** *(Mới)*: Xây dựng Voice Agent thời gian thực (Real-time).
+*   **`daily-news-report`** *(Mới)*: AI tự động tổng hợp tin tức thị trường.
+*   **`puppeteer-mcp`** *(Official)*: Điều khiển Browser, chụp màn hình, cào dữ liệu.
+*   **`langgraph-engineering`** *(Mới)*: Xây dựng Agent có ký ức (Memory) và Persistance.
 
 ### 🛠️ Nhóm Công Cụ & Tiện Ích *(Mới)*
 *   **`bash-linux`** *(Mới)*: Bash/Linux terminal patterns.
@@ -84,7 +97,8 @@ Vũ khí (Skills) được cấp phát thông minh dựa trên **Quy mô dự á
 *   **`documentation-templates`** *(Mới)*: README, API docs templates.
 *   **`i18n-localization`** *(Mới)*: Internationalization patterns.
 *   **`performance-profiling`** *(Mới)*: Performance measurement & analysis.
-*   **`web-design-guidelines`** *(Mới)*: Web Interface Guidelines compliance.
+*   **`web-design-guidelines`**: Web Interface Guidelines compliance.
+*   **`performance-engineer`**: Multi-layered application optimization.
 
 ### 🎨 Nhóm Thẩm Mỹ & Growth
 *   **`ui-ux-pro-max`**: Thiết kế giao diện đẹp mê ly (Linear/Magic UI).

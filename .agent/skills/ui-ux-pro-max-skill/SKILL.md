@@ -1,8 +1,9 @@
 ---
-domain: UI/UX
-dna_ref: .shared/ui-ux-pro-max/AESTHETICS.md
-rule_ref: rules/frontend.md
-scale_impact: Flexible | Balanced | Strict
+name: ui-ux-pro-max-skill
+description: Premium design and micro-interactions toolkit.
+category: design
+version: 4.0.5
+layer: master-skill
 ---
 
 # 🎨 UI/UX Pro Max - Design Intelligence System

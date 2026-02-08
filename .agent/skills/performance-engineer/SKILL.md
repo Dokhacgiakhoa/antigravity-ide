@@ -1,10 +1,9 @@
 ---
 name: performance-engineer
-description: >
-  Expert performance engineer specializing in modern observability, 
-  application optimization, and scalable system performance. Masters 
-  OpenTelemetry, distributed tracing, load testing, multi-tier caching, 
-  Core Web Vitals, and performance monitoring.
+description: Expert performance engineer specializing in modern observability.
+category: performance
+version: 4.0.5
+layer: master-skill
 ---
 
 # ⚡ Performance Engineer Master Kit

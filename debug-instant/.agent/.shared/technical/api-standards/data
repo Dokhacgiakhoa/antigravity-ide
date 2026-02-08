@@ -1,0 +1,21 @@
+{
+  "jwt": {
+    "header": { "alg": "HS256", "typ": "JWT" },
+    "payload_standard": {
+      "sub": "user_uuid",
+      "email": "string",
+      "roles": ["string"],
+      "iat": "timestamp",
+      "exp": "timestamp"
+    },
+    "storage_strategy": "HttpOnly Cookie (Recommended) or Secure LocalStorage with sliding window session"
+  },
+  "oauth2": {
+    "flows": ["Authorization Code Flow", "Refresh Token Flow"],
+    "token_types": "Bearer"
+  },
+  "api_key": {
+    "usage": "For internal microservices or 3rd party integrations",
+    "header_name": "X-API-KEY"
+  }
+}

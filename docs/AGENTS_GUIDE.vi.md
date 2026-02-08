@@ -1,6 +1,6 @@
 # 🕵️ Hướng Dẫn Về "Hệ Thống Agent" (Digital Employees)
 
-> **Antigravity** vận hành như một công ty phần mềm thu nhỏ, với các nhân viên số (AI Agents) chuyên trách từng mảng.
+> **Antigravity** không chỉ là công cụ, mà là một **Hệ điều hành Nhân sự AI**. Mọi Agent đều đã được nâng cấp lên chuẩn **Senior Principal Personnel** với khả năng phối hợp hệ sinh thái và kỷ luật vận hành tuyệt đối.
 
 ---
 
@@ -8,71 +8,18 @@
 
 Dưới đây là danh sách các nhân viên ảo sẽ phục vụ bạn:
 
-### 🏗️ Ban Kiến Trúc & Kế Hoạch
-*   **`project-planner`**:
-    *   *Vai trò*: PM (Product Manager).
-    *   *Nhiệm vụ*: Lên kế hoạch, chia nhỏ đầu việc, viết PRD.
-    *   *Khi nào gọi*: Khi dùng `/plan`.
-*   **`orchestrator`**:
-    *   *Vai trò*: Tech Lead / Thư ký.
-    *   *Nhiệm vụ*: Điều phối các agent khác, tổng hợp báo cáo.
-    *   *Khi nào gọi*: Khi dùng `/orchestrate`.
+| Nhóm | Các Agent tiêu biểu | Trọng tâm |
+|------|--------------------|-----------|
+| **1. Engineering Core** | `frontend-specialist`, `backend-specialist`, `database-architect`, `devops-engineer`, `cloud-architect`, `mobile-developer`, `full-stack-architect`. | Tính toàn vẹn dữ liệu, UI/UX Core, Infrastructure-as-Code. |
+| **2. Security & Quality** | `security-auditor`, `penetration-tester`, `test-engineer`, `performance-optimizer`, `qa-automation-engineer`, `quality-inspector`, `malware-analyst`. | Gatekeeping, bảo mật thực chiến, cam kết chất lượng. |
+| **3. Product & Orchestration** | `project-planner`, `product-manager`, `product-owner`, `orchestrator`, `growth-strategist`. | Điều phối lộ trình, tối ưu ROI và giá trị sử dụng. |
+| **4. Specialized & Support** | `seo-specialist`, `game-developer`, `documentation-writer`, `explorer-agent`, `code-archaeologist`, `debugger`. | Chuyên môn sâu, phân tích mã nguồn và tra cứu tri thức. |
 
-### 💻 Ban Kỹ Thuật (Engineer)
-*   **`frontend-specialist`**:
-    *   *Vai trò*: Senior Frontend Dev.
-    *   *Kỹ năng*: React, Vue, CSS Animation, Responsive.
-*   **`backend-specialist`**:
-    *   *Vai trò*: Senior Backend Dev.
-    *   *Kỹ năng*: API Design, Database, Auth, Logic.
-*   **`database-architect`**:
-    *   *Vai trò*: DBA (Database Administrator).
-    *   *Nhiệm vụ*: Thiết kế Schema, tối ưu câu Query.
-*   **`mobile-developer`**:
-    *   *Vai trò*: Mobile Dev.
-    *   *Task*: Code iOS/Android (React Native/Flutter).
-*   **`game-developer`**:
-    *   *Vai trò*: Game Dev.
-    *   *Task*: Phát triển game với Unity/Godot/WebGL.
-*   **`code-archaeologist`** *(Mới)*:
-    *   *Vai trò*: Legacy Code Explorer.
-    *   *Nhiệm vụ*: Phân tích và hiểu mã nguồn cũ, tìm kiếm pattern.
-*   **`explorer-agent`** *(Mới)*:
-    *   *Vai trò*: Codebase Navigator.
-    *   *Nhiệm vụ*: Khám phá cấu trúc dự án mới, mapping dependencies.
-
-### 🛡️ Ban Chất Lượng & Vận Hành
-*   **`security-auditor`**:
-    *   *Vai trò*: Chuyên gia bảo mật.
-    *   *Nhiệm vụ*: Tìm lỗ hổng, rà soát key lộ.
-*   **`penetration-tester`** *(Mới)*:
-    *   *Vai trò*: Ethical Hacker.
-    *   *Nhiệm vụ*: Tấn công thử nghiệm, kiểm tra bảo mật.
-*   **`test-engineer`**:
-    *   *Vai trò*: QA/QC.
-    *   *Nhiệm vụ*: Viết test case, chạy kiểm thử tự động.
-*   **`qa-automation-engineer`** *(Mới)*:
-    *   *Vai trò*: Test Automation Lead.
-    *   *Nhiệm vụ*: Thiết kế framework tự động hóa kiểm thử.
-*   **`devops-engineer`**:
-    *   *Vai trò*: SysAdmin.
-    *   *Nhiệm vụ*: Cấu hình Server, Docker, Deploy.
-
-### 📊 Ban Sản Phẩm & Chiến Lược *(Mới)*
-*   **`product-manager`** *(Mới)*:
-    *   *Vai trò*: Product Manager.
-    *   *Nhiệm vụ*: Lên chiến lược sản phẩm, viết PRD.
-*   **`product-owner`** *(Mới)*:
-    *   *Vai trò*: Product Owner.
-    *   *Nhiệm vụ*: Quản lý Backlog, ưu tiên tính năng.
-
-### 🎨 Ban Sáng Tạo & Growth
-*   **`ui-ux-designer`**:
-    *   *Vai trò*: Designer.
-    *   *Nhiệm vụ*: Phối màu, chọn font, thiết kế trải nghiệm.
-*   **`seo-specialist`**:
-    *   *Vai trò*: SEO Marketing.
-    *   *Nhiệm vụ*: Tối ưu từ khóa, đẩy Top Google.
+### 🤝 Giao thức Phối hợp (Ecosystem Protocol)
+Mỗi Agent hiện nay không làm việc cô lập. Họ tuân thủ:
+- **Handoff**: Chuyển giao ngữ cảnh (API docs, PRD, Test logs) cho Agent tiếp theo.
+- **Socratic Gatekeeping**: Biết dừng lại hỏi ý kiến người dùng hoặc đồng nghiệp khi thấy rủi ro.
+- **DNA Linkage**: Luôn kiểm tra `GEMINI.md` và `MASTER_GUIDE.md` trước khi hành động.
 
 ---
 

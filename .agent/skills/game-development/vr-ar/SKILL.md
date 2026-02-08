@@ -1,7 +1,9 @@
 ---
 name: vr-ar
-description: VR/AR development principles. Comfort, interaction, performance requirements.
-allowed-tools: Read, Write, Edit, Glob, Grep
+description: VR/AR development principles.
+category: development
+version: 4.0.5
+layer: master-skill
 ---
 
 # VR/AR Development

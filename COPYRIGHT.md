@@ -1,57 +1,38 @@
-# Bản Quyền và Giấy Phép
+# Bản Quyền và Giấy Phép (v4.0.5)
 
 ## 📜 Thông Tin Bản Quyền
 
-**Tên Dự Án**: Google Antigravity (Enhanced Edition)  
-**Chủ Sở Hữu & Bảo Trì**: Dokhacgiakhoa  
+**Tên Dự Án**: AntiGravity IDE (Enhanced Edition)  
+**Chủ Sở Hữu & Bảo Trì Chính**: Dokhacgiakhoa  
 **Năm**: 2026  
 **Giấy Phép**: MIT License
 
 ---
 
-## ⚖️ Giấy Phép MIT - Giải Thích Bằng Tiếng Việt
-
-Dự án này được phát hành theo **giấy phép MIT**.
-
-### Quyền Lợi:
-✅ **Sử dụng tự do**: Bạn có thể sử dụng cho cá nhân, thương mại, học tập.  
-✅ **Sao chép và phân phối**: Bạn có thể chia sẻ dự án.  
-✅ **Chỉnh sửa**: Bạn có thể tùy biến code.
-
-### Nghĩa Vụ:
-⚠️ **Giữ nguyên thông báo bản quyền**: Khi phân phối lại.  
-⚠️ **Không bảo hành**: Tác giả không chịu trách nhiệm về lỗi phát sinh.
-
----
-
 ## 🙏 Ghi Nhận & Nguồn Tham Khảo (Credits)
 
-Dự án này do **Dokhacgiakhoa** phát triển và vận hành. Trong quá trình xây dựng, chúng tôi đã tham khảo và kế thừa tri thức từ các nguồn mã nguồn mở sau:
+Dự án này là kết quả của quá trình nghiên cứu, tinh chỉnh và tối ưu hóa sâu rộng của **Dokhacgiakhoa**. Trong đó, chúng tôi trân trọng ghi nhận tầm ảnh hưởng và tri thức từ các nguồn mã nguồn mở sau:
 
-### Nguồn Tham Khảo (Upstream References)
-*Đây là các dự án nguồn mà chúng tôi đã nghiên cứu để xây dựng nên phiên bản này:*
-
+### Nguồn Kế Thừa Trực Tiếp (Upstream)
 1.  **Antigravity Kit** (by `vudovn`)
-    *   *Vai trò*: Tham khảo cấu trúc Framework và tư duy Agent.
+    *   *Tham khảo*: Cấu trúc Framework và tư duy Agentic Workflow.
     *   *Link*: [github.com/vudovn/antigravity-kit](https://github.com/vudovn/antigravity-kit)
 
-2.  **Antigravity Awesome Skills** (by `sickn33`)
-    *   *Vai trò*: Tham khảo cơ sở dữ liệu các kỹ năng (Skills Database).
-    *   *Link*: [github.com/sickn33/antigravity-awesome-skills](https://github.com/sickn33/antigravity-awesome-skills)
+2.  **Antigravity Awesome Skills** & **UI/UX Pro Max** (by `sickn33`)
+    *   *Tham khảo*: Cơ sở dữ liệu kỹ năng và quy chuẩn thiết kế Visuals Premium.
+    *   *Link*: [github.com/sickn33](https://github.com/sickn33)
 
+### Nguồn Cảm Hứng Hệ Sinh Thái (Ecosystem)
+-   **Model Context Protocol (MCP)**: Tiêu chuẩn hóa giao thức kết nối Agent từ Anthropic.
+-   **High-Performance Engineering**: Cảm hứng từ phong cách code của `Anthony Fu` và tiêu chuẩn `Vercel`.
+-   **Strategic Patterns**: Cảm hứng từ dự án `Fabric` trong việc chiết xuất tri thức.
 
-3.  **UI/UX Pro Max** (by `sickn33`)
-    *   *Vai trò*: Tham khảo quy chuẩn thiết kế giao diện cao cấp.
-    *   *Link*: [github.com/sickn33/ui-ux-pro-max](https://github.com/sickn33/ui-ux-pro-max)
-
-> **Lưu ý**: Các tác giả gốc (`vudovn`, `sickn33`) được ghi nhận vì những đóng góp nền tảng cho cộng đồng mã nguồn mở. Tuy nhiên, họ **không trực tiếp tham gia** phát triển, sửa lỗi hay quản lý repository (`Dokhacgiakhoa/google-antigravity`) này.
-
----
-
-## 📄 Văn Bản Pháp Lý Gốc
-
-Văn bản giấy phép MIT đầy đủ bằng tiếng Anh được lưu tại file [`LICENSE`](./LICENSE).
+> **Lưu ý**: Các cá nhân và tổ chức trên là nguồn cảm hứng và tri thức nền tảng. Họ **không trực tiếp tham gia** phát triển hay chịu trách nhiệm cho các vấn đề phát sinh trong repository này.
 
 ---
 
-*Verified by Dokhacgiakhoa*
+## ⚖️ Giấy Phép MIT
+
+Dự án này được phát hành theo **giấy phép MIT**. Xem chi tiết tại file [`LICENSE`](./LICENSE).
+
+*Xác nhận bởi: Dokhacgiakhoa*

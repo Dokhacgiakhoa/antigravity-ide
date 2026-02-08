@@ -1,7 +1,9 @@
 ---
 name: bash-linux
-description: Bash/Linux terminal patterns. Critical commands, piping, error handling, scripting. Use when working on macOS or Linux systems.
-allowed-tools: Read, Write, Edit, Glob, Grep, Bash
+description: Bash/Linux terminal patterns and critical commands.
+category: tools
+version: 4.0.5
+layer: master-skill
 ---
 
 # Bash Linux Patterns

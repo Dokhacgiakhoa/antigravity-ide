@@ -1,86 +1,47 @@
 ---
-description: Dự án đang đến đâu rồi? Xem Dashboard báo cáo.
+description: Dự án đang đến đâu rồi? Xem Dashboard báo cáo chuyên nghiệp.
 ---
 
-# /status - Show Status
+# /status - Executive Project Dashboard
 
 $ARGUMENTS
 
 ---
 
-## Task
+## 🟢 PHASE 1: Data Aggregation
+**Agent**: `product-owner` & `explorer-agent`
+**Mission**: Gather the "Pulse" of the project.
+- **Action**: Read `task.md`, `walkthrough.md`, and `ERRORS.md`.
+- **Action**: Check git history for recent velocity.
 
-Show current project and agent status.
+## 🟡 PHASE 2: Logic & Health Assessment
+**Agent**: `product-owner`
+**Mission**: Analyze the "Vitals."
+- **Checks**:
+  - Are milestones being hit?
+  - Is technical debt (ERRORS.md) increasing?
+  - Is the plan still aligned with the goal?
 
-### What It Shows
+## 🔵 PHASE 3: Dashboard Synthesis
+**Agent**: `product-owner`
+**Mission**: Create a visual overview.
+- **Action**: Generate a Markdown-friendly dashboard with progress bars and status badges.
 
-1. **Project Info**
-   - Project name and path
-   - Tech stack
-   - Current features
-
-2. **Agent Status Board**
-   - Which agents are running
-   - Which tasks are completed
-   - Pending work
-
-3. **File Statistics**
-   - Files created count
-   - Files modified count
-
-4. **Preview Status**
-   - Is server running
-   - URL
-   - Health check
-
----
-
-## Example Output
-
-```
-=== Project Status ===
-
-📁 Project: my-ecommerce
-📂 Path: C:/projects/my-ecommerce
-🏷️ Type: nextjs-ecommerce
-📊 Status: active
-
-🔧 Tech Stack:
-   Framework: next.js
-   Database: postgresql
-   Auth: clerk
-   Payment: stripe
-
-✅ Features (5):
-   • product-listing
-   • cart
-   • checkout
-   • user-auth
-   • order-history
-
-⏳ Pending (2):
-   • admin-panel
-   • email-notifications
-
-📄 Files: 73 created, 12 modified
-
-=== Agent Status ===
-
-✅ database-architect → Completed
-✅ backend-specialist → Completed
-🔄 frontend-specialist → Dashboard components (60%)
-⏳ test-engineer → Waiting
-
-=== Preview ===
-
-🌐 URL: http://localhost:3000
-💚 Health: OK
-```
+## 🔴 PHASE 4: Professional Reporting
+**Agent**: `orchestrator`
+**Mission**: Deliver the "Executive Summary."
+- **Artifact**: A concise, professional message to the User summarizing current state and next immediate steps.
 
 ---
 
-## Technical
+## Status Indicators:
+- 🟢 **Healthy**: On track, no blockers.
+- 🟡 **Warning**: Minor delays or increasing errors.
+- 🔴 **Blocked**: Critical dependencies or major bugs.
 
-Status uses these scripts:
-- `python .agent/scripts/session_manager.py status`
-- `python .agent/scripts/auto_preview.py status`
+---
+
+## Examples:
+- `/status`
+- `/status focus on infrastructure`
+- `/status show recent errors`

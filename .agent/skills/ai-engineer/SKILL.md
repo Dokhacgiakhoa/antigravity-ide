@@ -1,8 +1,9 @@
 ---
-domain: AI & Automation
-rule_ref: rules/GEMINI.md
-dna_ref: .shared/ai-master/RESEARCH_PROTOCOL.md
-scale_impact: Flexible (Solo Agent) | Strict (Orchestrated)
+name: ai-engineer
+description: Principal AI Architect and Machine Learning Engineer.
+category: development
+version: 4.0.5
+layer: master-skill
 ---
 
 # 🤖 AI Engineer Master Kit

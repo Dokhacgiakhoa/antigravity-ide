@@ -2,175 +2,50 @@
 description: Code xong rồi? Đẩy lên Server/Vercel thôi.
 ---
 
-# /deploy - Production Deployment
+# /deploy - Production Release System
 
 $ARGUMENTS
 
 ---
 
-## Purpose
+## 🟢 PHASE 1: Pre-Flight Integrity Check
+**Agent**: `devops-engineer` & `security-auditor`
+**Mission**: Ensure the code is "Deployable."
+- **Action**: Run `npm run build` and `npm test`.
+- **Checklist**:
+  - [ ] Zero Lint/TS errors.
+  - [ ] All security patches applied (`npm audit`).
+  - [ ] Environment variables configured in Production.
 
-This command handles production deployment with pre-flight checks, deployment execution, and verification.
+## 🟡 PHASE 2: Artifact Creation & Gating
+**Agent**: `devops-engineer`
+**Mission**: Build the release.
+- **Action**: Create the production bundle/container.
+- **Gate**: Stop and verify the "Pre-deploy Checklist" success.
 
----
+## 🔵 PHASE 3: Surgical Deployment
+**Agent**: `devops-engineer`
+**Mission**: Switch the traffic.
+- **Action**: Execute `vercel --prod`, `railway up`, or target platform command.
+- **Strategy**: Use Blue/Green or Canary if supported by the infrastructure.
 
-## Sub-commands
-
-```
-/deploy            - Interactive deployment wizard
-/deploy check      - Run pre-deployment checks only
-/deploy preview    - Deploy to preview/staging
-/deploy production - Deploy to production
-/deploy rollback   - Rollback to previous version
-```
-
----
-
-## Pre-Deployment Checklist
-
-Before any deployment:
-
-```markdown
-## 🚀 Pre-Deploy Checklist
-
-### Code Quality
-- [ ] No TypeScript errors (`npx tsc --noEmit`)
-- [ ] ESLint passing (`npx eslint .`)
-- [ ] All tests passing (`npm test`)
-
-### Security
-- [ ] No hardcoded secrets
-- [ ] Environment variables documented
-- [ ] Dependencies audited (`npm audit`)
-
-### Performance
-- [ ] Bundle size acceptable
-- [ ] No console.log statements
-- [ ] Images optimized
-
-### Documentation
-- [ ] README updated
-- [ ] CHANGELOG updated
-- [ ] API docs current
-
-### Ready to deploy? (y/n)
-```
+## 🔴 PHASE 4: Health Audit & Verification
+**Agent**: `performance-optimizer` & `incident-responder`
+**Mission**: Verify the "Live" state.
+- **Action**: Check Production URL response time and status.
+- **Action**: Verify Database connectivity in the live environment.
+- **Artifact**: Provide the Production URL and Health Badge to the User.
 
 ---
 
-## Deployment Flow
-
-```
-┌─────────────────┐
-│  /deploy        │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│  Pre-flight     │
-│  checks         │
-└────────┬────────┘
-         │
-    Pass? ──No──► Fix issues
-         │
-        Yes
-         │
-         ▼
-┌─────────────────┐
-│  Build          │
-│  application    │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│  Deploy to      │
-│  platform       │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│  Health check   │
-│  & verify       │
-└────────┬────────┘
-         │
-         ▼
-┌─────────────────┐
-│  ✅ Complete    │
-└─────────────────┘
-```
+## Deployment Rules:
+- **No Yolo-Deploy**: Never deploy without a successful local build.
+- **Rollback Ready**: Always have a plan to return to the previous version.
+- **Zero Downtime**: Prioritize strategies that don't break the user experience.
 
 ---
 
-## Output Format
-
-### Successful Deploy
-
-```markdown
-## 🚀 Deployment Complete
-
-### Summary
-- **Version:** v1.2.3
-- **Environment:** production
-- **Duration:** 47 seconds
-- **Platform:** Vercel
-
-### URLs
-- 🌐 Production: https://app.example.com
-- 📊 Dashboard: https://vercel.com/project
-
-### What Changed
-- Added user profile feature
-- Fixed login bug
-- Updated dependencies
-
-### Health Check
-✅ API responding (200 OK)
-✅ Database connected
-✅ All services healthy
-```
-
-### Failed Deploy
-
-```markdown
-## ❌ Deployment Failed
-
-### Error
-Build failed at step: TypeScript compilation
-
-### Details
-```
-error TS2345: Argument of type 'string' is not assignable...
-```
-
-### Resolution
-1. Fix TypeScript error in `src/services/user.ts:45`
-2. Run `npm run build` locally to verify
-3. Try `/deploy` again
-
-### Rollback Available
-Previous version (v1.2.2) is still active.
-Run `/deploy rollback` if needed.
-```
-
----
-
-## Platform Support
-
-| Platform | Command | Notes |
-|----------|---------|-------|
-| Vercel | `vercel --prod` | Auto-detected for Next.js |
-| Railway | `railway up` | Needs Railway CLI |
-| Fly.io | `fly deploy` | Needs flyctl |
-| Docker | `docker compose up -d` | For self-hosted |
-
----
-
-## Examples
-
-```
-/deploy
-/deploy check
-/deploy preview
-/deploy production --skip-tests
-/deploy rollback
-```
+## Examples:
+- `/deploy production`
+- `/deploy preview`
+- `/deploy check`

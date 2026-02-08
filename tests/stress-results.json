@@ -1,0 +1,170 @@
+[
+  {
+    "name": "1. [EN] INSTANT-user_app-minimal",
+    "status": "✅",
+    "stats": "5R/4A/26S/7W",
+    "cliStats": "5 Rules • 4 Agents • 26 Skills • 6 Workflows • 17 DNA",
+    "time": "352ms"
+  },
+  {
+    "name": "2. [EN] INSTANT-dev_tool-standard",
+    "status": "✅",
+    "stats": "6R/5A/26S/7W",
+    "cliStats": "6 Rules • 5 Agents • 26 Skills • 6 Workflows • 17 DNA",
+    "time": "228ms"
+  },
+  {
+    "name": "3. [EN] INSTANT-ai_agent-full",
+    "status": "✅",
+    "stats": "7R/5A/26S/7W",
+    "cliStats": "7 Rules • 5 Agents • 26 Skills • 6 Workflows • 17 DNA",
+    "time": "224ms"
+  },
+  {
+    "name": "4. [EN] INSTANT-digital_asset-minimal",
+    "status": "✅",
+    "stats": "6R/4A/26S/7W",
+    "cliStats": "6 Rules • 4 Agents • 26 Skills • 6 Workflows • 17 DNA",
+    "time": "221ms"
+  },
+  {
+    "name": "5. [EN] CREATIVE-user_app-standard",
+    "status": "✅",
+    "stats": "14R/22A/63S/30W",
+    "cliStats": "14 Rules • 22 Agents • 63 Skills • 30 Workflows • 17 DNA",
+    "time": "335ms"
+  },
+  {
+    "name": "6. [EN] CREATIVE-dev_tool-full",
+    "status": "✅",
+    "stats": "14R/22A/63S/30W",
+    "cliStats": "14 Rules • 22 Agents • 63 Skills • 30 Workflows • 17 DNA",
+    "time": "340ms"
+  },
+  {
+    "name": "7. [EN] CREATIVE-ai_agent-minimal",
+    "status": "✅",
+    "stats": "14R/22A/63S/30W",
+    "cliStats": "14 Rules • 22 Agents • 63 Skills • 30 Workflows • 17 DNA",
+    "time": "352ms"
+  },
+  {
+    "name": "8. [EN] CREATIVE-digital_asset-standard",
+    "status": "✅",
+    "stats": "14R/22A/63S/30W",
+    "cliStats": "14 Rules • 22 Agents • 63 Skills • 30 Workflows • 17 DNA",
+    "time": "325ms"
+  },
+  {
+    "name": "9. [EN] SME-user_app-full",
+    "status": "✅",
+    "stats": "10R/10A/32S/10W",
+    "cliStats": "10 Rules • 9 Agents • 32 Skills • 10 Workflows • 17 DNA",
+    "time": "247ms"
+  },
+  {
+    "name": "10. [EN] SME-dev_tool-minimal",
+    "status": "✅",
+    "stats": "10R/9A/32S/10W",
+    "cliStats": "10 Rules • 8 Agents • 32 Skills • 10 Workflows • 17 DNA",
+    "time": "238ms"
+  },
+  {
+    "name": "11. [EN] SME-ai_agent-standard",
+    "status": "✅",
+    "stats": "11R/10A/32S/10W",
+    "cliStats": "11 Rules • 9 Agents • 32 Skills • 10 Workflows • 17 DNA",
+    "time": "244ms"
+  },
+  {
+    "name": "12. [EN] SME-digital_asset-full",
+    "status": "✅",
+    "stats": "11R/10A/32S/10W",
+    "cliStats": "11 Rules • 9 Agents • 32 Skills • 10 Workflows • 17 DNA",
+    "time": "241ms"
+  },
+  {
+    "name": "13. [VI] INSTANT-user_app-minimal",
+    "status": "✅",
+    "stats": "5R/4A/26S/7W",
+    "cliStats": "5 Rules • 4 Agents • 26 Skills • 6 Workflows • 17 DNA",
+    "time": "219ms"
+  },
+  {
+    "name": "14. [VI] INSTANT-dev_tool-standard",
+    "status": "✅",
+    "stats": "6R/5A/26S/7W",
+    "cliStats": "6 Rules • 5 Agents • 26 Skills • 6 Workflows • 17 DNA",
+    "time": "218ms"
+  },
+  {
+    "name": "15. [VI] INSTANT-ai_agent-full",
+    "status": "✅",
+    "stats": "7R/5A/26S/7W",
+    "cliStats": "7 Rules • 5 Agents • 26 Skills • 6 Workflows • 17 DNA",
+    "time": "215ms"
+  },
+  {
+    "name": "16. [VI] INSTANT-digital_asset-minimal",
+    "status": "✅",
+    "stats": "6R/4A/26S/7W",
+    "cliStats": "6 Rules • 4 Agents • 26 Skills • 6 Workflows • 17 DNA",
+    "time": "215ms"
+  },
+  {
+    "name": "17. [VI] CREATIVE-user_app-standard",
+    "status": "✅",
+    "stats": "14R/22A/63S/30W",
+    "cliStats": "14 Rules • 22 Agents • 63 Skills • 30 Workflows • 17 DNA",
+    "time": "335ms"
+  },
+  {
+    "name": "18. [VI] CREATIVE-dev_tool-full",
+    "status": "✅",
+    "stats": "14R/22A/63S/30W",
+    "cliStats": "14 Rules • 22 Agents • 63 Skills • 30 Workflows • 17 DNA",
+    "time": "342ms"
+  },
+  {
+    "name": "19. [VI] CREATIVE-ai_agent-minimal",
+    "status": "✅",
+    "stats": "14R/22A/63S/30W",
+    "cliStats": "14 Rules • 22 Agents • 63 Skills • 30 Workflows • 17 DNA",
+    "time": "365ms"
+  },
+  {
+    "name": "20. [VI] CREATIVE-digital_asset-standard",
+    "status": "✅",
+    "stats": "14R/22A/63S/30W",
+    "cliStats": "14 Rules • 22 Agents • 63 Skills • 30 Workflows • 17 DNA",
+    "time": "359ms"
+  },
+  {
+    "name": "21. [VI] SME-user_app-full",
+    "status": "✅",
+    "stats": "10R/10A/32S/10W",
+    "cliStats": "10 Rules • 9 Agents • 32 Skills • 10 Workflows • 17 DNA",
+    "time": "240ms"
+  },
+  {
+    "name": "22. [VI] SME-dev_tool-minimal",
+    "status": "✅",
+    "stats": "10R/9A/32S/10W",
+    "cliStats": "10 Rules • 8 Agents • 32 Skills • 10 Workflows • 17 DNA",
+    "time": "238ms"
+  },
+  {
+    "name": "23. [VI] SME-ai_agent-standard",
+    "status": "✅",
+    "stats": "11R/10A/32S/10W",
+    "cliStats": "11 Rules • 9 Agents • 32 Skills • 10 Workflows • 17 DNA",
+    "time": "340ms"
+  },
+  {
+    "name": "24. [VI] SME-digital_asset-full",
+    "status": "✅",
+    "stats": "11R/10A/32S/10W",
+    "cliStats": "11 Rules • 9 Agents • 32 Skills • 10 Workflows • 17 DNA",
+    "time": "245ms"
+  }
+]

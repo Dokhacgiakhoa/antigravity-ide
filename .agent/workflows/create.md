@@ -1,59 +1,51 @@
 ---
-description: Muốn tạo tính năng mới từ A-Z? Dùng cái này.
+description: Muốn tạo tính năng mới hoặc dự án từ A-Z? Sử dụng bộ máy nhân sự chuyên nghiệp.
 ---
 
-# /create - Create Application
+# /create - Full-Cycle Product Creation
 
 $ARGUMENTS
 
 ---
 
-## Task
+## 🟢 PHASE 1: Requirements Discovery
+**Agent**: `product-manager` & `explorer-agent`
+**Mission**: Define the "What" and "Why."
+- **Action**: Analyze User Intent and map to project scale.
+- **Verification**: Ensure no conflict with existing system architecture.
 
-This command starts a new application creation process.
+## 🟡 PHASE 2: Strategic Architecture (PLAN)
+**Agent**: `project-planner`
+**Mission**: Define the "How."
+- **Workflow Link**: Invokes `/plan` automatically.
+- **Artifact**: Create `docs/PLAN-{slug}.md`.
+- **Mandatory**: User MUST approve the plan before Phase 3 begins.
 
-### Steps:
+## 🔵 PHASE 3: Surgical Execution
+**Agent**: `orchestrator`
+**Mission**: Direct the "Heavy Lifters."
+- **Choreography**: 
+  1. `database-architect` (Schema first).
+  2. `backend-specialist` (APIs/Logic).
+  3. `frontend-specialist` (Design/UI).
+  4. `documentation-writer` (Sync docs).
 
-1. **Request Analysis**
-   - Understand what the user wants
-   - If information is missing, use `conversation-manager` skill to ask
-
-2. **Project Planning**
-   - Use `project-planner` agent for task breakdown
-   - Determine tech stack
-   - Plan file structure
-   - Create plan file and proceed to building
-
-3. **Application Building (After Approval)**
-   - Orchestrate with `app-builder` skill
-   - Coordinate expert agents:
-     - `database-architect` → Schema
-     - `backend-specialist` → API
-     - `frontend-specialist` → UI
-
-4. **Preview**
-   - Start with `auto_preview.py` when complete
-   - Present URL to user
-
----
-
-## Usage Examples
-
-```
-/create blog site
-/create e-commerce app with product listing and cart
-/create todo app
-/create Instagram clone
-/create crm system with customer management
-```
+## 🔴 PHASE 4: Professional Audit & Handoff
+**Agent**: `quality-inspector` & `test-engineer`
+**Mission**: Defend the Quality Gate.
+- **Verification**: Run `/test` and `/security` workflows.
+- **Artifact**: Create the final `walkthrough.md` with proof of work.
 
 ---
 
-## Before Starting
+## Rules of Engagement:
+- **No Placeholders**: Every generated asset must be functional.
+- **Security-First**: No hardcoded keys, ever.
+- **Wow Factor**: Frontend work must use `ui-ux-pro-max` standards.
 
-If request is unclear, ask these questions:
-- What type of application?
-- What are the basic features?
-- Who will use it?
+---
 
-Use defaults, add details later.
+## Examples:
+- `/create e-commerce dashboard with analytics`
+- `/create inventory management CLI in Rust`
+- `/create portfolio site with video backgrounds`

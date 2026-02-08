@@ -1,7 +1,9 @@
 ---
 name: game-audio
-description: Game audio principles. Sound design, music integration, adaptive audio systems.
-allowed-tools: Read, Glob, Grep
+description: Game audio principles.
+category: development
+version: 4.0.5
+layer: master-skill
 ---
 
 # Game Audio Principles

@@ -1,7 +1,9 @@
 ---
 name: systematic-debugging
-description: 4-phase systematic debugging methodology with root cause analysis and evidence-based verification. Use when debugging complex issues.
-allowed-tools: Read, Glob, Grep
+description: 4-phase systematic debugging methodology with root cause analysis and evidence-based verification.
+category: tools
+version: 4.0.5
+layer: master-skill
 ---
 
 # Systematic Debugging

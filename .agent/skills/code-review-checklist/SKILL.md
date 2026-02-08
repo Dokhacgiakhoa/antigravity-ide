@@ -1,7 +1,9 @@
 ---
 name: code-review-checklist
-description: Code review guidelines covering code quality, security, and best practices.
-allowed-tools: Read, Glob, Grep
+description: Code review guidelines covering quality, security, and best practices.
+category: development
+version: 4.0.5
+layer: master-skill
 ---
 
 # Code Review Checklist

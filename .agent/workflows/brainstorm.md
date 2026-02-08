@@ -1,113 +1,50 @@
 ---
-description: Bí ý tưởng? Dùng cái này để AI gợi ý.
+description: Bí ý tưởng? Dùng cái này để AI gợi ý theo chuẩn Senior.
 ---
 
-# /brainstorm - Structured Idea Exploration
+# /brainstorm - Structured Strategic Exploration
 
 $ARGUMENTS
 
 ---
 
-## Purpose
+## 🟢 PHASE 1: Domain Discovery
+**Agent**: `explorer-agent`
+**Mission**: Understand the boundaries of the problem.
+- **Action**: Scan relevant files for context.
+- **DNA Link**: Map the request to the correct scale in `GEMINI.md`.
 
-This command activates BRAINSTORM mode for structured idea exploration. Use when you need to explore options before committing to an implementation.
+## 🟡 PHASE 2: Multi-Option Generation
+**Agent**: `project-planner` or specific specialist
+**Mission**: Divergent thinking.
+- **Action**: Provide at least 3 distinct approaches:
+  - **Option A**: Conservative/Safe.
+  - **Option B**: Modern/Aggressive.
+  - **Option C**: Creative/Out-of-the-box.
+- **Artifact**: Create a comparison table with Pros, Cons, and Effort.
 
----
+## 🔵 PHASE 3: Competitive Analysis & Recommendation
+**Agent**: `product-manager`
+**Mission**: Convergent thinking.
+- **Action**: Analyze tradeoffs against the original goal.
+- **Action**: State a professional recommendation with clear rationale.
 
-## Behavior
-
-When `/brainstorm` is triggered:
-
-1. **Understand the goal**
-   - What problem are we solving?
-   - Who is the user?
-   - What constraints exist?
-
-2. **Generate options**
-   - Provide at least 3 different approaches
-   - Each with pros and cons
-   - Consider unconventional solutions
-
-3. **Compare and recommend**
-   - Summarize tradeoffs
-   - Give a recommendation with reasoning
-
----
-
-## Output Format
-
-```markdown
-## 🧠 Brainstorm: [Topic]
-
-### Context
-[Brief problem statement]
+## 🔴 PHASE 4: Strategic Handoff
+**Agent**: `project-planner`
+**Mission**: Prepare for action.
+- **Action**: Ask the user which path to take.
+- **Transition**: Ready to trigger `/plan` based on selection.
 
 ---
 
-### Option A: [Name]
-[Description]
-
-✅ **Pros:**
-- [benefit 1]
-- [benefit 2]
-
-❌ **Cons:**
-- [drawback 1]
-
-📊 **Effort:** Low | Medium | High
+## Brainstorming Rules:
+- **No Code**: Focus on architecture and logic.
+- **Honest Tradeoffs**: Don't hide complexity.
+- **User-Centric**: Tailor solutions to the user's specific context.
 
 ---
 
-### Option B: [Name]
-[Description]
-
-✅ **Pros:**
-- [benefit 1]
-
-❌ **Cons:**
-- [drawback 1]
-- [drawback 2]
-
-📊 **Effort:** Low | Medium | High
-
----
-
-### Option C: [Name]
-[Description]
-
-✅ **Pros:**
-- [benefit 1]
-
-❌ **Cons:**
-- [drawback 1]
-
-📊 **Effort:** Low | Medium | High
-
----
-
-## 💡 Recommendation
-
-**Option [X]** because [reasoning].
-
-What direction would you like to explore?
-```
-
----
-
-## Examples
-
-```
-/brainstorm authentication system
-/brainstorm state management for complex form
-/brainstorm database schema for social app
-/brainstorm caching strategy
-```
-
----
-
-## Key Principles
-
-- **No code** - this is about ideas, not implementation
-- **Visual when helpful** - use diagrams for architecture
-- **Honest tradeoffs** - don't hide complexity
-- **Defer to user** - present options, let them decide
+## Examples:
+- `/brainstorm state management strategy`
+- `/brainstorm database schema for social media`
+- `/brainstorm UI design system for mobile`

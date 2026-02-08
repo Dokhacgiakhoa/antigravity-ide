@@ -1,6 +1,6 @@
 # 📘 Hướng Dẫn Sử Dụng Hệ Thống Workflow (Quy Trình)
 
-> **Antigravity IDE** cung cấp 17 quy trình (Workflow) chuyên biệt, được tự động kích hoạt dựa trên **Lĩnh vực (Industry)** bạn chọn khi cài đặt.
+> **Antigravity IDE** cung cấp **22 quy trình (Workflow)** chuyên biệt, tuân thủ nghiêm ngặt **Quy chuẩn Nhất thể (Unified Protocol)** với 4 giai đoạn: **Discovery → Planning → Execution → Audit**.
 
 ---
 
@@ -63,6 +63,12 @@
 - **Khi nào dùng**: Viết Unit Test, E2E Test cho dự án.
 - **Cách dùng**: `/test [tên file/module]`
 
+### `/performance` - Tối ưu hiệu năng *(Mới)*
+- **Khi nào dùng**: Khi web chậm, cần đo Lighthouse và tối ưu tốc độ load.
+- **Cách dùng**: `/performance [URL/mô tả]`
+
+---
+
 ---
 
 ## 4. Nhóm Tăng trưởng & Thẩm mỹ (Growth & Design)
@@ -74,42 +80,73 @@
 
 ### `/seo` - Tối ưu tìm kiếm
 - **Khi nào dùng**: Để trang web lên Top Google. Tạo Sitemap, Schema JSON-LD.
-- **Cách dùng**: `/seo audit`
 
-### `/update` - Cập nhật Antigravity IDE
-- **Khi nào dùng**: Kiểm tra và cập nhật phiên bản Antigravity IDE mới nhất.
-- **Cách dùng**: `/update`
+### `/portfolio` / `/blog` - Chuyên biệt nội dung *(Mới)*
+- **Khi nào dùng**: Tự động cấu hình cấu trúc Landing Page cá nhân hoặc hệ thống tin tức.
+
+### `/visually` / `/explain` - Trực quan hóa tri thức *(Mới)*
+- **Khi nào dùng**: Khi cần AI vẽ biểu đồ Logic hoặc giải thích code theo kiểu "Mindmap".
 
 ---
 
-## 5. Nhóm Vận hành & Con người (Ops & Team)
+## 5. Nhóm Kỹ thuật Chuyên biệt (Verticals)
+*Dành cho các bài toán đặc thù theo ngành.*
+
+### `/api` - Master API Design *(Mới)*
+- **Khi nào dùng**: Thiết kế hệ thống API chuẩn OpenAPI 3.1, xử lý bảo mật Header.
+
+### `/realtime` - Kết nối thời gian thực *(Mới)*
+- **Khi nào dùng**: Triển khai Socket.io, WebRTC hoặc Server-Sent Events.
+
+### `/compliance` - Pháp lý & Tuân thủ *(Mới)*
+- **Khi nào dùng**: Rà soát tiêu chuẩn an toàn dữ liệu (GDPR/HIPAA).
+
+### `/mobile` - Phát triển Di động *(Mới)*
+- **Khi nào dùng**: Tối ưu hóa giao diện và trải nghiệm Native App.
+
+### `/performance` - Tối ưu hiệu năng
+- **Khi nào dùng**: Khi web chậm, cần đo Lighthouse và tối ưu tốc độ load.
+
+### `/preview` - Xem trước dự án *(Mới)*
+- **Khi nào dùng**: Khởi chạy môi trường sandbox để kiểm tra kết quả ngay lập tức.
+
+---
+
+## 6. Nhóm Vận hành & Con người (Ops & Team)
 *Dành cho Tech Lead hoặc DevOps.*
 
 ### `/onboard` - Hướng dẫn người mới
 - **Khi nào dùng**: Khi team có thành viên mới. AI sẽ chỉ họ cách setup, giải thích code.
-- **Cách dùng**: `/onboard`
 
 ### `/document` - Viết tài liệu
 - **Khi nào dùng**: Tự động update README, API Docs từ code.
-- **Cách dùng**: `/document all`
 
 ### `/update-docs` - Cập nhật tài liệu tự động
 - **Khi nào dùng**: Sau khi thêm Skills/Workflows/Rules mới để đồng bộ docs.
-- **Cách dùng**: `/update-docs`
 
-### `/release` - Phát hành phiên bản
+### `/release-version` - Phát hành phiên bản *(Mới)*
 - **Khi nào dùng**: Tự động cập nhật version, đồng bộ số liệu stats và chuẩn bị commit.
-- **Cách dùng**: `/release [version_mới]`
 
 ### `/monitor` - Giám sát
 - **Khi nào dùng**: Setup logging, theo dõi lỗi trên Production.
-- **Cách dùng**: `/monitor setup`
 
 ### `/deploy` - Phát hành
 - **Khi nào dùng**: Deploy lên Vercel, VPS, Docker.
-- **Cách dùng**: `/deploy`
+
+### `/update` - Nâng cấp Hệ thống
+- **Khi nào dùng**: Kiểm tra và nâng cấp bộ não của Antigravity IDE lên bản mới nhất.
+
+### `/log-error` - Nhật ký lỗi (Ngầm)
+- **Khi nào dùng**: AI tự động ghi nhận lỗi và giải pháp vào file `ERRORS.md`.
 
 ---
+
+## 🏗️ Quy chuẩn Nhất thể (Unified Protocol) là gì?
+Mọi lệnh bạn gõ đều trải qua dây chuyền 4 lớp:
+1.  **🟢 Discovery**: Agent thám hiểm mã nguồn để hiểu "địa hình".
+2.  **🟡 Planning**: Tạo `PLAN.md` và chờ bạn duyệt (Design-first).
+3.  **🔵 Execution**: Triển khai code bởi các chuyên gia Senior.
+4.  **🔴 Audit**: Nghiệm thu, quét bảo mật và báo cáo kết quả (`walkthrough.md`).
 
 ## 💡 Mẹo sử dụng
 - Bạn có thể **kết hợp** các lệnh. Ví dụ: Dùng `/plan` trước, sau đó dùng `/orchestrate` để thực thi plan đó.

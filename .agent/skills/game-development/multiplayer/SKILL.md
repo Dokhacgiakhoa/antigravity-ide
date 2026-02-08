@@ -1,7 +1,9 @@
 ---
 name: multiplayer
-description: Multiplayer game development principles. Architecture, networking, synchronization.
-allowed-tools: Read, Write, Edit, Glob, Grep, Bash
+description: Multiplayer game development principles.
+category: development
+version: 4.0.5
+layer: master-skill
 ---
 
 # Multiplayer Game Development

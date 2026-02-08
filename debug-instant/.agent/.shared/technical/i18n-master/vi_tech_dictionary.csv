@@ -1,0 +1,14 @@
+Original,Meaning,Vietnamese_Term
+Dashboard,Bảng điều khiển/Tổng quan,Bảng điều khiển
+Submit,Gửi đi/Xác nhận,Gửi yêu cầu
+Settings,Cài đặt/Thiết lập,Cấu hình
+Credentials,Thông tin xác thực,Thông tin đăng nhập
+Deploy,Triển khai,Triển khai
+Maintenance,Bảo trì,Bảo trì hệ thống
+Performance,Hiệu năng,Hiệu suất
+Security,Bảo mật,An ninh
+Database,Cơ sở dữ liệu,Dữ liệu
+Workflow,Luồng công việc,Quy trình xử lý
+Scalability,Khả năng mở rộng,Khả năng mở rộng
+Endpoint,Điểm cuối,Điểm cuối API
+Middleware,Phần mềm trung gian,Lớp trung gian

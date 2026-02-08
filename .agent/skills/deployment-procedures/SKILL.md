@@ -1,7 +1,9 @@
 ---
 name: deployment-procedures
-description: Production deployment principles and decision-making. Safe deployment workflows, rollback strategies, and verification. Teaches thinking, not scripts.
-allowed-tools: Read, Glob, Grep, Bash
+description: Production deployment principles and decision-making.
+category: infrastructure
+version: 4.0.5
+layer: master-skill
 ---
 
 # Deployment Procedures

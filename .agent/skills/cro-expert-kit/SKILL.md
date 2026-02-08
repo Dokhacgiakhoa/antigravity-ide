@@ -1,9 +1,9 @@
 ---
 name: cro-expert-kit
-description: >
-  Elite Conversion Rate Optimization Toolkit. Covers Page CRO, Signup Flows, 
-  Onboarding, Form Optimization, Paywalls, and Popups. Focuses on psychological 
-  leverage and friction reduction to increase revenue and retention.
+description: Elite Conversion Rate Optimization Toolkit.
+category: marketing
+version: 4.0.5
+layer: master-skill
 ---
 
 # 📈 CRO Expert Kit (Master Skill)

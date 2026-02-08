@@ -1,7 +1,9 @@
 ---
 name: nodejs-best-practices
-description: Node.js development principles and decision-making. Framework selection, async patterns, security, and architecture. Teaches thinking, not copying.
-allowed-tools: Read, Write, Edit, Glob, Grep
+description: Node.js development principles and decision-making.
+category: development
+version: 4.0.5
+layer: master-skill
 ---
 
 # Node.js Best Practices

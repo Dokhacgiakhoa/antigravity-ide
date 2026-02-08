@@ -1,7 +1,9 @@
 ---
 name: mobile-games
-description: Mobile game development principles. Touch input, battery, performance, app stores.
-allowed-tools: Read, Write, Edit, Glob, Grep
+description: Mobile game development principles.
+category: development
+version: 4.0.5
+layer: master-skill
 ---
 
 # Mobile Game Development

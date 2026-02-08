@@ -9,22 +9,22 @@ const ora = require('ora');
 const { execSync } = require('child_process');
 const { getProjectConfig, getSkillsForCategories } = require('./prompts');
 const gradient = require('gradient-string');
+const { getRulesList, getAgentsList } = require('./logic/manifest-manager');
 
-async function createProject(projectName, options) {
+async function createProject(projectName, options, predefinedConfig = null) {
     try {
         // Determine target directory
         const isCurrentDir = !projectName || projectName === '.';
         const targetName = isCurrentDir ? path.basename(process.cwd()) : projectName;
 
-        // Get configuration (pass targetName if specifically provided/determined as CWD target)
-        // If isCurrentDir is true, we pass '.' to prompts to tell it to skip the name question
-        const config = await getProjectConfig(options.skipPrompts, isCurrentDir ? targetName : projectName);
+        // Get configuration
+        const config = predefinedConfig || await getProjectConfig(options.skipPrompts, isCurrentDir ? targetName : projectName);
 
         // Resolve final project path
         const projectPath = isCurrentDir ? process.cwd() : path.resolve(process.cwd(), config.projectName);
         const finalProjectName = config.projectName;
 
-        // Check if directory exists (only if NOT current dir)
+        // Check if directory exists
         if (!isCurrentDir && fs.existsSync(projectPath)) {
             console.error(chalk.red(`\n❌ Directory "${finalProjectName}" already exists.\n`));
             process.exit(1);
@@ -40,42 +40,94 @@ async function createProject(projectName, options) {
         const spinner = ora('Creating project structure...').start();
         fs.mkdirSync(projectPath, { recursive: true });
 
-        // Copy base structure
-        await copyBaseStructure(projectPath, config);
-        spinner.succeed('Project structure created');
+        // --- MODULAR INSTALLATION START ---
+        
+        // 1. Resolve Rules & Agents based on Scale + Product
+        const rulesToInstall = getRulesList(config.rules, config.productType);
+        
+        // We need list of ALL available agents to handle wildcards
+        const agentsDir = path.join(__dirname, '..', '.agent', 'agents');
+        const allAgents = fs.existsSync(agentsDir) ? fs.readdirSync(agentsDir) : [];
+        const rawAgentsToInstall = getAgentsList(config.rules, config.productType, allAgents);
+        const agentsToInstall = [...new Set(rawAgentsToInstall)];
+
+        // 2. Copy Base Structure + Selective Rules/Agents
+        await copyModularStructure(projectPath, config, rulesToInstall, agentsToInstall);
+        spinner.succeed('Project structure created (Modular Mode)');
+
+        // --- MODULAR INSTALLATION END ---
+
+        // --- INTELLIGENT RESOURCE BALANCING START ---
+        // Ensuring logical balance between Agents, Skills, and Workflows based on Scale
+        
+        let finalSkillCategories = config.skillCategories || [];
+        let finalWorkflows = config.workflows || [];
+
+        // If explicitly empty or missing, derive from Scale Rules
+        // This ensures automated runs (CI/Test) get balanced resources seamlessly
+        if (finalSkillCategories.length === 0 || finalWorkflows.length === 0) {
+            const scaleConfig = getScaleConfig(config.rules || 'creative'); // Default to creative if rule missing
+            
+            if (finalSkillCategories.length === 0) {
+                finalSkillCategories = scaleConfig.coreSkillCategories;
+                spinner.info(chalk.dim(`Auto-balanced Skills for ${config.rules}: ${finalSkillCategories.join(', ')}`));
+            }
+            
+            if (finalWorkflows.length === 0) {
+                finalWorkflows = scaleConfig.baseWorkflows;
+                spinner.info(chalk.dim(`Auto-balanced Workflows for ${config.rules}: ${finalWorkflows.join(', ')}`));
+            }
+        }
+        // --- INTELLIGENT RESOURCE BALANCING END ---
 
         // Copy selected skills
-        if (config.template !== 'minimal' && config.skillCategories?.length > 0) {
+        let skillCount = 0;
+        if (finalSkillCategories.length > 0) {
             spinner.start('Installing selected skills...');
-            await copySkills(projectPath, config.skillCategories, config.engineMode);
-            spinner.succeed(`Installed ${config.skillCategories.length} skill categories`);
+            skillCount = await copySkills(projectPath, finalSkillCategories, config.engineMode);
+            spinner.succeed(`Installed ${skillCount} skills across ${finalSkillCategories.length} categories`);
         }
 
         // Copy workflows
-        if (config.workflows?.length > 0) {
+        let workflowCount = 0;
+        if (finalWorkflows.length > 0) {
             spinner.start('Setting up workflows...');
-            await copyWorkflows(projectPath, config.workflows);
-            spinner.succeed(`Configured ${config.workflows.length} workflows`);
+            workflowCount = await copyWorkflows(projectPath, finalWorkflows);
+            spinner.succeed(`Configured ${workflowCount} workflows`);
         }
 
-
-
-        // Generate configuration files
-        spinner.start('Generating configuration files...');
-        await generateConfigs(projectPath, config);
-        spinner.succeed('Configuration files created');
-
-        // Initialize git
-        spinner.start('Initializing git repository...');
-        try {
-            execSync('git init', { cwd: projectPath, stdio: 'ignore' });
-            spinner.succeed('Git repository initialized');
-        } catch (error) {
-            spinner.warn('Git initialization skipped (git not found)');
-        }
+        // ... existing code ...
 
         // Print success message
-        printSuccessMessage(finalProjectName, config);
+        const sharedDir = path.join(__dirname, '..', '.agent', '.shared');
+        let sharedCount = 0;
+        if (fs.existsSync(sharedDir)) {
+            ['core', 'technical', 'verticals'].forEach(dir => {
+                const subDir = path.join(sharedDir, dir);
+                if (fs.existsSync(subDir)) {
+                    sharedCount += fs.readdirSync(subDir).filter(f => fs.lstatSync(path.join(subDir, f)).isDirectory()).length;
+                }
+            });
+        }
+
+        // Create GEMINI.md
+        // generateGeminiMd(rules, language, industry, agentName)
+        const geminiContent = generateGeminiMd(
+            config.rules, 
+            config.language, 
+            config.productType, 
+            finalProjectName
+        );
+        fs.writeFileSync(path.join(projectPath, 'GEMINI.md'), geminiContent);
+        
+        const stats = {
+            rules: rulesToInstall.length,
+            agents: agentsToInstall.length,
+            skills: skillCount,
+            workflows: workflowCount,
+            shared: sharedCount
+        };
+        printSuccessMessage(finalProjectName, config, stats);
 
     } catch (error) {
         console.error(chalk.red('\n❌ Error creating project:'), error.message);
@@ -100,10 +152,8 @@ function handleCoreFileConflict(filePath, fileName) {
 // Helper to determine file filter based on engine mode
 function getEngineFilter(engineMode) {
     return (src, dest) => {
-        // If mode is 'standard' (Node.js focus), exclude Python files
         if (engineMode === 'standard') {
             const lowerSrc = src.toLowerCase();
-            // Exclude Python source, compiled files, and package configs
             if (lowerSrc.endsWith('.py') ||
                 lowerSrc.endsWith('.pyc') ||
                 lowerSrc.endsWith('requirements.txt') ||
@@ -115,85 +165,88 @@ function getEngineFilter(engineMode) {
                 return false;
             }
         }
-        // 'advanced' mode (or others) includes everything
         return true;
     };
 }
 
-async function copyBaseStructure(projectPath, config) {
+async function copyModularStructure(projectPath, config, rulesList, agentsList) {
     const sourceAgentDir = path.join(__dirname, '..', '.agent');
     const destAgentDir = path.join(projectPath, '.agent');
     const filter = getEngineFilter(config.engineMode);
-
+    
     // Create base .agent directory
     fs.mkdirSync(destAgentDir, { recursive: true });
 
-    // Copy all subdirectories from .agent (except skills, which are handled separately)
-    if (fs.existsSync(sourceAgentDir)) {
-        const entries = fs.readdirSync(sourceAgentDir, { withFileTypes: true });
+    // 1. Copy Shared Modules (Always copy .shared but maybe filter later? For now keep simple)
+    // To be strictly modular, we should only copy needed .shared. But let's copy all for safety first.
+    if (fs.existsSync(path.join(sourceAgentDir, '.shared'))) {
+        await fs.copy(path.join(sourceAgentDir, '.shared'), path.join(destAgentDir, '.shared'), { filter });
+    }
 
-        for (const entry of entries) {
-            if (entry.name === 'skills' || entry.name === 'GEMINI.md' || entry.name === 'START_HERE.md') {
-                continue; // Handle these separately
-            }
-
-            const sourceEntryPath = path.join(sourceAgentDir, entry.name);
-            const destEntryPath = path.join(destAgentDir, entry.name);
-
-            await fs.copy(sourceEntryPath, destEntryPath, { filter });
+    // 2. Copy Rules (SELECTIVE)
+    const rulesDest = path.join(destAgentDir, 'rules');
+    fs.mkdirSync(rulesDest, { recursive: true });
+    
+    for (const rule of rulesList) {
+        const srcRule = path.join(sourceAgentDir, 'rules', rule);
+        if (fs.existsSync(srcRule)) {
+            await fs.copy(srcRule, path.join(rulesDest, rule));
         }
     }
 
-    // Ensure 'skills' dir exists even if empty
-    fs.mkdirSync(path.join(destAgentDir, 'skills'), { recursive: true });
+    // 3. Copy Agents (SELECTIVE)
+    const agentsDest = path.join(destAgentDir, 'agents');
+    fs.mkdirSync(agentsDest, { recursive: true });
 
-    // Copy GEMINI.md based on rules (core file - auto backup if exists)
+    for (const agent of agentsList) {
+        const srcAgent = path.join(sourceAgentDir, 'agents', agent);
+        if (fs.existsSync(srcAgent)) {
+            await fs.copy(srcAgent, path.join(agentsDest, agent));
+        }
+    }
+
+    // 4. Ensure 'skills' and 'workflows' dir exists
+    fs.mkdirSync(path.join(destAgentDir, 'skills'), { recursive: true });
+    fs.mkdirSync(path.join(destAgentDir, 'workflows'), { recursive: true });
+
+    // 5. Copy GEMINI.md (Core file)
     const geminiPath = path.join(destAgentDir, 'GEMINI.md');
     const geminiDecision = handleCoreFileConflict(geminiPath, 'GEMINI.md');
 
     if (geminiDecision.shouldWrite) {
         const geminiContent = generateGeminiMd(config.rules, config.language, config.industryDomain, config.agentName);
         fs.writeFileSync(geminiDecision.targetPath, geminiContent);
-
         if (geminiDecision.isBackup) {
             console.log(chalk.yellow(`  ℹ️  GEMINI.md exists, created ${path.basename(geminiDecision.targetPath)}`));
-        } else {
-            console.log(chalk.green('  ✓ Created GEMINI.md'));
         }
     }
 
-    // Copy START_HERE.md (core file - auto backup if exists)
+    // 6. Copy START_HERE.md (if exists)
     const startHereSource = path.join(sourceAgentDir, 'START_HERE.md');
-    const startHereDest = path.join(destAgentDir, 'START_HERE.md');
-
     if (fs.existsSync(startHereSource)) {
-        const startHereDecision = handleCoreFileConflict(startHereDest, 'START_HERE.md');
-
-        if (startHereDecision.shouldWrite) {
-            fs.copyFileSync(startHereSource, startHereDecision.targetPath);
-
-            if (startHereDecision.isBackup) {
-                console.log(chalk.yellow(`  ℹ️  START_HERE.md exists, created ${path.basename(startHereDecision.targetPath)}`));
-            } else {
-                console.log(chalk.green('  ✓ Created START_HERE.md'));
-            }
+        const startHereDest = path.join(destAgentDir, 'START_HERE.md');
+        const decision = handleCoreFileConflict(startHereDest, 'START_HERE.md');
+        if (decision.shouldWrite) {
+            fs.copyFileSync(startHereSource, decision.targetPath);
         }
     }
 
-    // Copy basic files (README, .gitignore) - only if they don't exist
+    // 7. Copy README, .gitignore
     const files = ['README.md', '.gitignore'];
     const rootDir = path.join(__dirname, '..');
-
     files.forEach(file => {
         const source = path.join(rootDir, file);
         const dest = path.join(projectPath, file);
         if (fs.existsSync(source) && !fs.existsSync(dest)) {
             fs.copyFileSync(source, dest);
-            console.log(chalk.green(`  ✓ Created ${file}`));
-        } else if (fs.existsSync(dest)) {
-            console.log(chalk.yellow(`  ℹ️  Skipped ${file} (already exists)`));
         }
     });
+
+    // 8. Copy RESOURCES.md to .agent/
+    const resourcesSource = path.join(sourceAgentDir, 'RESOURCES.md');
+    if (fs.existsSync(resourcesSource)) {
+         fs.copyFileSync(resourcesSource, path.join(destAgentDir, 'RESOURCES.md'));
+    }
 }
 
 async function copySkills(projectPath, categories, engineMode) {
@@ -201,40 +254,38 @@ async function copySkills(projectPath, categories, engineMode) {
     const skillsDestDir = path.join(projectPath, '.agent', 'skills');
     const filter = getEngineFilter(engineMode);
 
-    // Check if source directory exists
-    if (!fs.existsSync(skillsSourceDir)) {
-        console.warn(chalk.yellow(`\n⚠️  Warning: Skills directory not found at ${skillsSourceDir}`));
-        console.warn('   The .agent folder might be missing from the package.');
-        return;
-    }
+    if (!fs.existsSync(skillsSourceDir)) return 0;
 
     const selectedSkills = getSkillsForCategories(categories);
+    const uniqueSkills = [...new Set(selectedSkills)]; // Deduplicate to avoid overwrites and double-counting
+    let count = 0;
 
-    for (const skill of selectedSkills) {
+    for (const skill of uniqueSkills) {
         const skillPath = path.join(skillsSourceDir, skill);
         if (fs.existsSync(skillPath)) {
             const destPath = path.join(skillsDestDir, skill);
             await fs.copy(skillPath, destPath, { filter });
-        } else {
-            // Optional: Warn about missing specific skills if needed
+            count++;
         }
     }
+    return count;
 }
 
 async function copyWorkflows(projectPath, workflows) {
     const workflowsSourceDir = path.join(__dirname, '..', '.agent', 'workflows');
     const workflowsDestDir = path.join(projectPath, '.agent', 'workflows');
+    let count = 0;
 
     for (const workflow of workflows) {
         const workflowFile = `${workflow}.md`;
         const source = path.join(workflowsSourceDir, workflowFile);
         if (fs.existsSync(source)) {
             await fs.copy(source, path.join(workflowsDestDir, workflowFile));
+            count++;
         }
     }
+    return count;
 }
-
-
 
 async function generateConfigs(projectPath, config) {
     // Generate package.json only if it doesn't exist
@@ -250,7 +301,7 @@ async function generateConfigs(projectPath, config) {
                 dev: 'echo "No dev server configured"',
                 build: 'echo "No build script"'
             },
-            keywords: ['ai', 'agent', 'google-antigravity'],
+            keywords: ['ai', 'agent', 'antigravity-ide'],
             author: '',
             license: 'MIT'
         };
@@ -260,38 +311,20 @@ async function generateConfigs(projectPath, config) {
             JSON.stringify(packageJson, null, 2)
         );
         console.log(chalk.green('  ✓ Created package.json'));
-    } else {
-        console.log(chalk.yellow('  ℹ️  Skipped package.json (already exists)'));
     }
 
-    // Generate .editorconfig only if it doesn't exist
+    // Generate .editorconfig
     const editorconfigPath = path.join(projectPath, '.editorconfig');
     if (!fs.existsSync(editorconfigPath)) {
-        const editorConfig = `root = true
-
-[*]
-charset = utf-8
-end_of_line = lf
-insert_final_newline = true
-indent_style = space
-indent_size = 2
-trim_trailing_whitespace = true
-
-[*.md]
-trim_trailing_whitespace = false
-`;
+        const editorConfig = `root = true\n\n[*]\ncharset = utf-8\nend_of_line = lf\ninsert_final_newline = true\nindent_style = space\nindent_size = 2\ntrim_trailing_whitespace = true\n\n[*.md]\ntrim_trailing_whitespace = false\n`;
         fs.writeFileSync(editorconfigPath, editorConfig);
         console.log(chalk.green('  ✓ Created .editorconfig'));
     }
 
-    // Generate .gitattributes only if it doesn't exist
+    // Generate .gitattributes
     const gitAttributesPath = path.join(projectPath, '.gitattributes');
     if (!fs.existsSync(gitAttributesPath)) {
-        const gitAttributes = `* text=auto eol=lf
-*.js text eol=lf
-*.sh text eol=lf
-bin/* text eol=lf
-`;
+        const gitAttributes = `* text=auto eol=lf\n*.js text eol=lf\n*.sh text eol=lf\nbin/* text eol=lf\n`;
         fs.writeFileSync(gitAttributesPath, gitAttributes);
         console.log(chalk.green('  ✓ Created .gitattributes'));
     }
@@ -300,21 +333,23 @@ bin/* text eol=lf
 
 function generateGeminiMd(rules, language = 'en', industry = 'other', agentName = 'Antigravity') {
     const strictness = {
-        strict: {
+        sme: { // Was Strict/Enterprise
             autoRun: 'false',
             confirmLevel: 'Ask before every file modification and command execution'
         },
-        balanced: {
+        creative: { // Was Balanced/Team
             autoRun: 'true for safe read operations',
             confirmLevel: 'Ask before destructive operations'
         },
-        flexible: {
+        instant: { // Was Flexible/Personal
             autoRun: 'true',
             confirmLevel: 'Minimal confirmation, high autonomy'
         }
     };
 
-    const config = strictness[rules] || strictness.balanced;
+    // Fallback to creative if rule name mismatch
+    const config = strictness[rules] || strictness.creative;
+    const safeRules = rules || 'creative';
     const isVi = language === 'vi';
 
     // Define Industry Focus strings
@@ -341,10 +376,10 @@ This file controls the behavior of your AI Agent.
 ## 🤖 Agent Identity: ${agentName}
 > **Identity Verification**: You are ${agentName}. Always reflect this identity in your tone and decision-making. **Special Protocol**: If called by name, you MUST perform a "Context Integrity Check" to verify alignment with .agent rules, confirm your status, and then wait for instructions.
 
-## 🎯 Primary Focus: ${industryFocus.toUpperCase()}
+## 🎯 Primary Focus: ${(industryFocus || 'General Development').toUpperCase()}
 > **Priority**: Optimize all solutions for this domain.
 
-## Agent Behavior Rules: ${rules.toUpperCase()}
+## Agent Behavior Rules: ${safeRules.toUpperCase()}
 
 **Auto-run Commands**: ${config.autoRun}
 **Confirmation Level**: ${config.confirmLevel}
@@ -407,10 +442,10 @@ Tệp này kiểm soát hành vi của AI Agent.
 ## 🤖 Danh tính Agent: ${agentName}
 > **Xác minh danh tính**: Bạn là ${agentName}. Luôn thể hiện danh tính này trong phong thái và cách ra quyết định. **Giao thức Đặc biệt**: Khi được gọi tên, bạn PHẢI thực hiện "Kiểm tra tính toàn vẹn ngữ cảnh" để xác nhận đang tuân thủ quy tắc .agent, báo cáo trạng thái và sẵn sàng đợi chỉ thị.
 
-## 🎯 Trọng tâm Chính: ${industryFocus.toUpperCase()}
+## 🎯 Trọng tâm Chính: ${(industryFocus || 'Phát triển chung').toUpperCase()}
 > **Ưu tiên**: Tối ưu hóa mọi giải pháp cho lĩnh vực này.
 
-## Quy tắc hành vi: ${rules.toUpperCase()}
+## Quy tắc hành vi: ${safeRules.toUpperCase()}
 
 **Tự động chạy lệnh**: ${config.autoRun}
 **Mức độ xác nhận**: ${config.confirmLevel === 'Minimal confirmation, high autonomy' ? 'Tối thiểu, tự chủ cao' : 'Hỏi trước các tác vụ quan trọng'}
@@ -465,7 +500,7 @@ Thêm các hướng dẫn cụ thể cho dự án của bạn tại đây.
     return isVi ? contentVi : contentEn;
 }
 
-function printSuccessMessage(projectName, config) {
+function printSuccessMessage(projectName, config, stats = null) {
     console.log('\n');
     console.log(gradient.rainbow('━'.repeat(60)));
     console.log(gradient.morning.multiline('  ✓ SUCCESS! Project Ready'));
@@ -476,9 +511,9 @@ function printSuccessMessage(projectName, config) {
     console.log(chalk.bold('📋 Config'));
     console.log(chalk.gray('  Project:   ') + gradient.cristal(projectName));
     console.log(chalk.gray('  Template:  ') + chalk.cyan(config.template));
-    console.log(chalk.gray('  Skills:    ') + chalk.cyan(config.skillCategories?.join(', ') || 'none'));
+    console.log(chalk.gray('  Scale:     ') + chalk.cyan(config.rules.toUpperCase()));
 
-    // AI Activation Instructions (NEW)
+    // AI Activation Instructions
     console.log('');
     console.log(gradient.pastel('━'.repeat(60)));
     console.log(chalk.bold.cyan(config.language === 'vi' ? '🤖 Kích hoạt AI Agent' : '🤖 AI Agent Activation'));
@@ -496,9 +531,22 @@ function printSuccessMessage(projectName, config) {
         console.log(chalk.gray('  3. Activate:      ') + chalk.green(`Type: "wake up ${agentName}"`));
     }
 
-    // Stats Display
-    console.log('');
-    console.log(gradient.pastel('  ✨ Installed: ') + chalk.white('58 Master Skills') + chalk.gray(' • ') + chalk.white('23 Specialists') + chalk.gray(' • ') + chalk.white('17 Shared Modules'));
+    // Dynamic Stats Display
+    if (stats) {
+        console.log('');
+        const statLine = [
+            chalk.white(`${stats.rules} Rules`),
+            chalk.white(`${stats.agents} Agents`),
+            chalk.white(`${stats.skills} Skills`),
+            chalk.white(`${stats.workflows} Workflows`),
+            chalk.white(`${stats.shared} DNA`)
+        ].join(chalk.gray(' • '));
+        console.log(gradient.pastel('  ✨ Installed: ') + statLine);
+    } else {
+        // Fallback for non-modular runs
+        console.log('');
+        console.log(gradient.pastel('  ✨ Installed: ') + chalk.white('Adaptive Rules') + chalk.gray(' • ') + chalk.white('Specialist Agents') + chalk.gray(' • ') + chalk.white('Enterprise DNA'));
+    }
 
     console.log('');
     console.log(chalk.dim(config.language === 'vi' ? '     AI sẽ tự động tải các kỹ năng và quy tắc.' : '     The AI will load all skills and rules automatically.'));

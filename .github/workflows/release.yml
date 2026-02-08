@@ -42,3 +42,30 @@ jobs:
         run: npm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+  publish-gpr:
+    runs-on: ubuntu-latest
+    needs: release
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          registry-url: 'https://npm.pkg.github.com'
+      - name: Rename package to scoped (Required for GPR)
+        run: |
+          node -e "
+            const fs = require('fs');
+            const pkg = require('./package.json');
+            // Assuming the repo owner is the scope
+            pkg.name = '@${{ github.repository_owner }}/antigravity-ide';
+            fs.writeFileSync('package.json', JSON.stringify(pkg, null, 2));
+          "
+      - run: npm ci
+      - name: Publish to GitHub Packages
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -7,15 +7,18 @@
 
 const { program } = require('commander');
 const { createProject } = require('./create');
+const { initProject } = require('./init');
 const packageJson = require('../package.json');
 const { checkAndApplyUpdates } = require('./lib/auto-update');
 
 // Run update check before program
 (async () => {
-    await checkAndApplyUpdates(packageJson);
+    if (!process.env.ANTIGRAVITY_SKIP_UPDATE) {
+        await checkAndApplyUpdates(packageJson);
+    }
 
     program
-      .name('google-antigravity')
+      .name('antigravity-ide')
       .description('Create AI Agent projects with skills, rules, and workflows')
       .version(packageJson.version)
       .argument('[project-name]', 'Name of the project', '.')
@@ -23,6 +26,13 @@ const { checkAndApplyUpdates } = require('./lib/auto-update');
       .option('-s, --skip-prompts', 'Skip interactive prompts and use defaults')
       .action(async (projectName, options) => {
         await createProject(projectName, options);
+      });
+
+    program
+      .command('init')
+      .description('Initialize Antigravity in the current directory')
+      .action(async (options) => {
+        await initProject(options);
       });
 
     program

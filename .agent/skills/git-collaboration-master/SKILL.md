@@ -1,9 +1,9 @@
 ---
 name: git-collaboration-master
-description: >
-  Master Git workflows and high-performance team collaboration. Covers PR strategies, 
-  automated standups, issue resolution, and professional code review culture. 
-  Replaces all fragmented Git and team-related skills.
+description: Master Git workflows and high-performance team collaboration.
+category: development
+version: 4.0.5
+layer: master-skill
 ---
 
 # 🤝 Git & Collaboration Master Kit

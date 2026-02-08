@@ -8,9 +8,9 @@
 
 Antigravity Kit is a modular system consisting of:
 
-- **15 Specialist Agents** - Role-based AI personas
-- **22 Master Skills** - Consolidating 550+ capabilities & patterns
-- **11 Workflows** - Slash command procedures
+- **23 Specialist Agents** - Role-based AI personas
+- **58+4 Master Skills** - Consolidating 650+ capabilities & patterns
+- **22 Workflows** - Slash command procedures
 
 ---
 
@@ -46,6 +46,9 @@ Antigravity Kit is a modular system consisting of:
 | `game-developer` | **Worker** | Immersive Experiences |
 | `debugger` | **Worker** | Troubleshooting & Hotfixing |
 | `seo-specialist` | **Worker** | Growth & Search Optimization |
+| `voice-ai-engineer` | **Worker** | Real-time Voice Agents (NEW) |
+| `rust-expert` | **Worker** | System Programming (NEW) |
+| `react-architect` | **Worker** | Next.js Enterprise Patterns (NEW) |
 
 ---
 

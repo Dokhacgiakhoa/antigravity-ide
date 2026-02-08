@@ -1,3 +1,11 @@
+---
+name: modern-web-performance
+description: High-Performance Web Engineering.
+category: performance
+version: 4.0.5
+layer: master-skill
+---
+
 # ⚡ High-Performance Web Engineering
 > **Source**: Vercel Best Practices / Anthony Fu (Antfu) Engineering Standards
 

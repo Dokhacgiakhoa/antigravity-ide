@@ -1,7 +1,9 @@
 ---
 name: seo-fundamentals
 description: SEO fundamentals, E-E-A-T, Core Web Vitals, and Google algorithm principles.
-allowed-tools: Read, Glob, Grep
+category: seo
+version: 4.0.5
+layer: master-skill
 ---
 
 # SEO Fundamentals

@@ -1,8 +1,9 @@
 ---
 name: tdd-master-workflow
-description: >
-  Comprehensive Test-Driven Development (TDD) cycle. Enforces strict Red-Green-Refactor 
-  discipline, test architecture design, and multi-agent testing coordination.
+description: Comprehensive Test-Driven Development (TDD) cycle.
+category: development
+version: 4.0.5
+layer: master-skill
 ---
 
 # 🧪 TDD Master Workflow

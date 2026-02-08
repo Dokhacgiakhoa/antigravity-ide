@@ -1,7 +1,9 @@
 ---
 name: performance-profiling
 description: Performance profiling principles. Measurement, analysis, and optimization techniques.
-allowed-tools: Read, Glob, Grep, Bash
+category: infrastructure
+version: 4.0.5
+layer: master-skill
 ---
 
 # Performance Profiling

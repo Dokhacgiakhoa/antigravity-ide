@@ -1,8 +1,9 @@
 ---
 name: deployment-engineer
-description: >
-  MASTER DEPLOY: CI/CD Pipelines, Docker, K8s, GitOps (Flux/ArgoCD), 
-  Progressive Delivery (Canary). Use for Infra setup, pipelines, and releases.
+description: MASTER DEPLOY: CI/CD Pipelines, Docker, K8s, GitOps.
+category: infrastructure
+version: 4.0.5
+layer: master-skill
 ---
 
 # 🛳️ Deployment & Infrastructure Master

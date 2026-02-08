@@ -1,9 +1,9 @@
 ---
 name: cloud-architect-master
-description: >
-  Elite Cloud and Multi-Cloud Architect Master Skill. Covers AWS/Azure/GCP, hybrid clouds, 
-  cloud-native networking, security audits, and infrastructure cost optimization. 
-  Replaces all fragmented cloud architecture skills.
+description: Elite Cloud and Multi-Cloud Architect Master Skill.
+category: infrastructure
+version: 4.0.5
+layer: master-skill
 ---
 
 # ☁️ Cloud Architect Master Kit

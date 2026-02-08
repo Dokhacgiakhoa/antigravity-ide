@@ -1,7 +1,9 @@
 ---
 name: 2d-games
-description: 2D game development principles. Sprites, tilemaps, physics, camera.
-allowed-tools: Read, Write, Edit, Glob, Grep
+description: 2D game development principles.
+category: development
+version: 4.0.5
+layer: master-skill
 ---
 
 # 2D Game Development

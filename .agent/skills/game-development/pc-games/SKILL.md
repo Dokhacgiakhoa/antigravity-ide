@@ -1,7 +1,9 @@
 ---
 name: pc-games
-description: PC and console game development principles. Engine selection, platform features, optimization strategies.
-allowed-tools: Read, Write, Edit, Glob, Grep
+description: PC and console game development principles.
+category: development
+version: 4.0.5
+layer: master-skill
 ---
 
 # PC/Console Game Development

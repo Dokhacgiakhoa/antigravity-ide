@@ -1,8 +1,9 @@
 ---
 name: database-migration
-description: >
-  MASTER DB: Zero-Downtime, Schema Design (3NF), SQL/NoSQL, Data Sync, 
-  Rollback strategies. Use for DB changes, migrations, and performance tuning.
+description: MASTER DB: Zero-Downtime, Schema Design (3NF), SQL/NoSQL.
+category: database
+version: 4.0.5
+layer: master-skill
 ---
 
 # 🗄️ Database Migration Master Skill
