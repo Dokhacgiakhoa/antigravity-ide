@@ -1,6 +1,6 @@
 # 🧠 Hướng Dẫn Về "Kỹ Năng" (Skills System)
 
-> **AntiGravity IDE** không chỉ là một con bot chat. Nó là một tập hợp của **72 Chuyên Gia Ảo (Master Skills)**, mỗi chuyên gia phụ trách một mảng công nghệ chuyên sâu đạt chuẩn v4.0.5.
+> **AntiGravity IDE** không chỉ là một con bot chat. Nó là một tập hợp của **72 Chuyên Gia Ảo (Master Skills)**, mỗi chuyên gia phụ trách một mảng công nghệ chuyên sâu đạt chuẩn v4.0.6.
 
 ---
 
@@ -10,7 +10,7 @@
 Ở phiên bản v4.0, mỗi **Skill** không chỉ là một file hướng dẫn. Nó là một thực thể được liên kết khoa học:
 - **`layer`**: Phân lớp kỹ năng (master-skill, tool-skill).
 - **`category`**: Phân loại theo mục đích sử dụng (development, security, performance...).
-- **`version`**: Phiên bản chuẩn hóa 4.0.5.
+- **`version`**: Phiên bản chuẩn hóa 4.0.6.
 
 ---
 

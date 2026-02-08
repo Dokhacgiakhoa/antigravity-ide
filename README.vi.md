@@ -28,7 +28,7 @@ npx antigravity-ide@latest my-project --skip-prompts
 > [!WARNING]
 > **Lưu ý quan trọng:** Không nên cài đặt Global (`npm install -g antigravity-ide`) vì sẽ gây xung đột. Xem [Hướng dẫn Gỡ cài đặt](file:///docs/UNINSTALL_GUIDE.vi.md) nếu đã lỡ cài.
 
-### ✨ Tính năng Setup Wizard (v4.0.5 - Big Update)
+### ✨ Tính năng Setup Wizard (v4.0.6 - Build Update)
 Trải nghiệm dòng lệnh (CLI) đẳng cấp Premium với **Cơ chế Thích ứng theo Quy mô**:
 
 1.  **Kiến trúc Thích ứng theo Quy mô (Scale-Adaptive)**: 
@@ -61,11 +61,14 @@ Chúng tôi cung cấp thư viện 72 kỹ năng "Senior-Grade" được phân l
 
 ---
 
-## 📈 Lịch sử Phiên bản
+#### v4.0.6 (Nâng cấp tài liệu & CLI)
+- Đồng bộ hóa toàn bộ 30 Workflows và 22 Agents.
+- Bổ sung tài liệu FAQ, Update và Uninstall.
+- Tối ưu hóa cơ chế xử lý xung đột file (--force).
 
 #### v4.0.5 (Đồng bộ cuối)
 - Đổi tên thương hiệu thành AntiGravity IDE.
-- Chuẩn hóa toàn bộ 72 Master Skills sang metadata v4.0.5.
+- Chuẩn hóa toàn bộ 72 Master Skills sang metadata v4.0.6.
 - Tích hợp nhận diện môi trường Python.
 - Nhất quán License & Credits.
 

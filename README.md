@@ -24,7 +24,7 @@ npx antigravity-ide@latest my-project --skip-prompts
 > [!TIP]
 > **New to npx?** Check our [NPX Installation Guide](file:///docs/INSTALL_NPX_GUIDE.vi.md) for a step-by-step setup.
 
-### ✨ Setup Wizard Features (v4.0.5 - Modular Architecture)
+### ✨ Setup Wizard Features (v4.0.6 - Docs & CLI Upgrade)
 The new interactive CLI features a **Modular Installation Engine** that adapts to your exact needs:
 
 1.  **Scale-Adaptive Architecture**: 
@@ -59,9 +59,14 @@ Meet your new virtual team:
 
 ## 📈 Release History
 
+#### v4.0.6 (Full Docs & Workflow Sync)
+- Synchronized all 30 Workflows and 22 Specialist Agents.
+- Added comprehensive FAQ, Update, and Uninstall guides.
+- Improved CLI conflict resolution with `--force` flag.
+
 #### v4.0.5 (Final Sync)
 - Rebranded to AntiGravity IDE.
-- Standardized all 72 Master Skills to v4.0.5 metadata.
+- Standardized all 72 Master Skills to v4.0.6 metadata.
 - Integrated Python environment awareness.
 - Unified License & Credits.
 
