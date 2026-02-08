@@ -31,7 +31,7 @@ npx antigravity-ide .
 > [!TIP]
 > **New to npx?** Check our [NPX Installation Guide](file:///docs/INSTALL_NPX_GUIDE.vi.md) for a step-by-step setup.
 
-### ✨ Unified God Command (v4.0.8 - Smart Repair)
+### ✨ Unified God Command (v4.0.9 - Smart Repair)
 Experience a single command to manage your entire project lifecycle:
 
 1.  **Scale-Adaptive Architecture**: 
@@ -42,13 +42,13 @@ Experience a single command to manage your entire project lifecycle:
     - Intelligent cross-engine filtering (Python vs Node.js projects).
 3.  **DNA Synchronization**:
     - Automatically pulls core enterprise DNA (API, DB, Cloud, SEO) standards.
-4.  **The Watchdog System (v4.0.8)**:
+4.  **The Watchdog System (v4.0.9)**:
     - Automatic **Hang Detection** and infinite loop prevention.
     - **Zero-Silent-Failure**: Every system error or Agent mistake is logged in \`ERRORS.md\` for recursive learning.
 
 ### 🛡️ Why Choose AntiGravity IDE?
 
-| Feature | **AntiGravity IDE (v4.0.8)** | Scripts/Plugins "Hack" |
+| Feature | **AntiGravity IDE (v4.0.9)** | Scripts/Plugins "Hack" |
 | :--- | :--- | :--- |
 | **Safety** | ✅ **Watchdog AI** protects your account 24/7 | ❌ High risk of Google Ban (99%) |
 | **Setup** | ✅ One single command (npx) | ❌ Hard JSON configurations |
@@ -82,6 +82,12 @@ Meet your new virtual team:
 ---
 
 ## 📈 Release History
+
+#### v4.0.9 (Content Polish)
+- Moved **Project Statistics Bar** to top for maximum visual impact.
+- Standardized Badge Colors: Green (Version), Purple (Downloads), Orange (License).
+- Audited all 72 Skills and 600+ Patterns for consistency.
+- Fixed minor typos in Vietnamese guides.
 
 #### v4.0.8 (Marketing Alpha & NPM)
 - Updated **Minimalist Marketing Slogan**: "Easy Vibe, Lazy Code. One Command to Rule Them All."

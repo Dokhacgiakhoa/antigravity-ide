@@ -35,7 +35,7 @@ npx antigravity-ide .
 > [!WARNING]
 > **Lưu ý quan trọng:** Không nên cài đặt Global (`npm install -g antigravity-ide`) vì sẽ gây xung đột. Xem [Hướng dẫn Gỡ cài đặt](file:///docs/UNINSTALL_GUIDE.vi.md) nếu đã lỡ cài.
 
-### ✨ Unified God Command (v4.0.8 - Smart Repair)
+### ✨ Unified God Command (v4.0.9 - Smart Repair)
 Trải nghiệm một lệnh duy nhất để quản trị toàn bộ vòng đời dự án:
 
 1.  **Kiến trúc Thích ứng theo Quy mô (Scale-Adaptive)**: 
@@ -46,13 +46,13 @@ Trải nghiệm một lệnh duy nhất để quản trị toàn bộ vòng đ�
     - Bộ lọc cross-engine thông minh: Tự động loại bỏ file thừa nếu project chỉ dùng Node.js.
 3.  **Đồng bộ DNA**:
     - Tự động tích hợp các tiêu chuẩn DNA cốt lõi (API, Database, Cloud, SEO/GEO) của hệ thống.
-4.  **Hệ thống Giám sát "The Watchdog" (v4.0.8)**: 
+4.  **Hệ thống Giám sát "The Watchdog" (v4.0.9)**: 
     - Cơ chế tự động phát hiện treo (Hang Detection) và ngăn chặn vòng lặp vô hạn.
     - **Zero-Silent-Failure**: Mọi lỗi hệ thống và sai sót của Agent đều được lưu lại tại `ERRORS.md` để tự động học hỏi.
 
 ### 🛡️ Tại sao nên chọn AntiGravity IDE?
 
-| Tính năng | **AntiGravity IDE (v4.0.8)** | Scripts/Plugins "Lậu" |
+| Tính năng | **AntiGravity IDE (v4.0.9)** | Scripts/Plugins "Lậu" |
 | :--- | :--- | :--- |
 | **Độ an toàn** | ✅ **Watchdog AI** bảo vệ tài khoản 24/7 | ❌ Rủi ro bị Google Ban 99% |
 | **Cài đặt** | ✅ 1 câu lệnh duy nhất (npx) | ❌ Cấu hình file JSON cực khó |
@@ -84,6 +84,11 @@ Chúng tôi cung cấp thư viện 72 kỹ năng "Senior-Grade" được phân l
 - ...và hơn 19 nhân vật Senior khác.
 
 ---
+
+#### v4.0.9 (Content Polish)
+- Đưa **Thanh thống kê (Stats Bar)** lên đầu trang để tạo ấn tượng thị giác.
+- Chuẩn hóa màu Badge: Version (Lục), Downloads (Tím), License (Cam).
+- Rà soát chính tả và tính nhất quán trên toàn bộ 72 Skills.
 
 #### v4.0.8 (Alpha Marketing & NPM)
 - Cập nhật **Slogan Marketing tối giản**: "Vibe thoải mái, Code thảnh thơi. Một lệnh duy nhất cân cả thế giới."

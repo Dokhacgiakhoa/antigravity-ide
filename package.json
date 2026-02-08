@@ -1,6 +1,6 @@
 {
   "name": "antigravity-ide",
-  "version": "4.0.8",
+  "version": "4.0.9",
   "description": "Easy Vibe, Lazy Code. One Command to Rule Them All.",
   "homepage": "https://antigravity-ide-cli.vercel.app/",
   "main": "cli/index.js",
