@@ -42,7 +42,7 @@ async function createProject(projectName, options, predefinedConfig = null) {
 
         console.log('\n');
         console.log(gradient.cristal('━'.repeat(60)));
-        console.log(chalk.bold('  📦 Creating Antigravity IDE Project'));
+        console.log(chalk.bold('  🛸 Antigravity IDE: Easy Vibe, Lazy Code'));
         console.log(gradient.cristal('━'.repeat(60)));
         console.log('');
 

@@ -1,6 +1,6 @@
 # AntiGravity IDE (Phiên bản Nâng cao)
 
-IDE đầu tiên được thiết kế dành riêng cho "Vibe Coding" và Quy trình Tác chiến AI (Agentic Workflow). 🛰️🚀
+Vibe thoải mái, Code thảnh thơi. Một lệnh duy nhất cân cả thế giới. 🛰️🚀
 
 **Trang chủ chính thức**: [antigravity-ide-cli.vercel.app](https://antigravity-ide-cli.vercel.app/)
 
@@ -102,7 +102,7 @@ ten-du-an/
 
 ---
 
-**AntiGravity IDE** - Phá bỏ mọi giới hạn, đưa dự án của bạn lên tầm cao mới. 🛰️🚀
+**AntiGravity IDE** - Vibe thoải mái, Code thảnh thơi. Một lệnh duy nhất cân cả thế giới. 🛰️🚀
 
 ---
 

@@ -1,6 +1,6 @@
 # AntiGravity IDE (Enhanced Edition)
 
-The First AI-Native IDE designed for Vibe Coding & Agentic Workflow. 🛰️🚀
+Easy Vibe, Lazy Code. One Command to Rule Them All. 🛰️🚀
 
 **Official Website**: [antigravity-ide-cli.vercel.app](https://antigravity-ide-cli.vercel.app/)
 
@@ -97,7 +97,7 @@ my-project/
 
 ---
 
-**AntiGravity IDE** - Breaking the laws of gravity to elevate your projects. 🛰️🚀
+**AntiGravity IDE** - Easy Vibe, Lazy Code. One Command to Rule Them All. 🛰️🚀
 
 ---
 
