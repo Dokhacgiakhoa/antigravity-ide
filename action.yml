@@ -1,0 +1,32 @@
+name: 'AntiGravity IDE Setup'
+description: 'Install and configure AntiGravity IDE in your CI/CD workflow.'
+author: 'Dokhacgiakhoa'
+inputs:
+  project-name:
+    description: 'Name of the project to create'
+    required: false
+    default: 'my-antigravity-project'
+  rules:
+    description: 'Scale Config: instant, creative, or sme'
+    required: false
+    default: 'creative'
+  template:
+    description: 'Project Template: minimal, standard, full'
+    required: false
+    default: 'standard'
+  product:
+    description: 'Product Type: user_app, dev_tool, ai_agent, digital_asset'
+    required: false
+    default: 'user_app'
+  skip-prompts:
+    description: 'Skip interactive prompts (auto-confirm)'
+    required: false
+    default: 'true'
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js' # We might need to bundle this first or point to cli/index.js if dependencies are handled
+
+branding:
+  icon: 'cpu'
+  color: 'purple'
