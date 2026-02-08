@@ -101,7 +101,7 @@
          │  • Suggest next steps               │
          └─────────────────────────────────────┘
           ┌─────────────────────────────────────┐
-          │      THE WATCHDOG (v4.0.7)          │
+          │      THE WATCHDOG (v4.0.8)          │
           │  • Real-time Hang Detection         │
           │  • Loop Prevention Protocol         │
           │  • Error Log (ERRORS.md) Logging     │

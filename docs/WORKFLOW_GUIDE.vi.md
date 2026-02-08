@@ -134,12 +134,6 @@
 ### `/update` - Nâng cấp Hệ thống
 - **Khi nào dùng**: Kiểm tra và nâng cấp bộ não của Antigravity IDE lên bản mới nhất.
 
-### `/update` - Nâng cấp Hệ thống
-- **Khi nào dùng**: Kiểm tra và nâng cấp bộ não của Antigravity IDE lên bản mới nhất.
-
-### `/log-error` - Nhật ký lỗi (Ngầm)
-- **Khi nào dùng**: AI tự động ghi nhận lỗi và giải pháp vào file `ERRORS.md`.
-
 ---
 
 ## 🏗️ Quy chuẩn Nhất thể (Unified Protocol) là gì?

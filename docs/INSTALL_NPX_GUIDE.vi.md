@@ -1,5 +1,7 @@
 # 📦 Hướng Dẫn Cài Đặt Node.js & Sử Dụng NPX
 
+> **Easy Vibe, Lazy Code. One Command to Rule Them All.** 🛰️🚀
+
 Lệnh `npx` là cách nhanh nhất và an toàn nhất để trải nghiệm **AntiGravity IDE** mà không cần cài đặt cố định vào máy. Tài liệu này sẽ hướng dẫn bạn thiết lập môi trường từ con số 0.
 
 ---
@@ -38,14 +40,14 @@ Nếu bạn dự định sử dụng các tính năng cao cấp (Advanced AI, Da
 
 ---
 
-## 3. Khởi độnɡ AntiGravity IDE (Tất cả tronɡ một)
+## 3. Khởi độnɡ AntiGravity IDE (Lệnh Vạn Năng)
 Bạn chỉ cần một lệnh duy nhất để xử lý mọi tình huốnɡ (Tạo mới, Cập nhật, Sửa lỗi, Đồng bộ):
 
 ```bash
 npx antigravity-ide [tên_dự_án]
 ```
 - **Nếu thư mục chưa có gì**: Hệ thống sẽ tạo mới (Create).
-- **Nếu đã là dự án Antigravity**: Hệ thống sẽ tự động kiểm tra, sửa lỗi (Repair), cập nhật Rules mới nhất (Update) và đồng bộ DNA (Fix).
+- **Nếu đã là dự án Antigravity IDE**: Hệ thống sẽ tự động kiểm tra, sửa lỗi (Repair), cập nhật Rules mới nhất (Update) và đồng bộ DNA (Fix).
 
 ---
 
@@ -54,24 +56,18 @@ npx antigravity-ide [tên_dự_án]
 | Tình huống | Lệnh (Command) | Ý nghĩa |
 | :--- | :--- | :--- |
 | **Cài lần đầu** | `npx antigravity-ide .` | Khởi tạo vào thư mục hiện tại. |
-| **Sửa lỗi/Update** | `npx antigravity-ide` | Tự động rà soát và vá lỗi (Repair Mode). |
+| **Sửa lỗi/Update** | `npx antigravity-ide` | Tự động rà soát và vá lỗi (Repair & Update). |
 | **Đè lại toàn bộ** | `npx antigravity-ide --force` | Cưỡng bức khôi phục các Rule về bản gốc. |
-| **Check bản IDE** | `--version` / `-V` | Kiểm tra phiên bản Engine. |
+| **Check bản IDE** | `npx antigravity-ide --version` | Kiểm tra phiên bản Engine. |
 
 ### Tham số phổ biến:
 - **`-s, --skip-prompts`**: Khởi tạo thần tốc bằng các giá trị mặc định.
 - **`-t, --template <type>`**: Chọn mẫu project (`minimal`, `standard`, `full`).
+- **`-f, --force`**: Cưỡng bức ghi đè khi sửa lỗi dự án cũ.
 
 ---
 
-## 5. Khởi tạo nhanh (Bỏ qua câu hỏi)
-Nếu bạn là người dùng chuyên nghiệp hoặc muốn dùng trong script tự động, bạn có thể bỏ qua các bước trả lời câu hỏi của Setup Wizard bằng tùy chọn:
-
-- **`--skip-prompts`** (hoặc **`-s`**)
-
-```bash
-# Khởi tạo dự án nhanh với cấu hình mặc định (Creative Scale)
-## 7. Xử lý Trùng lặp File (Conflict Resolution)
+## 5. Xử lý Trùng lặp File (Conflict Resolution)
 Nếu bạn cài đặt vào một thư mục đã có sẵn các file cấu hình (như `GEMINI.md`, `package.json`), hệ thống sẽ hỏi bạn cách xử lý để bảo vệ dữ liệu cũ.
 
 ### 🛡️ Cơ chế Tương tác (Mặc định)
@@ -85,12 +81,9 @@ Hệ thống sẽ dừng lại và hỏi bạn từng file:
 ### 🔥 Ghi đè Cưỡng bức (Force Overwrite)
 Nếu bạn muốn reset dự án và chấp nhận mất cấu hình cũ, hãy dùng cờ `--force`:
 ```bash
-npx antigravity-ide init --force
+npx antigravity-ide . --force
 ```
-> **Tác dụng**: Bỏ qua tất cả câu hỏi và ghi đè toàn bộ file trùng lặp.
-
-### 🤖 Tự động Backup (Backup Mode)
-Nếu bạn dùng trong CI/CD hoặc script tự động, hãy dùng cờ `--skip-prompts`. Hệ thống sẽ tự động chọn giải pháp an toàn nhất (Tạo file backup `.new`) thay vì ghi đè.
+> **Tác dụng**: Bỏ qua tất cả câu hỏi và ghi đè toàn bộ file trùng lặp để đưa dự án về trạng thái chuẩn nhất.
 
 ---
 
@@ -106,7 +99,6 @@ Nếu bạn dùng trong CI/CD hoặc script tự động, hãy dùng cờ `--ski
 
 ### 3. Phiên bản Node.js quá cũ
 - **Yêu cầu**: AntiGravity IDE hoạt động tốt nhất trên Node.js **v18** trở lên.
-- **Cách sửa**: Tải bản LTS mới nhất từ trang chủ Node.js để ghi đè bản cũ.
 
 ---
 

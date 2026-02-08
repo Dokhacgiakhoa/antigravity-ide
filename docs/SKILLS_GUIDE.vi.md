@@ -69,42 +69,50 @@ Vũ khí (Skills) được cấp phát thông minh dựa trên **Quy mô dự á
 *   **`webapp-testing`** *(Mới)*: E2E, Playwright, deep audit.
 *   **`server-management`** *(Mới)*: Process management, monitoring.
 
-### 🛡️ Nhóm Bảo Mật (Security)
+### 🛡️ Nhóm Bảo Mật & Kiểm Định (Security & Audit)
 *   **`security-auditor`**: Soát xét code tìm lỗ hổng OWASP Top 10.
-*   **`filesystem-mcp`** *(Official)*: Thao tác file nội bộ an toàn (Read, Write, Move).
-*   **`malware-analyst`**: Quét mã độc, phát hiện Phishing và phân tích URL độc hại.
+*   **`filesystem-mcp`** *(Official)*: Thao tác file nội bộ an toàn.
+*   **`malware-analyst`**: Quét mã độc, phát hiện Phishing & URL độc hại.
 *   **`penetration-tester-master`**: Đóng vai hacker mũ trắng tấn công thử nghiệm.
-*   **`vulnerability-scanner`** *(Mới)*: OWASP 2025, Supply Chain Security.
-*   **`red-team-tactics`** *(Mới)*: MITRE ATT&CK, detection evasion.
+*   **`vulnerability-scanner`**: OWASP 2025, Supply Chain Security.
+*   **`red-team-tactics`**: MITRE ATT&CK, detection evasion.
+*   **`production-code-audit`** *(Mới)*: Kiểm định code mức độ doanh nghiệp.
+*   **`lint-and-validate`** *(Mới)*: Kiểm tra chất lượng và tiêu chuẩn tĩnh.
 
 ### 🤖 Nhóm Trí Tuệ Nhân Tạo (AI Agent)
 *   **`ai-engineer`**: Xây dựng ứng dụng LLM, RAG System.
-*   **`brainstorming`** *(Mới)*: Socratic questioning, user communication.
-*   **`parallel-agents`** *(Mới)*: Multi-agent orchestration patterns.
-*   **`intelligent-routing`** *(Mới)*: Auto agent selection.
-*   **`voice-ai-engine-development`** *(Mới)*: Xây dựng Voice Agent thời gian thực (Real-time).
-*   **`daily-news-report`** *(Mới)*: AI tự động tổng hợp tin tức thị trường.
-*   **`puppeteer-mcp`** *(Official)*: Điều khiển Browser, chụp màn hình, cào dữ liệu.
-*   **`langgraph-engineering`** *(Mới)*: Xây dựng Agent có ký ức (Memory) và Persistance.
+*   **`brainstorming`**: Socratic questioning, giao tiếp người dùng.
+*   **`parallel-agents`**: Multi-agent orchestration patterns.
+*   **`intelligent-routing`**: Tự động chọn Agent phù hợp.
+*   **`agent-orchestration`** *(Mới)*: Điều phối đa Agent và quản lý trạng thái.
+*   **`langgraph-engineering`**: Xây dựng Agent có ký ức (Memory).
+*   **`puppeteer-mcp`** *(Official)*: Điều khiển Browser, cào dữ liệu.
+*   **`voice-ai-engine-development`**: Voice Agent thời gian thực.
+*   **`daily-news-report`**: AI tự động tổng hợp tin tức.
 
-### 🛠️ Nhóm Công Cụ & Tiện Ích *(Mới)*
-*   **`bash-linux`** *(Mới)*: Bash/Linux terminal patterns.
-*   **`powershell-windows`** *(Mới)*: PowerShell Windows patterns.
-*   **`systematic-debugging`** *(Mới)*: 4-phase debugging methodology.
-*   **`plan-writing`** *(Mới)*: Structured task planning.
-*   **`behavioral-modes`** *(Mới)*: AI operational modes.
-*   **`code-review-checklist`** *(Mới)*: Code review guidelines.
-*   **`documentation-templates`** *(Mới)*: README, API docs templates.
-*   **`i18n-localization`** *(Mới)*: Internationalization patterns.
-*   **`performance-profiling`** *(Mới)*: Performance measurement & analysis.
-*   **`web-design-guidelines`**: Web Interface Guidelines compliance.
-*   **`performance-engineer`**: Multi-layered application optimization.
+### 🛠️ Nhóm Công Cụ & Quản Trị Hệ Thống
+*   **`bash-linux`**: Bash/Linux terminal patterns.
+*   **`powershell-windows`**: PowerShell Windows patterns.
+*   **`systematic-debugging`**: Quy trình điều tra lỗi 4 bước.
+*   **`plan-writing`**: Lập kế hoạch nhiệm vụ có cấu trúc.
+*   **`behavioral-modes`**: Các chế độ vận hành của AI.
+*   **`code-review-checklist`**: Hướng dẫn review code.
+*   **`legacy-modernizer`** *(Mới)*: Hiện đại hóa mã nguồn cũ.
+*   **`incident-responder`** *(Mới)*: Phản ứng sự cố SRE chuyên nghiệp.
+*   **`documentation-templates`**: Mẫu tài liệu chuẩn.
+*   **`i18n-localization`**: Đa ngôn ngữ và địa phương hóa.
+*   **`performance-profiling`**: Đo lường và phân tích hiệu năng.
+*   **`performance-engineer`**: Tối ưu hóa ứng dụng đa lớp.
+*   **`modern-web-performance`** *(Mới)*: Kỹ nghệ Web hiệu năng cao.
 
-### 🎨 Nhóm Thẩm Mỹ & Growth
-*   **`ui-ux-pro-max`**: Thiết kế giao diện đẹp mê ly (Linear/Magic UI).
-*   **`seo-fundamentals`** *(Mới)*: E-E-A-T, Core Web Vitals.
+### 📈 Nhóm Growth & Marketing (SEO/GEO)
+*   **`seo-expert-kit`** *(Mới)*: Bộ công cụ SEO Master toàn diện.
+*   **`seo-fundamentals`**: E-E-A-T, Core Web Vitals.
+*   **`geo-fundamentals`** *(Mới)*: Tối ưu hóa cho AI Search (ChatGPT, Claude Search).
+*   **`cro-expert-kit`** *(Mới)*: Tối ưu hóa tỷ lệ chuyển đổi (CRO).
 *   **`copywriting-master`**: Viết nội dung bán hàng đỉnh cao.
 *   **`paid-ads-specialist`**: Tối ưu quảng cáo chuyển đổi.
+*   **`ui-ux-pro-max`**: Thiết kế giao diện Visuals Premium.
 
 ---
 

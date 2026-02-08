@@ -16,7 +16,7 @@ Hệ thống sẽ tự động khởi động **Repair & Update Mode**:
 1.  **Check**: Kiểm tra tính toàn vẹn của dự án.
 2.  **Update**: Cập nhật Engine và Rules mới nhất từ NPM.
 3.  **Repair**: Khôi phục các file hệ thống bị hỏng hoặc mất.
-4.  **Sync**: Đồng bộ DNA chuẩn v4.0.7 mới nhất.
+4.  **Sync**: Đồng bộ DNA chuẩn v4.0.8 mới nhất.
 
 ### Kiểm tra phiên bản hiện tại:
 ```bash

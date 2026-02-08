@@ -1,5 +1,9 @@
 # AntiGravity IDE (Enhanced Edition)
 
+[![npm version](https://img.shields.io/npm/v/antigravity-ide.svg?style=flat-square)](https://www.npmjs.com/package/antigravity-ide)
+[![npm downloads](https://img.shields.io/npm/dm/antigravity-ide.svg?style=flat-square)](https://www.npmjs.com/package/antigravity-ide)
+[![license](https://img.shields.io/npm/l/antigravity-ide.svg?style=flat-square)](LICENSE)
+
 Easy Vibe, Lazy Code. One Command to Rule Them All. 🛰️🚀
 
 **Official Website**: [antigravity-ide-cli.vercel.app](https://antigravity-ide-cli.vercel.app/)
@@ -24,7 +28,7 @@ npx antigravity-ide .
 > [!TIP]
 > **New to npx?** Check our [NPX Installation Guide](file:///docs/INSTALL_NPX_GUIDE.vi.md) for a step-by-step setup.
 
-### ✨ Unified God Command (v4.0.7 - Smart Repair)
+### ✨ Unified God Command (v4.0.8 - Smart Repair)
 Experience a single command to manage your entire project lifecycle:
 
 1.  **Scale-Adaptive Architecture**: 
@@ -35,9 +39,23 @@ Experience a single command to manage your entire project lifecycle:
     - Intelligent cross-engine filtering (Python vs Node.js projects).
 3.  **DNA Synchronization**:
     - Automatically pulls core enterprise DNA (API, DB, Cloud, SEO) standards.
-4.  **The Watchdog System (v4.0.7)**:
+4.  **The Watchdog System (v4.0.8)**:
     - Automatic **Hang Detection** and infinite loop prevention.
     - **Zero-Silent-Failure**: Every system error or Agent mistake is logged in \`ERRORS.md\` for recursive learning.
+
+### 🛡️ Why Choose AntiGravity IDE?
+
+| Feature | **AntiGravity IDE (v4.0.8)** | Scripts/Plugins "Hack" |
+| :--- | :--- | :--- |
+| **Safety** | ✅ **Watchdog AI** protects your account 24/7 | ❌ High risk of Google Ban (99%) |
+| **Setup** | ✅ One single command (npx) | ❌ Hard JSON configurations |
+| **Intelligence** | ✅ 72 Senior Experts (Master Skills) | ❌ Simple Wrapper only |
+| **Support** | ✅ Self-Repair & Auto-Update | ❌ Manual fix (if broken) |
+
+### 🎯 3 Steps to Your First App (Non-Tech Friendly)
+1. **Open your Terminal** (Command Prompt or Powershell).
+2. **Run the God Command**: `npx antigravity-ide my-app`
+3. **Talk to your AI Agent** and watch the magic happen!
 
 ---
 
@@ -62,14 +80,17 @@ Meet your new virtual team:
 
 ## 📈 Release History
 
+#### v4.0.8 (Marketing Alpha & NPM)
+- Updated **Minimalist Marketing Slogan**: "Easy Vibe, Lazy Code. One Command to Rule Them All."
+- Full documentation sync for Non-Tech users (80/20 target).
+- Integrated official MCP badges and professional repository standards.
+- Synchronized all 72 Master Skills and 22 Specialist Agents.
+
 #### v4.0.7 (The Unified Command Update)
 - Implemented the **Unified God Command**: \`npx antigravity-ide\` now handles Create, Update, Repair, and Fix automatically.
 - Integrated **The Watchdog**: Real-time hang detection and loop prevention.
 - **Recursive Learning**: Automatic logging of Agent errors and test failures to \`ERRORS.md\` for behavior improvement.
-- Updated all core guides to reflect the unified workflow.
-- Synchronized all 30 Workflows and 22 Specialist Agents.
 - Added comprehensive FAQ, Update, and Uninstall guides.
-- Improved CLI conflict resolution with `--force` flag.
 
 #### v4.0.5 (Final Sync)
 - Rebranded to AntiGravity IDE.
@@ -87,12 +108,15 @@ Meet your new virtual team:
 ## 📂 Project Structure
 
 ```text
-my-project/
-├── .agent/           # 🧠 THE BRAIN: DNA, Skills & Rules
-│   ├── .shared/      # ⛩️ Master Knowledge (API, DB, Design)
-│   ├── agents/       # 🎭 Specialist Agent Personas
-│   └── skills/       # 🛠️ 600+ Mission-Ready Skills
-└── cli/              # ⚡ CLI: Scaffolding management
+your-project/
+├── .agent/            # 🧠 THE BRAIN (Standardized AI Core)
+│   ├── .shared/       # ⛩️ Shared DNA (API, DB, Design standards)
+│   ├── agents/        # 🎭 Specialist Personas (Lead, PM, Security...)
+│   ├── rules/         # ⚖️ Governance Rules (Compliance, Security)
+│   ├── skills/        # 🛠️ Master Skills (Node.js, Python, AWS...)
+│   ├── workflows/     # 🚀 Operational Flows (/create, /debug...)
+│   └── scripts/       # 🧪 Automated Audit & Validation tools
+└── (your app)         # ⚡ Your source code & logic
 ```
 
 ---

@@ -1,5 +1,9 @@
 # AntiGravity IDE (Phiên bản Nâng cao)
 
+[![npm version](https://img.shields.io/npm/v/antigravity-ide.svg?style=flat-square)](https://www.npmjs.com/package/antigravity-ide)
+[![npm downloads](https://img.shields.io/npm/dm/antigravity-ide.svg?style=flat-square)](https://www.npmjs.com/package/antigravity-ide)
+[![license](https://img.shields.io/npm/l/antigravity-ide.svg?style=flat-square)](LICENSE)
+
 Vibe thoải mái, Code thảnh thơi. Một lệnh duy nhất cân cả thế giới. 🛰️🚀
 
 **Trang chủ chính thức**: [antigravity-ide-cli.vercel.app](https://antigravity-ide-cli.vercel.app/)
@@ -28,7 +32,7 @@ npx antigravity-ide .
 > [!WARNING]
 > **Lưu ý quan trọng:** Không nên cài đặt Global (`npm install -g antigravity-ide`) vì sẽ gây xung đột. Xem [Hướng dẫn Gỡ cài đặt](file:///docs/UNINSTALL_GUIDE.vi.md) nếu đã lỡ cài.
 
-### ✨ Unified God Command (v4.0.7 - Smart Repair)
+### ✨ Unified God Command (v4.0.8 - Smart Repair)
 Trải nghiệm một lệnh duy nhất để quản trị toàn bộ vòng đời dự án:
 
 1.  **Kiến trúc Thích ứng theo Quy mô (Scale-Adaptive)**: 
@@ -42,6 +46,20 @@ Trải nghiệm một lệnh duy nhất để quản trị toàn bộ vòng đ�
 4.  **Hệ thống Giám sát "The Watchdog" (v4.0.8)**: 
     - Cơ chế tự động phát hiện treo (Hang Detection) và ngăn chặn vòng lặp vô hạn.
     - **Zero-Silent-Failure**: Mọi lỗi hệ thống và sai sót của Agent đều được lưu lại tại `ERRORS.md` để tự động học hỏi.
+
+### 🛡️ Tại sao nên chọn AntiGravity IDE?
+
+| Tính năng | **AntiGravity IDE (v4.0.8)** | Scripts/Plugins "Lậu" |
+| :--- | :--- | :--- |
+| **Độ an toàn** | ✅ **Watchdog AI** bảo vệ tài khoản 24/7 | ❌ Rủi ro bị Google Ban 99% |
+| **Cài đặt** | ✅ 1 câu lệnh duy nhất (npx) | ❌ Cấu hình file JSON cực khó |
+| **Chỉ số thông minh** | ✅ 72 Chuyên gia (Senior Skills) | ❌ Chỉ là vỏ (Wrapper) đơn giản |
+| **Bảo trì** | ✅ Tự sửa lỗi, tự cập nhật | ❌ Hỏng là "nghỉ game" |
+
+### 🎯 3 bước để có ứng dụng đầu tiên (Dành cho Non-Tech)
+1. **Mở Terminal** (Command Prompt hoặc Powershell).
+2. **Chạy Lệnh Vạn Năng**: `npx antigravity-ide ten-du-an`
+3. **Trò chuyện với AI** và xem phép thuật hiện ra!
 
 ---
 
@@ -64,16 +82,17 @@ Chúng tôi cung cấp thư viện 72 kỹ năng "Senior-Grade" được phân l
 
 ---
 
-#### v4.0.8 (Nâng cấp tài liệu & CLI)
-- Đồng bộ hóa toàn bộ 30 Workflows và 22 Agents.
-- Bổ sung tài liệu FAQ, Update và Uninstall.
-- Tối ưu hóa cơ chế xử lý xung đột file (--force).
+#### v4.0.8 (Alpha Marketing & NPM)
+- Cập nhật **Slogan Marketing tối giản**: "Vibe thoải mái, Code thảnh thơi. Một lệnh duy nhất cân cả thế giới."
+- Đồng bộ toàn bộ tài liệu cho người dùng Non-Tech (chiếm 80% đối tượng).
+- Tích hợp các Badge chuyên nghiệp và quy chuẩn NPM chuẩn quốc tế.
+- Nhất quán 72 Master Skills và 22 Specialist Agents.
 
-#### v4.0.5 (Đồng bộ cuối)
-- Đổi tên thương hiệu thành AntiGravity IDE.
-- Chuẩn hóa toàn bộ 72 Master Skills sang metadata v4.0.8.
-- Tích hợp nhận diện môi trường Python.
-- Nhất quán License & Credits.
+#### v4.0.7 (Nâng cấp Lệnh Vạn Năng)
+- Triển khai **Unified God Command**: `npx antigravity-ide` tự động xử lý Tạo mới, Cập nhật, Sửa lỗi và Fix.
+- Tích hợp **The Watchdog**: Phát hiện treo và chống vòng lặp thời gian thực.
+- **Recursive Learning**: Tự động ghi lỗi vào `ERRORS.md` để cải thiện hành vi Agent.
+- Bổ sung tài liệu FAQ, Update và Uninstall đầy đủ.
 
 #### v4.0.0 (Đại cập nhật)
 - Ra mắt kiến trúc thích ứng quy mô (Instant/Creative/SME).
@@ -85,12 +104,15 @@ Chúng tôi cung cấp thư viện 72 kỹ năng "Senior-Grade" được phân l
 ## 📂 Cấu trúc dự án
 
 ```text
-ten-du-an/
-├── .agent/           # 🧠 BỘ NÃO: Agent DNA, Skills & Quy tắc
-│   ├── .shared/      # ⛩️ Master Knowledge (API, DB, Design)
-│   ├── agents/       # 🎭 Hệ thống nhân vật Chuyên gia
-│   └── skills/       # 🛠️ 600+ Công cụ tác chiến
-└── cli/              # ⚡ CLI: Quản lý scaffolding
+du-an-cua-ban/
+├── .agent/            # 🧠 BỘ NÃO (Nhân lõi AI chuẩn hóa)
+│   ├── .shared/       # ⛩️ DNA Hệ thống (API, DB, Design standards)
+│   ├── agents/        # 🎭 Đội ngũ chuyên gia (Lead, PM, Security...)
+│   ├── rules/         # ⚖️ Quy tắc vận hành (Compliance, Security)
+│   ├── skills/        # 🛠️ Bộ kỹ năng Master (Node.js, Python, AWS...)
+│   ├── workflows/     # 🚀 Quy trình tự động (/create, /debug...)
+│   └── scripts/       # 🧪 Công cụ kiểm định & Validation tự động
+└── (code của bạn)     # ⚡ Mã nguồn ứng dụng
 ```
 
 ---

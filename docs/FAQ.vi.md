@@ -6,7 +6,7 @@
 **A**: Không hẳn. Nó hoạt động như một lớp bổ trợ (layer) thông minh chạy trên nền Node.js. Bạn có thể gọi nó bất cứ lúc nào qua `npx` mà không cần cài đặt nặng nề như Visual Studio hay Android Studio.
 
 ### Q: Tôi có thể dùng nó với dự án có sẵn không (Brownfield Project)?
-**A**: **Có!** Hãy cd vào thư mục dự án của bạn và chạy `npx antigravity-ide@latest init`. Nó sẽ tự động phát hiện cấu trúc và chỉ thêm thư mục `.agent` vào mà không làm hỏng code cũ của bạn.
+**A**: **Có!** Hãy cd vào thư mục dự án của bạn và chạy `npx antigravity-ide`. Nó sẽ tự động phát hiện dự án và chỉ thêm bộ não `.agent/` vào mà không làm hỏng code cũ của bạn.
 
 ### Q: Nó có miễn phí không?
 **A**: Mã nguồn AntiGravity là **Open Source**. Tuy nhiên, để AI hoạt động thông minh, bạn cần API Key của các mô hình LLM (như Gemini, GPT-4, Claude) - phần này có thể tốn phí tùy nhà cung cấp.
