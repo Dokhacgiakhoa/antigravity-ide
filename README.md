@@ -2,6 +2,8 @@
 
 The First AI-Native IDE designed for Vibe Coding & Agentic Workflow. 🛰️🚀
 
+**Official Website**: [antigravity-ide-cli.vercel.app](https://antigravity-ide-cli.vercel.app/)
+
 > [!IMPORTANT]
 > **AntiGravity IDE** is a conceptual expansion of the original Antigravity framework, optimized for senior-level engineering, security, and high-performance web development.
 

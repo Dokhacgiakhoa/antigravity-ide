@@ -2,6 +2,8 @@
 
 IDE đầu tiên được thiết kế dành riêng cho "Vibe Coding" và Quy trình Tác chiến AI (Agentic Workflow). 🛰️🚀
 
+**Trang chủ chính thức**: [antigravity-ide-cli.vercel.app](https://antigravity-ide-cli.vercel.app/)
+
 > [!IMPORTANT]
 > **AntiGravity IDE** là một bản mở rộng đột phá của framework Antigravity gốc, được tối ưu hóa cho kỹ thuật phần mềm cấp cao, bảo mật và phát triển web hiệu năng cao.
 

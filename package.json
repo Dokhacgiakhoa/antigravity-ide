@@ -2,6 +2,7 @@
   "name": "antigravity-ide",
   "version": "4.0.5",
   "description": "The First AI-Native IDE designed for Vibe Coding & Agentic Workflow.",
+  "homepage": "https://antigravity-ide-cli.vercel.app/",
   "main": "cli/index.js",
   "bin": {
     "antigravity": "./cli/index.js",
