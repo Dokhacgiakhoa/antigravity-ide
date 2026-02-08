@@ -4,10 +4,10 @@
 [![npm downloads](https://img.shields.io/npm/dm/antigravity-ide.svg?style=flat-square)](https://www.npmjs.com/package/antigravity-ide)
 [![license](https://img.shields.io/npm/l/antigravity-ide.svg?style=flat-square)](LICENSE)
 
-Easy Vibe, Lazy Code. One Command to Rule Them All. 🛰️🚀
-
 | **15** Rules | **22** Agents | **72** Master Skills | **600+** AI Patterns | **30** Workflows | **52** DNA Libraries |
 | :---: | :---: | :---: | :---: | :---: | :---: |
+
+Easy Vibe, Lazy Code. One Command to Rule Them All. 🛰️🚀
 
 **Official Website**: [antigravity-ide-cli.vercel.app](https://antigravity-ide-cli.vercel.app/)
 

@@ -4,10 +4,10 @@
 [![npm downloads](https://img.shields.io/npm/dm/antigravity-ide.svg?style=flat-square)](https://www.npmjs.com/package/antigravity-ide)
 [![license](https://img.shields.io/npm/l/antigravity-ide.svg?style=flat-square)](LICENSE)
 
-Vibe thoải mái, Code thảnh thơi. Một lệnh duy nhất cân cả thế giới. 🛰️🚀
-
 | **15** Quy tắc | **22** Agent | **72** Chuyên gia | **600+** Chiến thuật | **30** Quy trình | **52** Thư viện DNA |
 | :---: | :---: | :---: | :---: | :---: | :---: |
+
+Vibe thoải mái, Code thảnh thơi. Một lệnh duy nhất cân cả thế giới. 🛰️🚀
 
 **Trang chủ chính thức**: [antigravity-ide-cli.vercel.app](https://antigravity-ide-cli.vercel.app/)
 
