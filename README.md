@@ -1,24 +1,31 @@
-# AntiGravity IDE (Enhanced Edition)
+<div align="center">
 
-[![npm version](https://img.shields.io/npm/v/antigravity-ide.svg?style=flat-square&color=2ea44f)](https://www.npmjs.com/package/antigravity-ide)
-[![npm downloads](https://img.shields.io/npm/dm/antigravity-ide.svg?style=flat-square&color=blueviolet)](https://www.npmjs.com/package/antigravity-ide)
-[![license](https://img.shields.io/npm/l/antigravity-ide.svg?style=flat-square&color=orange)](LICENSE)
+# 🛰️ AntiGravity IDE
+### *Enhanced Edition • v4.1.0 Meta-Engine*
 
-| **15** Rules • **22** Agents • **573** Master Skills • **2977** AI Patterns • **30** Workflows • **135** Shared DNA Libraries |
+[![npm version](https://img.shields.io/npm/v/antigravity-ide.svg?style=for-the-badge&color=2ea44f)](https://www.npmjs.com/package/antigravity-ide)
+[![npm downloads](https://img.shields.io/npm/dm/antigravity-ide.svg?style=for-the-badge&color=blueviolet)](https://www.npmjs.com/package/antigravity-ide)
+[![license](https://img.shields.io/npm/l/antigravity-ide.svg?style=for-the-badge&color=orange)](LICENSE)
+
+**Easy Vibe, Lazy Code. One Command to Rule Them All.**
+
+[Explore Docs](https://antigravity-ide-cli.vercel.app/) • [Github](https://github.com/Dokhacgiakhoa/antigravity-ide) • [Report Bug](https://github.com/Dokhacgiakhoa/antigravity-ide/issues)
+
+---
+
+### 📊 Project Mastery at a Glance
+
+| **15** Rules | **22** Agents | **573** Skills | **2977** Patterns | **30** Flows | **135** DNA |
 | :---: | :---: | :---: | :---: | :---: | :---: |
+| *Governance* | *Specialists* | *Operational* | *Advanced AI* | *Standardized* | *Core Libraries* |
 
-Easy Vibe, Lazy Code. One Command to Rule Them All. 🛰️🚀
-
-**Official Website**: [antigravity-ide-cli.vercel.app](https://antigravity-ide-cli.vercel.app/)
-
-> [!IMPORTANT]
-> **AntiGravity IDE** is a conceptual expansion of the original Antigravity framework, optimized for senior-level engineering, security, and high-performance web development.
+</div>
 
 ---
 
 ## ⚡ Global Installation (npx)
 
-The recommended way to use Antigravity IDE is via **npx**. This ensures you always have the latest engine and master skills without messy global installs.
+The recommended way to use Antigravity IDE is via **npx**. No global clutter, always the latest engine.
 
 ```sh
 # UNIFIED COMMAND: Create, Update, Repair, and Sync
@@ -31,138 +38,59 @@ npx antigravity-ide .
 > [!TIP]
 > **New to npx?** Check our [NPX Installation Guide](file:///docs/INSTALL_NPX_GUIDE.vi.md) for a step-by-step setup.
 
-### ✨ Unified God Command (v4.0.9 - Smart Repair)
-Experience a single command to manage your entire project lifecycle:
+---
 
-1.  **Scale-Adaptive Architecture**: 
-    - Choose between **Instant (MVP)**, **Creative (Full AI)**, and **SME (Enterprise Ready)**.
-    - Each scale automatically configures different sets of Rules and Master Skills.
-2.  **Environment Awareness**:
-    - Proactive Python detection for advanced AI & Data features.
-    - Intelligent cross-engine filtering (Python vs Node.js projects).
-3.  **DNA Synchronization**:
-    - Automatically pulls core enterprise DNA (API, DB, Cloud, SEO) standards.
-4.  **The Watchdog System (v4.0.9)**:
-    - Automatic **Hang Detection** and infinite loop prevention.
-    - **Zero-Silent-Failure**: Every system error or Agent mistake is logged in \`ERRORS.md\` for recursive learning.
+## ✨ The Premium Edge (v4.1.0)
 
-### 🛡️ Why Choose AntiGravity IDE?
-
-| Feature | **AntiGravity IDE (v4.0.9)** | Scripts/Plugins "Hack" |
+| Feature | **AntiGravity IDE** | Standard AI Wrappers |
 | :--- | :--- | :--- |
-| **Safety** | ✅ **Watchdog AI** protects your account 24/7 | ❌ High risk of Google Ban (99%) |
-| **Setup** | ✅ One single command (npx) | ❌ Hard JSON configurations |
-| **Intelligence** | ✅ 72 Senior Experts (Master Skills) | ❌ Simple Wrapper only |
-| **Support** | ✅ Self-Repair & Auto-Update | ❌ Manual fix (if broken) |
-
-### 🎯 3 Steps to Your First App (Non-Tech Friendly)
-1. **Open your Terminal** (Command Prompt or Powershell).
-2. **Run the God Command**: `npx antigravity-ide my-app`
-3. **Talk to your AI Agent** and watch the magic happen!
+| **🧠 Fractal Intelligence** | **573 Core Skills** with 2977 nested tactics | Single-purpose prompts |
+| **🛡️ Watchdog System** | Real-time hang detection & error learning | Direct failures / Silent crashes |
+| **🌊 Scale Adaptive** | Modular DNA for Instant, Creative, or SME | One-size-fits-all |
+| **🛠️ Self-Healing** | Auto-repair logic via unified god command | Manual JSON debugging |
 
 ---
 
-## 🧩 The Core Ecosystem
-
-### 🧠 Master Skills (72 Chuyên Gia)
-We provide a library of 72 "Senior-Grade" skills categorized by domain. Each skill contains specialized instructions, best practices, and automated workflows.
-
-- **Web Performance**: Next.js 15, React 19, Tailwind v4.
-- **Security**: OWASP Audit, Malware Analysis, Pentesting.
-- **Infrastructure**: Docker, AWS, Vercel, Supabase.
-- **AI Execution**: LangGraph, RAG Systems, Multi-Agent Orchestration.
-
-### 🎭 Specialist Agents
-Meet your new virtual team:
-- **Lead Developer**: System Design & Code quality.
-- **Security Auditor**: Vulnerability scanning.
-- **Product Manager**: Task planning & prioritization.
-- ...and 19 other senior personas.
+## 🎯 3 Steps to Your First App
+1. **Launch Terminal**: Open Command Prompt or Powershell.
+2. **Execute God Command**: `npx antigravity-ide my-app`
+3. **Talk to the Brain**: Interact with your new Virtual Team.
 
 ---
 
-## 📈 Release History
-
-#### v4.0.9 (Content Polish)
-- Moved **Project Statistics Bar** to top for maximum visual impact.
-- Standardized Badge Colors: Green (Version), Purple (Downloads), Orange (License).
-- Audited all 72 Skills and 600+ Patterns for consistency.
-- Fixed minor typos in Vietnamese guides.
-
-#### v4.0.8 (Marketing Alpha & NPM)
-- Updated **Minimalist Marketing Slogan**: "Easy Vibe, Lazy Code. One Command to Rule Them All."
-- Full documentation sync for Non-Tech users (80/20 target).
-- Integrated official MCP badges and professional repository standards.
-- Synchronized all 72 Master Skills and 22 Specialist Agents.
-
-#### v4.0.7 (The Unified Command Update)
-- Implemented the **Unified God Command**: \`npx antigravity-ide\` now handles Create, Update, Repair, and Fix automatically.
-- Integrated **The Watchdog**: Real-time hang detection and loop prevention.
-- **Recursive Learning**: Automatic logging of Agent errors and test failures to \`ERRORS.md\` for behavior improvement.
-- Added comprehensive FAQ, Update, and Uninstall guides.
-
-#### v4.0.5 (Final Sync)
-- Rebranded to AntiGravity IDE.
-- Standardized all 72 Master Skills to v4.0.8 metadata.
-- Integrated Python environment awareness.
-- Unified License & Credits.
-
-#### v4.0.0 (Big Update)
-- Introduced Scalable Architecture (Instant/Creative/SME).
-- Implemented "Scientific Linking" between DNA, Skills, and Agents.
-- Full rewrite of the CLI Setup Wizard.
-
----
-
-## 📂 Project Structure
+## 📂 Visual Brain Structure
 
 ```text
 your-project/
-├── .agent/            # 🧠 THE BRAIN (Standardized AI Core)
-│   ├── .shared/       # ⛩️ Shared DNA (API, DB, Design standards)
-│   ├── agents/        # 🎭 Specialist Personas (Lead, PM, Security...)
-│   ├── rules/         # ⚖️ Governance Rules (Compliance, Security)
-│   ├── skills/        # 🛠️ Master Skills (Node.js, Python, AWS...)
-│   ├── workflows/     # 🚀 Operational Flows (/create, /debug...)
-│   └── scripts/       # 🧪 Automated Audit & Validation tools
-└── (your app)         # ⚡ Your source code & logic
+├── .agent/              # 🧠 THE BRAIN (Fractal Core)
+│   ├── .shared/         # ⛩️ DNA (API/DB/Security Standards)
+│   ├── agents/          # 🎭 Specialists (Lead, PM, Auditor)
+│   ├── rules/           # ⚖️ Governance (Compliance, Context)
+│   ├── skills/          # 🛠️ Mastery (573 Fractal Skills)
+│   ├── workflows/       # 🚀 Ops (/create, /debug, /audit)
+│   └── scripts/         # 🧪 Continuous Validation
+└── (your app)           # ⚡ Your Source Code
 ```
 
 ---
 
-**AntiGravity IDE** - Easy Vibe, Lazy Code. One Command to Rule Them All. 🛰️🚀
+## 🧠 Master Ecosystem
+
+### 🎭 Virtual Specialist Team
+- **Lead Developer**: System Design & Architecture.
+- **Security Auditor**: Real-time vulnerability scanning.
+- **Product Manager**: Semantic task planning.
+- *...and 19 other senior industrial personas.*
+
+### 🛠️ Strategic Skill Domains
+- **High-Perf Web**: Next.js 15, React 19, Tailwind v4.
+- **Offensive Security**: OWASP, Malware, Pentesting.
+- **Infra & Cloud**: K8s, Docker, AWS, Vercel, Supabase.
+- **Advanced AI**: LangGraph, RAG, Multi-Agent Orchestration.
 
 ---
 
-## 📚 Official Resources & References
+## 🙏 Credits
+Authored by **Dokhacgiakhoa**. Inspired by [Antigravity Kit](https://github.com/vudovn/antigravity-kit), [Awesome Skills](https://github.com/sickn33/antigravity-awesome-skills), [MCP](https://modelcontextprotocol.io/), and [Fabric](https://github.com/danielmiessler/fabric).
 
-### 📘 Documentation (The Source of Truth)
-- **Antigravity Docs**: [antigravity.google/docs](https://antigravity.google/docs)
-- **Agent Configuration**: [github.com/Dokhacgiakhoa/antigravity-ide/tree/main/.agent/agents](https://github.com/Dokhacgiakhoa/antigravity-ide/tree/main/.agent/agents)
-- **Model Context Protocol (MCP)**: [modelcontextprotocol.io](https://modelcontextprotocol.io/)
-- **Gemini MCP Server**: [github.com/google-gemini/mcp-server](https://github.com/google-gemini/mcp-server)
-
-### 📂 Code Repositories (Blueprints)
-- **Official MCP Servers**: [github.com/modelcontextprotocol/servers](https://github.com/modelcontextprotocol/servers)
-- **Antigravity Skills Tutorial**: [github.com/rominirani/antigravity-skills](https://github.com/rominirani/antigravity-skills)
-- **Python SDK**: [github.com/modelcontextprotocol/python-sdk](https://github.com/modelcontextprotocol/python-sdk)
-- **TypeScript SDK**: [github.com/modelcontextprotocol/typescript-sdk](https://github.com/modelcontextprotocol/typescript-sdk)
-- **FastMCP (Python)**: [github.com/jlowin/fastmcp](https://github.com/jlowin/fastmcp)
-
-### 🌐 Community Hubs
-- **MCP Server Registry**: [glama.ai/mcp/servers](https://glama.ai/mcp/servers)
-- **Cursor Directory (Rules)**: [cursor.directory](https://cursor.directory/)
-- **System Prompts**: [github.com/mustvlad/ChatGPT-System-Prompts](https://github.com/mustvlad/ChatGPT-System-Prompts)
-
----
-
-## 🙏 Credits & Acknowledgements
-
-**AntiGravity IDE** is authored and maintained by **Dokhacgiakhoa**. Special thanks to the open-source community and the following projects for their foundational inspiration:
-
-- [Antigravity Kit](https://github.com/vudovn/antigravity-kit) by `vudovn`.
-- [Awesome Skills](https://github.com/sickn33/antigravity-awesome-skills) and [UI/UX Pro Max](https://github.com/sickn33/ui-ux-pro-max) by `sickn33`.
-- [Model Context Protocol](https://modelcontextprotocol.io/) by Anthropic.
-- Strategic patterns inspired by [Fabric](https://github.com/danielmiessler/fabric).
-
-Developed with 💡 by **Dokhacgiakhoa** • [LICENSE](LICENSE)
+Developed with 💡 by **Dokhacgiakhoa** • [MIT LICENSE](LICENSE)

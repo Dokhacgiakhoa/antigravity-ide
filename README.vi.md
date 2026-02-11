@@ -1,149 +1,96 @@
-# AntiGravity IDE (Phiên bản Nâng cao)
+<div align="center">
 
-[![npm version](https://img.shields.io/npm/v/antigravity-ide.svg?style=flat-square&color=2ea44f)](https://www.npmjs.com/package/antigravity-ide)
-[![npm downloads](https://img.shields.io/npm/dm/antigravity-ide.svg?style=flat-square&color=blueviolet)](https://www.npmjs.com/package/antigravity-ide)
-[![license](https://img.shields.io/npm/l/antigravity-ide.svg?style=flat-square&color=orange)](LICENSE)
+# 🛰️ AntiGravity IDE
+### *Phiên bản Nâng cao • v4.1.0 Meta-Engine*
 
-| **15** Rules • **22** Agents • **573** Master Skills • **2977** AI Patterns • **30** Workflows • **135** Shared DNA Libraries
- |
+[![npm version](https://img.shields.io/npm/v/antigravity-ide.svg?style=for-the-badge&color=2ea44f)](https://www.npmjs.com/package/antigravity-ide)
+[![npm downloads](https://img.shields.io/npm/dm/antigravity-ide.svg?style=for-the-badge&color=blueviolet)](https://www.npmjs.com/package/antigravity-ide)
+[![license](https://img.shields.io/npm/l/antigravity-ide.svg?style=for-the-badge&color=orange)](LICENSE)
+
+**Vibe thoải mái, Code thảnh thơi. Một lệnh duy nhất cân cả thế giới.**
+
+[Trang chủ](https://antigravity-ide-cli.vercel.app/) • [Github](https://github.com/Dokhacgiakhoa/antigravity-ide) • [Báo lỗi](https://github.com/Dokhacgiakhoa/antigravity-ide/issues)
+
+---
+
+### 📊 Chỉ số Hệ thống v4.1.0
+
+| **15** Quy tắc | **22** Chuyên gia | **573** Kỹ năng | **2977** Chiến thuật | **30** Quy trình | **135** Thư viện DNA |
 | :---: | :---: | :---: | :---: | :---: | :---: |
+| *Quản trị* | *Virtual Agents* | *Công cụ lõi* | *Mẫu AI Nâng cao* | *Chuẩn hóa* | *DNA Dùng chung* |
 
-Vibe thoải mái, Code thảnh thơi. Một lệnh duy nhất cân cả thế giới. 🛰️🚀
-
-**Trang chủ chính thức**: [antigravity-ide-cli.vercel.app](https://antigravity-ide-cli.vercel.app/)
-
-> [!IMPORTANT]
-> **AntiGravity IDE** là một bản mở rộng đột phá của framework Antigravity gốc, được tối ưu hóa cho kỹ thuật phần mềm cấp cao, bảo mật và phát triển web hiệu năng cao.
+</div>
 
 ---
 
 ## ⚡ Cài đặt Toàn cầu (npx)
 
-Cách tốt nhất để sử dụng Antigravity IDE là thông qua **npx**. Điều này đảm bảo bạn luôn có Engine và Master Skills mới nhất mà không làm rác máy bởi các gói cài đặt global.
+Khuyến khích sử dụng thông qua **npx** để luôn có Engine và Skills mới nhất mà không gây rác hệ thống.
 
 ```sh
-# LỆNH VẠN NĂNG (Tất cả trong một): Tạo mới, Update, Sửa lỗi, Đồng bộ
-npx antigravity-ide [tên-dự-án]
+# LỆNH VẠN NĂNG: Tạo mới, Cập nhật, Sửa lỗi và Đồng bộ
+npx antigravity-ide [ten-du-an]
 
-# Nếu chạy trong thư mục dự án cũ, nó sẽ tự động REPAIR & UPDATE
+# Chạy trong dự án cũ để tự động SỬA LỖI & CẬP NHẬT
 npx antigravity-ide .
 ```
 
 > [!TIP]
-> **Mới làm quen với npx?** Xem [Hướng dẫn Cài đặt NPX](file:///docs/INSTALL_NPX_GUIDE.vi.md) để bắt đầu.
-> **Cần hỗ trợ?** Xem [FAQ](file:///docs/FAQ.vi.md) hoặc [Hướng dẫn Cập nhật](file:///docs/UPDATE_GUIDE.vi.md).
+> **Mới dùng npx?** Xem [Hướng dẫn Cài đặt](file:///docs/INSTALL_NPX_GUIDE.vi.md) để bắt đầu.
 
-> [!WARNING]
-> **Lưu ý quan trọng:** Không nên cài đặt Global (`npm install -g antigravity-ide`) vì sẽ gây xung đột. Xem [Hướng dẫn Gỡ cài đặt](file:///docs/UNINSTALL_GUIDE.vi.md) nếu đã lỡ cài.
+---
 
-### ✨ Unified God Command (v4.0.9 - Smart Repair)
-Trải nghiệm một lệnh duy nhất để quản trị toàn bộ vòng đời dự án:
+## ✨ Điểm khác biệt (Phiên bản v4.1.0)
 
-1.  **Kiến trúc Thích ứng theo Quy mô (Scale-Adaptive)**: 
-    - Chọn giữa các mức độ **Instant (MVP)**, **Creative (Toàn diện AI)**, và **SME (Chuẩn doanh nghiệp)**.
-    - Mỗi quy mô sẽ tự động nạp bộ Rules và Master Skills tương ứng.
-2.  **Nhận diện Môi trường (Environment Awareness)**:
-    - Tự động phát hiện môi trường Python cho các tính năng AI & Data nâng cao.
-    - Bộ lọc cross-engine thông minh: Tự động loại bỏ file thừa nếu project chỉ dùng Node.js.
-3.  **Đồng bộ DNA**:
-    - Tự động tích hợp các tiêu chuẩn DNA cốt lõi (API, Database, Cloud, SEO/GEO) của hệ thống.
-4.  **Hệ thống Giám sát "The Watchdog" (v4.0.9)**: 
-    - Cơ chế tự động phát hiện treo (Hang Detection) và ngăn chặn vòng lặp vô hạn.
-    - **Zero-Silent-Failure**: Mọi lỗi hệ thống và sai sót của Agent đều được lưu lại tại `ERRORS.md` để tự động học hỏi.
-
-### 🛡️ Tại sao nên chọn AntiGravity IDE?
-
-| Tính năng | **AntiGravity IDE (v4.0.9)** | Scripts/Plugins "Lậu" |
+| Tính năng | **AntiGravity IDE** | Wrapper AI thông thường |
 | :--- | :--- | :--- |
-| **Độ an toàn** | ✅ **Watchdog AI** bảo vệ tài khoản 24/7 | ❌ Rủi ro bị Google Ban 99% |
-| **Cài đặt** | ✅ 1 câu lệnh duy nhất (npx) | ❌ Cấu hình file JSON cực khó |
-| **Chỉ số thông minh** | ✅ 72 Chuyên gia (Senior Skills) | ❌ Chỉ là vỏ (Wrapper) đơn giản |
-| **Bảo trì** | ✅ Tự sửa lỗi, tự cập nhật | ❌ Hỏng là "nghỉ game" |
+| **🧠 Trí tuệ Fractal** | **573 Kỹ năng** với 2977 chiến thuật | Chỉ là các câu prompt rời rạc |
+| **🛡️ Hệ thống Watchdog** | Phát hiện treo & Tự học từ lỗi dự án | Hay bị kẹt / Lỗi im lặng |
+| **🌊 Scale Adaptive** | DNA linh hoạt cho Instant/Creative/SME | Một khuôn mẫu cho mọi dự án |
+| **🛠️ Self-Healing** | Tự sửa lỗi cấu hình qua 1 lệnh duy nhất | Phải sửa JSON thủ công |
 
-### 🎯 3 bước để có ứng dụng đầu tiên (Dành cho Non-Tech)
-1. **Mở Terminal** (Command Prompt hoặc Powershell).
+---
+
+## 🎯 3 Bước để Bắt đầu
+1. **Mở Terminal**: Command Prompt hoặc Powershell.
 2. **Chạy Lệnh Vạn Năng**: `npx antigravity-ide ten-du-an`
-3. **Trò chuyện với AI** và xem phép thuật hiện ra!
+3. **Trò chuyện với AI**: Bắt đầu làm việc với đội ngũ ảo của bạn.
 
 ---
 
-## 🧩 Hệ Sinh Thái Cốt Lõi
-
-### 🧠 Kỹ Năng Bậc Thầy (72 Master Skills)
-Chúng tôi cung cấp thư viện 72 kỹ năng "Senior-Grade" được phân loại theo domain. Mỗi kỹ năng là một "chuyên gia ảo" với quy trình tác chiến riêng.
-
-- **Web Performance**: Next.js 15, React 19, Tailwind v4.
-- **Security**: Kiểm định OWASP, Phân tích mã độc, Pentesting.
-- **Infrastructure**: Docker, AWS, Vercel, Supabase.
-- **AI Execution**: LangGraph, Hệ thống RAG, Điều phối đa Agent.
-
-### 🎭 Hệ thống Agent Chuyên Gia
-Đội ngũ nhân sự ảo của bạn bao gồm:
-- **Lead Developer**: Thiết kế hệ thống & Đảm bảo chất lượng code.
-- **Security Auditor**: Quét lỗ hổng bảo mật.
-- **Product Manager**: Lập kế hoạch và ưu tiên Task.
-- ...và hơn 19 nhân vật Senior khác.
-
----
-
-#### v4.0.9 (Content Polish)
-- Đưa **Thanh thống kê (Stats Bar)** lên đầu trang để tạo ấn tượng thị giác.
-- Chuẩn hóa màu Badge: Version (Lục), Downloads (Tím), License (Cam).
-- Rà soát chính tả và tính nhất quán trên toàn bộ 72 Skills.
-
-#### v4.0.8 (Alpha Marketing & NPM)
-- Cập nhật **Slogan Marketing tối giản**: "Vibe thoải mái, Code thảnh thơi. Một lệnh duy nhất cân cả thế giới."
-- Đồng bộ toàn bộ tài liệu cho người dùng Non-Tech (chiếm 80% đối tượng).
-- Tích hợp các Badge chuyên nghiệp và quy chuẩn NPM chuẩn quốc tế.
-- Nhất quán 72 Master Skills và 22 Specialist Agents.
-
-#### v4.0.7 (Nâng cấp Lệnh Vạn Năng)
-- Triển khai **Unified God Command**: `npx antigravity-ide` tự động xử lý Tạo mới, Cập nhật, Sửa lỗi và Fix.
-- Tích hợp **The Watchdog**: Phát hiện treo và chống vòng lặp thời gian thực.
-- **Recursive Learning**: Tự động ghi lỗi vào `ERRORS.md` để cải thiện hành vi Agent.
-- Bổ sung tài liệu FAQ, Update và Uninstall đầy đủ.
-
-#### v4.0.0 (Đại cập nhật)
-- Ra mắt kiến trúc thích ứng quy mô (Instant/Creative/SME).
-- Triển khai "Liên kết Khoa học" (Scientific Linking) giữa DNA, Skills và Agents.
-- Viết lại toàn bộ CLI Setup Wizard.
-
----
-
-## 📂 Cấu trúc dự án
+## 📂 Cấu trúc Dự án (Visual Tree)
 
 ```text
 du-an-cua-ban/
-├── .agent/            # 🧠 BỘ NÃO (Nhân lõi AI chuẩn hóa)
-│   ├── .shared/       # ⛩️ DNA Hệ thống (API, DB, Design standards)
-│   ├── agents/        # 🎭 Đội ngũ chuyên gia (Lead, PM, Security...)
-│   ├── rules/         # ⚖️ Quy tắc vận hành (Compliance, Security)
-│   ├── skills/        # 🛠️ Bộ kỹ năng Master (Node.js, Python, AWS...)
-│   ├── workflows/     # 🚀 Quy trình tự động (/create, /debug...)
-│   └── scripts/       # 🧪 Công cụ kiểm định & Validation tự động
-└── (code của bạn)     # ⚡ Mã nguồn ứng dụng
+├── .agent/              # 🧠 BỘ NÃO (Fractal Core)
+│   ├── .shared/         # ⛩️ DNA (API/DB/Security Standards)
+│   ├── agents/          # 🎭 Chuyên gia (Lead, PM, Auditor)
+│   ├── rules/           # ⚖️ Quản trị (Compliance, Context)
+│   ├── skills/          # 🛠️ Kỹ năng (573 Fractal Skills)
+│   ├── workflows/       # 🚀 Quy trình (/create, /debug, /audit)
+│   └── scripts/         # 🧪 Kiểm định & Validation
+└── (code của bạn)       # ⚡ Mã nguồn ứng dụng
 ```
 
 ---
 
-## ️ Triết lý "Vỏ Việt - Lõi Anh"
+## 🧠 Hệ sinh thái Master
 
-- **Giao tiếp**: Tiếng Việt (Trực quan, súc tích).
-- **Kỹ thuật**: Tiếng Anh (Biến, hàm, logic - Đảm bảo hiệu suất AI cao nhất).
+### 🎭 Đội ngũ Tác nhân Chuyên gia
+- **Lead Developer**: Thiết kế hệ thống & Kiến trúc.
+- **Security Auditor**: Quét lỗ hổng bảo mật thời gian thực.
+- **Product Manager**: Lập kế hoạch Task thông minh.
+- *...và 19 nhân sự Senior khác.*
+
+### 🛠️ Lĩnh vực Tác chiến Kỹ năng
+- **Web Hiệu năng cao**: Next.js 15, React 19, Tailwind v4.
+- **Bảo mật Tấn công**: OWASP, Malware, Pentesting.
+- **Hạ tầng & Cloud**: K8s, Docker, AWS, Vercel, Supabase.
+- **AI Chuyên sâu**: LangGraph, RAG, Điều phối Đa Agent.
 
 ---
 
-**AntiGravity IDE** - Vibe thoải mái, Code thảnh thơi. Một lệnh duy nhất cân cả thế giới. 🛰️🚀
+## 🙏 Ghi nhận
+Phát triển bởi **Dokhacgiakhoa**. Cảm ơn [Antigravity Kit](https://github.com/vudovn/antigravity-kit), [Awesome Skills](https://github.com/sickn33/antigravity-awesome-skills), [MCP](https://modelcontextprotocol.io/), và [Fabric](https://github.com/danielmiessler/fabric).
 
----
-
-## 🙏 Ghi nhận & Tri ân (Credits)
-
-**AntiGravity IDE** được phát triển và bảo trì chính bởi **Dokhacgiakhoa**. Xin chân thành cảm ơn cộng đồng mã nguồn mở và các dự án sau đã truyền cảm hứng:
-
-- **Antigravity Kit** (bởi `vudovn`).
-- **Awesome Skills** & **UI/UX Pro Max** (bởi `sickn33`).
-- **Model Context Protocol** (bởi Anthropic).
-- **Fabric** (bởi danielmiessler).
-
-Phát triển bởi 💡 **Dokhacgiakhoa** • [Bản quyền](COPYRIGHT.md)
+Phát triển với 💡 bởi **Dokhacgiakhoa** • [MIT LICENSE](LICENSE)
