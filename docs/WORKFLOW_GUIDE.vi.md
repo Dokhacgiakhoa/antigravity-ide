@@ -56,11 +56,11 @@
 - **Cách dùng**: `/audit`
 
 ### `/security` - Bảo mật chuyên sâu
-- **Khi nào dùng**: Hardening hệ thống, quét lỗ hổng, check API Key lộ.
+- **Khi nào dùng**: Hardening hệ thống, quét lỗ hổng, check API Key lộ, và tuân thủ đạo đức AI.
 - **Cách dùng**: `/security scan`
 
 ### `/test` - Kiểm thử tự động
-- **Khi nào dùng**: Viết Unit Test, E2E Test cho dự án.
+- **Khi nào dùng**: Viết & Chạy Unit Test, E2E Test (Playwright) hoàn toàn tự động.
 - **Cách dùng**: `/test [tên file/module]`
 
 ### `/performance` - Tối ưu hiệu năng *(Mới)*

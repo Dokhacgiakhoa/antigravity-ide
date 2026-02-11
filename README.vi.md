@@ -4,7 +4,8 @@
 [![npm downloads](https://img.shields.io/npm/dm/antigravity-ide.svg?style=flat-square&color=blueviolet)](https://www.npmjs.com/package/antigravity-ide)
 [![license](https://img.shields.io/npm/l/antigravity-ide.svg?style=flat-square&color=orange)](LICENSE)
 
-| **15** Quy tắc | **22** Agent | **72** Chuyên gia | **600+** Chiến thuật | **30** Quy trình | **52** Thư viện DNA |
+| **15** Rules • **22** Agents • **573** Master Skills • **2977** AI Patterns • **30** Workflows • **135** Shared DNA Libraries
+ |
 | :---: | :---: | :---: | :---: | :---: | :---: |
 
 Vibe thoải mái, Code thảnh thơi. Một lệnh duy nhất cân cả thế giới. 🛰️🚀

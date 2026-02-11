@@ -24,11 +24,11 @@ Dưới đây là danh sách các nhân viên ảo sẽ phục vụ bạn:
 *   **`project-planner`**: Lập kế hoạch thực thi, chia nhỏ task và ước lượng thời gian.
 
 ### 3. Nhóm Chất Lượng & Bảo Mật (Quality & Security)
-*   **`security-auditor`**: Rà soát mã nguồn, phát hiện lỗ hổng bảo mật (OWASP).
+*   **`security-auditor`**: Rà soát mã nguồn, phát hiện lỗ hổng bảo mật (OWASP) và tuân thủ đạo đức AI (Fabric).
 *   **`penetration-tester`**: Tấn công thử nghiệm (Red Team) để tìm điểm yếu hệ thống.
 *   **`quality-inspector`**: Kiểm tra tiêu chuẩn code (Linting, Convention) và độ ổn định.
 *   **`test-engineer`**: Viết và chạy các kịch bản kiểm thử (Unit/Integration Test).
-*   **`qa-automation-engineer`**: Tự động hóa quy trình kiểm thử E2E (Playwright/Selenium).
+*   **`qa-automation-engineer`**: Tự động viết và chạy kịch bản kiểm thử E2E (Playwright MCP).
 
 ### 4. Nhóm Hỗ Trợ & Phân Tích (Support & Analysis)
 *   **`documentation-writer`**: Soạn thảo tài liệu kỹ thuật, API Docs và Hướng dẫn sử dụng.

@@ -1,0 +1,12 @@
+# Users
+
+```sql
+CREATE TABLE users (
+  user_id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+  email TEXT NOT NULL UNIQUE,
+  name TEXT NOT NULL,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+CREATE UNIQUE INDEX ON users (LOWER(email));
+CREATE INDEX ON users (created_at);
+```

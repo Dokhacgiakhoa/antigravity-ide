@@ -1,0 +1,16 @@
+# 3. Code Quality Analyzer
+
+Advanced tooling for specialized tasks.
+
+**Features:**
+- Expert-level automation
+- Custom configurations
+- Integration ready
+- Production-grade output
+
+**Usage:**
+```bash
+python scripts/code_quality_analyzer.py [arguments] [options]
+```
+
+## Reference Documentation

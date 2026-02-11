@@ -1,0 +1,22 @@
+{
+  "name": "Standard Security Headers",
+  "description": "Recommended settings for Helmet.js or equivalent middleware.",
+  "recommended": {
+    "contentSecurityPolicy": {
+      "directives": {
+        "defaultSrc": ["'self'"],
+        "scriptSrc": ["'self'", "'unsafe-inline'"],
+        "styleSrc": ["'self'", "'unsafe-inline'"],
+        "imgSrc": ["'self'", "data:", "https:"]
+      }
+    },
+    "xFrameOptions": { "action": "deny" },
+    "xContentTypeOptions": true,
+    "strictTransportSecurity": {
+      "maxAge": 63072000,
+      "includeSubDomains": true,
+      "preload": true
+    },
+    "referrerPolicy": { "policy": "same-origin" }
+  }
+}

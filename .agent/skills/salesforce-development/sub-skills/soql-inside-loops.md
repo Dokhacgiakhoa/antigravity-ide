@@ -1,0 +1,2 @@
+# ❌ SOQL Inside Loops
+

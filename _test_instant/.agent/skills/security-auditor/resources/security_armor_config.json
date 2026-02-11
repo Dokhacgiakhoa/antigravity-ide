@@ -1,0 +1,6 @@
+{
+  "sql_injection": "Luôn dùng Parameterized Queries (?), tuyệt đối không cộng chuỗi SQL.",
+  "xss_prevention": "Dùng DOMPurify để làm sạch nội dung HTML từ người dùng trước khi render.",
+  "auth_security": "Sử dụng Argon2 hoặc Bcrypt để hash mật khẩu. Token phải có thời hạn ngắn (Exp).",
+  "secret_management": "Không bao giờ commit .env. Sử dụng AWS Secrets Manager hoặc HashiCorp Vault."
+}
