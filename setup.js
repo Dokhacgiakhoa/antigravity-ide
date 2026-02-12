@@ -275,18 +275,18 @@ async function setup() {
     localizeWorkflows(lang);
 
     // FINAL SUMMARY (Premium Style)
-    console.log('\n' + gradient.pastel.multiline('📦 Configuring Antigravity IDE Environment'));
+    console.log('\n' + gradient.pastel.multiline(lang === 'vi' ? '📦 Đang cấu hình môi trường Antigravity IDE' : '📦 Configuring Antigravity IDE Environment'));
     console.log(gradient.atlas('━'.repeat(60)));
     
-    console.log(chalk.green('√') + ' Global Rules Synced (Enterprise Standard)');
-    console.log(chalk.green('√') + ' Workflows Localized');
-    console.log(chalk.green('√') + ` Workspace Configured (${projectScale.toUpperCase()} Mode)`);
-    console.log(chalk.green('√') + ' Context Injected (Identity & Domain)');
+    console.log(chalk.green('√') + (lang === 'vi' ? ' Đồng bộ Global Rules (Chuẩn Enterprise)' : ' Global Rules Synced (Enterprise Standard)'));
+    console.log(chalk.green('√') + (lang === 'vi' ? ' Đã bản địa hóa Workflows' : ' Workflows Localized'));
+    console.log(chalk.green('√') + (lang === 'vi' ? ` Cấu hình Workspace (Chế độ ${projectScale.toUpperCase()})` : ` Workspace Configured (${projectScale.toUpperCase()} Mode)`));
+    console.log(chalk.green('√') + (lang === 'vi' ? ' Đã nạp Context (Định danh & Lĩnh vực)' : ' Context Injected (Identity & Domain)'));
     
-    console.log(gradient.rainbow('\n✓ SUCCESS! System Ready'));
+    console.log(gradient.rainbow(lang === 'vi' ? '\n✓ THÀNH CÔNG! Hệ thống đã sẵn sàng' : '\n✓ SUCCESS! System Ready'));
     console.log(gradient.atlas('━'.repeat(60)));
 
-    console.log(chalk.bold.yellow('\n🤖 Kích hoạt AI Agent (Next Steps):'));
+    console.log(chalk.bold.yellow(lang === 'vi' ? '\n🤖 Kích hoạt AI Agent (Bước tiếp theo):' : '\n🤖 Activate AI Agent (Next Steps):'));
     if (lang === 'vi') {
         console.log(`   1. Mở dự án:     ${chalk.cyan('cd <your-project>')}`);
         console.log(`   2. Mở Chat:      ${chalk.cyan('(Sử dụng AI Panel của IDE)')}`);
