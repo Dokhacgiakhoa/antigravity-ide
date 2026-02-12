@@ -1,6 +1,6 @@
 {
   "name": "antigravity-ide",
-  "version": "4.1.1",
+  "version": "4.1.2",
   "description": "Easy Vibe, Lazy Code. 15 Rules • 22 Agents • 573 Master Skills • 2977 AI Patterns • 30 Workflows • 135 Shared DNA Libraries. One Command to Rule Them All.",
   "homepage": "https://antigravity-ide-cli.vercel.app/",
   "main": "cli/index.js",
