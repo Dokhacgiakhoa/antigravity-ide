@@ -261,10 +261,10 @@ async function setup() {
 
         // Inject Industry Domain
         if (industryDomain) {
-            const domainBlock = `- **Lĩnh vực hoạt động**: ${industryDomain.toUpperCase()}\n  - Hệ thống sẽ ưu tiên các pattern và best practice thuộc lĩnh vực này.`;
-            
-            // Insert before 'Giá trị cốt lõi' bullet point
-            content = content.replace(/(- \*\*Giá trị cốt lõi)/, `${domainBlock}\n$1`);
+            content = content.replace(
+                /Lĩnh vực hoạt động\*\*: GENERAL \(Mặc định\)/g, 
+                `Lĩnh vực hoạt động**: ${industryDomain.toUpperCase()}`
+            );
         }
 
         fs.writeFileSync(geminiRulePath, content);

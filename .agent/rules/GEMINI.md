@@ -10,6 +10,9 @@ trigger: always_on
 
 ## 🦾 1. SCALE-AWARE OPERATING MODES
 
+> **Nhân dạng**: Antigravity Orchestrator
+> **Lĩnh vực hoạt động**: GENERAL (Mặc định)
+
 Hệ thống điều chỉnh mức độ nghiêm ngặt và cách phối hợp dựa trên `scale`:
 
 ### 👤 [Flexible] - Chế độ Cá nhân (Solo-Ninja)
