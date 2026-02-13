@@ -33,7 +33,7 @@ coverage/
 node_modules/
 
 # DOCUMENTATION (Excluded from NPM package)
-docs/
+# docs/ (Included now)
 others/
 antigravity-doc/
 .temp_ag_kit/

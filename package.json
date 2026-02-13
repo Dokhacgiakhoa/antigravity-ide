@@ -16,7 +16,8 @@
     "setup.js",
     "update.js",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "docs"
   ],
   "scripts": {
     "test": "jest",
