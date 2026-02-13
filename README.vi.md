@@ -110,7 +110,7 @@ du-an-cua-ban/
 ## 📚 Tài liệu tham khảo
 
 - **[Hướng dẫn Gemini](docs/GEMINI_USAGE.md)**: Cách cấu hình và sử dụng với Google Gemini.
-- **[Vận hành Master](docs/MASTER_OPERATIONS.md)**: Tìm hiểu sâu về cơ chế cốt lõi.
+- **[Vận hành Master](docs/MASTER_OPERATIONS.vi.md)**: Tìm hiểu sâu về cơ chế cốt lõi.
 - **[Hướng dẫn Phát hành](docs/PUBLISHING_GUIDE.md)**: Cách đóng gói và xuất bản Agent của riêng bạn.
 
 ---

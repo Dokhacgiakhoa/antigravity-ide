@@ -1,85 +1,85 @@
 # 🛰️ AntiGravity IDE - Master Operations Guide
 **Version**: 4.1.7 (Stable Marketing & NPM)
-**Language**: Tiếng Việt (Giao diện) - English (Technical)
+**Language**: English (Technical)
 
-Chào mừng bạn đến với hệ thống AntiGravity IDE đã được "độ" lên mức tối đa. Đây không còn là một công cụ lập trình thông thường, mà là một **Phòng tác chiến AI** với đầy đủ tri thức nghiệp vụ và dây chuyền sản xuất chuyên nghiệp.
-
----
-
-## 🛠️ 1. Tiền đề (Prerequisites)
-Để hệ thống hoạt động với 100% công suất, bạn nên cài đặt:
-- **Node.js**: Để chạy lệnh cài đặt và quản lý gói (Yêu cầu v18+).
-- **Python 3.x**: (**Khuyên dùng**) Để các Skill thực thi được các kịch bản tự động như Scanners, Evaluators, Data Science.
-
-## 🚀 2. Khởi động nhanh (Quick Start)
-
-Để cài đặt hoặc cập nhật hệ thống lên mức Global (toàn cục), hãy sử dụng các lệnh sau:
-
-- **Cài đặt mới**: `npx antigravity-ide [tên-dự-án]`
-- **Khởi tạo nhanh**: `npx antigravity-ide --skip-prompts` (Sử dụng cấu hình mặc định).
-- **Cập nhật tính năng**: `npx antigravity-ide` (Chạy lệnh trong folder dự án sẽ tự động kích hoạt update).
+Welcome to the AntiGravity IDE system, tuned to maximum performance. This is no longer just a coding tool, but an **AI War Room** equipped with professional domain knowledge and production pipelines.
 
 ---
 
-## 🏎️ 2. Chế độ Động cơ (Engine Modes)
-AntiGravity hỗ trợ hai chế độ vận hành linh hoạt tùy theo nhu cầu dự án:
+## 🛠️ 1. Prerequisites
+To operate at 100% capacity, you should install:
+- **Node.js**: For installation and package management (Requires v18+).
+- **Python 3.x**: (**Recommended**) For Skills to execute automated scripts like Scanners, Evaluators, and Data Science tasks.
+
+## 🚀 2. Quick Start
+
+To install or update the system globally, use the following commands:
+
+- **New Installation**: `npx antigravity-ide [project-name]`
+- **Quick Init**: `npx antigravity-ide --skip-prompts` (Use default configuration).
+- **Update Features**: `npx antigravity-ide` (Running this inside a project folder automatically triggers an update).
+
+---
+
+## 🏎️ 2. Engine Modes
+AntiGravity supports two flexible operating modes based on project needs:
 
 - **Standard Mode (Node.js)**: 
-  - *Mục tiêu*: Nhẹ nhàng, tốc độ, Zero-Config.
-  - *Sử dụng*: Phù hợp dự án Web, Portfolio, SaaS vừa và nhỏ.
+  - *Goal*: Lightweight, Speed, Zero-Config.
+  - *Usage*: Web Projects, Portfolios, SaaS (Small/Medium).
 - **Advanced Mode (Python)**:
-  - *Mục tiêu*: Chuyên sâu, Bảo mật cao, AI phức tạp.
-  - *Sử dụng*: Phù hợp dự án Enterprise, Big Data, Pentest.
+  - *Goal*: Deep Tech, High Security, Complex AI.
+  - *Usage*: Enterprise, Big Data, Pentesting.
 
 ---
 
-## 🧬 4. Kho tài nguyên DNA (`.shared/`)
-Đây là nơi lưu trữ "mã di truyền" của hệ thống, giúp Agent thông minh hơn theo từng phiên bản:
+## 🧬 4. DNA Resources (`.shared/`)
+This stores the system's "genetic code", helping the Agent get smarter with every version:
 
-| Module | Trọng tâm trí tuệ |
+| Module | Intellectual Focus |
 | :--- | :--- |
-| `ai-master` | Chiến lược LLM, RAG patterns & Agentic Workflow. |
-| `api-standards` | Chuẩn OpenAPI, REST, Auth patterns và Error handling. |
-| `database-master` | Schema 3NF, Migration protocols & SQL performance. |
+| `ai-master` | LLM Strategies, RAG patterns & Agentic Workflow. |
+| `api-standards` | OpenAPI Standards, REST, Auth patterns & Error handling. |
+| `database-master` | 3NF Schemas, Migration protocols & SQL performance. |
 | `design-system` | UI Tokens, Luxury/Tech presets & Component hierarchy. |
-| `security-armor` | Chống SQLi, XSS, Hardening & Secret auditing. |
-| `testing-master` | Chiến lược TDD, E2E (Playwright) & Mocking standards. |
+| `security-armor` | Anti-SQLi, XSS, Hardening & Secret auditing. |
+| `testing-master` | TDD Strategies, E2E (Playwright) & Mocking standards. |
 | `ui-ux-pro-max` | Advanced Motion (Framer), Glassmorphism & Micro-interactions. |
-| `seo-master` | Tối ưu hóa E-E-A-T, Schema JSON-LD & Web Vitals. |
-| `compliance` | Quy chuẩn pháp lý GDPR, HIPAA và Privacy Policy templates. |
-| `domain-blueprints` | Kiến trúc chuyên ngành: Fintech, Healthcare, Logistics, F&B... |
+| `seo-master` | E-E-A-T Optimization, Schema JSON-LD & Web Vitals. |
+| `compliance` | GDPR/HIPAA Standards and Privacy Policy templates. |
+| `domain-blueprints` | Industry Architectures: Fintech, Healthcare, Logistics, F&B... |
 | `infra-blueprints` | Infrastructure-as-Code: Docker, Terraform, K8s, Vercel configs. |
-| `metrics` | Hệ thống chỉ số đo lường hiệu suất và chất lượng mã nguồn. |
-| `vitals-templates` | Benchmarks cho các dự án High-Performance. |
-| `malware-protection` | Quét virus, link độc hại và kiểm soát chuỗi cung ứng dependency. |
-| `auto-update` | Giao thức tự nâng cấp hệ não bộ của Agent. |
-| `error-logging` | Hệ thống tự ghi lỗi và học tập từ các thất bại runtime. |
-| `docs-sync` | Đảm bảo tài liệu luôn khớp 100% với code thực tế. |
+| `metrics` | Performance metrics and code quality indicators. |
+| `vitals-templates` | Benchmarks for High-Performance projects. |
+| `malware-protection` | Virus scanning, malicious links & supply chain dependency control. |
+| `auto-update` | Evaluation protocol for self-upgrading the Agent's brain. |
+| `error-logging` | Automated error logging and runtime failure learning system. |
+| `docs-sync` | Ensures documentation matches 100% with actual code. |
 
 ---
 
-## 🛡️ 5. Bảo tồn nội dung Custom (Markers)
-Khi bạn chạy lệnh `update`, AntiGravity IDE sẽ đồng bộ các file hệ thống nhưng vẫn **tôn trọng** những gì bạn tự viết.
+## 🛡️ 5. Preserving Custom Content (Markers)
+When you run `update`, AntiGravity IDE syncs system files but **respects** what you've written.
 
-Để ngăn AI ghi đè lên các đoạn code quan trọng của bạn, hãy sử dụng marker:
+To prevent AI from overwriting your critical code, use markers:
 ```javascript
 // [CUSTOM_START]
-// Viết code hoặc ghi chú của riêng bạn ở đây...
-// Hệ thống sẽ không bao giờ chạm vào vùng này khi update.
+// Write your own code or notes here...
+// The system will never touch this area during updates.
 const myPrivateApiKey = "xyz"; 
 // [CUSTOM_END]
 ```
 
 ---
 
-## ⌨️ 6. Hệ thống lệnh Slash Command (`/`)
-Sử dụng **`/`** trong khung chat để triệu hồi 22 quy trình tác chiến chuyên sâu (Xem chi tiết tại `docs/WORKFLOW_GUIDE.vi.md`).
+## ⌨️ 6. Slash Command System (`/`)
+Use **`/`** in the chat box to summon 22 specialized operational workflows (See details in `docs/WORKFLOW_GUIDE.vi.md`).
 
 ---
 
-## 🏗️ 7. Nguyên tắc "Vỏ Việt - Lõi Anh"
-- **Giao tiếp**: Việt hóa hoàn toàn để dễ nắm bắt và báo cáo.
-- **Kỹ thuật**: 100% Tiếng Anh cho biến, hàm, logic để đảm bảo AI xử lý chính xác nhất.
+## 🏗️ 7. "Vietnamese Shell - English Core" Principle
+- **Communication**: Fully localized in Vietnamese for easy reporting and understanding.
+- **Technical**: 100% English for variables, functions, and logic to ensure AI processes strictly and accurately.
 
 ---
-**AntiGravity IDE - Sẵn sàng bẻ gãy mọi quy luật trọng lực để đưa dự án của bạn lên tầm cao mới.** 🚀🛰️
+**AntiGravity IDE - Ready to defy gravity and elevate your project.** 🚀🛰️

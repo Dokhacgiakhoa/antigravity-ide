@@ -47,7 +47,7 @@ npx antigravity-ide validate
 ```
 
 > [!TIP]
-> **New to npx?** Check our [NPX Installation Guide](docs/INSTALL_NPX_GUIDE.vi.md) for a step-by-step setup.
+> **New to npx?** Check our [NPX Installation Guide](docs/INSTALL_NPX_GUIDE.md) for a step-by-step setup.
 
 ---
 
