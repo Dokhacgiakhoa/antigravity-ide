@@ -1,7 +1,7 @@
 <div align="center">
 
 # 🛰️ AntiGravity IDE
-### *Enhanced Edition • v4.1.0 Meta-Engine*
+### *Enhanced Edition • v4.1.3 Meta-Engine*
 
 [![npm version](https://img.shields.io/npm/v/antigravity-ide.svg?style=for-the-badge&color=2ea44f)](https://www.npmjs.com/package/antigravity-ide)
 [![npm downloads](https://img.shields.io/npm/dm/antigravity-ide.svg?style=for-the-badge&color=blueviolet)](https://www.npmjs.com/package/antigravity-ide)

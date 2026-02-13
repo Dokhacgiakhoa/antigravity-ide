@@ -89,7 +89,7 @@ async function repairProject(projectPath, options, config) {
             // If exists, save as .new to let user compare
             fs.writeFileSync(path.join(projectPath, 'GEMINI.new.md'), geminiContent);
         }
-        spinner.succeed('Core Configuration (v4.0.8) applied');
+        spinner.succeed('Core Configuration applied (v' + require('../package.json').version + ')');
 
         console.log(chalk.bold.green('\n✨ Repair & Sync Complete!'));
         console.log(chalk.white('  Your project is now fully aligned with Antigravity v' + require('../package.json').version));

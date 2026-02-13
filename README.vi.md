@@ -1,7 +1,7 @@
 <div align="center">
 
 # 🛰️ AntiGravity IDE
-### *Phiên bản Nâng cao • v4.1.0 Meta-Engine*
+### *Phiên bản Nâng cao • v4.1.3 Meta-Engine*
 
 [![npm version](https://img.shields.io/npm/v/antigravity-ide.svg?style=for-the-badge&color=2ea44f)](https://www.npmjs.com/package/antigravity-ide)
 [![npm downloads](https://img.shields.io/npm/dm/antigravity-ide.svg?style=for-the-badge&color=blueviolet)](https://www.npmjs.com/package/antigravity-ide)
@@ -13,7 +13,7 @@
 
 ---
 
-### 📊 Chỉ số Hệ thống v4.1.0
+### 📊 Chỉ số Hệ thống v4.1.3
 
 | **15** Quy tắc | **22** Chuyên gia | **573** Kỹ năng | **2977** Chiến thuật | **30** Quy trình | **135** Thư viện DNA |
 | :---: | :---: | :---: | :---: | :---: | :---: |
