@@ -1,4 +1,4 @@
-<div align="center">
+
 
 # 🛰️ AntiGravity IDE
 ### *Phiên bản Nâng cao • v4.1.26 Meta-Engine*
@@ -124,7 +124,7 @@ A: Có. "Agent" giờ đây là các vai trò động dựa trên **Kỹ năng (
 
 ---
 
-<div align="center">
+
   Phát triển với 💡 bởi <strong>Dokhacgiakhoa</strong><br>
   <a href="LICENSE">MIT LICENSE</a>
 </div>

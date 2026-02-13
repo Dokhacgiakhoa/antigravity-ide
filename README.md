@@ -1,4 +1,4 @@
-<div align="center">
+
 
 # 🛰️ AntiGravity IDE
 ### *Advanced Edition • v4.1.26 Meta-Engine*
@@ -124,7 +124,7 @@ A: Yes. "Agents" are now dynamic personas powered by **Skills**. You can teach t
 
 ---
 
-<div align="center">
+
   Developed with 💡 by <strong>Dokhacgiakhoa</strong><br>
   <a href="LICENSE">MIT LICENSE</a>
 </div>
