@@ -6,8 +6,30 @@ const fs = require('fs-extra');
 const path = require('path');
 const chalk = require('chalk');
 const ora = require('ora');
+const gradient = require('gradient-string');
 const { getRulesList, getAgentsList } = require('./logic/manifest-manager');
 const { generateGeminiMd } = require('./logic/gemini-generator');
+const { getScaleConfig } = require('./logic/scale-rules');
+
+// Helper to determine file filter based on engine mode (Copied from create.js for consistency)
+function getEngineFilter(engineMode) {
+    return (src, dest) => {
+        if (engineMode === 'standard') {
+            const lowerSrc = src.toLowerCase();
+            if (lowerSrc.endsWith('.py') ||
+                lowerSrc.endsWith('.pyc') ||
+                lowerSrc.endsWith('requirements.txt') ||
+                lowerSrc.endsWith('pipfile') ||
+                lowerSrc.endsWith('pyproject.toml') ||
+                lowerSrc.includes('__pycache__') ||
+                lowerSrc.includes('venv/') ||
+                lowerSrc.includes('.venv/')) {
+                return false;
+            }
+        }
+        return true;
+    };
+}
 
 async function repairProject(projectPath, options, config) {
     const spinner = ora('🔍 Analyzing project integrity...').start();
@@ -66,6 +88,48 @@ async function repairProject(projectPath, options, config) {
         }
         spinner.succeed(`Specialist Agents ready (${restoredAgents} updated/restored)`);
 
+        // 3.5 Sync Skills (Critical for Agent Capabilities)
+        spinner.start('Restoring Skills...');
+        const skillsSourceDir = path.join(sourceAgentDir, 'skills');
+        const skillsDestDir = path.join(agentDir, 'skills');
+        fs.ensureDirSync(skillsDestDir);
+
+        // Get allowed skills based on Scale
+        const scaleConfig = getScaleConfig(config.rules || 'creative');
+        // If creative, use all skills logic eventually, but for now let's use core set + existing
+        // Actually, for repair, we should probably restore what's defined in scale rules
+        // OR if it's creative/full, restore ALL skills?
+        // Let's stick to the "Mandatory" set from Scale Config to ensure they always exist
+        const skillsToRestore = scaleConfig.coreSkillCategories || []; 
+        
+        // Also we might want to scan ALL skills if mode is creative? 
+        // For simplicity and safety in Repair, let's restore the Core set defined by the Scale.
+        // And if the user has "creative", that usually implies a lot of skills.
+        
+        let restoredSkills = 0;
+        const filter = getEngineFilter(config.engineMode || 'standard');
+
+        if (fs.existsSync(skillsSourceDir)) {
+            // Flatten skills list if it's categories (logic copied from prompts/create)
+            // But wait, scaleConfig.coreSkillCategories are CATEGORIES (folders in skills/)
+            // Actually in current codebase, skills are direct folders in .agent/skills/
+            // Let's verify structure. `skillsSourceDir` has folders like `3d-web-experience`, `api-fuzzing...`
+            // `coreSkillCategories` in scale-rules are arrays of these folder names.
+            
+            for (const skill of skillsToRestore) {
+                const srcSkill = path.join(skillsSourceDir, skill);
+                const destSkill = path.join(skillsDestDir, skill);
+                
+                if (fs.existsSync(srcSkill)) {
+                    if (!fs.existsSync(destSkill) || options.force) {
+                        await fs.copy(srcSkill, destSkill, { filter, overwrite: true });
+                        restoredSkills++;
+                    }
+                }
+            }
+        }
+        spinner.succeed(`Skills synchronized (${restoredSkills} restored)`);
+
         // 4. Sync Workflows (Critical for slash commands)
         spinner.start('Restoring Workflows...');
         const workflowsDest = path.join(agentDir, 'workflows');
@@ -120,6 +184,7 @@ async function repairProject(projectPath, options, config) {
         const statLine = [
             chalk.white(`${restoredRules} Rules`),
             chalk.white(`${restoredAgents} Agents`),
+            chalk.white(`${restoredSkills} Skills`),
             chalk.white(`${restoredWorkflows} Workflows`)
         ].join(chalk.gray(' • '));
         console.log(gradient.pastel('  ✨ Synced: ') + statLine);
