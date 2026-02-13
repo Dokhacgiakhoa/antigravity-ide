@@ -1,13 +1,12 @@
-
+<div align="center">
 
 # 🛰️ AntiGravity IDE
 ### *Advanced Edition • v4.1.26 Meta-Engine*
 
-<!-- UNIFIED BADGES -->
-[![NPM Version](https://img.shields.io/npm/v/antigravity-ide?style=for-the-badge&color=2ea44f&logo=npm)](https://www.npmjs.com/package/antigravity-ide)
-[![Downloads](https://img.shields.io/npm/dm/antigravity-ide?style=for-the-badge&color=blueviolet&logo=npm)](https://www.npmjs.com/package/antigravity-ide)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/Dokhacgiakhoa/antigravity-ide/npm-publish.yml?style=for-the-badge&logo=github&label=BUILD)](https://github.com/Dokhacgiakhoa/antigravity-ide/actions)
-[![License](https://img.shields.io/npm/l/antigravity-ide?style=for-the-badge&color=orange)](LICENSE)
+[![NPM Version](https://img.shields.io/npm/v/antigravity-ide?style=flat-square&color=2ea44f&logo=npm)](https://www.npmjs.com/package/antigravity-ide)
+[![Downloads](https://img.shields.io/npm/dm/antigravity-ide?style=flat-square&color=blueviolet&logo=npm)](https://www.npmjs.com/package/antigravity-ide)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/Dokhacgiakhoa/antigravity-ide/npm-publish.yml?style=flat-square&logo=github&label=BUILD)](https://github.com/Dokhacgiakhoa/antigravity-ide/actions)
+[![License](https://img.shields.io/npm/l/antigravity-ide?style=flat-square&color=orange)](LICENSE)
 
 <br>
 
@@ -124,7 +123,7 @@ A: Yes. "Agents" are now dynamic personas powered by **Skills**. You can teach t
 
 ---
 
-
+<div align="center">
   Developed with 💡 by <strong>Dokhacgiakhoa</strong><br>
   <a href="LICENSE">MIT LICENSE</a>
 </div>
