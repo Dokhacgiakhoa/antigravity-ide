@@ -72,7 +72,7 @@ async function repairProject(projectPath, options, config) {
             config.rules || 'creative', 
             config.language || 'vi', 
             config.productType || 'other', 
-            path.basename(projectPath)
+            config.agentName || path.basename(projectPath) // Use Agent Name if valid
         );
         
         const rootGeminiPath = path.join(projectPath, 'GEMINI.md');

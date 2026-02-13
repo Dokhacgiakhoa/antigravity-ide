@@ -76,17 +76,23 @@ async function createProject(projectName, options, predefinedConfig = null) {
 
         // If explicitly empty or missing, derive from Scale Rules
         // This ensures automated runs (CI/Test) get balanced resources seamlessly
-        if (finalSkillCategories.length === 0 || finalWorkflows.length === 0) {
+        if (finalSkillCategories.length === 0 || finalWorkflows.length === 0 || config.rules === 'creative') {
             const scaleConfig = getScaleConfig(config.rules || 'creative'); // Default to creative if rule missing
             
-            if (finalSkillCategories.length === 0) {
+            // For Creative mode, we FORCE full set to ensure nothing is stripped
+            if (config.rules === 'creative') {
                 finalSkillCategories = scaleConfig.coreSkillCategories;
-                spinner.info(chalk.dim(`Auto-balanced Skills for ${config.rules}: ${finalSkillCategories.join(', ')}`));
-            }
-            
-            if (finalWorkflows.length === 0) {
                 finalWorkflows = scaleConfig.baseWorkflows;
-                spinner.info(chalk.dim(`Auto-balanced Workflows for ${config.rules}: ${finalWorkflows.join(', ')}`));
+            } else {
+                if (finalSkillCategories.length === 0) {
+                    finalSkillCategories = scaleConfig.coreSkillCategories;
+                    spinner.info(chalk.dim(`Auto-balanced Skills for ${config.rules}: ${finalSkillCategories.join(', ')}`));
+                }
+                
+                if (finalWorkflows.length === 0) {
+                    finalWorkflows = scaleConfig.baseWorkflows;
+                    spinner.info(chalk.dim(`Auto-balanced Workflows for ${config.rules}: ${finalWorkflows.join(', ')}`));
+                }
             }
         }
         // --- INTELLIGENT RESOURCE BALANCING END ---
@@ -127,7 +133,7 @@ async function createProject(projectName, options, predefinedConfig = null) {
             config.rules, 
             config.language, 
             config.productType, 
-            finalProjectName
+            config.agentName || finalProjectName // Use Agent Name if valid
         );
         const rootGeminiPath = path.join(projectPath, 'GEMINI.md');
         const rootGeminiDecision = await handleCoreFileConflict(rootGeminiPath, 'GEMINI.md', config.force, config.skipPrompts);

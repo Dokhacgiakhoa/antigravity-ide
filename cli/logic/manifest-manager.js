@@ -11,6 +11,7 @@ const MANIFEST = {
         instant: [
             'GEMINI.md',           // Core Constitution (Simple version)
             'code-quality.md',      // Basic standards
+            'error-logging.md',     // Mandatory: Error tracking
             'frontend.md',          // UI/UX focus
             'debug.md',             // Basic debugging
             'docs-update.md'        // Helper
