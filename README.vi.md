@@ -115,13 +115,16 @@ du-an-cua-ban/
 
 ---
 
-## 🙏 Ghi nhận
+## 🙏 Ghi nhận & Tham khảo
 
-Dự án áp dụng **[Agent Skills Standard](https://github.com/HoangNguyen0403/agent-skills-standard)** cho các quy chuẩn kỹ thuật AI.
-- **Mục tiêu**: Tối ưu Token, Ngữ cảnh mật độ cao và Tương thích toàn cầu.
-- **Giấy phép**: MIT (Ref: HoangNguyen0403)
+Dự án này được phát triển độc lập bởi **Dokhacgiakhoa**.
 
-Chúng tôi cũng tích hợp bộ kỹ năng chính thức từ **[anthropics/skills](https://github.com/anthropics/skills)** (Apache 2.0).
+Chúng tôi xin trân trọng ghi nhận các dự án mã nguồn mở sau đây là **nguồn cảm hứng và tài liệu tham khảo** (Lưu ý: Các tác giả này không trực tiếp tham gia vào quá trình phát triển dự án này):
+
+- **[Agent Skills Standard](https://github.com/HoangNguyen0403/agent-skills-standard)**: Được áp dụng làm chuẩn kiến trúc cốt lõi cho AI.
+- **[Antigravity Kit](https://github.com/vudovn/antigravity-kit)**: Nguồn cảm hứng cho khái niệm "Antigravity" và triết lý Meta-Engine.
+- **[Awesome Skills](https://github.com/sickn33/antigravity-awesome-skills)**: Tham khảo về cấu trúc thư mục kỹ năng.
+- **[anthropics/skills](https://github.com/anthropics/skills)**: Tích hợp các kỹ năng chính thức từ Anthropic (Apache 2.0).
 
 ---
 

@@ -117,11 +117,14 @@ your-project/
 
 ## 🙏 Credits & Acknowledgments
 
-This project adopts the **[Agent Skills Standard](https://github.com/HoangNguyen0403/agent-skills-standard)** for AI engineering practices.
-- **Goal**: Token Economy, High-Density Context, and Universal Compatibility.
-- **License**: MIT (Ref: HoangNguyen0403)
+This project is independently developed by **Dokhacgiakhoa**.
 
-We also integrate official skills from **[anthropics/skills](https://github.com/anthropics/skills)** (Apache 2.0).
+We respectfully acknowledge the following open-source projects as **references and sources of inspiration** (Note: These authors are not directly involved in the development of this project):
+
+- **[Agent Skills Standard](https://github.com/HoangNguyen0403/agent-skills-standard)**: Adopted as the core architectural standard for AI engineering.
+- **[Antigravity Kit](https://github.com/vudovn/antigravity-kit)**: Inspiration for the "Antigravity" concept and meta-engine philosophy.
+- **[Awesome Skills](https://github.com/sickn33/antigravity-awesome-skills)**: Reference for skill directory structure.
+- **[anthropics/skills](https://github.com/anthropics/skills)**: Official Anthropic skills integrated under Apache 2.0 license.
 
 ---
 
