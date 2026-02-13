@@ -135,6 +135,16 @@ async function repairProject(projectPath, options, config) {
         }
         spinner.succeed(`Skills synchronized (${restoredSkills} restored)`);
 
+        // 4. Sync RESOURCES.md (Documentation)
+        const resourcesSource = path.join(sourceAgentDir, 'RESOURCES.md');
+        const resourcesDest = path.join(agentDir, 'RESOURCES.md');
+        if (fs.existsSync(resourcesSource)) {
+            // Smart Repair: Merge logic
+            if (!fs.existsSync(resourcesDest) || options.force) {
+                await fs.copy(resourcesSource, resourcesDest, { overwrite: true });
+            }
+        }
+
         // 4. Sync Workflows (Critical for slash commands)
         spinner.start('Restoring Workflows...');
         const workflowsSourceDir = path.join(sourceAgentDir, 'workflows');
