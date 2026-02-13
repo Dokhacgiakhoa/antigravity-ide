@@ -92,8 +92,9 @@ The following **17 Shared Modules** in \`.agent/.shared\` must be respected:
 16. **Error Logging**: Automatic learning system.
 17. **Docs Sync**: Documentation integrity.
 
-94. 
 ## ⌨️ Slash Commands (Auto-Active)
+> **System Instruction**: Workflows are located in \`.agent/workflows/\`. When a user runs a command, YOU MUST read the corresponding \`.md\` file (e.g. \`/api\` -> \`.agent/workflows/api.md\`) to execute it.
+
 Use these commands to trigger specialized workflows:
 
 - **/api**: API Design & Documentation (OpenAPI 3.1).
@@ -196,6 +197,8 @@ Vui lòng sử dụng các kỹ năng phù hợp nhất cho **${industryFocus}**
 17. **Docs Sync**: Đồng bộ tài liệu.
 
 ## ⌨️ Hệ thống lệnh Slash Command (Tự động Kích hoạt)
+> **Chỉ dẫn Hệ thống**: Các quy trình (workflows) nằm trong thư mục \`.agent/workflows/\`. Khi người dùng gọi lệnh, BẠN PHẢI đọc file \`.md\` tương ứng (ví dụ: \`/api\` -> \`.agent/workflows/api.md\`) để thực thi.
+
 Sử dụng các lệnh sau để kích hoạt quy trình tác chiến chuyên sâu:
 
 - **/api**: Thiết kế API & Tài liệu hóa (OpenAPI 3.1).

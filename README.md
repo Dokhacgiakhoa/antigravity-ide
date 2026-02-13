@@ -1,7 +1,7 @@
 <div align="center">
 
 # 🛰️ AntiGravity IDE
-### *Advanced Edition • v4.1.27 Meta-Engine*
+### *Advanced Edition • v4.1.28 Meta-Engine*
 
 <!-- BADGES: Spaced & Tightly Wrapped to prevent Underlines -->
 <p align="center">
@@ -52,7 +52,7 @@ npx antigravity-ide [project-name]
 
 ---
 
-## ✨ The Premium Edge (v4.1.27)
+## ✨ The Premium Edge (v4.1.28)
 
 Why choose AntiGravity over standard AI wrappers?
 
