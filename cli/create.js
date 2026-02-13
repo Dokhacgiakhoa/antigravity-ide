@@ -130,22 +130,26 @@ async function createProject(projectName, options, predefinedConfig = null) {
 
         // Create GEMINI.md
         // generateGeminiMd(rules, language, industry, agentName)
-        const geminiContent = generateGeminiMd(
-            config.rules, 
-            config.language, 
-            config.productType, 
-            config.agentName || finalProjectName // Use Agent Name if valid
-        );
-        const rootGeminiPath = path.join(projectPath, 'GEMINI.md');
-        const rootGeminiDecision = await handleCoreFileConflict(rootGeminiPath, 'GEMINI.md', config.force, config.skipPrompts);
+        // Create GEMINI.md
+        // generateGeminiMd(rules, language, industry, agentName)
+        // Check if modular structure already handled it?
+        // Actually, copyModularStructure already wrote it to Root in our previous edit to Step 5.
+        // But copyModularStructure is only called if we are in Modular mode.
+        // Let's ensure strict single source.
         
-        if (rootGeminiDecision.shouldWrite) {
-            fs.writeFileSync(rootGeminiDecision.targetPath, geminiContent);
-            if (rootGeminiDecision.isBackup) {
-                console.log(chalk.yellow(`  ℹ️  Root GEMINI.md exists, created ${path.basename(rootGeminiDecision.targetPath)}`));
-            } else if (rootGeminiDecision.isOverwrite) {
-                console.log(chalk.green(`  ✓ Overwrote existing Root GEMINI.md`));
-            }
+        // If copyModularStructure ran, GEMINI.md is already there.
+        // We should check if it exists before overwriting, OR rely on the fact that modular structure is the main path.
+        
+        // Let's keep this block for safety in case copyModularStructure didn't run (unlikely in current flow)
+        // But strictly, we removed the duplicate logic.
+        // To be safe: If GEMINI.md exists at root, don't re-write it here unless FORCE.
+        // Actually, the previous block (Step 5 in copyModularStructure) is INSIDE copyModularStructure.
+        // The block here is at the end of createProject.
+        
+        // If we moved the root write to copyModularStructure (Step 5), then this block is DUPLICATE.
+        // Let's remove this block to avoid double-logging.
+        if (!fs.existsSync(rootGeminiPath)) {
+             // Redundant fallback - logic moved to copyModularStructure
         }
         
         const stats = {
@@ -249,12 +253,12 @@ async function copyModularStructure(projectPath, config, rulesList, agentsList) 
     fs.mkdirSync(path.join(destAgentDir, 'skills'), { recursive: true });
     fs.mkdirSync(path.join(destAgentDir, 'workflows'), { recursive: true });
 
-    // 5. Copy GEMINI.md (Core file)
-    const geminiPath = path.join(destAgentDir, 'GEMINI.md');
-    const geminiDecision = await handleCoreFileConflict(geminiPath, 'GEMINI.md', config.force, config.skipPrompts);
+    // 5. Create GEMINI.md (Core file) - Write ONLY to Root, not to .agent/
+    // Previous versions wrote to .agent/GEMINI.md as well, which was redundant.
+    const geminiContent = generateGeminiMd(config.rules, config.language, config.industryDomain, config.agentName);
+    const geminiDecision = await handleCoreFileConflict(path.join(projectPath, 'GEMINI.md'), 'GEMINI.md', config.force, config.skipPrompts);
 
     if (geminiDecision.shouldWrite) {
-        const geminiContent = generateGeminiMd(config.rules, config.language, config.industryDomain, config.agentName);
         fs.writeFileSync(geminiDecision.targetPath, geminiContent);
         if (geminiDecision.isBackup) {
             console.log(chalk.yellow(`  ℹ️  GEMINI.md exists, created ${path.basename(geminiDecision.targetPath)}`));

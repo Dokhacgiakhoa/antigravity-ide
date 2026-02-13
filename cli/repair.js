@@ -165,10 +165,10 @@ async function repairProject(projectPath, options, config) {
         const rootGeminiPath = path.join(projectPath, 'GEMINI.md');
         const agentGeminiPath = path.join(agentDir, 'GEMINI.md');
 
-        // Update GEMINI.md but preserve custom instructions if possible? 
-        // For now, let's use the backup strategy from handled in create.js logic
-        // But for Repair, users expect a "Fix", so we might overwrite or create .new
-        fs.writeFileSync(agentGeminiPath, geminiContent); // Internal agent config should be latest
+        // Cleanup: Remove redundant .agent/GEMINI.md if it exists (User request: Don't duplicate)
+        if (fs.existsSync(agentGeminiPath)) {
+            fs.unlinkSync(agentGeminiPath);
+        }
         
         if (!fs.existsSync(rootGeminiPath) || options.force) {
             fs.writeFileSync(rootGeminiPath, geminiContent);
