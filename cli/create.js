@@ -250,6 +250,12 @@ async function copyModularStructure(projectPath, config, rulesList, agentsList) 
         await fs.copy(path.join(sourceAgentDir, '.shared'), path.join(destAgentDir, '.shared'), { filter });
     }
 
+    // 1b. Copy Root Concept Files (Architecture, Start Here, etc.) - FIX for v4.1.30
+    const rootFiles = fs.readdirSync(sourceAgentDir).filter(f => f.endsWith('.md') && f !== 'GEMINI.md'); // GEMINI.md is generated
+    for (const file of rootFiles) {
+        await fs.copy(path.join(sourceAgentDir, file), path.join(destAgentDir, file));
+    }
+
     // 2. Copy Rules (SELECTIVE)
     const rulesDest = path.join(destAgentDir, 'rules');
     fs.mkdirSync(rulesDest, { recursive: true });

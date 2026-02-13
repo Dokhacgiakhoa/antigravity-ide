@@ -48,6 +48,16 @@ async function repairProject(projectPath, options, config) {
         }
         spinner.succeed('Shared DNA synchronized to v' + require('../package.json').version);
 
+        // 1b. Restore Root Concepts (Architecture, Concepts, etc.) - FIX v4.1.30
+        const rootFiles = fs.readdirSync(sourceAgentDir).filter(f => f.endsWith('.md') && f !== 'GEMINI.md');
+        for (const file of rootFiles) {
+            const srcFile = path.join(sourceAgentDir, file);
+            const destFile = path.join(agentDir, file);
+            if (!fs.existsSync(destFile) || options.force) {
+                await fs.copy(srcFile, destFile, { overwrite: options.force });
+            }
+        }
+
         // 2. Restore/Update Rules
         spinner.start('Verifying Rules & Compliance...');
         const rulesSourceDir = path.join(sourceAgentDir, 'rules');
