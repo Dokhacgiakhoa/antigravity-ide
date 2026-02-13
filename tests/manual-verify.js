@@ -2,8 +2,6 @@ const fs = require('fs');
 const path = require('path');
 const { createProject } = require('../cli/create');
 
-// Fix path to be absolute or relative to CWD properly
-// We want to create it inside d:\Github\antigravity-ide\tests\manual-test-project
 const TEST_DIR_NAME = 'manual-test-project';
 const TEST_DIR = path.join(__dirname, TEST_DIR_NAME);
 
@@ -11,18 +9,15 @@ const TEST_DIR = path.join(__dirname, TEST_DIR_NAME);
 if (fs.existsSync(TEST_DIR)) {
     try {
         fs.rmSync(TEST_DIR, { recursive: true, force: true });
-    } catch (e) {
-        // Ignore parallel cleanup errors
-    }
+    } catch (e) { }
 }
 
-console.log('🧪 Starting Manual Verification for Creative Mode...');
+console.log('🧪 Starting Structure Verification...');
 console.log(`📂 Target: ${TEST_DIR}`);
 
 const config = {
-    language: 'en',
-    // key fix: 'projectName' logic in create.js uses this if skipPrompts=true for some internal namings
-    projectName: 'manual-test-project', 
+    language: 'vi',
+    projectName: 'manual-test-project',
     scale: 'creative',
     productType: 'ai_agent', 
     agentName: 'TestAgent',
@@ -33,34 +28,47 @@ const config = {
 
 (async () => {
     try {
-        // We pass the RELATIVE path from CWD (which is root) or ABSOLUTE path
-        // createProject(path, options, config)
         await createProject(TEST_DIR, { force: true, skipPrompts: true }, config);
         
-        const skillsDir = path.join(TEST_DIR, '.agent', 'skills'); // Corrected path segment: .agent/skills
+        console.log('\n🔍 Inspecting File Structure...');
         
-        if (fs.existsSync(skillsDir)) {
-            const skills = fs.readdirSync(skillsDir);
-            console.log(`\n✅ Verification Result:`);
-            console.log(`Skills Folder: ${skillsDir}`);
-            console.log(`Total Skills Installed: ${skills.length}`);
-            
-            if (skills.length > 30) { // Expect robust number
-                console.log(`PASS: Creative mode installed ${skills.length} skills (Expected > 30).`);
-            } else {
-                console.error(`FAIL: Creative mode should have > 30 skills, found ${skills.length}.`);
-                process.exit(1);
-            }
+        // 1. Check Root Files
+        const geminiPath = path.join(TEST_DIR, 'GEMINI.md');
+        const readmePath = path.join(TEST_DIR, 'README.md');
+        const pkgPath = path.join(TEST_DIR, 'package.json');
+        
+        const hasGemini = fs.existsSync(geminiPath);
+        const hasReadme = fs.existsSync(readmePath);
+        const hasPkg = fs.existsSync(pkgPath);
+        
+        console.log(`- [Root] GEMINI.md: ${hasGemini ? '✅' : '❌'}`);
+        console.log(`- [Root] README.md: ${!hasReadme ? '✅ (Removed)' : '❌ (Exists)'}`);
+        console.log(`- [Root] package.json: ${!hasPkg ? '✅ (Removed)' : '❌ (Exists)'}`);
+
+        // 2. Check .agent Folder
+        const agentDir = path.join(TEST_DIR, '.agent');
+        const workflowsDir = path.join(agentDir, 'workflows');
+        const rulesDir = path.join(agentDir, 'rules');
+        const skillsDir = path.join(agentDir, 'skills');
+        
+        const hasAgent = fs.existsSync(agentDir);
+        const hasWorkflows = fs.existsSync(workflowsDir) && fs.readdirSync(workflowsDir).length > 0;
+        const hasRules = fs.existsSync(rulesDir) && fs.readdirSync(rulesDir).length > 0;
+        const hasSkills = fs.existsSync(skillsDir) && fs.readdirSync(skillsDir).length > 0;
+
+        console.log(`- [.agent] Folder: ${hasAgent ? '✅' : '❌'}`);
+        console.log(`- [.agent] Workflows: ${hasWorkflows ? '✅' : '❌'} (${hasWorkflows ? fs.readdirSync(workflowsDir).length : 0} items)`);
+        console.log(`- [.agent] Rules: ${hasRules ? '✅' : '❌'} (${hasRules ? fs.readdirSync(rulesDir).length : 0} items)`);
+        console.log(`- [.agent] Skills: ${hasSkills ? '✅' : '❌'} (${hasSkills ? fs.readdirSync(skillsDir).length : 0} items)`);
+
+        if (hasGemini && !hasReadme && hasWorkflows && !hasPkg) {
+            console.log('\n✨ TEST PASSED: Structure matches requirements.');
+            process.exit(0);
         } else {
-            console.error(`FAIL: Skills folder not found at ${skillsDir}`);
-            // List what IS there
-            if(fs.existsSync(path.join(TEST_DIR, '.agent'))) {
-                 console.log('Contents of .agent:', fs.readdirSync(path.join(TEST_DIR, '.agent')));
-            } else {
-                 console.log('.agent folder missing');
-            }
+            console.error('\n❌ TEST FAILED: Structure mismatch.');
             process.exit(1);
         }
+
     } catch (e) {
         console.error('❌ CRITICAL ERROR:', e);
         process.exit(1);

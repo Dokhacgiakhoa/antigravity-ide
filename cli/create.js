@@ -148,9 +148,7 @@ async function createProject(projectName, options, predefinedConfig = null) {
         
         // If we moved the root write to copyModularStructure (Step 5), then this block is DUPLICATE.
         // Let's remove this block to avoid double-logging.
-        if (!fs.existsSync(rootGeminiPath)) {
-             // Redundant fallback - logic moved to copyModularStructure
-        }
+        // Redundant fallback block removed
         
         const stats = {
             rules: rulesToInstall.length,
@@ -279,6 +277,44 @@ async function copyModularStructure(projectPath, config, rulesList, agentsList) 
 
 
 
+
+async function copySkills(projectPath, categories, engineMode) {
+    const skillsSourceDir = path.join(__dirname, '..', '.agent', 'skills');
+    const skillsDestDir = path.join(projectPath, '.agent', 'skills');
+    const filter = getEngineFilter(engineMode);
+
+    if (!fs.existsSync(skillsSourceDir)) return 0;
+
+    const selectedSkills = getSkillsForCategories(categories);
+    const uniqueSkills = [...new Set(selectedSkills)]; // Deduplicate to avoid overwrites and double-counting
+    let count = 0;
+
+    for (const skill of uniqueSkills) {
+        const skillPath = path.join(skillsSourceDir, skill);
+        if (fs.existsSync(skillPath)) {
+            const destPath = path.join(skillsDestDir, skill);
+            await fs.copy(skillPath, destPath, { filter });
+            count++;
+        }
+    }
+    return count;
+}
+
+async function copyWorkflows(projectPath, workflows) {
+    const workflowsSourceDir = path.join(__dirname, '..', '.agent', 'workflows');
+    const workflowsDestDir = path.join(projectPath, '.agent', 'workflows');
+    let count = 0;
+
+    for (const workflow of workflows) {
+        const workflowFile = `${workflow}.md`;
+        const source = path.join(workflowsSourceDir, workflowFile);
+        if (fs.existsSync(source)) {
+            await fs.copy(source, path.join(workflowsDestDir, workflowFile));
+            count++;
+        }
+    }
+    return count;
+}
 
 function printSuccessMessage(projectName, config, stats = null) {
     console.log('\n');
