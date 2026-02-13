@@ -10,6 +10,7 @@ const { execSync } = require('child_process');
 const { getProjectConfig, getSkillsForCategories, confirmOverwrite } = require('./prompts');
 const gradient = require('gradient-string');
 const { getRulesList, getAgentsList } = require('./logic/manifest-manager');
+const { getScaleConfig } = require('./logic/scale-rules');
 const { repairProject } = require('./repair');
 const { generateGeminiMd } = require('./logic/gemini-generator');
 
