@@ -1,7 +1,7 @@
 <div align="center">
 
 # 🛰️ AntiGravity IDE
-### *Advanced Edition • v4.1.12 Meta-Engine*
+### *Advanced Edition • v4.1.13 Meta-Engine*
 
 <!-- VISUAL BADGES -->
 [![npm version](https://img.shields.io/npm/v/antigravity-ide?style=flat&color=2ea44f&logo=npm)](https://www.npmjs.com/package/antigravity-ide)
@@ -51,7 +51,7 @@ npx antigravity-ide validate
 
 ---
 
-## ✨ The Premium Edge (v4.1.12)
+## ✨ The Premium Edge (v4.1.13)
 
 Why choose AntiGravity over standard AI wrappers?
 

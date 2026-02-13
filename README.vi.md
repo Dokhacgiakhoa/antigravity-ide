@@ -1,7 +1,7 @@
 <div align="center">
 
 # 🛰️ AntiGravity IDE
-### *Phiên bản Nâng cao • v4.1.12 Meta-Engine*
+### *Phiên bản Nâng cao • v4.1.13 Meta-Engine*
 
 <!-- VISUAL BADGES -->
 [![npm version](https://img.shields.io/npm/v/antigravity-ide?style=flat&color=2ea44f&logo=npm)](https://www.npmjs.com/package/antigravity-ide)
@@ -51,7 +51,7 @@ npx antigravity-ide validate
 
 ---
 
-## ✨ Điểm khác biệt (Phiên bản v4.1.12)
+## ✨ Điểm khác biệt (Phiên bản v4.1.13)
 
 Tại sao nên chọn AntiGravity thay vì các AI wrapper thông thường?
 
