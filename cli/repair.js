@@ -66,6 +66,29 @@ async function repairProject(projectPath, options, config) {
         }
         spinner.succeed(`Specialist Agents ready (${restoredAgents} updated/restored)`);
 
+        // 4. Sync Workflows (Critical for slash commands)
+        spinner.start('Restoring Workflows...');
+        const workflowsDest = path.join(agentDir, 'workflows');
+        fs.ensureDirSync(workflowsDest);
+        const workflowsSourceDir = path.join(sourceAgentDir, 'workflows');
+        
+        let restoredWorkflows = 0;
+        const workflowsToInstall = config.workflows || [];
+        
+        for (const workflow of workflowsToInstall) {
+            const workflowFile = `${workflow}.md`;
+            const srcWorkflow = path.join(workflowsSourceDir, workflowFile);
+            const destWorkflow = path.join(workflowsDest, workflowFile);
+            
+            if (!fs.existsSync(destWorkflow) || options.force) {
+                if (fs.existsSync(srcWorkflow)) {
+                    await fs.copy(srcWorkflow, destWorkflow);
+                    restoredWorkflows++;
+                }
+            }
+        }
+        spinner.succeed(`Operational Workflows ready (${restoredWorkflows} restored)`);
+
         // 4. Update Core Configuration (GEMINI.md)
         spinner.start('Updating Core Constitution (GEMINI.md)...');
         const geminiContent = generateGeminiMd(
