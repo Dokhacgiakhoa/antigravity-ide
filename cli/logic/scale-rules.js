@@ -25,7 +25,7 @@ function getScaleConfig(scale) {
             'create', 'plan', 'debug', 'test', 'deploy', 
             'preview', 'enhance', 'visually', 'log-error'
         ]; // 9 Workflows
-        coreSkillCategories = ['webdev', 'uiux', 'maker']; // 3 Categories (30%)
+        coreSkillCategories = ['webdev', 'uiux', 'maker-lite']; // Condensed Maker list
     } else if (scale === 'creative') { // Was Balanced/Team -> Creative/Research
         engineMode = 'advanced';
         // Target 100% (Full)
@@ -49,7 +49,7 @@ function getScaleConfig(scale) {
             'security', 'test', 'compliance', 'api', 'document',
             'log-error', 'release-version', 'update-docs', 'performance', 'onboard'
         ]; // 15 Workflows
-        coreSkillCategories = ['devops', 'security', 'testing', 'growth', 'research']; // 5 Categories (50%)
+        coreSkillCategories = ['devops', 'security', 'testing', 'growth-enterprise', 'research']; // 5 Categories (50%)
     }
 
     return { engineMode, rulesMode, baseWorkflows, coreSkillCategories };

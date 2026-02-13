@@ -627,6 +627,45 @@ const skillCategories = {
   'webapp-testing',
   'wordpress-penetration-testing'
 ]
+  },
+  'maker-lite': {
+    name: 'Indie Hacker Light (MVP & Launch)',
+    skills: [
+      'browser-extension-builder',
+      'clean-code',
+      'copywriting',
+      'deployment-procedures',
+      'error-handling-patterns',
+      'firebase',
+      'git-pushing',
+      'launch-strategy',
+      'marketing-ideas',
+      'micro-saas-launcher',
+      'personal-tool-builder',
+      'product-manager-toolkit',
+      'seo-fundamentals',
+      'stripe-integration',
+      'telegram-bot-builder',
+      'vercel-deploy'
+    ]
+  },
+  'growth-enterprise': {
+    name: 'Enterprise Growth (Scale & Ops)',
+    skills: [
+      'analytics-tracking',
+      'business-analyst',
+      'competitor-alternatives',
+      'content-marketer',
+      'cro-expert-kit',
+      'customer-support',
+      'email-systems',
+      'hubspot-integration',
+      'kpi-dashboard-design',
+      'product-manager-toolkit',
+      'salesforce-development',
+      'seo-audit',
+      'seo-expert-kit'
+    ]
   }
 };
 
