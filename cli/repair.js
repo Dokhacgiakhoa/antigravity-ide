@@ -115,10 +115,17 @@ async function repairProject(projectPath, options, config) {
         spinner.succeed('Core Configuration applied (v' + require('../package.json').version + ')');
 
         console.log(chalk.bold.green('\n✨ Repair & Sync Complete!'));
-        console.log(chalk.white('  Your project is now fully aligned with Antigravity v' + require('../package.json').version));
-        console.log(chalk.gray('  Checked: DNA, Rules, Agents, Workflows.'));
+        console.log(chalk.white('  Your project is now aligned with Antigravity v' + require('../package.json').version));
+        
+        const statLine = [
+            chalk.white(`${restoredRules} Rules`),
+            chalk.white(`${restoredAgents} Agents`),
+            chalk.white(`${restoredWorkflows} Workflows`)
+        ].join(chalk.gray(' • '));
+        console.log(gradient.pastel('  ✨ Synced: ') + statLine);
+
         if (!options.force) {
-            console.log(chalk.dim('  (Note: Existing custom rules/agents were preserved. Use --force to reset them.)'));
+            console.log(chalk.dim('\n  (Note: Existing custom rules/agents were preserved. Use --force to reset them.)'));
         }
         console.log('');
 

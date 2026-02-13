@@ -36,7 +36,7 @@ function displayBanner() {
   console.log(gradient.pastel.multiline('/_/  |_/_/ /_/\\__/_/\\____/_/   \\__,_/ |___/_/\\__/\\__, /  '));
   console.log(gradient.pastel.multiline('                                                 /____/   '));
   console.log(chalk.gray(`  AntiGravity IDE • v${packageJson.version}`));
-  console.log(chalk.gray('  ✨ Installed: 15 Rules • 22 Agents • 573 Skills • 30 Workflows • 2977 Patterns'));
+  console.log(chalk.gray('  ✨ System Core: 15 Rules • 22 Agents • 573 Skills • 30 Workflows • 2977 Patterns'));
   console.log(gradient.rainbow('━'.repeat(60)));
   console.log('');
 }
