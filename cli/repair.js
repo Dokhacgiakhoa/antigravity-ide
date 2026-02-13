@@ -10,6 +10,7 @@ const gradient = require('gradient-string');
 const { getRulesList, getAgentsList } = require('./logic/manifest-manager');
 const { generateGeminiMd } = require('./logic/gemini-generator');
 const { getScaleConfig } = require('./logic/scale-rules');
+const { getSkillsForCategories } = require('./logic/skill-definitions');
 
 // Helper to determine file filter based on engine mode (Copied from create.js for consistency)
 function getEngineFilter(engineMode) {
@@ -106,17 +107,22 @@ async function repairProject(projectPath, options, config) {
         // For simplicity and safety in Repair, let's restore the Core set defined by the Scale.
         // And if the user has "creative", that usually implies a lot of skills.
         
+        // For simplicity and safety in Repair, let's restore the Core set defined by the Scale.
+        // And if the user has "creative", that usually implies a lot of skills.
+        
         let restoredSkills = 0;
         const filter = getEngineFilter(config.engineMode || 'standard');
 
         if (fs.existsSync(skillsSourceDir)) {
-            // Flatten skills list if it's categories (logic copied from prompts/create)
-            // But wait, scaleConfig.coreSkillCategories are CATEGORIES (folders in skills/)
-            // Actually in current codebase, skills are direct folders in .agent/skills/
-            // Let's verify structure. `skillsSourceDir` has folders like `3d-web-experience`, `api-fuzzing...`
-            // `coreSkillCategories` in scale-rules are arrays of these folder names.
+            // Flatten skills list via logic/skill-definitions
+            // scaleConfig.coreSkillCategories are CATEGORIES (e.g. ['webdev', 'ai'])
+            // We need to map them to actual folder names (e.g. ['modern-web-architect', ...])
+            const skillsToInstall = getSkillsForCategories(skillsToRestore);
             
-            for (const skill of skillsToRestore) {
+            // Deduplicate
+            const uniqueSkills = [...new Set(skillsToInstall)];
+
+            for (const skill of uniqueSkills) {
                 const srcSkill = path.join(skillsSourceDir, skill);
                 const destSkill = path.join(skillsDestDir, skill);
                 
