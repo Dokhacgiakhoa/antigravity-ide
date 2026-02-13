@@ -1,0 +1,46 @@
+{
+  "brainstorm.md": {
+    "en": "Structured brainstorming for projects and features. Explores multiple options before implementation.",
+    "vi": "Lên ý tưởng, cấu trúc dự án, khám phá phương án"
+  },
+  "create.md": {
+    "en": "Create new application command. Triggers App Builder skill and starts interactive dialogue with user.",
+    "vi": "Khởi tạo dự án mới, xây dựng nền móng, App Builder"
+  },
+  "debug.md": {
+    "en": "Debugging command. Activates DEBUG mode for systematic problem investigation.",
+    "vi": "Gỡ lỗi hệ thống, điều tra vấn đề, sửa lỗi"
+  },
+  "deploy.md": {
+    "en": "Deployment command for production releases. Pre-flight checks and deployment execution.",
+    "vi": "Triển khai Production, kiểm tra an toàn, phát hành"
+  },
+  "enhance.md": {
+    "en": "Add or update features in existing application. Used for iterative development.",
+    "vi": "Cập nhật tính năng, phát triển lặp lại, nâng cấp app"
+  },
+  "orchestrate.md": {
+    "en": "Coordinate multiple agents for complex tasks. Use for multi-perspective analysis, comprehensive reviews.",
+    "vi": "Điều phối Agent, giải quyết phức tạp, đa cấu trúc"
+  },
+  "plan.md": {
+    "en": "Create project plan using project-planner agent. No code writing - only plan file generation.",
+    "vi": "Lập kế hoạch, phân rã tác vụ, project-planner"
+  },
+  "preview.md": {
+    "en": "Preview server start, stop, and status check. Local development server management.",
+    "vi": "Quản lý server, xem trước dự án, khởi động/dừng"
+  },
+  "status.md": {
+    "en": "Display agent and project status. Progress tracking and status board.",
+    "vi": "Trạng thái dự án, tiến độ Agent, dashboard"
+  },
+  "test.md": {
+    "en": "Test generation and test running command. Creates and executes tests for code.",
+    "vi": "Chạy kiểm thử, tự động hóa, đảm bảo chất lượng"
+  },
+  "ui-ux-pro-max.md": {
+    "en": "Plan and implement UI, Premium design, advanced interface.",
+    "vi": "Thiết kế UI/UX, Premium, giao diện cao cấp"
+  }
+}

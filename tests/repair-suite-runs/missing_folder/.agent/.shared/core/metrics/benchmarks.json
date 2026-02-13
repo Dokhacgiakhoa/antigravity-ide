@@ -1,0 +1,28 @@
+{
+  "performance": {
+    "lighthouse": {
+      "performance": 90,
+      "accessibility": 100,
+      "best_practices": 100,
+      "seo": 100
+    },
+    "core_web_vitals": {
+      "LCP": "< 2.5s",
+      "FID": "< 100ms",
+      "CLS": "< 0.1"
+    },
+    "bundle_size": {
+      "main_chunk": "< 200kb",
+      "total_js": "< 500kb"
+    }
+  },
+  "database": {
+    "query_time": "< 100ms",
+    "connection_pool_usage": "< 80%",
+    "index_efficiency": "> 95%"
+  },
+  "api": {
+    "response_time": "< 200ms",
+    "availability": "99.9%"
+  }
+}

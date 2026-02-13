@@ -63,7 +63,7 @@ async function repairProject(projectPath, options, config) {
                 
                 if (fs.existsSync(srcRule)) {
                     // Smart Repair: Merge folders (Add missing files, preserve existing) unless --force
-                    await fs.copy(srcRule, destRule, { filter, overwrite: options.force });
+                    await fs.copy(srcRule, destRule, { filter: getEngineFilter('standard'), overwrite: options.force });
                     restoredRules++;
                 }
             }
@@ -89,7 +89,7 @@ async function repairProject(projectPath, options, config) {
                 const destAgent = path.join(agentsDestDir, agent);
                 
                 if (fs.existsSync(srcAgent)) {
-                    await fs.copy(srcAgent, destAgent, { filter, overwrite: options.force });
+                    await fs.copy(srcAgent, destAgent, { filter: getEngineFilter('standard'), overwrite: options.force });
                     restoredAgents++;
                 }
             }
