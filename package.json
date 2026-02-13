@@ -1,6 +1,6 @@
 {
   "name": "antigravity-ide",
-  "version": "4.1.7",
+  "version": "4.1.8",
   "description": "The Ultimate AI-Powered IDE for 10x Engineers (Full Agentic Workflow)• 573 Master Skills • 2977 AI Patterns • 30 Workflows • 135 Shared DNA Libraries. One Command to Rule Them All.",
   "homepage": "https://antigravity-ide-cli.vercel.app/",
   "main": "cli/index.js",
