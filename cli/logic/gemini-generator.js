@@ -4,15 +4,15 @@
 
 function generateGeminiMd(rules, language = 'en', industry = 'other', agentName = 'Antigravity') {
     const strictness = {
-        sme: { // Was Strict/Enterprise
+        sme: { // Enterprise / SME
             autoRun: 'false',
             confirmLevel: 'Ask before every file modification and command execution'
         },
-        creative: { // Was Balanced/Team
+        creative: { // Creative / Team
             autoRun: 'true for safe read operations',
             confirmLevel: 'Ask before destructive operations'
         },
-        instant: { // Was Flexible/Personal
+        instant: { // Instant / Personal
             autoRun: 'true',
             confirmLevel: 'Minimal confirmation, high autonomy'
         }

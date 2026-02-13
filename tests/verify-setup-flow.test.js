@@ -13,11 +13,11 @@ describe('Project Setup 10 Scenarios Verification', () => {
 
 
 // Case 1: VI language, Personal scale, User App (Default Industry: Other/All)
-    test('Case 1: VI / Personal (Flexible) / User App -> Standard Engine, Limited Skills', async () => {
+    test('Case 1: VI / Instant (Personal) / User App -> Standard Engine, Limited Skills', async () => {
         prompts.mockResolvedValueOnce({
             language: 'vi',
             projectName: 'fin-bot',
-            scale: 'flexible',
+            scale: 'instant',
             productType: 'user_app',
             agentName: 'MoneyJarvis'
         });
@@ -25,7 +25,8 @@ describe('Project Setup 10 Scenarios Verification', () => {
         const config = await getProjectConfig();
         
         expect(config.language).toBe('vi');
-        expect(config.rules).toBe('flexible'); 
+        expect(config.language).toBe('vi');
+        expect(config.rules).toBe('instant'); 
         expect(config.engineMode).toBe('standard'); 
         expect(config.skillCategories).toContain('webdev');
         expect(config.skillCategories).toContain('ai');
@@ -37,11 +38,11 @@ describe('Project Setup 10 Scenarios Verification', () => {
     });
 
     // Case 2: EN language, Enterprise scale, User App (Mobile focus implicit by type)
-    test('Case 2: EN / Enterprise (Strict) / User App -> Advanced Engine, All Skills', async () => {
+    test('Case 2: EN / SME (Strict) / User App -> Advanced Engine, All Skills', async () => {
         prompts.mockResolvedValueOnce({
             language: 'en',
             projectName: 'edu-master',
-            scale: 'strict',
+            scale: 'sme',
             productType: 'user_app',
             agentName: 'TeacherAI'
         });
@@ -53,17 +54,17 @@ describe('Project Setup 10 Scenarios Verification', () => {
         expect(config.skillCategories).toContain('security');
         expect(config.skillCategories).toContain('research'); // Enterprise adds research
         expect(config.skillCategories).toContain('uiux');
-        expect(config.rules).toBe('strict');
+        expect(config.rules).toBe('sme');
         // From 'other' = all, 'explain' is in education but other has everything
         expect(config.workflows).toContain('explain'); 
     });
 
     // Case 3: VI language, Team scale, Digital Asset (Game)
-    test('Case 3: VI / Team (Balanced) / Digital Asset -> Advanced Engine, Mobile Skills', async () => {
+    test('Case 3: VI / Creative (Balanced) / Digital Asset -> Advanced Engine, Mobile Skills', async () => {
         prompts.mockResolvedValueOnce({
             language: 'vi',
             projectName: 'game-ai',
-            scale: 'balanced',
+            scale: 'creative',
             productType: 'digital_asset',
             agentName: 'ChefBot'
         });
@@ -75,9 +76,9 @@ describe('Project Setup 10 Scenarios Verification', () => {
         expect(config.skillCategories).toContain('webdev'); // Digital Asset maps to Webdev
         expect(config.skillCategories).toContain('ai');
         expect(config.skillCategories).toContain('devops');
-        expect(config.skillCategories).toContain('uiux'); // Team adds uiux
+        expect(config.skillCategories).toContain('uiux'); // Creative adds uiux
         
-        expect(config.rules).toBe('balanced');
+        expect(config.rules).toBe('creative');
         expect(config.workflows).toContain('mobile'); 
     });
 
@@ -99,12 +100,12 @@ describe('Project Setup 10 Scenarios Verification', () => {
         expect(config.workflows).toContain('create'); 
     });
 
-    // Case 5: VI language, Enterprise scale, Dev Tool (API)
-    test('Case 5: VI / Enterprise / Dev Tool -> Advanced Engine', async () => {
+    // Case 5: VI language, SME scale, Dev Tool (API)
+    test('Case 5: VI / SME / Dev Tool -> Advanced Engine', async () => {
         prompts.mockResolvedValueOnce({
             language: 'vi',
             projectName: 'ship-fast',
-            scale: 'strict',
+            scale: 'sme',
             productType: 'dev_tool',
             agentName: 'LogiBot'
         });
@@ -116,12 +117,12 @@ describe('Project Setup 10 Scenarios Verification', () => {
         expect(config.workflows).toContain('api'); 
     });
 
-    // Case 6: EN language, Team scale, User App (Desktop)
-    test('Case 6: EN / Team / User App -> Advanced Engine, All Workflows', async () => {
+    // Case 6: EN language, Creative scale, User App (Desktop)
+    test('Case 6: EN / Creative / User App -> Advanced Engine, All Workflows', async () => {
         prompts.mockResolvedValueOnce({
             language: 'en',
             projectName: 'random-app',
-            scale: 'balanced',
+            scale: 'creative',
             productType: 'user_app',
             agentName: 'Helper'
         });
@@ -147,7 +148,7 @@ describe('Project Setup 10 Scenarios Verification', () => {
     test('Case 8: Predefined Name', async () => {
         prompts.mockResolvedValueOnce({
             language: 'en',
-            scale: 'balanced',
+            scale: 'creative',
             productType: 'user_app',
             agentName: 'NamedAgent'
         });
@@ -156,12 +157,11 @@ describe('Project Setup 10 Scenarios Verification', () => {
         expect(config.projectName).toBe('cli-provided-name');
     });
 
-    // Case 9: VI / Personal / Digital Asset (Template)
-    test('Case 9: VI / Personal / Digital Asset -> Standard Engine', async () => {
+    test('Case 9: VI / Instant (Personal) / Digital Asset -> Standard Engine', async () => {
         prompts.mockResolvedValueOnce({
             language: 'vi',
             projectName: 'my-portfolio',
-            scale: 'flexible',
+            scale: 'instant',
             productType: 'digital_asset',
             agentName: 'MeBot'
         });
@@ -174,12 +174,12 @@ describe('Project Setup 10 Scenarios Verification', () => {
         expect(config.workflows).toContain('seo'); // From 'other' = all + digital_asset adds seo
     });
 
-    // Case 10: VI / Team / User App
-    test('Case 10: VI / Team / User App -> Advanced Engine', async () => {
+    // Case 10: VI / Creative (Team) / User App
+    test('Case 10: VI / Creative / User App -> Advanced Engine', async () => {
         prompts.mockResolvedValueOnce({
             language: 'vi',
             projectName: 'bank-app',
-            scale: 'balanced',
+            scale: 'creative',
             productType: 'user_app',
             agentName: 'Banker'
         });
