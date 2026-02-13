@@ -14,7 +14,7 @@
     "test": "jest",
     "setup": "node ./setup.js",
     "update": "node ./update.js",
-    "prepublishOnly": "node ./scripts/bundle-skills.js"
+    "prepublishOnly": "node .agent/scripts/generate-skill-definitions.js && node ./scripts/bundle-skills.js"
   },
   "dependencies": {
     "boxen": "^5.1.2",

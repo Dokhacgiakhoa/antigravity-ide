@@ -280,8 +280,8 @@ async function copyModularStructure(projectPath, config, rulesList, agentsList) 
         }
     }
 
-    // 7. Copy README, .gitignore
-    const files = ['README.md', '.gitignore'];
+    // 7. Copy .gitignore
+    const files = ['.gitignore'];
     const rootDir = path.join(__dirname, '..');
     
     for (const file of files) {

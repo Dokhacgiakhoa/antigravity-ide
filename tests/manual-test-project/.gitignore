@@ -1,0 +1,18 @@
+# Ignore
+node_modules/
+.temp_ag_kit/
+antigravity-doc
+others
+
+# Logs
+*.log
+test_output.txt
+
+# Testing
+coverage/
+tests/e2e/stress_temp/
+tests/update_temp/
+temp_*/
+test-project-*/
+debug-*.js
+last_commit_files.txt
