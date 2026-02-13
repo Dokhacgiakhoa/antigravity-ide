@@ -11,6 +11,7 @@ on:
 permissions:
   contents: write
   id-token: write
+  packages: write
 
 jobs:
   build:
@@ -31,15 +32,25 @@ jobs:
       # We run it explicitly here to verify it works before publishing
       - run: npm run prepublishOnly
 
-      # Publish to npm
+      # Publish to npm (Primary)
       - run: npm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      # Create GitHub Release (to sync sidebar)
+      # Create GitHub Release (Sidebar Sync)
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
         with:
           generate_release_notes: true
           draft: false
           prerelease: false
+
+      # Publish to GitHub Packages (Sidebar Packages)
+      - name: Publish to GitHub Packages
+        run: |
+          npm config set registry https://npm.pkg.github.com/
+          npm config set //npm.pkg.github.com/:_authToken ${{ secrets.GITHUB_TOKEN }}
+          npm pkg set name="@dokhacgiakhoa/antigravity-ide"
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
