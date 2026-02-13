@@ -1,7 +1,7 @@
 <div align="center">
 
 # 🛰️ AntiGravity IDE
-### *Phiên bản Nâng cao • v4.1.26 Meta-Engine*
+### *Phiên bản Nâng cao • v4.1.27 Meta-Engine*
 
 <!-- BADGES: Spaced & Tightly Wrapped to prevent Underlines -->
 <p align="center">
@@ -52,7 +52,7 @@ npx antigravity-ide [ten-du-an]
 
 ---
 
-## ✨ Điểm khác biệt (Phiên bản v4.1.26)
+## ✨ Điểm khác biệt (Phiên bản v4.1.27)
 
 Tại sao nên chọn AntiGravity thay vì các AI wrapper thông thường?
 

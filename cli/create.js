@@ -113,11 +113,30 @@ async function createProject(projectName, options, predefinedConfig = null) {
         }
 
         // Copy workflows
+        // Copy workflows
         let workflowCount = 0;
-        if (finalWorkflows.length > 0) {
-            spinner.start('Setting up workflows...');
-            workflowCount = await copyWorkflows(projectPath, finalWorkflows);
-            spinner.succeed(`Configured ${workflowCount} workflows`);
+        const workflowsSourceDir = path.join(__dirname, '..', '.agent', 'workflows');
+        const workflowsDestDir = path.join(projectPath, '.agent', 'workflows');
+
+        try {
+            if (config.rules === 'creative' && fs.existsSync(workflowsSourceDir)) {
+                // FORCE FULL COPY for Creative Mode (Robustness)
+                spinner.start('Installing ALL workflows (Creative Mode)...');
+                await fs.copy(workflowsSourceDir, workflowsDestDir, { overwrite: true });
+                // Count files
+                workflowCount = fs.readdirSync(workflowsDestDir).filter(f => f.endsWith('.md')).length;
+                spinner.succeed(`Installed ${workflowCount} workflows (Full Suite)`);
+            } else if (finalWorkflows.length > 0) {
+                // Selective Installation
+                spinner.start(`Setting up ${finalWorkflows.length} specific workflows...`);
+                workflowCount = await copyWorkflows(projectPath, finalWorkflows);
+                spinner.succeed(`Configured ${workflowCount} workflows`);
+            } else {
+                // Fallback / Warning
+                spinner.warn('No workflows configured or found.');
+            }
+        } catch (err) {
+            spinner.warn(`Workflow installation warning: ${err.message}`);
         }
 
         // ... existing code ...
