@@ -1,10 +1,15 @@
-# ⚡ ANTIGRAVITY IDE: Activate Senior Engineer Mindset for AI
+<div align="center">
+  <img src=".agent/core/logo.png" alt="AntiGravity IDE Logo" width="120">
 
-[English](./README.md) | [Tiếng Việt](./README.vi.md)
+  # AntiGravity IDE
+  ## Activate Senior Engineer Mindset for AI
 
-> **Transform AI Agent from Intern to Lead Engineer.**
->
-> Đây không phải là trình soạn thảo code—đây là **Mindset Installer** giúp nạp tiêu chuẩn kỹ thuật chuyên nghiệp (PDCA, Security, Architecture) trực tiếp vào não bộ AI (Cursor, Windsurf, Cline).
+  [English](./README.md) | [Tiếng Việt](./README.vi.md)
+
+  > **Biến AI Agent từ một Thực tập viên thành Kỹ sư trưởng.**
+  >
+  > Đây không phải là trình soạn thảo code — Đây là **Hệ điều hành Tư duy** giúp nạp tiêu chuẩn chuyên nghiệp (PDCA, Security, Architecture) trực tiếp vào não bộ AI.
+</div>
 
 [![npm version](https://img.shields.io/npm/v/antigravity-ide?color=red)](https://badge.fury.io/js/antigravity-ide)
 [![License: MIT](https://img.shields.io/badge/License-MIT-orange)](https://opensource.org/licenses/MIT)

@@ -1,10 +1,15 @@
-# ⚡ ANTIGRAVITY IDE: The Senior Engineer Mindset for AI
+<div align="center">
+  <img src=".agent/core/logo.png" alt="AntiGravity IDE Logo" width="120">
 
-[English](./README.md) | [Tiếng Việt](./README.vi.md)
+  # AntiGravity IDE
+  ## Activate Senior Engineer Mindset for AI
 
-> **Upgrade your AI Agent from Intern to Lead Engineer.**
->
-> This is not an editor—it's a **Mindset Installer** that injects professional engineering standards (PDCA, Security, Architecture) directly into your AI's brain (Cursor, Windsurf, Cline).
+  [English](./README.md) | [Tiếng Việt](./README.vi.md)
+
+  > **Upgrade your AI Agent from Intern to Lead Engineer.**
+  >
+  > This is not an editor — it's a **Mindset Installer** that injects professional engineering standards (PDCA, Security, Architecture) directly into your AI's brain.
+</div>
 
 [![npm version](https://img.shields.io/npm/v/antigravity-ide?color=red)](https://badge.fury.io/js/antigravity-ide)
 [![License: MIT](https://img.shields.io/badge/License-MIT-orange)](https://opensource.org/licenses/MIT)
