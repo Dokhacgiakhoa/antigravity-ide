@@ -83,13 +83,8 @@ async function getProjectConfig(skipPrompts = false, predefinedName = null) {
   if (skipPrompts) {
     return {
       projectName: predefinedName || 'my-agent-project',
-      template: 'standard',
-      rules: 'balanced',
-      skillCategories: ['webdev'],
-      workflows: ['git', 'testing'],
-      includeDashboard: false,
       language: 'en',
-      packageManager: 'npm',
+      operationMode: 'standard',
       engineMode: 'standard'
     };
   }
@@ -100,10 +95,6 @@ async function getProjectConfig(skipPrompts = false, predefinedName = null) {
   console.log(chalk.bold.cyan('🚀 Project Setup Wizard\n'));
   console.log(chalk.gray('Answer a few questions to configure your AI Agent project...\n'));
 
-  /* 
-    PHASE 1: BASIC INFORMATION
-    Order: Language -> Name -> Scale -> Industry -> Agent Name
-  */
   const responses = await prompts([
     {
       type: 'select',
@@ -129,47 +120,37 @@ async function getProjectConfig(skipPrompts = false, predefinedName = null) {
     },
     {
       type: 'select',
-      name: 'scale', // Maps to 'rules'
-      message: (prev, values) => values.language === 'vi' ? 'Quy mô dự án:' : 'Project Scale:',
-      choices: (prev, values) => values.language === 'vi' ? [
-        { title: '👤 Cá nhân (Personal) - Cơ chế linh hoạt, tự chủ', value: 'flexible' },
-        { title: '👥 Team (Nhóm) - Cân bằng, hỏi trước khi sửa file', value: 'balanced' },
-        { title: '🏢 Doanh nghiệp (Enterprise) - Nghiêm ngặt, kiểm soát 100%', value: 'strict' }
-      ] : [
-        { title: '👤 Personal - Flexible, High Autonomy', value: 'flexible' },
-        { title: '👥 Team - Balanced, Confirm core changes', value: 'balanced' },
-        { title: '🏢 Enterprise - Strict, 100% Control', value: 'strict' }
-      ],
-      initial: 0
-    },
-    {
-      type: 'select',
-      name: 'industryDomain',
-      message: (prev, values) => values.language === 'vi' ? 'Lĩnh vực dự án (Industry):' : 'Select Industry Domain:',
-      choices: (prev, values) => values.language === 'vi' ? [
-        { title: '💰 Finance (Tài chính - Fintech)', value: 'finance' },
-        { title: '🎓 Education (Giáo dục - EdTech)', value: 'education' },
-        { title: '🍔 F&B / Restaurant (Nhà hàng)', value: 'fnb' },
-        { title: '👤 Personal / Portfolio (Cá nhân)', value: 'personal' },
-        { title: '🏥 Healthcare (Y tế - HealthTech)', value: 'healthcare' },
-        { title: '🚚 Logistics (Vận tải)', value: 'logistics' },
-        { title: '🔮 Other (Khác - Web/App cơ bản)', value: 'other' }
-      ] : [
-        { title: '💰 Finance (Fintech)', value: 'finance' },
-        { title: '🎓 Education (EdTech)', value: 'education' },
-        { title: '🍔 F&B / Restaurant', value: 'fnb' },
-        { title: '👤 Personal / Portfolio', value: 'personal' },
-        { title: '🏥 Healthcare (HealthTech)', value: 'healthcare' },
-        { title: '🚚 Logistics', value: 'logistics' },
-        { title: '🔮 Other (General Web/App)', value: 'other' }
-      ],
-      initial: 6
-    },
-    {
-      type: 'text',
-      name: 'agentName',
-      message: (prev, values) => values.language === 'vi' ? 'Đặt tên cho Agent (VD: Jarvis, Friday):' : 'Name your Agent (e.g., Jarvis, Friday):',
-      validate: (value) => value.length < 2 ? (process.env.LANG?.includes('vi') ? 'Tên Agent phải có ít nhất 2 ký tự' : 'Name must be at least 2 characters long') : true
+      name: 'operationMode',
+      message: (prev, values) => {
+        const lang = values.language;
+        return lang === 'vi'
+          ? 'Chọn Chế độ Vận hành (Phụ thuộc vào tài khoản AI của bạn):'
+          : 'Select Operation Mode (Based on your AI Account):';
+      },
+      choices: (prev, values) => {
+        const lang = values.language;
+        return [
+          {
+            title: lang === 'vi'
+              ? '🌿 ECO (Siêu tiết kiệm - Khuyên dùng cho Tài khoản Free)'
+              : '🌿 ECO (Economy - Best for Free accounts)',
+            value: 'eco'
+          },
+          {
+            title: lang === 'vi'
+              ? '🏢 PRO (Chuyên nghiệp - Gemini Pro - Hỗ trợ Plugin mở rộng)'
+              : '🏢 PRO (Professional - Gemini Pro - Supports Plugin extensions)',
+            value: 'pro'
+          },
+          {
+            title: lang === 'vi'
+              ? '🌌 ULTRA (Sáng tạo - Yêu cầu Gemini Ultra)'
+              : '🌌 ULTRA (Infinite - Requires Gemini Ultra)',
+            value: 'ultra'
+          }
+        ];
+      },
+      initial: 1
     }
   ], {
     onCancel: () => {
@@ -183,56 +164,10 @@ async function getProjectConfig(skipPrompts = false, predefinedName = null) {
     responses.projectName = predefinedName;
   }
 
-  // PRESETS CONFIGURATION
-  const baseWorkflows = ['git', 'plan', 'status'];
-
-  const industryWorkflows = {
-    finance: ['security', 'audit', 'test'],
-    education: ['explain', 'visually', 'test'],
-    fnb: ['performance', 'mobile', 'deploy'],
-    personal: ['blog', 'portfolio', 'seo'],
-    healthcare: ['compliance', 'security', 'audit'],
-    logistics: ['api', 'realtime', 'deploy'],
-    other: ['create', 'debug', 'enhance']
-  };
-
-  const specificWorkflows = industryWorkflows[responses.industryDomain] || ['create', 'debug', 'enhance'];
-  
-  const availableWorkflows = [
-    'audit', 'brainstorm', 'create', 'debug', 'deploy', 'document', 'enhance', 
-    'monitor', 'onboard', 'orchestrate', 'plan', 'preview', 'security', 'seo', 
-    'status', 'test', 'ui-ux-pro-max',
-    'explain', 'visually', 'mobile', 'performance', 'compliance', 'api', 'realtime', 'blog', 'portfolio'
-  ];
-
-  const finalWorkflows = new Set(['plan', 'status', 'brainstorm', 'debug', 'enhance']);
-
-  // Add industry-specific workflows
-  if (specificWorkflows && Array.isArray(specificWorkflows)) {
-    specificWorkflows.forEach(w => {
-      if (availableWorkflows.includes(w)) {
-        finalWorkflows.add(w);
-      }
-    });
-  }
-
-  // Logic based on Industry and implicit skills
-  if (responses.industryDomain === 'personal' || responses.industryDomain === 'fnb') {
-    finalWorkflows.add('ui-ux-pro-max');
-  }
-  if (responses.industryDomain === 'finance' || responses.industryDomain === 'healthcare') {
-    finalWorkflows.add('orchestrate');
-  }
-  if (responses.industryDomain === 'logistics' || responses.industryDomain === 'other') {
-    finalWorkflows.add('create');
-  }
-
   const settings = {
-    template: 'standard',
-    rules: responses.scale,
-    workflows: Array.from(finalWorkflows),
-    packageManager: 'npm',
-    engineMode: 'standard' // Default since prompt was removed
+    engineMode: responses.operationMode === 'creative' ? 'advanced' : 'standard',
+    agentName: 'Antigravity',
+    projectScale: responses.operationMode
   };
   
   // Return configuration with presets

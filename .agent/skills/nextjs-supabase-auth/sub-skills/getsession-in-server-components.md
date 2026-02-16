@@ -1,0 +1,2 @@
+# ❌ getSession in Server Components
+

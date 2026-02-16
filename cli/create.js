@@ -8,6 +8,7 @@ const chalk = require('chalk');
 const ora = require('ora');
 const { execSync } = require('child_process');
 const { getProjectConfig, getSkillsForCategories } = require('./prompts');
+const MANIFEST = require('./manifest');
 const gradient = require('gradient-string');
 
 async function createProject(projectName, options) {
@@ -45,17 +46,10 @@ async function createProject(projectName, options) {
         spinner.succeed('Project structure created');
 
         // Copy selected skills
-        if (config.template !== 'minimal' && config.skillCategories?.length > 0) {
+        if (config.template !== 'minimal') {
             spinner.start('Installing selected skills...');
             await copySkills(projectPath, config.skillCategories, config.engineMode);
             spinner.succeed(`Installed ${config.skillCategories.length} skill categories`);
-        }
-
-        // Copy workflows
-        if (config.workflows?.length > 0) {
-            spinner.start('Setting up workflows...');
-            await copyWorkflows(projectPath, config.workflows);
-            spinner.succeed(`Configured ${config.workflows.length} workflows`);
         }
 
 
@@ -124,76 +118,159 @@ async function copyBaseStructure(projectPath, config) {
     const sourceAgentDir = path.join(__dirname, '..', '.agent');
     const destAgentDir = path.join(projectPath, '.agent');
     const filter = getEngineFilter(config.engineMode);
+    const operationMode = config.operationMode || 'pro';
+    const modeConfig = MANIFEST[operationMode];
 
     // Create base .agent directory
     fs.mkdirSync(destAgentDir, { recursive: true });
 
-    // Copy all subdirectories from .agent (except skills, which are handled separately)
-    if (fs.existsSync(sourceAgentDir)) {
-        const entries = fs.readdirSync(sourceAgentDir, { withFileTypes: true });
+    // Copy 'docs' directory to project root
+    const sourceDocsDir = path.join(__dirname, '..', 'docs');
+    const destDocsDir = path.join(projectPath, 'docs');
+    if (fs.existsSync(sourceDocsDir)) {
+        await fs.copy(sourceDocsDir, destDocsDir);
+    }
 
-        for (const entry of entries) {
-            if (entry.name === 'skills' || entry.name === 'GEMINI.md' || entry.name === 'START_HERE.md') {
-                continue; // Handle these separately
+    // Copy common directories
+    const commonDirs = []; // .shared and skills now filtered by manifest
+    for (const dir of commonDirs) {
+        const src = path.join(sourceAgentDir, dir);
+        const dest = path.join(destAgentDir, dir);
+        if (fs.existsSync(src)) {
+            await fs.copy(src, dest, { filter });
+        }
+    }
+
+    // Copy filtered directories: rules, agents, workflows, skills, .shared, core, scripts
+    const filteredDirs = ['rules', 'agents', 'workflows', 'skills', '.shared', 'core', 'scripts'];
+    for (const folder of filteredDirs) {
+        const globalFolder = path.join(sourceAgentDir, folder);
+        const localFolder = path.join(destAgentDir, folder);
+        
+        if (!fs.existsSync(localFolder)) fs.mkdirSync(localFolder, { recursive: true });
+
+        const manifestKey = folder.startsWith('.') ? folder.slice(1) : folder;
+        const whitelist = modeConfig[manifestKey];
+
+        if (fs.existsSync(globalFolder)) {
+            const files = fs.readdirSync(globalFolder);
+            for (const file of files) {
+                // Suffix handling (e.g., orchestrator.eco.md)
+                const isEcoVariant = file.includes('.eco.md') || file.includes('.instant.md');
+                const isUltraVariant = file.includes('.ultra.md') || file.includes('.creative.md');
+                const isProVariant = !isEcoVariant && !isUltraVariant;
+                const isDirectory = fs.lstatSync(path.join(globalFolder, file)).isDirectory();
+
+                let targetFileName = file;
+                let shouldCopy = false;
+
+                if (whitelist === '*') {
+                    // Ultra Mode: Copy everything, but prefer ultra variants
+                    if (isUltraVariant) {
+                        targetFileName = file.replace('.ultra.md', '.md').replace('.creative.md', '.md');
+                        shouldCopy = true;
+                    } else if (isProVariant) {
+                        if (isDirectory) {
+                            shouldCopy = true;
+                        } else {
+                            const ultraVariant = file.replace('.md', '.ultra.md');
+                            const creativeVariant = file.replace('.md', '.creative.md');
+                            if (!fs.existsSync(path.join(globalFolder, ultraVariant)) && !fs.existsSync(path.join(globalFolder, creativeVariant))) {
+                                shouldCopy = true;
+                            }
+                        }
+                    }
+                } else {
+                    // Eco or Pro Mode: Only copy from whitelist
+                    const baseName = file.replace('.eco.md', '.md').replace('.instant.md', '.md')
+                                         .replace('.ultra.md', '.md').replace('.creative.md', '.md');
+                    
+                    if (whitelist.includes(baseName)) {
+                        if (operationMode === 'eco') {
+                            if (isEcoVariant) {
+                                targetFileName = baseName;
+                                shouldCopy = true;
+                            } else if (isProVariant) {
+                                if (isDirectory) {
+                                    shouldCopy = true;
+                                } else {
+                                    const ecoVariant = file.replace('.md', '.eco.md');
+                                    const instantVariant = file.replace('.md', '.instant.md');
+                                    if (!fs.existsSync(path.join(globalFolder, ecoVariant)) && !fs.existsSync(path.join(globalFolder, instantVariant))) {
+                                        shouldCopy = true;
+                                    }
+                                }
+                            }
+                        } else if (operationMode === 'pro') {
+                            if (isProVariant) {
+                                shouldCopy = true;
+                            }
+                        }
+                    }
+                }
+
+                if (shouldCopy) {
+                    const srcPath = path.join(globalFolder, file);
+                    const destPath = path.join(localFolder, targetFileName);
+
+                    if (fs.lstatSync(srcPath).isDirectory()) {
+                        // Recursive copy for skill directories
+                        await fs.copy(srcPath, destPath, { filter });
+                    } else {
+                        // File copy
+                        fs.copyFileSync(srcPath, destPath);
+                    }
+                }
             }
-
-            const sourceEntryPath = path.join(sourceAgentDir, entry.name);
-            const destEntryPath = path.join(destAgentDir, entry.name);
-
-            await fs.copy(sourceEntryPath, destEntryPath, { filter });
         }
     }
 
     // Ensure 'skills' dir exists even if empty
     fs.mkdirSync(path.join(destAgentDir, 'skills'), { recursive: true });
 
-    // Copy GEMINI.md based on rules (core file - auto backup if exists)
-    const geminiPath = path.join(destAgentDir, 'GEMINI.md');
+    // 1. Copy GEMINI.md to ROOT (User Requirement)
+    // Was previously in .agent/GEMINI.md
+    const geminiPath = path.join(projectPath, 'GEMINI.md');
     const geminiDecision = handleCoreFileConflict(geminiPath, 'GEMINI.md');
 
     if (geminiDecision.shouldWrite) {
-        const geminiContent = generateGeminiMd(config.rules, config.language, config.industryDomain, config.agentName);
+        const geminiContent = generateGeminiMd(config.operationMode, config.language, config.industryDomain, config.agentName);
         fs.writeFileSync(geminiDecision.targetPath, geminiContent);
-
-        if (geminiDecision.isBackup) {
-            console.log(chalk.yellow(`  ℹ️  GEMINI.md exists, created ${path.basename(geminiDecision.targetPath)}`));
-        } else {
-            console.log(chalk.green('  ✓ Created GEMINI.md'));
-        }
+        console.log(chalk.green('  ✓ Created GEMINI.md (Root context)'));
     }
 
-    // Copy START_HERE.md (core file - auto backup if exists)
-    const startHereSource = path.join(sourceAgentDir, 'START_HERE.md');
+    // 2. Create ERRORS.md (Empty template for logging)
+    const errorsPath = path.join(projectPath, 'ERRORS.md');
+    if (!fs.existsSync(errorsPath)) {
+        const errorsTemplate = `# 🐛 Error Log - ${config.projectName}\n\n> Tập hợp tất cả lỗi xảy ra trong quá trình phát triển (Auto-generated).\n\n---\n\n## Thống kê nhanh\n- **Tổng lỗi**: 0\n- **Đã sửa**: 0\n\n---\n\n<!-- Errors sẽ được agent tự động ghi vào đây -->\n`;
+        fs.writeFileSync(errorsPath, errorsTemplate);
+        console.log(chalk.green('  ✓ Created ERRORS.md'));
+    }
+
+    // 3. Copy START_HERE.md to .agent/ (Keep internal)
+    const startHereSource = path.join(sourceAgentDir, config.language === 'vi' ? 'START_HERE.vi.md' : 'START_HERE.md');
     const startHereDest = path.join(destAgentDir, 'START_HERE.md');
 
     if (fs.existsSync(startHereSource)) {
-        const startHereDecision = handleCoreFileConflict(startHereDest, 'START_HERE.md');
-
-        if (startHereDecision.shouldWrite) {
-            fs.copyFileSync(startHereSource, startHereDecision.targetPath);
-
-            if (startHereDecision.isBackup) {
-                console.log(chalk.yellow(`  ℹ️  START_HERE.md exists, created ${path.basename(startHereDecision.targetPath)}`));
-            } else {
-                console.log(chalk.green('  ✓ Created START_HERE.md'));
-            }
-        }
+        fs.copyFileSync(startHereSource, startHereDest);
     }
 
-    // Copy basic files (README, .gitignore) - only if they don't exist
-    const files = ['README.md', '.gitignore'];
-    const rootDir = path.join(__dirname, '..');
+    // 4. Copy README based on Language selection
+    const readmeSource = path.join(__dirname, '..', config.language === 'vi' ? 'README.vi.md' : 'README.md');
+    const readmeDest = path.join(projectPath, 'README.md'); // Always name it README.md in target
 
-    files.forEach(file => {
-        const source = path.join(rootDir, file);
-        const dest = path.join(projectPath, file);
-        if (fs.existsSync(source) && !fs.existsSync(dest)) {
-            fs.copyFileSync(source, dest);
-            console.log(chalk.green(`  ✓ Created ${file}`));
-        } else if (fs.existsSync(dest)) {
-            console.log(chalk.yellow(`  ℹ️  Skipped ${file} (already exists)`));
-        }
-    });
+    if (!fs.existsSync(readmeDest) && fs.existsSync(readmeSource)) {
+        fs.copyFileSync(readmeSource, readmeDest);
+        console.log(chalk.green(`  ✓ Created README.md (${config.language === 'vi' ? 'Vietnamese' : 'English'})`));
+    }
+
+    // 5. Copy .gitignore
+    const gitignoreSource = path.join(__dirname, '..', '.gitignore');
+    const gitignoreDest = path.join(projectPath, '.gitignore');
+    if (!fs.existsSync(gitignoreDest) && fs.existsSync(gitignoreSource)) {
+        fs.copyFileSync(gitignoreSource, gitignoreDest);
+        console.log(chalk.green('  ✓ Created .gitignore'));
+    }
 }
 
 async function copySkills(projectPath, categories, engineMode) {
@@ -298,23 +375,23 @@ bin/* text eol=lf
 }
 
 
-function generateGeminiMd(rules, language = 'en', industry = 'other', agentName = 'Antigravity') {
+function generateGeminiMd(operationMode = 'standard', language = 'en', industry = 'other', agentName = 'Antigravity') {
     const strictness = {
-        strict: {
+        creative: {
             autoRun: 'false',
             confirmLevel: 'Ask before every file modification and command execution'
         },
-        balanced: {
+        standard: {
             autoRun: 'true for safe read operations',
             confirmLevel: 'Ask before destructive operations'
         },
-        flexible: {
+        instant: {
             autoRun: 'true',
-            confirmLevel: 'Minimal confirmation, high autonomy'
+            confirmLevel: 'Minimal confirmation, high autonomy (MVP Mode)'
         }
     };
 
-    const config = strictness[rules] || strictness.balanced;
+    const config = strictness[operationMode] || strictness.standard;
     const isVi = language === 'vi';
 
     // Define Industry Focus strings
@@ -344,7 +421,7 @@ This file controls the behavior of your AI Agent.
 ## 🎯 Primary Focus: ${industryFocus.toUpperCase()}
 > **Priority**: Optimize all solutions for this domain.
 
-## Agent Behavior Rules: ${rules.toUpperCase()}
+## Agent Behavior Rules: ${operationMode.toUpperCase()}
 
 **Auto-run Commands**: ${config.autoRun}
 **Confirmation Level**: ${config.confirmLevel}
@@ -406,7 +483,7 @@ Tệp này kiểm soát hành vi của AI Agent.
 ## 🎯 Trọng tâm Chính: ${industryFocus.toUpperCase()}
 > **Ưu tiên**: Tối ưu hóa mọi giải pháp cho lĩnh vực này.
 
-## Quy tắc hành vi: ${rules.toUpperCase()}
+## Quy tắc hành vi: ${operationMode.toUpperCase()}
 
 **Tự động chạy lệnh**: ${config.autoRun}
 **Mức độ xác nhận**: ${config.confirmLevel === 'Minimal confirmation, high autonomy' ? 'Tối thiểu, tự chủ cao' : 'Hỏi trước các tác vụ quan trọng'}
@@ -502,5 +579,8 @@ function printSuccessMessage(projectName, config) {
 
 module.exports = {
     createProject,
-    generateGeminiMd
+    generateGeminiMd,
+    copyBaseStructure,
+    copySkills,
+    copyWorkflows
 };

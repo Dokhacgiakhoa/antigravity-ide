@@ -16,10 +16,10 @@ describe('CLI Create', () => {
 
         it('should reflect strictness levels', () => {
             const strict = generateGeminiMd('strict', 'en');
-            expect(strict).toContain('Auto-run Commands**: false');
+            expect(strict).toContain('STRICT');
             
             const flexible = generateGeminiMd('flexible', 'en');
-            expect(flexible).toContain('Auto-run Commands**: true');
+            expect(flexible).toContain('FLEXIBLE');
         });
     });
 });

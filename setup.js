@@ -9,6 +9,8 @@ const gradient = require('gradient-string');
 const boxen = require('boxen');
 const prompts = require('prompts');
 
+const MANIFEST = require('./cli/manifest.js');
+
 const GLOBAL_DIR = path.join(os.homedir(), '.antigravity');
 const SOURCE_DIR = path.join(__dirname, '.agent');
 
@@ -30,24 +32,10 @@ async function setup() {
     
     console.log(gradient.rainbow.multiline(branding));
     console.log(gradient.atlas('━'.repeat(60)));
-    console.log(chalk.gray(`  Google Antigravity • Global Setup Wizard • v3.5.61`));
+    console.log(chalk.gray(`  Google Antigravity • Global Setup Wizard • v4.2.1`));
     console.log(chalk.gray('  Developed with 💡 by Dokhacgiakhoa'));
     console.log(gradient.atlas('━'.repeat(60)) + '\n');
     console.log(chalk.bold.hex('#00ffee')('🚀 Antigravity Global Setup Starting...\n'));
-
-    // 0. Check for Python (Required for Advanced Skills)
-    let hasPython = false;
-    try {
-        execSync('python --version', { stdio: 'ignore' });
-        hasPython = true;
-    } catch (e) {
-        try {
-            execSync('python3 --version', { stdio: 'ignore' });
-            hasPython = true;
-        } catch (e2) {}
-    }
-
-    // Silent check - we will warn later if they select Advanced Mode
 
     // Interactive Prompts
     const response = await prompts([
@@ -63,60 +51,18 @@ async function setup() {
         },
         {
             type: 'select',
-            name: 'engineMode',
-            message: (prev, values) => values.lang === 'vi' ? 'Chọn Chế độ Động cơ:' : 'Select Engine Mode:',
+            name: 'operationMode',
+            message: (prev, values) => values.lang === 'vi' ? 'Chọn Chế độ Vận hành (Mode):' : 'Select Operation Mode:',
             choices: (prev, values) => values.lang === 'vi' ? [
-                { title: '⚡ Standard (Node.js) - Gọn nhẹ [Mặc định]', value: 'standard' },
-                { title: '🧠 Advanced (Python) - Chuyên sâu AI & Data', value: 'advanced' }
+                { title: '⚡ INSTANT (MVP) - Khởi tạo Thần tốc, Đa năng', value: 'instant' },
+                { title: '🏢 STANDARD (Pro) - Quy trình Chuẩn chuyên nghiệp', value: 'standard' },
+                { title: '🏭 CREATIVE (Elite) - Sức mạnh tối đa, Chuyên biệt hóa', value: 'creative' }
             ] : [
-                { title: '⚡ Standard (Node.js) - Lightweight [Default]', value: 'standard' },
-                { title: '🧠 Advanced (Python) - Deep AI & Data', value: 'advanced' }
-            ],
-            initial: 0
-        },
-        {
-            type: 'text',
-            name: 'agentName',
-            message: (prev, values) => values.lang === 'vi' ? 'Đặt tên định danh cho AI Agent của bạn:' : 'Name your AI Agent:',
-            validate: value => value.length < 2 ? 'Minimum 2 chars' : true
-        },
-        {
-            type: 'select',
-            name: 'projectScale',
-            message: (prev, values) => values.lang === 'vi' ? 'Chọn Quy mô Dự án (Project Scale):' : 'Select Project Scale:',
-            choices: (prev, values) => values.lang === 'vi' ? [
-                { title: '👤 Personal (Cá nhân) - Tinh gọn (Core + Debug)', value: 'personal' },
-                { title: '🏢 SME / Start-Up (Tiêu chuẩn) - Đầy đủ Big 5 [Mặc định]', value: 'sme' },
-                { title: '🏭 Enterprise (Tập đoàn) - Full Option + Compliance', value: 'enterprise' }
-            ] : [
-                { title: '👤 Personal - Lean (Core + Debug)', value: 'personal' },
-                { title: '🏢 SME / Start-Up - Standard Big 5 [Default]', value: 'sme' },
-                { title: '🏭 Enterprise - Full Option + Compliance', value: 'enterprise' }
+                { title: '⚡ INSTANT (MVP) - Ultra Fast, Multi-tasking', value: 'instant' },
+                { title: '🏢 STANDARD (Pro) - Professional Standard Flow', value: 'standard' },
+                { title: '🏭 CREATIVE (Elite) - Maximum Power, Micro-Specialization', value: 'creative' }
             ],
             initial: 1
-        },
-        {
-            type: 'select',
-            name: 'industryDomain',
-            message: (prev, values) => values.lang === 'vi' ? 'Chọn Lĩnh vực dự án (Industry):' : 'Select Industry Domain:',
-            choices: (prev, values) => values.lang === 'vi' ? [
-                { title: '💰 Finance (Tài chính - Fintech)', value: 'finance' },
-                { title: '🎓 Education (Giáo dục - EdTech)', value: 'education' },
-                { title: '🍔 F&B / Restaurant (Nhà hàng)', value: 'fnb' },
-                { title: '👤 Personal / Portfolio (Cá nhân)', value: 'personal' },
-                { title: '🏥 Healthcare (Y tế - HealthTech)', value: 'healthcare' },
-                { title: '🚚 Logistics (Vận tải)', value: 'logistics' },
-                { title: '🔮 Other (Khác - Web/App cơ bản)', value: 'other' }
-            ] : [
-                { title: '💰 Finance (Fintech)', value: 'finance' },
-                { title: '🎓 Education (EdTech)', value: 'education' },
-                { title: '🍔 F&B / Restaurant', value: 'fnb' },
-                { title: '👤 Personal / Portfolio', value: 'personal' },
-                { title: '🏥 Healthcare (HealthTech)', value: 'healthcare' },
-                { title: '🚚 Logistics', value: 'logistics' },
-                { title: '🔮 Other (General Web/App)', value: 'other' }
-            ],
-            initial: 6
         }
     ], {
         onCancel: () => {
@@ -125,20 +71,23 @@ async function setup() {
         }
     });
 
-    const { lang, engineMode, agentName, projectScale, industryDomain } = response;
+    const { lang, operationMode } = response;
+
+    // Use default values for hidden configs
+    const engineMode = operationMode === 'creative' ? 'advanced' : 'standard';
+    const agentName = 'Antigravity';
+    const projectScale = operationMode;
 
     console.log(chalk.green(`\n📍 Configuration Saved:`));
     console.log(chalk.cyan(`   Language: ${lang === 'vi' ? 'Tiếng Việt' : 'English'}`));
-    console.log(chalk.cyan(`   Agent Name: ${chalk.bold.yellow(agentName)}`));
-    console.log(chalk.cyan(`   Engine: ${engineMode.toUpperCase()}`));
-    console.log(chalk.cyan(`   Scale: ${projectScale.toUpperCase()}`));
-    console.log(chalk.cyan(`   Industry: ${industryDomain ? industryDomain.toUpperCase() : 'OTHER'}\n`));
+    console.log(chalk.cyan(`   Mode: ${operationMode.toUpperCase()}`));
+    console.log(chalk.cyan(`   Engine: ${engineMode.toUpperCase()} (Auto-configured)\n`));
 
     // Save config
     if (!fs.existsSync(GLOBAL_DIR)) {
         fs.mkdirSync(GLOBAL_DIR, { recursive: true });
     }
-    fs.writeFileSync(path.join(GLOBAL_DIR, '.config.json'), JSON.stringify({ lang, engineMode, agentName, projectScale, industryDomain }, null, 2));
+    fs.writeFileSync(path.join(GLOBAL_DIR, '.config.json'), JSON.stringify({ lang, engineMode, agentName, projectScale, operationMode }, null, 2));
 
     // 5. Smart Dependency Check (Post-Selection)
     if (engineMode === 'advanced' && !hasPython) {
@@ -205,45 +154,91 @@ async function setup() {
     });
     console.log('✅ Global Cache is up-to-date (Full Enterprise Mode).');
 
-    // 7. Initialize Workspace (Apply Scale Logic to Local Project)
-    // Only copy specific rules to current directory based on Scale
-    console.log(`\n📂 Initializing Workspace (Scale: ${projectScale.toUpperCase()})...`);
+    // 7. Initialize Workspace (Apply Manifest Logic to Local Project)
+    console.log(`\n📂 Initializing Workspace (Mode: ${operationMode.toUpperCase()})...`);
     
     const localAgentDir = path.join(process.cwd(), '.agent');
-    const localRulesDir = path.join(localAgentDir, 'rules');
+    const localRulesDir = path.join(localAgentDir, 'rules'); // Keep this definition as it's used later
+    
+    ['rules', 'agents', 'workflows', 'skills', '.shared', 'core', 'scripts'].forEach(folder => {
+        const globalFolder = path.join(GLOBAL_DIR, folder);
+        const localFolder = path.join(localAgentDir, folder);
+        
+        if (!fs.existsSync(localFolder)) fs.mkdirSync(localFolder, { recursive: true });
 
-    // Create local .agent struct if not exists
-    if (!fs.existsSync(localRulesDir)) fs.mkdirSync(localRulesDir, { recursive: true });
+        const manifestKey = folder.startsWith('.') ? folder.slice(1) : folder;
+        const whitelist = modeConfig[manifestKey];
 
-    // Define rules for each scale
-    const rulesToApply = {
-        'personal': ['GEMINI.md', 'security.md', 'debug.md'],
-        'sme': ['GEMINI.md', 'security.md', 'frontend.md', 'backend.md', 'debug.md', 'business.md'],
-        'enterprise': null // null means ALL files from Global
-    };
+        if (fs.existsSync(globalFolder)) {
+            fs.readdirSync(globalFolder).forEach(file => {
+                // Suffix handling (e.g., orchestrator.eco.md)
+                const isEcoVariant = file.includes('.eco.md') || file.includes('.instant.md'); // Backward compatibility for filenames
+                const isUltraVariant = file.includes('.ultra.md') || file.includes('.creative.md');
+                const isProVariant = !isEcoVariant && !isUltraVariant;
 
-    const targetRules = rulesToApply[projectScale];
+                let targetFileName = file;
+                let shouldCopy = false;
 
-    if (targetRules) {
-        // Copy specific files from GLOBAL to LOCAL
-        targetRules.forEach(file => {
-            const globalFile = path.join(GLOBAL_DIR, 'rules', file);
-            const localFile = path.join(localRulesDir, file);
-            if (fs.existsSync(globalFile)) {
-                 fs.copyFileSync(globalFile, localFile);
-            }
-        });
-        console.log(`✅ Applied ${targetRules.length} rules to Workspace.`);
-    } else {
-        // Enterprise: Copy ALL rules from Global to Local
-         const globalRulesDir = path.join(GLOBAL_DIR, 'rules');
-         if (fs.existsSync(globalRulesDir)) {
-             fs.readdirSync(globalRulesDir).forEach(file => {
-                 fs.copyFileSync(path.join(globalRulesDir, file), path.join(localRulesDir, file));
-             });
-         }
-         console.log(`✅ Applied Full Enterprise rules to Workspace.`);
-    }
+                if (whitelist === '*') {
+                    // Ultra Mode: Copy everything, but prefer ultra variants
+                    if (isUltraVariant) {
+                        targetFileName = file.replace('.ultra.md', '.md').replace('.creative.md', '.md');
+                        shouldCopy = true;
+                    } else if (isProVariant) {
+                        const ultraVariant = file.replace('.md', '.ultra.md');
+                        const creativeVariant = file.replace('.md', '.creative.md');
+                        if (!fs.existsSync(path.join(globalFolder, ultraVariant)) && !fs.existsSync(path.join(globalFolder, creativeVariant))) {
+                            shouldCopy = true;
+                        }
+                    }
+                } else {
+                    // Eco or Pro Mode: Only copy from whitelist
+                    const baseName = file.replace('.eco.md', '.md').replace('.instant.md', '.md')
+                                         .replace('.ultra.md', '.md').replace('.creative.md', '.md');
+                    
+                    if (whitelist.includes(baseName)) {
+                        if (operationMode === 'eco') {
+                            if (isEcoVariant) {
+                                targetFileName = baseName;
+                                shouldCopy = true;
+                            } else if (isProVariant) {
+                                const ecoVariant = file.replace('.md', '.eco.md');
+                                const instantVariant = file.replace('.md', '.instant.md');
+                                if (!fs.existsSync(path.join(globalFolder, ecoVariant)) && !fs.existsSync(path.join(globalFolder, instantVariant))) {
+                                    shouldCopy = true;
+                                }
+                            }
+                        } else if (operationMode === 'pro') {
+                            if (isProVariant) {
+                                shouldCopy = true;
+                            }
+                        }
+                    }
+                }
+
+                if (shouldCopy) {
+                    const srcPath = path.join(globalFolder, file);
+                    const destPath = path.join(localFolder, targetFileName);
+
+                    if (fs.lstatSync(srcPath).isDirectory()) {
+                        // For skills (directories), we use recursive copy
+                        if (os.platform() === 'win32') {
+                            try {
+                                execSync(`robocopy "${srcPath}" "${destPath}" /E /NFL /NDL /NJH /NJS /nc /ns /np /XO`, { stdio: 'inherit' });
+                            } catch (e) {}
+                        } else {
+                            execSync(`mkdir -p "${destPath}" && cp -R "${srcPath}/"* "${destPath}/"`, { stdio: 'inherit' });
+                        }
+                    } else {
+                        // For files
+                        fs.copyFileSync(srcPath, destPath);
+                    }
+                }
+            });
+        }
+    });
+
+    console.log(`✅ Applied ${operationMode.toUpperCase()} resources to Workspace.`);
 
     // 8. Inject Config into Workspace Rules (Agent Name & Domain)
     const geminiRulePath = path.join(localRulesDir, 'GEMINI.md');

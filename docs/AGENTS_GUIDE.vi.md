@@ -1,12 +1,12 @@
 # 🕵️ Hướng Dẫn Về "Hệ Thống Agent" (Digital Employees)
 
-> **Antigravity** vận hành như một công ty phần mềm thu nhỏ, với các nhân viên số (AI Agents) chuyên trách từng mảng.
+> **Antigravity** vận hành như một công ty phần mềm thu nhỏ, với **42 nhân viên số (AI Agents)** chuyên trách từng mảng.
 
 ---
 
 ## 1. Biệt Đội Chuyên Gia (The Squad)
 
-Dưới đây là danh sách các nhân viên ảo sẽ phục vụ bạn:
+Dưới đây là danh sách các nhân viên ảo chủ chốt sẽ phục vụ bạn:
 
 ### 🏗️ Ban Kiến Trúc & Kế Hoạch
 *   **`project-planner`**:

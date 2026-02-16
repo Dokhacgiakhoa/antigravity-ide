@@ -270,10 +270,10 @@ For details, see [scripts/README.md](scripts/README.md)
 
 | Metric | Value |
 | ------ | ----- |
-| **Total Agents** | 20 |
-| **Total Master Skills** | 22 (Covering 550+ capabilities) |
-| **Total Workflows** | 11 |
-| **Total Scripts** | 2 (master) + 18 (skill-level) |
+| **Total Agents** | 15 |
+| **Total Master Skills** | 573 (Encapsulating 2977+ patterns) |
+| **Total Workflows** | 30 |
+| **Core Libraries** | 17 |
 | **Coverage** | ~90% web/mobile development |
 
 ---

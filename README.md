@@ -1,100 +1,104 @@
-# Google Antigravity
+# ⚡ ANTIGRAVITY IDE: The Senior Engineer Mindset for AI
 
 [English](./README.md) | [Tiếng Việt](./README.vi.md)
 
-> **Antigravity IDE: The Intelligent Operating System for AI Engineers & Project Squads.**  
-> *Transform your AI from a chatbot into a professional Specialist Squad with standard operating procedures.*
+> **Upgrade your AI Agent from Intern to Lead Engineer.**
+>
+> This is not an editor—it's a **Mindset Installer** that injects professional engineering standards (PDCA, Security, Architecture) directly into your AI's brain (Cursor, Windsurf, Cline).
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![npm version](https://badge.fury.io/js/antigravity-ide.svg)](https://badge.fury.io/js/antigravity-ide)
+[![npm version](https://img.shields.io/npm/v/antigravity-ide?color=red)](https://badge.fury.io/js/antigravity-ide)
+[![License: MIT](https://img.shields.io/badge/License-MIT-orange)](https://opensource.org/licenses/MIT)
+[![Downloads](https://img.shields.io/npm/dm/antigravity-ide?color=yellow)](https://npmjs.com/package/antigravity-ide)
+[![GitHub stars](https://img.shields.io/github/stars/Dokhacgiakhoa/antigravity-ide?color=green)](https://github.com/Dokhacgiakhoa/antigravity-ide/stargazers)
+[![Contributors](https://img.shields.io/github/contributors/Dokhacgiakhoa/antigravity-ide?color=blue)](https://github.com/Dokhacgiakhoa/antigravity-ide/graphs/contributors)
+[![Last Commit](https://img.shields.io/github/last-commit/Dokhacgiakhoa/antigravity-ide?color=blueviolet)](https://github.com/Dokhacgiakhoa/antigravity-ide/commits/main)
+[![Code Size](https://img.shields.io/github/languages/code-size/Dokhacgiakhoa/antigravity-ide?color=ff69b4)](https://github.com/Dokhacgiakhoa/antigravity-ide)
 
-**Google Antigravity** is more than just a skill collection; it is a comprehensive **Orchestration Framework**. it provides an "AI Battlefield" environment where AI agents collaborate through a professional production line (PDCA), ensuring every line of code is audited and optimized.
-
-| **22** Master Skills | **15** Specialist Agents | **11** Workflows | **13** Shared DNA Modules |
-| :---: | :---: | :---: | :---: |
-| Containing 550+ Capabilities | Role-Based Personas | PDCA Cycle | Industry Blueprints |
+| **573** Skills | **38** Specialist Agents | **33** Workflows |
+| :---: | :---: | :---: |
+| Enterprise Patterns | Role-Based Personas | PDCA Cycle |
 
 ---
 
-## 🚀 1. Quick Scaffolding
+## 🚀 1. Quick Start
 
-Set up your mission-critical environment in 30 seconds using the CLI:
+Scaffold your AI-ready environment in 30 seconds:
 
 ```sh
-# 1. Create a new project (Recommended)
-npx antigravity-ide my_project
-
-# 2. Smart install in current directory
-npx antigravity-ide
+npx antigravity-ide@latest
 ```
 
-### ✨ Setup Wizard Features (v3.5.54)
-The new interactive CLI puts you in control with a **Premium Developer Experience**:
+### ✨ Setup Wizard (v4.2.1)
+Interactive CLI configuration with 3 defined tiers to match your computational resources:
 
-1.  **Interactive & Visual**:
-    - Navigate menus with **Arrow Keys** (No more manual typing).
-    - **Gradient Aesthetics**: Beautiful CLI visuals that inspire creativity.
-    - **Satisfaction Summary**: A clean "Success" checklist ensures you're ready to go.
+1.  **🌿 ECO (Basic - 96 Skills)**:
+    - **Target**: Gemini 1.5 Flash / Free Tier users.
+    - **Capabilities**: Essential features (Scaffolding, Patterns, Debugging).
+    - **Performance**: Lightweight, low token consumption, maximum speed.
 
-2.  **Project Scale Selection**:
-    - **👤 Personal**: Lean setup (Core Rules + Debug). Perfect for hobby projects.
-    - **🏢 SME / Start-Up**: Standard Big 5 Rules + Business Logic + Security.
-    - **🏭 Enterprise**: Full Option + Compliance + Architecture Review.
+2.  **🏢 PRO (Professional - 216 Skills)**:
+    - **Target**: Gemini 1.5 Pro / Paid Users.
+    - **Capabilities**: Adds DevOps, Security Audits, Cloud Architecture, TDD workflows.
+    - **Performance**: Balanced power and context usage. Industry standard.
 
-3.  **Context Injection**:
-    - **Name your Agent**: Personalize your AI (e.g., *Jarvis*, *Friday*).
-    - **Industry Domain**: Optimize for **Finance, Healthcare, Logistics**, etc.
-    - *Auto-Injection*: These details are deeply embedded into `.agent/rules/GEMINI.md` (See `GEMINI_GUIDE.md`).
-
-4.  **Global vs. Workspace Strategy**:
-    - **Global (`~/.antigravity`)**: Holds the Master Rules (Enterprise Tier).
-    - **Workspace (`.agent`)**: Inherits only what matches your Project Scale.
-
-### Engine Modes
-- **⚡ Standard (Node.js)**: High-speed, lightweight, perfect for Web/SaaS projects.
-- **🧠 Advanced (Python)**: Deep AI integration, Data Science, and automated Security Scanners.
-
-### Identity Awareness & Brain-Drop Protection
-You can assign a unique name to your Agent (e.g., *Jarvis*). This acts as an "Identity Anchor" to verify if the AI is still adhering to the system rules and operational flow.
+3.  **🌌 ULTRA (Enterprise - 573 Skills)**:
+    - **Target**: Gemini 1.5 Ultra / High-Context Models (2M+ tokens).
+    - **Capabilities**: Full Fractal Knowledge. Includes Specialized verticals (Fintech, Edtech), Deep Research, and Multi-Agent Orchestration.
+    - **Performance**: Unlimited power.
 
 ---
 
-## 🧠 2. The Core Brain: `.agent` Folder
+## 2. Documentation & Guides (Included in `docs/`)
+Comprehensive documentation is installed locally with every project. You don't need internet access to master the tool.
 
-The `.agent` directory is where the system's intelligence resides:
+### 📘 Core Guides
+- **[Quick Install Guide](./docs/INSTALL_NPX_GUIDE.md)**:
+  *Step-by-step installation instructions and troubleshooting for first-time users.*
+- **[Master Guide](./docs/MASTER_GUIDE.md)**:
+  *The philosophy, core concepts, and architectural decisions behind Antigravity.*
+- **[Operational Flow](./docs/OPERATIONAL_FLOW.md)**:
+  *How to effectively run the PDCA (Plan-Do-Check-Act) cycle with AI agents.*
 
-- **Specialist Agent System**: Includes the Project Planner, Backend/Frontend Specialists, Security Auditor, and the Orchestrator (Captain).
-- **PDCA Cycle (Plan-Do-Check-Act)**: AI doesn't just "write code." It follows a rigorous Plan -> Implement -> Inspect -> Approve cycle.
-- **Shared Knowledge DNA (`.shared/`)**: Contains the project's core principles, including API Standards, DB Schemas, Compliance docs, and Domain Blueprints (Fintech, Edtech, etc.).
+### 📙 Reference Manuals
+- **[Skills Catalog](./docs/SKILLS.md)**:
+  *Complete list of all 573 capabilities, triggers, and usage examples.*
+- **[Agent Roster](./docs/AGENTS_GUIDE.vi.md)**:
+  *Profiles of the 42 Specialist Agents (Frontend, Backend, Security, etc.) available to you.*
+- **[Workflow Library](./docs/WORKFLOW_GUIDE.vi.md)**:
+  *Catalog of 21 standardized workflows (e.g., /plan, /create, /deploy).*
+- **[Rules & Protocols](./docs/RULES_GUIDE.vi.md)**:
+  *Security guardrails, coding standards, and operational laws.*
+
+### 🛠️ Support
+- **[Glossary](./docs/GLOSSARY.md)**: *Definitions of terms (Fractal, PDCA, MCP).*
+- **[Troubleshooting](./docs/TROUBLESHOOTING.md)**: *Common issues and solutions.*
+
 
 ---
 
-## ⚡ 3. Slash Commands (`/`) & Updates
-
-Trigger deep workflows directly within your AI chat interface:
-
-- `/plan`: Outline requirements and break down tasks (Project Planner).
-- `/create`: Scaffold the project's foundation.
-- `/ui-ux-pro-max`: Design premium interfaces & micro-interactions.
-- `/orchestrate`: Coordinate multiple agents to solve complex problems.
-
-### System Updates
-Update the Antigravity Brain to the latest version while preserving your custom configurations:
-```sh
-npx antigravity-ide update
-```
-
 ---
+
+## 📊 Resource Matrix
+
+| Mode | Skills | Agents | Workflows | Rules | Shared Modules |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **🌿 ECO** | 151 | 5 | 6 | 2 | 3 |
+| **🏢 PRO** | 296 | 10 | 11 | 5 | 10 |
+| **🌌 ULTRA** | 573 | 38 | 33 | 25 | 20 |
 
 ## 📂 Project Structure
 
 ```text
-my-project/
-├── .agent/           # 🧠 THE BRAIN: DNA, Skills & Rules
+project-name/
+├── .agent/           # 🧠 THE BRAIN: Agent DNA, Skills & Rules
 │   ├── .shared/      # ⛩️ Master Knowledge (API, DB, Design)
 │   ├── agents/       # 🎭 Specialist Agent Personas
 │   └── skills/       # 🛠️ 550+ Mission-Ready Skills
-└── cli/              # ⚡ CLI: Scaffolding management
+├── src/              # 🏗️ YOUR APPLICATION SOURCE CODE
+├── docs/             # 📘 Offline Documentation
+├── GEMINI.md         # ⚙️ Agent Configuration (Root Context)
+├── ERRORS.md         # 🐛 Auto-generated Error Log
+└── README.md         # 📖 Project Guide
 ```
 
 ---

@@ -1,6 +1,6 @@
 # 📘 Hướng Dẫn Sử Dụng Hệ Thống Workflow (Quy Trình)
 
-> **Antigravity IDE** cung cấp 17 quy trình (Workflow) chuyên biệt, được tự động kích hoạt dựa trên **Lĩnh vực (Industry)** bạn chọn khi cài đặt.
+> **Antigravity IDE** cung cấp **21 quy trình (Workflow)** chuyên biệt, được tự động kích hoạt dựa trên **Lĩnh vực (Industry)** bạn chọn khi cài đặt.
 
 ---
 

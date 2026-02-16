@@ -1,0 +1,17 @@
+{
+  "note": "FastCode configuration template. Use environment variables for current version.",
+  "llm": {
+    "provider_options": ["openai", "ollama", "openrouter"],
+    "defaults": {
+      "ollama": {
+        "base_url": "http://localhost:11434/v1",
+        "api_key": "ollama",
+        "model": "qwen2.5-coder"
+      },
+      "openrouter": {
+        "base_url": "https://openrouter.ai/api/v1",
+        "model": "google/gemini-2.0-flash-exp:free"
+      }
+    }
+  }
+}

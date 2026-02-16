@@ -1,0 +1,1038 @@
+[
+  {
+    "path": ".agent\\fastcode_index.json",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\ai-engineer\\resources\\ai_infra_stack.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\ai-engineer\\scripts\\ai_evaluator.js",
+    "symbols": [
+      "prompt",
+      "criteria"
+    ]
+  },
+  {
+    "path": ".agent\\skills\\ai-engineer\\scripts\\ai_evaluator.py",
+    "symbols": [
+      "evaluate_rag_prompt"
+    ]
+  },
+  {
+    "path": ".agent\\skills\\ai-engineer\\SKILL.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\api-documenter\\examples\\standard_endpoint_example.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\api-documenter\\resources\\openapi_template.yaml",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\api-documenter\\scripts\\openapi_validator.js",
+    "symbols": [
+      "fs",
+      "target"
+    ]
+  },
+  {
+    "path": ".agent\\skills\\api-documenter\\scripts\\openapi_validator.py",
+    "symbols": [
+      "validate_openapi"
+    ]
+  },
+  {
+    "path": ".agent\\skills\\api-documenter\\SKILL.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\cloud-architect-master\\resources\\cost_optimization_checklist.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\cloud-architect-master\\scripts\\aws_audit.js",
+    "symbols": [
+      "auditAWS",
+      "execSync"
+    ]
+  },
+  {
+    "path": ".agent\\skills\\cloud-architect-master\\SKILL.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\cro-expert-kit\\resources\\psychological_triggers.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\cro-expert-kit\\scripts\\conversion_calc.js",
+    "symbols": [
+      "spend",
+      "conversion",
+      "revenuePerSale",
+      "sales"
+    ]
+  },
+  {
+    "path": ".agent\\skills\\cro-expert-kit\\SKILL.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\database-migration\\resources\\zero_downtime_strategy.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\database-migration\\scripts\\migration_dry_run.js",
+    "symbols": [
+      "target"
+    ]
+  },
+  {
+    "path": ".agent\\skills\\database-migration\\scripts\\migration_dry_run.py",
+    "symbols": [
+      "dry_run_migration"
+    ]
+  },
+  {
+    "path": ".agent\\skills\\database-migration\\SKILL.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\deployment-engineer\\resources\\k8s_best_practices.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\deployment-engineer\\scripts\\ci_pipeline_generator.js",
+    "symbols": [
+      "platform"
+    ]
+  },
+  {
+    "path": ".agent\\skills\\deployment-engineer\\scripts\\ci_pipeline_generator.py",
+    "symbols": [
+      "generate_pipeline"
+    ]
+  },
+  {
+    "path": ".agent\\skills\\deployment-engineer\\SKILL.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\fastcode-search\\fastcode_config.example.json",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\fastcode-search\\SKILL.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\frontend-trends-2026\\formulas\\BentoGrid.tsx",
+    "symbols": [
+      "BentoGrid",
+      "BentoItem",
+      "spans"
+    ]
+  },
+  {
+    "path": ".agent\\skills\\frontend-trends-2026\\formulas\\LiquidCard.tsx",
+    "symbols": [
+      "LiquidCard"
+    ]
+  },
+  {
+    "path": ".agent\\skills\\frontend-trends-2026\\formulas\\NeoButton.tsx",
+    "symbols": [
+      "NeoButton"
+    ]
+  },
+  {
+    "path": ".agent\\skills\\frontend-trends-2026\\SKILL.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\full-stack-scaffold\\scripts\\scaffold_app.js",
+    "symbols": [
+      "projectType"
+    ]
+  },
+  {
+    "path": ".agent\\skills\\full-stack-scaffold\\scripts\\scaffold_app.py",
+    "symbols": [
+      "scaffold_app"
+    ]
+  },
+  {
+    "path": ".agent\\skills\\full-stack-scaffold\\SKILL.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\game-development\\2d-games\\SKILL.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\game-development\\3d-games\\SKILL.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\game-development\\game-art\\SKILL.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\game-development\\game-audio\\SKILL.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\game-development\\game-design\\SKILL.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\game-development\\mobile-games\\SKILL.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\game-development\\multiplayer\\SKILL.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\game-development\\pc-games\\SKILL.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\game-development\\SKILL.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\game-development\\vr-ar\\SKILL.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\game-development\\web-games\\SKILL.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\geo-fundamentals\\scripts\\geo_checker.py",
+    "symbols": [
+      "is_page_file",
+      "find_web_pages",
+      "check_page",
+      "main"
+    ]
+  },
+  {
+    "path": ".agent\\skills\\geo-fundamentals\\SKILL.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\git-collaboration-master\\resources\\pr_template.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\git-collaboration-master\\scripts\\branch_cleanup.js",
+    "symbols": [
+      "cleanupBranches",
+      "execSync"
+    ]
+  },
+  {
+    "path": ".agent\\skills\\git-collaboration-master\\SKILL.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\i18n-localization\\scripts\\i18n_checker.py",
+    "symbols": [
+      "find_locale_files",
+      "check_locale_completeness",
+      "flatten_keys",
+      "check_hardcoded_strings",
+      "main"
+    ]
+  },
+  {
+    "path": ".agent\\skills\\i18n-localization\\SKILL.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\incident-responder\\resources\\incident_severity_levels.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\incident-responder\\scripts\\health_check.js",
+    "symbols": [
+      "url"
+    ]
+  },
+  {
+    "path": ".agent\\skills\\incident-responder\\scripts\\health_check.py",
+    "symbols": [
+      "check_incidents"
+    ]
+  },
+  {
+    "path": ".agent\\skills\\incident-responder\\SKILL.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\legacy-modernizer\\resources\\strangler_fig_pattern.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\legacy-modernizer\\scripts\\refactor_suggestion.js",
+    "symbols": [
+      "into",
+      "file"
+    ]
+  },
+  {
+    "path": ".agent\\skills\\legacy-modernizer\\scripts\\refactor_suggestion.py",
+    "symbols": [
+      "suggest_refactor"
+    ]
+  },
+  {
+    "path": ".agent\\skills\\legacy-modernizer\\SKILL.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\mcp-builder\\SKILL.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\mobile-design\\decision-trees.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\mobile-design\\mobile-backend.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\mobile-design\\mobile-color-system.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\mobile-design\\mobile-debugging.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\mobile-design\\mobile-design-thinking.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\mobile-design\\mobile-navigation.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\mobile-design\\mobile-performance.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\mobile-design\\mobile-testing.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\mobile-design\\mobile-typography.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\mobile-design\\platform-android.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\mobile-design\\platform-ios.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\mobile-design\\scripts\\mobile_audit.py",
+    "symbols": [
+      "__init__",
+      "audit_file",
+      "audit_directory",
+      "get_report",
+      "main",
+      "MobileAuditor"
+    ]
+  },
+  {
+    "path": ".agent\\skills\\mobile-design\\SKILL.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\mobile-design\\touch-psychology.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\modern-web-architect\\resources\\architecture_templates.json",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\modern-web-architect\\scripts\\ffci_calculator.py",
+    "symbols": [
+      "print_banner",
+      "get_score",
+      "main",
+      "Colors"
+    ]
+  },
+  {
+    "path": ".agent\\skills\\modern-web-architect\\scripts\\tech_stack_validator.js",
+    "symbols": [
+      "validateTechStack",
+      "fs",
+      "checks"
+    ]
+  },
+  {
+    "path": ".agent\\skills\\modern-web-architect\\SKILL.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\penetration-tester-master\\resources\\owasp_top_10_2025.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\penetration-tester-master\\scripts\\port_scanner.js",
+    "symbols": [
+      "target",
+      "ports"
+    ]
+  },
+  {
+    "path": ".agent\\skills\\penetration-tester-master\\scripts\\port_scanner.py",
+    "symbols": [
+      "scan_ports"
+    ]
+  },
+  {
+    "path": ".agent\\skills\\penetration-tester-master\\SKILL.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\performance-engineer\\scripts\\lighthouse_check.js",
+    "symbols": [
+      "url"
+    ]
+  },
+  {
+    "path": ".agent\\skills\\performance-engineer\\scripts\\lighthouse_check.py",
+    "symbols": [
+      "check_lighthouse"
+    ]
+  },
+  {
+    "path": ".agent\\skills\\performance-engineer\\SKILL.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\production-code-audit\\resources\\solid_principles_cheat_sheet.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\production-code-audit\\scripts\\expert_audit.js",
+    "symbols": [
+      "path"
+    ]
+  },
+  {
+    "path": ".agent\\skills\\production-code-audit\\scripts\\expert_audit.py",
+    "symbols": [
+      "expert_audit"
+    ]
+  },
+  {
+    "path": ".agent\\skills\\production-code-audit\\SKILL.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\security-auditor\\resources\\security_armor_config.json",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\security-auditor\\scripts\\security_scan.js",
+    "symbols": [
+      "scanVulnerabilities",
+      "fs",
+      "path",
+      "target"
+    ]
+  },
+  {
+    "path": ".agent\\skills\\security-auditor\\scripts\\security_scan.py",
+    "symbols": [
+      "scan_vulnerabilities"
+    ]
+  },
+  {
+    "path": ".agent\\skills\\security-auditor\\SKILL.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\seo-expert-kit\\resources\\technical_seo_checklist.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\seo-expert-kit\\scripts\\content_audit.js",
+    "symbols": [
+      "url",
+      "checks"
+    ]
+  },
+  {
+    "path": ".agent\\skills\\seo-expert-kit\\scripts\\content_audit.py",
+    "symbols": [
+      "audit_content"
+    ]
+  },
+  {
+    "path": ".agent\\skills\\seo-expert-kit\\SKILL.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\tdd-master-workflow\\resources\\unit_test_naming_convention.md",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\tdd-master-workflow\\scripts\\tdd_cycle.js",
+    "symbols": []
+  },
+  {
+    "path": ".agent\\skills\\tdd-master-workflow\\scripts\\tdd_cycle.py",
+    "symbols": [
+      "run_tdd_cycle"
+    ]
+  },
+  {
+    "path": ".agent\\skills\\tdd-master-workflow\\SKILL.md",
+    "symbols": []
+  },
+  {
+    "path": ".editorconfig",
+    "symbols": []
+  },
+  {
+    "path": ".gitattributes",
+    "symbols": []
+  },
+  {
+    "path": ".github\\workflows\\release.yml",
+    "symbols": []
+  },
+  {
+    "path": ".gitignore",
+    "symbols": []
+  },
+  {
+    "path": ".npmignore",
+    "symbols": []
+  },
+  {
+    "path": "AGENT_FLOW.md",
+    "symbols": []
+  },
+  {
+    "path": "CHANGELOG.md",
+    "symbols": []
+  },
+  {
+    "path": "cli\\create.js",
+    "symbols": [
+      "createProject",
+      "handleCoreFileConflict",
+      "getEngineFilter",
+      "copyBaseStructure",
+      "copySkills",
+      "copyWorkflows",
+      "generateConfigs",
+      "generateGeminiMd",
+      "printSuccessMessage",
+      "fs",
+      "path",
+      "chalk",
+      "ora",
+      "gradient",
+      "isCurrentDir",
+      "targetName",
+      "config",
+      "projectPath",
+      "finalProjectName",
+      "spinner",
+      "dir",
+      "ext",
+      "base",
+      "newPath",
+      "lowerSrc",
+      "sourceAgentDir",
+      "destAgentDir",
+      "filter",
+      "entries",
+      "sourceEntryPath",
+      "destEntryPath",
+      "geminiPath",
+      "geminiDecision",
+      "geminiContent",
+      "startHereSource",
+      "startHereDest",
+      "startHereDecision",
+      "files",
+      "rootDir",
+      "source",
+      "dest",
+      "skillsSourceDir",
+      "skillsDestDir",
+      "filter",
+      "selectedSkills",
+      "skillPath",
+      "destPath",
+      "workflowsSourceDir",
+      "workflowsDestDir",
+      "workflowFile",
+      "source",
+      "packageJsonPath",
+      "packageJson",
+      "editorconfigPath",
+      "editorConfig",
+      "gitAttributesPath",
+      "gitAttributes",
+      "strictness",
+      "config",
+      "isVi",
+      "industryMap",
+      "industryFocus",
+      "contentEn",
+      "contentVi",
+      "agentName",
+      "execSync",
+      "getProjectConfig",
+      "getSkillsForCategories"
+    ]
+  },
+  {
+    "path": "cli\\index.js",
+    "symbols": [
+      "packageJson",
+      "ora",
+      "chalk",
+      "spinner",
+      "program",
+      "createProject",
+      "checkAndApplyUpdates",
+      "exec"
+    ]
+  },
+  {
+    "path": "cli\\lib\\auto-update.js",
+    "symbols": [
+      "checkAndApplyUpdates",
+      "updateNotifier",
+      "prompts",
+      "chalk",
+      "notifierLib",
+      "promptsLib",
+      "execSyncLib",
+      "exitLib",
+      "notifier",
+      "response",
+      "execSync",
+      "latest",
+      "current",
+      "type"
+    ]
+  },
+  {
+    "path": "cli\\prompts.js",
+    "symbols": [
+      "displayBanner",
+      "getProjectConfig",
+      "getSkillsForCategories",
+      "prompts",
+      "chalk",
+      "gradient",
+      "packageJson",
+      "skillCategories",
+      "responses",
+      "baseWorkflows",
+      "industryWorkflows",
+      "specificWorkflows",
+      "availableWorkflows",
+      "finalWorkflows",
+      "settings",
+      "skills"
+    ]
+  },
+  {
+    "path": "cli\\skills\\fastcode.js",
+    "symbols": [
+      "getFiles",
+      "extractSymbols",
+      "index",
+      "search",
+      "fs",
+      "path",
+      "readdir",
+      "readFile",
+      "stat",
+      "writeFile",
+      "IGNORE_DIRS",
+      "IGNORE_FILES",
+      "INDEX_FILE",
+      "PATTERNS",
+      "subdirs",
+      "files",
+      "res",
+      "relative",
+      "symbols",
+      "ext",
+      "files",
+      "indexData",
+      "content",
+      "relativePath",
+      "symbols",
+      "indexData",
+      "results",
+      "aPathMatch",
+      "bPathMatch",
+      "args",
+      "command",
+      "query",
+      "promisify"
+    ]
+  },
+  {
+    "path": "cli\\templates\\full\\README.md",
+    "symbols": []
+  },
+  {
+    "path": "cli\\templates\\minimal\\README.md",
+    "symbols": []
+  },
+  {
+    "path": "cli\\templates\\standard\\README.md",
+    "symbols": []
+  },
+  {
+    "path": "COPYRIGHT.md",
+    "symbols": []
+  },
+  {
+    "path": "DEPLOYMENT.md",
+    "symbols": []
+  },
+  {
+    "path": "docs\\AGENTS_GUIDE.vi.md",
+    "symbols": []
+  },
+  {
+    "path": "docs\\CONTRIBUTING.md",
+    "symbols": []
+  },
+  {
+    "path": "docs\\CONTRIBUTING.vi.md",
+    "symbols": []
+  },
+  {
+    "path": "docs\\GLOSSARY.md",
+    "symbols": []
+  },
+  {
+    "path": "docs\\GLOSSARY.vi.md",
+    "symbols": []
+  },
+  {
+    "path": "docs\\HOW_ANTIGRAVITY_THINKS.vi.md",
+    "symbols": []
+  },
+  {
+    "path": "docs\\OPERATIONAL_FLOW.md",
+    "symbols": []
+  },
+  {
+    "path": "docs\\OPERATIONAL_FLOW.vi.md",
+    "symbols": []
+  },
+  {
+    "path": "docs\\PLAN-upgrade-core-architecture.md",
+    "symbols": []
+  },
+  {
+    "path": "docs\\RULES_GUIDE.vi.md",
+    "symbols": []
+  },
+  {
+    "path": "docs\\SHARED_LIBRARY_GUIDE.vi.md",
+    "symbols": []
+  },
+  {
+    "path": "docs\\SKILLS_GUIDE.vi.md",
+    "symbols": []
+  },
+  {
+    "path": "docs\\TROUBLESHOOTING.md",
+    "symbols": []
+  },
+  {
+    "path": "docs\\TROUBLESHOOTING.vi.md",
+    "symbols": []
+  },
+  {
+    "path": "docs\\WORKFLOW_GUIDE.vi.md",
+    "symbols": []
+  },
+  {
+    "path": "GEMINI_GUIDE.md",
+    "symbols": []
+  },
+  {
+    "path": "jest.config.js",
+    "symbols": []
+  },
+  {
+    "path": "LICENSE",
+    "symbols": []
+  },
+  {
+    "path": "MASTER_GUIDE.md",
+    "symbols": []
+  },
+  {
+    "path": "package.json",
+    "symbols": []
+  },
+  {
+    "path": "PUBLISHING.md",
+    "symbols": []
+  },
+  {
+    "path": "README.md",
+    "symbols": []
+  },
+  {
+    "path": "README.vi.md",
+    "symbols": []
+  },
+  {
+    "path": "setup.js",
+    "symbols": [
+      "setup",
+      "localizeWorkflows",
+      "fs",
+      "path",
+      "os",
+      "chalk",
+      "gradient",
+      "boxen",
+      "prompts",
+      "GLOBAL_DIR",
+      "SOURCE_DIR",
+      "syncFolders",
+      "branding",
+      "hasPython",
+      "response",
+      "installCmd",
+      "checkMark",
+      "promptText",
+      "src",
+      "dest",
+      "localAgentDir",
+      "localRulesDir",
+      "rulesToApply",
+      "targetRules",
+      "globalFile",
+      "localFile",
+      "globalRulesDir",
+      "geminiRulePath",
+      "content",
+      "domainBlock",
+      "workflowsJSON",
+      "workflowDir",
+      "filePath",
+      "content",
+      "desc",
+      "newContent",
+      "execSync",
+      "lang",
+      "engineMode",
+      "agentName",
+      "projectScale",
+      "industryDomain"
+    ]
+  },
+  {
+    "path": "SKILLS.md",
+    "symbols": []
+  },
+  {
+    "path": "tests\\cli\\auto-update.test.js",
+    "symbols": [
+      "mockUpdateNotifier",
+      "mockPrompts",
+      "mockExecSync",
+      "mockExit",
+      "consoleLogSpy",
+      "consoleErrorSpy",
+      "checkAndApplyUpdates"
+    ]
+  },
+  {
+    "path": "tests\\cli\\create.test.js",
+    "symbols": [
+      "content",
+      "content",
+      "strict",
+      "flexible",
+      "generateGeminiMd"
+    ]
+  },
+  {
+    "path": "tests\\cli\\parameterized.test.js",
+    "symbols": [
+      "languages",
+      "rules",
+      "industries",
+      "content",
+      "strictnessMarker",
+      "generateGeminiMd"
+    ]
+  },
+  {
+    "path": "tests\\cli\\prompts.test.js",
+    "symbols": [
+      "prompts",
+      "skills",
+      "skills",
+      "skills"
+    ]
+  },
+  {
+    "path": "tests\\design-trends-demo.tsx",
+    "symbols": [
+      "DesignTrendsDemo"
+    ]
+  },
+  {
+    "path": "tests\\e2e\\stress.test.js",
+    "symbols": [
+      "fs",
+      "path",
+      "prompts",
+      "spinner",
+      "testRoot",
+      "scenarios",
+      "projectPath",
+      "isCurrentDir",
+      "originalCwd",
+      "geminiContent",
+      "langMarker",
+      "createProject"
+    ]
+  },
+  {
+    "path": "tests\\setup.test.js",
+    "symbols": [
+      "fs",
+      "path",
+      "setupPath",
+      "content"
+    ]
+  },
+  {
+    "path": "tests\\update.test.js",
+    "symbols": [
+      "fs",
+      "path",
+      "testRoot",
+      "sourceDir",
+      "destDir",
+      "sourceContent",
+      "userContent",
+      "result",
+      "sourceContent",
+      "userContent",
+      "syncRecursively",
+      "MARKER_START",
+      "MARKER_END"
+    ]
+  },
+  {
+    "path": "tests\\verify-install.js",
+    "symbols": [
+      "fs",
+      "path",
+      "chalk",
+      "CLI_PATH",
+      "TEST_PROJECT_DIR",
+      "cmd",
+      "requiredFiles",
+      "skillFile",
+      "missing",
+      "filePath",
+      "skillPath",
+      "execSync"
+    ]
+  },
+  {
+    "path": "tests\\verify-setup-flow.test.js",
+    "symbols": [
+      "prompts",
+      "config",
+      "config",
+      "config",
+      "config",
+      "config",
+      "config",
+      "config",
+      "config",
+      "config",
+      "config",
+      "getProjectConfig"
+    ]
+  },
+  {
+    "path": "update.js",
+    "symbols": [
+      "main",
+      "syncRecursively",
+      "localizeWorkflows",
+      "fs",
+      "path",
+      "os",
+      "GLOBAL_DIR",
+      "WORKSPACE_DIR",
+      "GLOBAL_VERSION_FILE",
+      "WORKSPACE_VERSION_FILE",
+      "CONFIG_FILE",
+      "MARKER_START",
+      "MARKER_END",
+      "globalVer",
+      "workspaceVer",
+      "lang",
+      "config",
+      "syncFolders",
+      "SOURCE_BASE",
+      "srcDir",
+      "destDir",
+      "items",
+      "srcPath",
+      "destPath",
+      "contentToBuffer",
+      "globalContent",
+      "startIdx",
+      "endIdx",
+      "newContent",
+      "newStartIdx",
+      "newEndIdx",
+      "workflowsJSON",
+      "workflowDir",
+      "filePath",
+      "content",
+      "desc",
+      "newContent",
+      "execSync"
+    ]
+  },
+  {
+    "path": "VERSION",
+    "symbols": []
+  }
+]

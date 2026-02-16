@@ -1,6 +1,6 @@
 # 🧠 Hướng Dẫn Về "Kỹ Năng" (Skills System)
 
-> **Antigravity IDE** không chỉ là một con bot chat. Nó là một tập hợp của **22 Chuyên Gia Ảo (Master Skills)**, mỗi người phụ trách một mảng công nghệ chuyên sâu.
+> **Antigravity IDE** không chỉ là một con bot chat. Nó là một tập hợp của **573 Siêu Kỹ Năng (Master Skills)**, mỗi người phụ trách một mảng công nghệ chuyên sâu.
 
 ---
 
@@ -9,10 +9,10 @@
 ### 🧩 Skill là gì?
 Hãy tưởng tượng **Skill** giống như việc "cài phần mềm vào não" của AI.
 *   Bình thường: AI biết chung chung về mọi thứ.
-*   Khi nạp Skill `react-nextjs-expert`: AI đột nhiên trở thành chuyên gia React 19, biết rõ Server Components, Hooks tối ưu, và Folder Structure chuẩn.
+*   Khi nạp Skill: AI đột nhiên trở thành chuyên gia trong lĩnh vực cụ thể.
 
 ### ⚡ Lazy Loading (Nạp Theo Nhu Cầu)
-Hệ thống **KHÔNG** nạp tất cả 22 chuyên gia cùng lúc (vì sẽ quá tải).
+Hệ thống **KHÔNG** nạp tất cả 573 chuyên gia cùng lúc (vì sẽ quá tải).
 *   Khi bạn nói: *"Giúp tôi code giao diện mobile"* -> Hệ thống tự động gọi ông `mobile-design` và `react-native-architecture` vào phòng họp.
 *   Khi bạn nói: *"Check lỗi bảo mật"* -> Hệ thống gọi ông `security-auditor` vào.
 

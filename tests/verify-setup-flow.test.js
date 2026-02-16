@@ -5,171 +5,138 @@ const { getProjectConfig } = require('../cli/prompts');
 // Mock prompts
 jest.mock('prompts');
 
-describe('Project Setup 10 Scenarios Verification', () => {
+/**
+ * Verify Setup Flow - Test getProjectConfig() với mock prompts
+ * Đảm bảo config trả về đúng format cho từng tình huống.
+ *
+ * API hiện tại trả về: { projectName, language, operationMode, engineMode, agentName, projectScale, skillCategories }
+ */
+
+describe('Project Setup Flow Verification', () => {
     beforeEach(() => {
         jest.clearAllMocks();
     });
 
-    // Case 1: VI language, Personal scale, Finance industry
-    test('Case 1: VI / Personal / Finance -> Flexible rules, Finance workflows', async () => {
+    // Case 1: Vietnamese, eco mode
+    test('Case 1: VI / eco mode -> Returns correct config shape', async () => {
         prompts.mockResolvedValueOnce({
             language: 'vi',
             projectName: 'fin-bot',
-            scale: 'flexible',
-            industryDomain: 'finance',
-            agentName: 'MoneyJarvis'
+            operationMode: 'eco'
         });
 
         const config = await getProjectConfig();
         
         expect(config.language).toBe('vi');
-        expect(config.rules).toBe('flexible'); // Personal -> flexible
-        expect(config.workflows).toContain('security'); // Finance workflow
-        expect(config.workflows).toContain('orchestrate'); // Finance implicit
-        expect(config.agentName).toBe('MoneyJarvis');
+        expect(config.projectName).toBe('fin-bot');
+        expect(config.operationMode).toBe('eco');
+        expect(config.engineMode).toBeDefined();
     });
 
-    // Case 2: EN language, Enterprise scale, Education industry
-    test('Case 2: EN / Enterprise / Education -> Strict rules, Education workflows', async () => {
+    // Case 2: English, pro mode
+    test('Case 2: EN / pro mode -> Returns correct config', async () => {
         prompts.mockResolvedValueOnce({
             language: 'en',
             projectName: 'edu-master',
-            scale: 'strict',
-            industryDomain: 'education',
-            agentName: 'TeacherAI'
+            operationMode: 'pro'
         });
 
         const config = await getProjectConfig();
 
         expect(config.language).toBe('en');
-        expect(config.rules).toBe('strict'); // Enterprise -> strict
-        expect(config.workflows).toContain('explain'); // Education workflow
-        expect(config.workflows).toContain('visually');
+        expect(config.operationMode).toBe('pro');
     });
 
-    // Case 3: VI language, Team scale, F&B industry
-    test('Case 3: VI / Team / F&B -> Balanced rules, F&B workflows + UI/UX', async () => {
+    // Case 3: Ultra mode
+    test('Case 3: VI / ultra mode -> engineMode is advanced', async () => {
         prompts.mockResolvedValueOnce({
             language: 'vi',
-            projectName: 'burger-king-ai',
-            scale: 'balanced',
-            industryDomain: 'fnb',
-            agentName: 'ChefBot'
+            projectName: 'ultra-app',
+            operationMode: 'creative'
         });
 
         const config = await getProjectConfig();
 
-        expect(config.rules).toBe('balanced');
-        expect(config.workflows).toContain('mobile'); // F&B
-        expect(config.workflows).toContain('ui-ux-pro-max'); // F&B implicit
+        expect(config.engineMode).toBe('advanced');
+        expect(config.projectScale).toBe('creative');
     });
 
-    // Case 4: EN language, Personal scale, Healthcare industry
-    test('Case 4: EN / Personal / Healthcare -> Flexible rules, Compliance + Orchestrate', async () => {
-        prompts.mockResolvedValueOnce({
-            language: 'en',
-            projectName: 'health-care-app',
-            scale: 'flexible',
-            industryDomain: 'healthcare',
-            agentName: 'DrStrange'
-        });
-
-        const config = await getProjectConfig();
-
-        expect(config.workflows).toContain('compliance'); // Healthcare
-        expect(config.workflows).toContain('orchestrate'); // Healthcare implicit
-    });
-
-    // Case 5: VI language, Enterprise scale, Logistics industry
-    test('Case 5: VI / Enterprise / Logistics -> Strict rules, API + Create', async () => {
-        prompts.mockResolvedValueOnce({
-            language: 'vi',
-            projectName: 'ship-fast',
-            scale: 'strict',
-            industryDomain: 'logistics',
-            agentName: 'LogiBot'
-        });
-
-        const config = await getProjectConfig();
-
-        expect(config.workflows).toContain('api'); // Logistics
-        expect(config.workflows).toContain('create'); // Logistics implicit
-    });
-
-    // Case 6: EN language, Team scale, Other (General)
-    test('Case 6: EN / Team / Other -> Balanced rules, Basic workflows', async () => {
-        prompts.mockResolvedValueOnce({
-            language: 'en',
-            projectName: 'random-app',
-            scale: 'balanced',
-            industryDomain: 'other',
-            agentName: 'Helper'
-        });
-
-        const config = await getProjectConfig();
-
-        expect(config.workflows).toContain('debug');
-        expect(config.workflows).toContain('enhance');
-        expect(config.workflows).not.toContain('orchestrate'); // Shouldn't have heavy workflows
-    });
-
-    // Case 7: Skip Prompts (Non-interactive mode)
-    test('Case 7: Skip Prompts -> Defaults applied', async () => {
+    // Case 4: Skip Prompts (Non-interactive mode)
+    test('Case 4: Skip Prompts -> Defaults applied', async () => {
         const config = await getProjectConfig(true); // skipPrompts = true
 
         expect(config.projectName).toBe('my-agent-project');
         expect(config.language).toBe('en');
-        expect(config.rules).toBe('balanced');
-        expect(config.skillCategories).toEqual(['webdev']);
+        expect(config.operationMode).toBe('standard');
+        expect(config.engineMode).toBe('standard');
     });
 
-    // Case 8: Predefined Project Name
-    test('Case 8: Predefined Name -> Prompts should respect input', async () => {
+    // Case 5: Predefined Project Name
+    test('Case 5: Predefined Name -> Name injected correctly', async () => {
         prompts.mockResolvedValueOnce({
             language: 'en',
-            // projectName prompt should be skipped or value injected
-            scale: 'balanced',
-            industryDomain: 'other',
-            agentName: 'NamedAgent'
+            operationMode: 'pro'
         });
 
         const config = await getProjectConfig(false, 'cli-provided-name');
 
-        // Logic in prompts.js: if predefinedName, it injects it into prompt result or response object
         expect(config.projectName).toBe('cli-provided-name');
     });
 
-    // Case 9: VI / Personal / Personal (Portfolio)
-    test('Case 9: VI / Personal / Personal -> UI/UX Pro Max', async () => {
-        prompts.mockResolvedValueOnce({
-            language: 'vi',
-            projectName: 'my-portfolio',
-            scale: 'flexible',
-            industryDomain: 'personal',
-            agentName: 'MeBot'
-        });
+    // Case 6: Skip prompts with predefined name
+    test('Case 6: Skip Prompts + Predefined Name -> Both applied', async () => {
+        const config = await getProjectConfig(true, 'my-awesome-project');
 
-        const config = await getProjectConfig();
-
-        expect(config.workflows).toContain('seo'); // Personal specific
-        expect(config.workflows).toContain('ui-ux-pro-max'); // Personal implicit
+        expect(config.projectName).toBe('my-awesome-project');
+        expect(config.operationMode).toBe('standard');
     });
 
-    // Case 10: Workflow Intersection (Finance + Team)
-    test('Case 10: VI / Team / Finance -> Security + Audit + Orchestrate', async () => {
+    // Case 7: Skip prompts returns minimal config (no skillCategories)
+    test('Case 7: Skip prompts -> minimal config shape', async () => {
+        const config = await getProjectConfig(true);
+
+        expect(config.projectName).toBeDefined();
+        expect(config.language).toBeDefined();
+        expect(config.operationMode).toBeDefined();
+        expect(config.engineMode).toBeDefined();
+    });
+
+    // Case 8: Standard mode -> standard engine
+    test('Case 8: Standard/Pro mode -> standard engine', async () => {
         prompts.mockResolvedValueOnce({
-            language: 'vi',
-            projectName: 'bank-app',
-            scale: 'balanced',
-            industryDomain: 'finance',
-            agentName: 'Banker'
+            language: 'en',
+            projectName: 'test-app',
+            operationMode: 'pro'
         });
 
         const config = await getProjectConfig();
 
-        expect(config.rules).toBe('balanced');
-        expect(config.workflows).toContain('audit');
-        expect(config.workflows).toContain('security');
-        expect(config.workflows).toContain('orchestrate');
+        expect(config.engineMode).toBe('standard');
+    });
+
+    // Case 9: Non-skip config includes agentName
+    test('Case 9: Non-skip mode includes agentName', async () => {
+        prompts.mockResolvedValueOnce({
+            language: 'en',
+            projectName: 'test-app',
+            operationMode: 'pro'
+        });
+
+        const config = await getProjectConfig();
+        expect(config.agentName).toBe('Antigravity');
+    });
+
+    // Case 10: Eco mode -> standard engine  
+    test('Case 10: Eco mode -> standard engine', async () => {
+        prompts.mockResolvedValueOnce({
+            language: 'vi',
+            projectName: 'eco-app',
+            operationMode: 'eco'
+        });
+
+        const config = await getProjectConfig();
+
+        expect(config.engineMode).toBe('standard');
+        expect(config.projectScale).toBe('eco');
     });
 });

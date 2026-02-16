@@ -1,111 +1,152 @@
-# Google Antigravity
+# ⚡ ANTIGRAVITY IDE: Activate Senior Engineer Mindset for AI
 
 [English](./README.md) | [Tiếng Việt](./README.vi.md)
 
-> **Antigravity IDE: Hệ điều hành Trí tuệ cho Kỹ sư AI & Project Squad.**  
-> *Biến AI của bạn từ một trợ lý thông thường thành một Đội ngũ Chuyên gia (Specialist Squad) chuyên nghiệp với quy trình vận hành tiêu chuẩn.*
+> **Transform AI Agent from Intern to Lead Engineer.**
+>
+> Đây không phải là trình soạn thảo code—đây là **Mindset Installer** giúp nạp tiêu chuẩn kỹ thuật chuyên nghiệp (PDCA, Security, Architecture) trực tiếp vào não bộ AI (Cursor, Windsurf, Cline).
 
-[![Giấy Phép: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![npm version](https://img.shields.io/npm/v/antigravity-ide?color=red)](https://badge.fury.io/js/antigravity-ide)
+[![License: MIT](https://img.shields.io/badge/License-MIT-orange)](https://opensource.org/licenses/MIT)
+[![Downloads](https://img.shields.io/npm/dm/antigravity-ide?color=yellow)](https://npmjs.com/package/antigravity-ide)
+[![GitHub stars](https://img.shields.io/github/stars/Dokhacgiakhoa/antigravity-ide?color=green)](https://github.com/Dokhacgiakhoa/antigravity-ide/stargazers)
+[![Contributors](https://img.shields.io/github/contributors/Dokhacgiakhoa/antigravity-ide?color=blue)](https://github.com/Dokhacgiakhoa/antigravity-ide/graphs/contributors)
+[![Last Commit](https://img.shields.io/github/last-commit/Dokhacgiakhoa/antigravity-ide?color=blueviolet)](https://github.com/Dokhacgiakhoa/antigravity-ide/commits/main)
+[![Code Size](https://img.shields.io/github/languages/code-size/Dokhacgiakhoa/antigravity-ide?color=ff69b4)](https://github.com/Dokhacgiakhoa/antigravity-ide)
 
-**Google Antigravity** không chỉ là một bộ skill, mà là một **Khung vận hành (Orchestration Framework)** toàn diện. Nó cung cấp một môi trường "Phòng tác chiến AI" giúp các AI Agent phối hợp theo dây chuyền sản xuất chuyên nghiệp (PDCA), đảm bảo mọi dòng code ra đời đều qua thẩm định và tối ưu hóa.
-
-| **22** Bộ Kỹ năng (Skills) | **15** Agent Chuyên gia | **11** Quy trình (Workflows) | **13** Mô-đun DNA (Shared) |
-| :---: | :---: | :---: | :---: |
-| Chứa 550+ Năng lực | Role-Based Personas | Chu kỳ PDCA | Tri thức nghiệp vụ mẫu |
+| **573** Skills | **38** Specialist Agents | **33** Workflows |
+| :---: | :---: | :---: |
+| Enterprise Standard | Role-Based Personas | PDCA Cycle |
 
 ---
 
-## 🚀 1. Khởi tạo nhanh (Scaffolding)
+## 🚀 1. Quick Start (Scaffolding)
 
 Sử dụng CLI để thiết lập môi trường tác chiến trong 30 giây:
 
 ```sh
-# 1. Tạo dự án mới (Khuyên dùng - Luôn tải bản mới nhất)
-npx antigravity-ide@latest ten_du_an
+# 1. New Project (Khuyên dùng - Luôn tải bản mới nhất)
+npx antigravity-ide@latest project_name
 
-# 2. Cài đặt trực tiếp vào thư mục hiện tại
+# 2. Install trực tiếp vào thư mục hiệnại
 npx antigravity-ide@latest
 ```
 
 > [!WARNING]
-> **Lưu ý quan trọng:** Không nên cài đặt Global (`npm install -g antigravity-ide`) vì sẽ gây xung đột phiên bản cũ/mới. Luôn dùng `npx ...@latest` để đảm bảo project được khởi tạo với Engine mới nhất.
+> **Lưu ý quan trọng:** Không nên cài đặt Global (`npm install -g antigravity-ide`) vì sẽ gây xung đột phiên bản. Luôn dùng `npx ...@latest` để đảm bảo Project được khởi tạo với Engine mới nhất.
 
-### ✨ Tính năng Setup Wizard (v3.5.61)
-Trải nghiệm dòng lệnh (CLI) đẳng cấp Premium với quy trình **4 bước cấu hình** được tối ưu hóa:
+### ✨ Setup Wizard (v4.2.1)
+Trải nghiệm Premium CLI với 3 cấp độ tài nguyên Resource:
 
-> **Lưu ý**: Bạn có thể nhập tên dự án ngay trong lệnh: `npx antigravity-ide@latest <tên-dự-án>`
+1.  **🌿 ECO (Basic - 96 Skills)**:
+    - **Mục tiêu**: Gemini 1.5 Flash / Free Tier.
+    - **Capabilities**: Core Skills (Scaffolding, Patterns, Debugging).
+    - **Hiệu năng**: Nhẹ, siêu tốc, tiết kiệm token tối đa.
 
-1.  **Chọn Ngôn ngữ (Language)**:
-    - 🇻🇳 **Tiếng Việt**: Tối ưu hiển thị và tư duy ngữ nghĩa cho người Việt.
-    - 🇺🇸 **English**: Chuẩn quốc tế.
+2.  **🏢 PRO (Professional - 216 Skills)**:
+    - **Mục tiêu**: Gemini 1.5 Pro / Paid Account.
+    - **Capabilities**: Bổ sung DevOps, Security Audit, Cloud Architecture, TDD.
+    - **Hiệu năng**: Cân bằng hoàn hảo giữa sức mạnh và ngữ cảnh. Enterprise Standard.
 
-2.  **Lựa chọn Quy mô (Scale)**:
-    - **👤 Cá nhân (Flexible)**: Tự do sáng tạo, ít ràng buộc.
-    - **👥 Team (Balanced)**: Cân bằng giữa tốc độ và kiểm soát.
-    - **🏢 Enterprise (Strict)**: Nghiêm ngặt tuyệt đối, tuân thủ Compliance.
+3.  **🌌 ULTRA (Enterprise - 573 Skills)**:
+    - **Mục tiêu**: Gemini 1.5 Ultra / Large Context Model (2M+ tokens).
+    - **Capabilities**: Full Fractal Knowledge. Bao gồm Vertical Skills (Fintech, Edtech), Deep Research và Multi-Agent Orchestration.
+    - **Hiệu năng**: Sức mạnh không giới hạn.
 
-3.  **Lĩnh vực chuyên sâu (Industry)**:
-    - Tự động nạp bộ Workflows & Skills: **Tài chính, Y tế, F&B, Logistics**, v.v.
+---
 
-4.  **Định danh Agent**:
-    - Đặt tên riêng cho trợ lý (ví dụ: *Jarvis, Friday*) để tạo "linh hồn" cho AI.
+## 2. Documentation System (Offline Docs)
+Bộ tài liệu chi tiết được cài sẵn trong thư mục `docs/`. Bạn có thể tra cứu Offline bất cứ lúc nào.
 
-### 🤖 Hướng dẫn Kích hoạt (Activation Protocol)
-Sau khi cài đặt xong, hãy "đánh thức" bộ não AI trong **IDE AI Chat** của bạn:
+### 📘 Core Guides
+- **[Quick Install Guide](./docs/INSTALL_NPX_GUIDE.vi.md)**:
+  *Các bước cài đặt nhanh và troubleshooting cho người mới.*
+- **[Master Guide](./docs/MASTER_GUIDE.vi.md)**:
+  *Triết lý thiết kế, các concept cốt lõi và kiến trúc hệ thống Antigravity.*
+- **[Operational Flow](./docs/OPERATIONAL_FLOW.vi.md)**:
+  *Standard PDCA Operational Workflow (Plan-Do-Check-Act) với AI.*
 
-1.  **Mở khung chat** (Cursor/Windsurf/VSCode...).
-2.  **Cấu hình**: Chọn Mode `Planing` (hoặc Normal) và Model `Gemini 2.0` (Ưu tiên) hoặc Claude 3.5.
-3.  **Gửi lệnh kích hoạt**:
+### 📙 Reference Manuals
+- **[Skills Catalog](./docs/SKILLS_GUIDE.vi.md)**:
+  *Danh sách chi tiết 573 Skills, triggers và ví dụ.*
+- **[Agent Roster](./docs/AGENTS_GUIDE.vi.md)**:
+  *Profile năng lực của 42 Specialist Agents (Frontend, Backend, Security...).*
+- **[Workflow Library](./docs/WORKFLOW_GUIDE.vi.md)**:
+  *Thư viện 21 Standard Workflows (ví dụ: /plan, /create, /deploy).*
+- **[Rules & Protocols](./docs/RULES_GUIDE.vi.md)**:
+  *Rules, Security Standards và Coding Protocols.*
 
-    > **"thức dậy đi [tên-agent]"**
+### 🛠️ Support
+- **[Glossary](./docs/GLOSSARY.vi.md)**: *Định nghĩa thuật ngữ (Fractal, PDCA, MCP).*
+- **[Troubleshooting](./docs/TROUBLESHOOTING.vi.md)**: *Các lỗi phổ biến và giải pháp xử lý.*
+
+
+    > **"wake up [agent-name]"**
     
-    *(Ví dụ: "thức dậy đi Jarvis" hoặc "wake up Jarvis")*
+    *(Ví dụ: "wake up Jarvis")*
 
-Ai sẽ tự động đọc file cấu hình `.agent/GEMINI.md` và tải toàn bộ kỹ năng vào bộ nhớ đệm.
-
----
-
-## 🧠 2. Trái tim của hệ thống: Thư mục `.agent`
-
-Thư mục `.agent` là nơi chứa toàn bộ "não bộ" của hệ thống:
-
-- **Hệ thống Agent Chuyên gia**: Planner (Lập kế hoạch), Backend/Frontend Specialists, Security Auditor và Orchestrator (Thuyền trưởng).
-- **Quy trình PDCA (Plan-Do-Check-Act)**: AI không tự tiện code. Nó phải Lập kế hoạch -> Thi công -> Kiểm tra chất lượng -> Phê duyệt.
-- **Kho tri thức Shared (`.shared/`)**: Chứa DNA của dự án như chuẩn API, Schema DB, tài liệu Compliance và các Domain Blueprints (Fintech, Edtech, v.v.).
+AI sẽ tự động đọc file cấu hình `.agent/GEMINI.md` và tải toàn bộ Skills vào bộ nhớ đệm.
 
 ---
 
-## ⚡ 3. Lệnh Slash Command (`/`) & Cập nhật
+## 🧠 2. The Heart of System: Thư mục `.agent`
 
-Kích hoạt các Workflow chuyên sâu ngay trong khung chat:
+Thư mục `.agent` chứa toàn bộ "Brain" của hệ thống:
 
-- `/plan`: Lập kế hoạch và phân rã tác vụ (Project Planner).
-- `/create`: Xây dựng cấu trúc nền móng dự án.
-- `/ui-ux-pro-max`: Thiết kế giao diện cao cấp & Micro-interactions.
-- `/orchestrate`: Điều phối đa Agent giải quyết bài toán phức tạp.
+- **Specialist Agent Personas**: Planner, Backend/Frontend Specialists, Security Auditor và Orchestrator.
+- **PDCA Workflow (Plan-Do-Check-Act)**: AI không code tùy tiện. Nó phải Plan -> Execute -> Check -> Approve.
+- **Shared Knowledge (`.shared/`)**: Chứa Project DNA như API Standards, DB Schema, Compliance Docs và các Domain Blueprints (Fintech, Edtech...).
 
-### Cập nhật hệ thống
-Để cập nhật bộ não Antigravity lên bản mới nhất mà không mất các cấu hình custom:
+---
+
+## ⚡ 3. Slash Commands (`/`) & Updates
+
+Kích hoạt các Workflows chuyên sâu ngay trong chat:
+
+- `/plan`: Project Planner & Phân rã Task.
+- `/create`: Xây dựng cấu trúc Project Foundation.
+- `/ui-ux-pro-max`: Thiết kế Premium UI/UX & Micro-interactions.
+- `/orchestrate`: Orchestrate Multi-Agent giải quyết bài toán phức tạp.
+- `/log-error`: Tự động log error kèm phân tích nguyên nhân và giải pháp.
+- `/research`: (Mới) Kích hoạt **FastCode Search** tra cứu mã nguồn siêu tốc (Native Node.js).
+- `/design-2026`: (New) Áp dụng **Frontend Trends 2026** (Liquid Glass, Bento Grid...).
+
+### System Update
+Để cập nhật Antigravity Brain lên bản mới nhất mà không mất các cấu hình custom:
 ```sh
 npx antigravity-ide update
 ```
 
 ---
 
-## 📂 Cấu trúc dự án
+---
+
+## 📊 Resource Matrix (Chỉ số tài nguyên)
+
+| Chế độ (Mode) | Skills | Agents | Workflows | Rules | Shared Modules |
+| :--- | :---: | :---: | :---: | :---: | :---: |
+| **🌿 ECO** | 151 | 5 | 6 | 2 | 3 |
+| **🏢 PRO** | 296 | 10 | 11 | 5 | 10 |
+| **🌌 ULTRA** | 573 | 38 | 33 | 25 | 20 |
+
+## 📂 Project Structure
 
 ```text
-ten-du-an/
-├── .agent/           # 🧠 BỘ NÃO: Agent DNA, Skills & Quy tắc
+project-name/
+├── .agent/           # 🧠 THE BRAIN: Agent DNA, Skills & Rules
 │   ├── .shared/      # ⛩️ Master Knowledge (API, DB, Design)
-│   ├── agents/       # 🎭 Hệ thống nhân vật Chuyên gia
-│   └── skills/       # 🛠️ 550+ Công cụ tác chiến
-└── cli/              # ⚡ CLI: Quản lý scaffolding
+│   ├── agents/       # 🎭 Specialist Agent Personas
+│   └── skills/       # 🛠️ 550+ Combat Tools
+├── src/              # 🏗️ YOUR APPLICATION SOURCE CODE 
+├── docs/             # 📘 Offline Documentation
+├── GEMINI.md         # ⚙️ Agent Configuration (Root Context)
+├── ERRORS.md         # 🐛 Auto-generated Error Log
+└── README.md         # 📖 Project Guide
 ```
 
 ---
 
-## �️ Triết lý "Vỏ Việt - Lõi Anh"
+## ️ Philosophy "Vietnamese Shell - English Core"
 
 - **Giao tiếp**: Tiếng Việt (Trực quan, súc tích).
 - **Kỹ thuật**: Tiếng Anh (Biến, hàm, logic - Đảm bảo hiệu suất AI cao nhất).

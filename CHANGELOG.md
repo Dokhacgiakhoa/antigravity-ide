@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [4.2.1] - 2026-02-16
+- **Feature**: FastCode Search (Native Node.js) - Instant full-stack code navigation throughout the project without API costs.
+- **Feature**: Frontend Trends 2026 Skill - Ready-to-use UI formulas (Liquid Glass, Bento Grids, Neo-Brutalism).
+- **Cleanup**: Removed legacy Python tools and redundant directories for a cleaner, faster experience.
+- **Docs**: Comprehensive updates to `SKILLS` and `README` to reflect new capabilities.
+
 ## [3.5.54] - 2026-01-31
 - **Optimization**: Significantly reduced NPM package size (excluded `docs/`, `tests/`).
 - **Automation**: Implemented GitHub Actions for auto-publishing with Provenance.
