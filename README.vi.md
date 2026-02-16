@@ -10,11 +10,11 @@
   > 
   > Đây không phải là trình soạn thảo code — Đây là **Hệ điều hành Tư duy** giúp nạp tiêu chuẩn chuyên nghiệp (PDCA, Security, Architecture) trực tiếp vào não bộ AI.
 
-<a href="https://badge.fury.io/js/antigravity-ide"><img src="https://img.shields.io/npm/v/antigravity-ide?color=red" alt="npm version"></a> <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-orange" alt="License: MIT"></a> <a href="https://npmjs.com/package/antigravity-ide"><img src="https://img.shields.io/npm/dm/antigravity-ide?color=yellow" alt="Downloads"></a> <a href="https://github.com/Dokhacgiakhoa/google-antigravity/stargazers"><img src="https://img.shields.io/github/stars/Dokhacgiakhoa/google-antigravity?color=green" alt="GitHub stars"></a> <a href="https://github.com/Dokhacgiakhoa/google-antigravity/graphs/contributors"><img src="https://img.shields.io/github/contributors/Dokhacgiakhoa/google-antigravity?color=blue" alt="Contributors"></a> <a href="https://github.com/Dokhacgiakhoa/google-antigravity/commits/main"><img src="https://img.shields.io/github/last-commit/Dokhacgiakhoa/google-antigravity?color=blueviolet" alt="Last Commit"></a> <a href="https://github.com/Dokhacgiakhoa/google-antigravity"><img src="https://img.shields.io/github/languages/code-size/Dokhacgiakhoa/google-antigravity?color=ff69b4" alt="Code Size"></a>
+<a href="https://badge.fury.io/js/antigravity-ide"><img src="https://img.shields.io/npm/v/antigravity-ide?color=red" alt="npm version"></a> <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-orange" alt="License: MIT"></a> <a href="https://npmjs.com/package/antigravity-ide"><img src="https://img.shields.io/npm/dm/antigravity-ide?color=yellow" alt="Downloads"></a> <a href="https://github.com/Dokhacgiakhoa/antigravity-ide/stargazers"><img src="https://img.shields.io/github/stars/Dokhacgiakhoa/antigravity-ide?color=green" alt="GitHub stars"></a> <a href="https://github.com/Dokhacgiakhoa/antigravity-ide/graphs/contributors"><img src="https://img.shields.io/github/contributors/Dokhacgiakhoa/antigravity-ide?color=blue" alt="Contributors"></a> <a href="https://github.com/Dokhacgiakhoa/antigravity-ide/commits/main"><img src="https://img.shields.io/github/last-commit/Dokhacgiakhoa/antigravity-ide?color=blueviolet" alt="Last Commit"></a> <a href="https://github.com/Dokhacgiakhoa/antigravity-ide"><img src="https://img.shields.io/github/languages/code-size/Dokhacgiakhoa/antigravity-ide?color=ff69b4" alt="Code Size"></a>
 
-| **573** Skills | **38** Specialist Agents | **33** Patterns | **25** Rules | **20** Shared Libs |
+| **573** Skills | **50** Specialist Agents | **33** Quy trình | **27** Rules | **20** Shared Libs |
 | :---: | :---: | :---: | :---: | :---: |
-| Enterprise Standard | Role-Based Personas | PDCA Cycle | Security Armor | Shared Knowledge |
+| Tiêu chuẩn Enterprise | Personas chuyên biệt | Chu trình PDCA | Security Armor | Kho tri thức dùng chung |
 
 </div>
 
@@ -28,7 +28,7 @@ Sử dụng CLI để thiết lập môi trường tác chiến trong 30 giây:
 # 1. New Project (Khuyên dùng - Luôn tải bản mới nhất)
 npx antigravity-ide@latest project_name
 
-# 2. Install trực tiếp vào thư mục hiệnại
+# 2. Install trực tiếp vào thư mục hiện tại
 npx antigravity-ide@latest
 ```
 
@@ -36,14 +36,14 @@ npx antigravity-ide@latest
 > **Lưu ý quan trọng:** Không nên cài đặt Global (`npm install -g antigravity-ide`) vì sẽ gây xung đột phiên bản. Luôn dùng `npx ...@latest` để đảm bảo Project được khởi tạo với Engine mới nhất.
 
 ### ✨ Setup Wizard (v4.2.1)
-Trải nghiệm Premium CLI với 3 cấp độ tài nguyên Resource:
+Trải nghiệm Premium CLI với 3 cấp độ tài nguyên:
 
-1.  **🌿 ECO (Basic - 96 Skills)**:
+1.  **🌿 ECO (Basic - 132 Skills)**:
     - **Mục tiêu**: Gemini 1.5 Flash / Free Tier.
     - **Capabilities**: Core Skills (Scaffolding, Patterns, Debugging).
     - **Hiệu năng**: Nhẹ, siêu tốc, tiết kiệm token tối đa.
 
-2.  **🏢 PRO (Professional - 216 Skills)**:
+2.  **🏢 PRO (Professional - 289 Skills)**:
     - **Mục tiêu**: Gemini 1.5 Pro / Paid Account.
     - **Capabilities**: Bổ sung DevOps, Security Audit, Cloud Architecture, TDD.
     - **Hiệu năng**: Cân bằng hoàn hảo giữa sức mạnh và ngữ cảnh. Enterprise Standard.
@@ -70,11 +70,11 @@ Bộ tài liệu chi tiết được cài sẵn trong thư mục `docs/`. Bạn 
 - **[Skills Catalog](./docs/SKILLS_GUIDE.vi.md)**:
   *Danh sách chi tiết 573 Skills, triggers và ví dụ.*
 - **[Agent Roster](./docs/AGENTS_GUIDE.vi.md)**:
-  *Profile năng lực của 42 Specialist Agents (Frontend, Backend, Security...).*
+  *Profile năng lực của 50+ Specialist Agents (Frontend, Backend, Security...).*
 - **[Workflow Library](./docs/WORKFLOW_GUIDE.vi.md)**:
-  *Thư viện 21 Standard Workflows (ví dụ: /plan, /create, /deploy).*
+  *Thư viện 33 Standard Workflows (ví dụ: /plan, /create, /deploy).*
 - **[Rules & Protocols](./docs/RULES_GUIDE.vi.md)**:
-  *Rules, Security Standards và Coding Protocols.*
+  *27 Rules, Security Standards và Coding Protocols.*
 
 ### 🛠️ Support
 - **[Glossary](./docs/GLOSSARY.vi.md)**: *Định nghĩa thuật ngữ (Fractal, PDCA, MCP).*
@@ -89,7 +89,7 @@ AI sẽ tự động đọc file cấu hình `.agent/GEMINI.md` và tải toàn 
 
 ---
 
-## 🧠 2. The Heart of System: Thư mục `.agent`
+## 🧠 2. Trái tim của hệ thống: Thư mục `.agent`
 
 Thư mục `.agent` chứa toàn bộ "Brain" của hệ thống:
 
@@ -109,7 +109,7 @@ Kích hoạt các Workflows chuyên sâu ngay trong chat:
 - `/orchestrate`: Orchestrate Multi-Agent giải quyết bài toán phức tạp.
 - `/log-error`: Tự động log error kèm phân tích nguyên nhân và giải pháp.
 - `/research`: (Mới) Kích hoạt **FastCode Search** tra cứu mã nguồn siêu tốc (Native Node.js).
-- `/design-2026`: (New) Áp dụng **Frontend Trends 2026** (Liquid Glass, Bento Grid...).
+- `/design-2026`: (Mới) Áp dụng **Frontend Trends 2026** (Liquid Glass, Bento Grid...).
 
 ### System Update
 Để cập nhật Antigravity Brain lên bản mới nhất mà không mất các cấu hình custom:
@@ -125,9 +125,9 @@ npx antigravity-ide update
 
 | Chế độ (Mode) | Skills | Agents | Workflows | Rules | Shared Modules |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| **🌿 ECO** | 151 | 5 | 6 | 2 | 3 |
-| **🏢 PRO** | 296 | 10 | 11 | 5 | 10 |
-| **🌌 ULTRA** | 573 | 38 | 33 | 25 | 20 |
+| **🌿 ECO** | 132 | 5 | 6 | 2 | 3 |
+| **🏢 PRO** | 289 | 11 | 11 | 5 | 10 |
+| **🌌 ULTRA** | 573 | 50 | 33 | 27 | 20 |
 
 </div>
 
@@ -148,7 +148,7 @@ project-name/
 
 ---
 
-## ️ Philosophy "Vietnamese Shell - English Core"
+## ⚖️ Philosophy "Vietnamese Shell - English Core"
 
 - **Giao tiếp**: Tiếng Việt (Trực quan, súc tích).
 - **Kỹ thuật**: Tiếng Anh (Biến, hàm, logic - Đảm bảo hiệu suất AI cao nhất).
